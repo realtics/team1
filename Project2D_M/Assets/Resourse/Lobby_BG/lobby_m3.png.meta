@@ -1,0 +1,1711 @@
+fileFormatVersion: 2
+guid: 669ee2cbd8899234b98c6b84dc435658
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -758000646374234171
+    second: lobby_m3_0
+  - first:
+      213: -3069180436492477715
+    second: lobby_m3_1
+  - first:
+      213: -6148016916652559838
+    second: lobby_m3_2
+  - first:
+      213: -8873237307685193134
+    second: lobby_m3_3
+  - first:
+      213: 563279949933031786
+    second: lobby_m3_4
+  - first:
+      213: -6100251865873969617
+    second: lobby_m3_5
+  - first:
+      213: -1288264209738440508
+    second: lobby_icon_new
+  - first:
+      213: 6911505076489838275
+    second: lobby_m3_7
+  - first:
+      213: 6780314420249173516
+    second: lobby_m3_8
+  - first:
+      213: -4342726786962037651
+    second: lobby_m3_9
+  - first:
+      213: 1553633655040179984
+    second: lobby_m3_10
+  - first:
+      213: 4704321582478576481
+    second: lobby_m3_11
+  - first:
+      213: -413352809110335166
+    second: lobby_m3_12
+  - first:
+      213: 3201824280545795865
+    second: lobby_m3_13
+  - first:
+      213: 1542777102046165826
+    second: lobby_m3_14
+  - first:
+      213: 8007538964237937222
+    second: lobby_m3_15
+  - first:
+      213: 2654064867778232462
+    second: lobby_m3_16
+  - first:
+      213: 8017674607162719927
+    second: lobby_m3_17
+  - first:
+      213: -7304046141034353198
+    second: lobby_m3_18
+  - first:
+      213: -8633479208071950969
+    second: lobby_m3_19
+  - first:
+      213: 2528765931785468171
+    second: lobby_m3_20
+  - first:
+      213: -950303150789237767
+    second: lobby_m3_21
+  - first:
+      213: 6481066275879532692
+    second: lobby_m3_22
+  - first:
+      213: 1777206205890492867
+    second: lobby_m3_23
+  - first:
+      213: 8852462933214247069
+    second: lobby_m3_24
+  - first:
+      213: 7108054189406939295
+    second: lobby_m3_25
+  - first:
+      213: -1649839594436292801
+    second: Lobby_icon_levelbar
+  - first:
+      213: 1928969896916798970
+    second: lobby_m3_27
+  - first:
+      213: 4399858068180944356
+    second: lobby_m3_28
+  - first:
+      213: 6752860901523056717
+    second: lobby_m3_29
+  - first:
+      213: 4448377511085669141
+    second: lobby_m3_30
+  - first:
+      213: 1701912855161572528
+    second: lobby_m3_31
+  - first:
+      213: -1887321758188232677
+    second: lobby_m3_32
+  - first:
+      213: -1797948060436083997
+    second: lobby_icon01
+  - first:
+      213: -1560612448688489388
+    second: lobby_m3_34
+  - first:
+      213: -8102904467211564329
+    second: lobby_m3_35
+  - first:
+      213: -1031645444940310184
+    second: lobby_m3_36
+  - first:
+      213: -8828327601644144967
+    second: lobby_m3_37
+  - first:
+      213: 4357598165599634566
+    second: lobby_m3_38
+  - first:
+      213: -4557020946960518036
+    second: lobby_m3_39
+  - first:
+      213: -4413500759258319580
+    second: lobby_m3_40
+  - first:
+      213: 4126263545255739539
+    second: lobby_m3_41
+  - first:
+      213: 6887072665110878283
+    second: lobby_m3_42
+  - first:
+      213: 8928255922136711956
+    second: lobby_m3_43
+  - first:
+      213: -3056705098147276113
+    second: lobby_m3_44
+  - first:
+      213: -31097175675279458
+    second: lobby_m3_45
+  - first:
+      213: -2727989657451373957
+    second: lobby_m3_46
+  - first:
+      213: -5799952024718744953
+    second: lobby_m3_47
+  - first:
+      213: 1173855533652678169
+    second: lobby_icon_CompassNeedle
+  - first:
+      213: 2411046355938793552
+    second: lobby_m3_49
+  - first:
+      213: -4132564086624643011
+    second: lobby_m3_50
+  - first:
+      213: 1966767054600681062
+    second: lobby_m3_51
+  - first:
+      213: -3928364447518790768
+    second: lobby_m3_52
+  - first:
+      213: 5041175026303857827
+    second: lobby_m3_53
+  - first:
+      213: 7777506563863515103
+    second: lobby_m3_54
+  - first:
+      213: 3642226129642863794
+    second: lobby_m3_55
+  - first:
+      213: -215477723418794639
+    second: lobby_m3_56
+  - first:
+      213: -3350922432869585881
+    second: lobby_m3_57
+  - first:
+      213: 7179324618216686545
+    second: lobby_m3_58
+  - first:
+      213: -3252983061146859297
+    second: lobby_m3_59
+  - first:
+      213: -2378872798369274100
+    second: lobby_m3_60
+  - first:
+      213: -8446305949076127890
+    second: lobby_m3_61
+  - first:
+      213: -6579155988300453965
+    second: lobby_m3_62
+  - first:
+      213: -9000901319990721182
+    second: lobby_m3_63
+  - first:
+      213: -4527108322086585591
+    second: lobby_m3_64
+  - first:
+      213: 5233470419538301500
+    second: lobby_m3_65
+  - first:
+      213: -1288264209738440508
+    second: lobby_m3_6
+  - first:
+      213: -1649839594436292801
+    second: lobby_m3_26
+  - first:
+      213: -1797948060436083997
+    second: lobby_m3_33
+  - first:
+      213: 1173855533652678169
+    second: lobby_m3_48
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lobby_m3_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1888
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f78e2d32422df468d609be3abc5b0e
+      internalID: -3069180436492477715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_3
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1804
+        width: 88
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8970f84670b703a429135e6b5124f91f
+      internalID: -8873237307685193134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1824
+        width: 74
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ec26ed5b430114e81fa023ea4afdd8
+      internalID: 563279949933031786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_8
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1708
+        width: 87
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e756f5a4ba04c664ca6dc4ec0d5d48de
+      internalID: 6780314420249173516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_9
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 1740
+        width: 86
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0785ab6645ff07e4fb00eb5ae740cc58
+      internalID: -4342726786962037651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_11
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1718
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb7a5696f877b14c98548198d686fc4
+      internalID: 4704321582478576481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_13
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1685
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820611db0639f054b9be002c1a051581
+      internalID: 3201824280545795865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_14
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1640
+        width: 95
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0efde25dbb66914286fd2e09acd579a
+      internalID: 1542777102046165826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_15
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1644
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8daeda9846a792e4a90547f9aa7a9c79
+      internalID: 8007538964237937222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_16
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 1644
+        width: 79
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58ff516a6a02c64ca929f44bf53e2f0
+      internalID: 2654064867778232462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_17
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1640
+        width: 101
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4eff64be8a9b9842812d21cec95130f
+      internalID: 8017674607162719927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_18
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1708
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024b33ecd35ed2b4ebed1e6f5ec50440
+      internalID: -7304046141034353198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_19
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 1668
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678901bbdc5adf64f913999b34512bbc
+      internalID: -8633479208071950969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_20
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 1668
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201eae659412fe74ab78e06a35e74aad
+      internalID: 2528765931785468171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_21
+      rect:
+        serializedVersion: 2
+        x: 1772
+        y: 1664
+        width: 68
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9301100b2656b36488111ec9dc93894d
+      internalID: -950303150789237767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_22
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1656
+        width: 60
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b91453bbee7d1469841590c332b671
+      internalID: 6481066275879532692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1476
+        width: 112
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e9dd20972021148a67aef4575cb071
+      internalID: 1777206205890492867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_24
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1624
+        width: 96
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279f095b7495bd24e842295db6f5b4fc
+      internalID: 8852462933214247069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_25
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1700
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbee3c3f13d34e74eb7e265fa15c7894
+      internalID: 7108054189406939295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_28
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 1684
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7cfb5d1764b5a40b2e286367b311b7
+      internalID: 4399858068180944356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_29
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 1684
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ced9bd372244c40a55a82d23142425
+      internalID: 6752860901523056717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_30
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1673
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3ad8cd0904d914e8f98659463d8ead
+      internalID: 4448377511085669141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_31
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 1616
+        width: 99
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dccb3cb6dd8ef4c85694be1cc48317
+      internalID: 1701912855161572528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_32
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1521
+        width: 94
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59194e1865f2e604f89d0ec74d40d79e
+      internalID: -1887321758188232677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_35
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 1604
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2de091b92810141a98c411f2ad5fd6
+      internalID: -8102904467211564329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_37
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1552
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b908394ae5c4c94397755f1c31262ce
+      internalID: -8828327601644144967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_38
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1431
+        width: 112
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14cc888c08945244382ec32a94f558ed
+      internalID: 4357598165599634566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_39
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1469
+        width: 92
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b8e77bf86ccac4b87b0786722a4f2b
+      internalID: -4557020946960518036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_41
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1524
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b4584401afc07488906e947a92ddd7
+      internalID: 4126263545255739539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1336
+        width: 132
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee3ef47b82d06f4c9ff682466aba08d
+      internalID: 6887072665110878283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_43
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1009
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564787e796bbd6145930d208fcbc1520
+      internalID: 8928255922136711956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_44
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1389
+        width: 112
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c829bd9a401242744b173d3ae08b187c
+      internalID: -3056705098147276113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_45
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 1388
+        width: 112
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213e4abca7bde104587735af7c9d8ab4
+      internalID: -31097175675279458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_46
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1425
+        width: 94
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48706ccbcefc48f4ca1c6b5d78b9f844
+      internalID: -2727989657451373957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_47
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1424
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1703c0ba9c08d74f9930c9b9a7558c2
+      internalID: -5799952024718744953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_icon_CompassNeedle
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1428
+        width: 40
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02a7ac3849581744a4dd247d02aaba7
+      internalID: 1173855533652678169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_49
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1412
+        width: 104
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70659ceb13c3a4c4190f32a32c1c57d3
+      internalID: 2411046355938793552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_50
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1412
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b53416f970b0b48baee3bbe7dd0ff8
+      internalID: -4132564086624643011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_52
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1384
+        width: 31
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8d10f6b4ce7a74e903246b015d1910
+      internalID: -3928364447518790768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_54
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1388
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df02a8488ea50045931e88e041d1538
+      internalID: 7777506563863515103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_55
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1294
+        width: 116
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9b93b307e9e4b49bf12b6480671f9e
+      internalID: 3642226129642863794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1192
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd6ef61b25580e44b01fa77a251b0d3
+      internalID: -215477723418794639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_62
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 348
+        width: 152
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79db36944fb6b448bcad99d4c3ee0a0
+      internalID: -6579155988300453965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_63
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 518
+        width: 116
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71131dd107cf72d4cb8ead178a85b20a
+      internalID: -9000901319990721182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_64
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 0
+        width: 197
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf6361876319b84297c4130cd06bc61
+      internalID: -4527108322086585591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_65
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 0
+        width: 112
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed14274e5ac91a24e8431b44d9e77113
+      internalID: 5233470419538301500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_icon01
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 1566
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3604b0f1d9c3104890db3d49db34305
+      internalID: -1797948060436083997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_icon_levelbar
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1481
+        width: 6
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60374d402a31659438110612f2914aac
+      internalID: -1649839594436292801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_icon_new
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1629
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e485193c6ae47438cd14cf82783121
+      internalID: -1288264209738440508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_6
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 853
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e288449fe1f844184f5f1b23e21f7c
+      internalID: -1288264209738440508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_7
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 625
+        width: 121
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b9c4e5c91508649a2edcf41507914b
+      internalID: 6911505076489838275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_10
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 643
+        width: 168
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ecf650b3e6c4a94f82ced1413b27457
+      internalID: 1553633655040179984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1832
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fd64eb2f8e0ab46af4e20cf0bb3137
+      internalID: -758000646374234171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1827
+        width: 66
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d27db256ac954744b275b6a4cf0a8c9
+      internalID: -6148016916652559838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_5
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1715
+        width: 62
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44122c6b1f5ff04a8420ac4d4968a8a
+      internalID: -6100251865873969617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1805
+        width: 344
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8950a0d615deef84f8d8911a7badbdf3
+      internalID: -413352809110335166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_26
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 663
+        width: 224
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a370b8c0c91efd4f91b0fd32b63b537
+      internalID: -1649839594436292801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_27
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 558
+        width: 224
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd91b979c1f6e44f8a5e154cbdf36ce
+      internalID: 1928969896916798970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_33
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 546
+        width: 224
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859b286f62fa17445b7b28d7c9fb02c5
+      internalID: -1797948060436083997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_34
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 21
+        width: 441
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4537093c03671e4193be61f3b405421
+      internalID: -1560612448688489388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_36
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 1455
+        width: 76
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7169768ce2f994d9a48c9cbf1100fc
+      internalID: -1031645444940310184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_40
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 1073
+        width: 88
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd61096e217bc1439bd2a6e7f2be875
+      internalID: -4413500759258319580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_48
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 867
+        width: 115
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0065ed860c3aa954d878268b2f92492a
+      internalID: 1173855533652678169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_51
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1192
+        width: 102
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595b070705f4d8c4ea3f288ffb649c01
+      internalID: 1966767054600681062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_53
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1807
+        width: 66
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d856729a7722d84ead061625ae2de89
+      internalID: 5041175026303857827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_57
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1914
+        width: 59
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b93f4e1e57894c4e8a814f2c87c8621
+      internalID: -3350922432869585881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 104697936f7bcb94ca115c11fa7a3c71
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
