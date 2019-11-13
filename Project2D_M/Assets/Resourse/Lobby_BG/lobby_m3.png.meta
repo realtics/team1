@@ -212,6 +212,54 @@ TextureImporter:
   - first:
       213: 1173855533652678169
     second: lobby_m3_48
+<<<<<<< HEAD
+  - first:
+      213: -653398548762829050
+    second: lobby_m3_66
+  - first:
+      213: 4197356236712453054
+    second: lobby_m3_67
+  - first:
+      213: 2658899018965056143
+    second: lobby_m3_68
+  - first:
+      213: 3827577942741024623
+    second: lobby_coin
+  - first:
+      213: -4128265312927222389
+    second: lobby_coin2
+  - first:
+      213: -3928364447518790768
+    second: lobby_m3_52
+  - first:
+      213: 4901967872947583796
+    second: lobby_m3_69
+  - first:
+      213: 3826883568533567758
+    second: lobby_m3_70
+  - first:
+      213: 7143675873172619388
+    second: lobby_m3_71
+  - first:
+      213: -4670272205959004766
+    second: lobby_m3_72
+  - first:
+      213: 6188317982562596402
+    second: lobby_m3_73
+  - first:
+      213: 6434921025219350443
+    second: lobby_m3_74
+  - first:
+      213: -9197664935032435534
+    second: lobby_backbutton
+  - first:
+      213: 3321498423838258344
+    second: lobby_m3_75
+  - first:
+      213: 2977497867637865032
+    second: lobby_m3_76
+=======
+>>>>>>> parent of 77029aa... 11.12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1693,6 +1741,450 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
+    - serializedVersion: 2
+      name: lobby_m3_58
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 1171
+        width: 97
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ed95e8206ef874781f1eeb9868a9e8
+      internalID: 7179324618216686545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_59
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1674
+        width: 94
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9633abf6475bb9b489fe75f91c667e92
+      internalID: -3252983061146859297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_60
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 1078
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce760741f864ea84d932de145471894a
+      internalID: -2378872798369274100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_61
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 873
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4c04d5cf096564ea2200d64de19a2c
+      internalID: -8446305949076127890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_66
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 1083
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02a90395c5070049bc85304b5333319
+      internalID: -653398548762829050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_67
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 956
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c8502f20029064fbcd1714fe2ab2e5
+      internalID: 4197356236712453054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_68
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 935
+        width: 98
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0572d34b1654f674d84b6d147cf06733
+      internalID: 2658899018965056143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_coin
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 909
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badd68ba360f7a149888799bb84a5a35
+      internalID: 3827577942741024623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_coin2
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 876
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c90824e04242e9478d8a14231e1bdad
+      internalID: -4128265312927222389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_level
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 404
+        width: 190
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4823031faf72804faae9cdd845e0671
+      internalID: -3928364447518790768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_52
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 1984
+        width: 248
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d720812204b84e459bf2b5a2f882b38
+      internalID: -3928364447518790768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_69
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 971
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f0bd70a6692e24b969cbaf040d8f08
+      internalID: 4901967872947583796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_70
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 811
+        width: 107
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e0549093bc80e4f8bae0e7ce483de5
+      internalID: 3826883568533567758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_71
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 716
+        width: 104
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffccab87d8b8d34dbd89c74503881b3
+      internalID: 7143675873172619388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_72
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 1589
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13f3316dda19394080282b7e52b9a30
+      internalID: -4670272205959004766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_73
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1787
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3912faf63506245ba9ba9ba5af6d78
+      internalID: 6188317982562596402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_74
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 1738
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2059cfa5916bc9647b8ac1dae871679d
+      internalID: 6434921025219350443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_backbutton
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1754
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c4cbc1281d496488284bd8d64dfb4b
+      internalID: -9197664935032435534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_75
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1259
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b5350583a13bd4e90541ba947546ab
+      internalID: 3321498423838258344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_47
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 1349
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c8148675d91c945bb43f0eaef29db0
+      internalID: -5799952024718744953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lobby_m3_76
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 913
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce70f84c339a9046822bb407679bdf8
+      internalID: 2977497867637865032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+=======
+>>>>>>> parent of 77029aa... 11.12
     outline: []
     physicsShape: []
     bones: []

@@ -128,6 +128,7 @@
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_Demo08.cs" />
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_DemoPlaySound.cs" />
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_OpenOtherScene.cs" />
+    <Compile Include="Assets\Script\Character\Common\AnimFuntion.cs" />
     <Compile Include="Assets\Script\Character\Common\CharacterJump.cs" />
     <Compile Include="Assets\Script\Character\Common\CharacterMove.cs" />
     <Compile Include="Assets\Script\Character\Player\Anim\PlayerAnimToRigidbody.cs" />
