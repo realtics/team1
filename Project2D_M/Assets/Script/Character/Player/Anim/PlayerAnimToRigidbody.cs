@@ -13,19 +13,19 @@ public class PlayerAnimToRigidbody : MonoBehaviour
 
     public void PlayerRigidbodyReset()
     {
-        m_rigidbody2D.mass = 1.0f;
-        m_rigidbody2D.gravityScale = 5.0f;
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.None;
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        //m_rigidbody2D.mass = 1.0f;
+        //m_rigidbody2D.gravityScale = 5.0f;
+        //m_rigidbody2D.constraints = RigidbodyConstraints2D.None;
+        //m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
     }
     public void FreezeY()
     {
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
+        //m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
     }
 
     public void FreezeX()
     {
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
+        //m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
     }
 }

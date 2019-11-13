@@ -14,13 +14,16 @@ public class PlayerFootCollision : MonoBehaviour
     private PlayerState m_playerState = null;
     private Animator    m_animator = null;
     private Rigidbody2D m_rigidbody2D = null;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         m_animator = this.GetComponent<Transform>().parent.transform.Find("PlayerSpineSprite").GetComponent<Animator>();
         m_playerState = this.GetComponent<Transform>().parent.GetComponent<PlayerState>();
         m_rigidbody2D = this.GetComponent<Transform>().parent.GetComponent<Rigidbody2D>();
-
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         this.GetComponent<BoxCollider2D>().offset = new Vector2(-0.01191986f, 0.09466985f);
         this.GetComponent<BoxCollider2D>().size = new Vector2(0.9761602f, 0.4479895f);
     }

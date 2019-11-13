@@ -14,10 +14,10 @@ public class PlayerCrowdControlManager : MonoBehaviour
     private PlayerInput     m_playerInput = null;
     private CharacterMove   m_characterMove = null;
     private CharacterJump   m_characterJump = null;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        m_playerInput   = this.GetComponent<PlayerInput>();
+        m_playerInput = this.GetComponent<PlayerInput>();
         m_characterMove = this.GetComponent<CharacterMove>();
         m_characterJump = this.GetComponent<CharacterJump>();
     }

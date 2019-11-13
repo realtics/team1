@@ -1,6 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
 --- !u!1 &49776794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,8 +1434,6 @@ MonoBehaviour:
   scale: 1
   zPosition: 1
   overrideAlpha: 1
-=======
->>>>>>> parent of 77029aa... 11.12
 --- !u!1 &4619171480891344486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,11 +1466,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4619171480891344486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.55381, y: 24.326948, z: -47.450478}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4619171482053815410}
   - {fileID: 4619171481762083631}
+  - {fileID: 7863194669252827699}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1550,6 +1548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f46446d10b50bb4086c672af7183f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skeletonAnimation: {fileID: 7863194669252827702}
 --- !u!114 &77044987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,11 +1685,8 @@ GameObject:
   - component: {fileID: 4619171482053815374}
   - component: {fileID: 1608382168}
   - component: {fileID: 1608382169}
-<<<<<<< HEAD
   - component: {fileID: 1127028382}
   - component: {fileID: 1614660504872141991}
-=======
->>>>>>> parent of 77029aa... 11.12
   m_Layer: 8
   m_Name: PlayerSpineSprite
   m_TagString: Untagged
@@ -1706,9 +1702,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4619171482053815366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1866777661}
   m_Father: {fileID: 4619171480891344489}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1834,7 +1831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1835f776b158a846a3f71c853959278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 --- !u!114 &1127028382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,5 +1984,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> parent of 77029aa... 11.12

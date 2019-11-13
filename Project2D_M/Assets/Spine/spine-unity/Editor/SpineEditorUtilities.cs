@@ -1835,11 +1835,10 @@ namespace Spine.Unity.Editor {
 
 		public static void DrawBoundingBox (Slot slot, BoundingBoxAttachment box, Transform t) {
 			if (box.Vertices.Length <= 2) return; // Handle cases where user creates a BoundingBoxAttachment but doesn't actually define it.
-
-			var worldVerts = new float[box.WorldVerticesLength];
+            var worldVerts = new float[box.WorldVerticesLength];
 			box.ComputeWorldVertices(slot, worldVerts);
 
-			Handles.color = Color.green;
+			Handles.color = Color.red;
 			Vector3 lastVert = Vector3.zero;
 			Vector3 vert = Vector3.zero;
 			Vector3 firstVert = t.TransformPoint(new Vector3(worldVerts[0], worldVerts[1], 0));
@@ -1857,7 +1856,7 @@ namespace Spine.Unity.Editor {
 			}
 
 			Handles.DrawLine(lastVert, firstVert);
-		}
+        }
 
 		public static void DrawPointAttachment (Bone bone, PointAttachment pointAttachment, Transform skeletonTransform) {
 			if (bone == null) return;

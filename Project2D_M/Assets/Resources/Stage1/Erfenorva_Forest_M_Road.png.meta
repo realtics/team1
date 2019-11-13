@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: cbf33cec75937904db4cb2f2cade9d17
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4133568862577833123
+    second: Erfenorva_Forest_M_Road_0
+  - first:
+      213: 4510870087191391707
+    second: Erfenorva_Forest_M_Road_1
+  - first:
+      213: 7801040239912800950
+    second: Erfenorva_Forest_M_Road_2
+  - first:
+      213: 421753775281053459
+    second: Erfenorva_Forest_M_Road_3
+  - first:
+      213: 277199125443103587
+    second: Erfenorva_Forest_M_Road_4
+  - first:
+      213: 101034362579126710
+    second: Erfenorva_Forest_M_Road_5
+  - first:
+      213: 2808498819205823365
+    second: Erfenorva_Forest_M_Road_6
+  - first:
+      213: -2399697967389498561
+    second: Erfenorva_Forest_M_Road_7
+  - first:
+      213: 5658682854232103176
+    second: Erfenorva_Forest_M_Road_8
+  - first:
+      213: 6667720108443670590
+    second: Erfenorva_Forest_M_Road_9
+  - first:
+      213: 2059229432635041064
+    second: Erfenorva_Forest_M_Road_10
+  - first:
+      213: -6953540469369546348
+    second: Erfenorva_Forest_M_Road_11
+  - first:
+      213: -8598407559316950008
+    second: Erfenorva_Forest_M_Road_12
+  - first:
+      213: 5045219768310388048
+    second: Erfenorva_Forest_M_Road_13
+  - first:
+      213: -3626394441491363905
+    second: Erfenorva_Forest_M_Road_14
+  - first:
+      213: 8467815919952612314
+    second: Erfenorva_Forest_M_Road_15
+  - first:
+      213: 802015365205975528
+    second: Erfenorva_Forest_M_Road_16
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1549
+        width: 1198
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7594ae6722a19444f8b30c5eb666c1ac
+      internalID: 4133568862577833123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_1
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1798
+        width: 802
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9cf2e503abdfec418783493420c23b8
+      internalID: 4510870087191391707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_2
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1570
+        width: 659
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3d71edb5ce742449d3ef39f73c1448
+      internalID: 7801040239912800950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_3
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1548
+        width: 41
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb342bd47801f20468ff19014a63507c
+      internalID: 421753775281053459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_4
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1547
+        width: 85
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188aae33faed7644d81db72c165da23d
+      internalID: 277199125443103587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_5
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1346
+        width: 621
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084cd4937f7d61042b54df9b31c078cb
+      internalID: 101034362579126710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 686
+        width: 932
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3cfb2e2c590fc43aae7580273e372b
+      internalID: 2808498819205823365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_7
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 464
+        width: 561
+        height: 437
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae9deadcb5399e489c05a1419afbf7a
+      internalID: -2399697967389498561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 507
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63fd55ddc24d75a4cbee8aeb759bb1cd
+      internalID: 5658682854232103176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_9
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 178
+        width: 501
+        height: 506
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985d3e8355e974841a120cf0c46c514e
+      internalID: 6667720108443670590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_10
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 288
+        width: 392
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c2845464eeebc49b0b9087f7d571cc
+      internalID: 2059229432635041064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_11
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 328
+        width: 418
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14cc57ad6cafe447b0c9ff41b728e26
+      internalID: -6953540469369546348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_12
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 19
+        width: 899
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601cf6bcbd1073c4e9423c53e361796f
+      internalID: -8598407559316950008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_13
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 136
+        width: 423
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df4b3642fcd4164b968ccf7284a1ed5
+      internalID: 5045219768310388048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_14
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 738
+        width: 394
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1ece9bee0d894428db5b1f60bc979e
+      internalID: -3626394441491363905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1304
+        width: 958
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350905624635c994b96f11ff703002db
+      internalID: 8467815919952612314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Erfenorva_Forest_M_Road_16
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 911
+        width: 955
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd12a9b57db76344b9cc7bf6a0b42b35
+      internalID: 802015365205975528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6e43222b30c5f294e9347409d92a6e75
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

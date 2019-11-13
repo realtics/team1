@@ -1,0 +1,13 @@
+
+Effect_Lupe.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+LineEffect01
+  rotate: false
+  xy: 2, 124
+  size: 200, 78
+  orig: 200, 78
+  offset: 0, 0
+  index: -1

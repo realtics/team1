@@ -1,0 +1,739 @@
+fileFormatVersion: 2
+guid: 510b2865db0464545acd139557afca65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3898411139036379769
+    second: Lobby_Relic_Objec_0
+  - first:
+      213: 9159868624778723951
+    second: Lobby_Relic_Objec_1
+  - first:
+      213: 7009506902790105684
+    second: Lobby_Relic_Objec_2
+  - first:
+      213: -2747473114755181840
+    second: Lobby_Relic_Objec_3
+  - first:
+      213: 8019853379374778495
+    second: Lobby_Relic_Objec_4
+  - first:
+      213: 3635884407297849790
+    second: Lobby_Relic_Objec_5
+  - first:
+      213: -6049413216602912772
+    second: Lobby_Relic_Objec_6
+  - first:
+      213: 9145890170097419291
+    second: Lobby_Relic_Objec_7
+  - first:
+      213: 3162407819359447215
+    second: Lobby_Relic_Objec_8
+  - first:
+      213: -4639582442839900364
+    second: Lobby_Relic_Objec_9
+  - first:
+      213: -5597133383724712675
+    second: Lobby_Relic_Objec_10
+  - first:
+      213: -8853704653167329881
+    second: Lobby_Relic_Objec_11
+  - first:
+      213: -4164583840481174187
+    second: Lobby_Relic_Objec_12
+  - first:
+      213: 4991770042666172683
+    second: Lobby_Relic_Objec_13
+  - first:
+      213: 3344170941865658380
+    second: Lobby_Relic_Objec_14
+  - first:
+      213: 3415574677157540578
+    second: Lobby_Relic_Objec_15
+  - first:
+      213: 2884491151574769541
+    second: Lobby_Relic_Objec_16
+  - first:
+      213: 3373454088862621557
+    second: Lobby_Relic_Objec_17
+  - first:
+      213: -763717619905562009
+    second: Lobby_Relic_Objec_18
+  - first:
+      213: 884989491931668345
+    second: Lobby_Relic_Objec_19
+  - first:
+      213: -6311366490955765592
+    second: Lobby_Relic_Objec_20
+  - first:
+      213: -4721503018205742911
+    second: Lobby_Relic_Objec_21
+  - first:
+      213: 2155896313156135900
+    second: Lobby_Relic_Objec_22
+  - first:
+      213: 6798991297470189800
+    second: Lobby_Relic_Objec_23
+  - first:
+      213: 6707713996869260708
+    second: Lobby_Relic_Objec_24
+  - first:
+      213: -1859663196934118158
+    second: Lobby_Relic_Objec_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 386
+        width: 162
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9102d661f21ad41bb3a419b96cc189
+      internalID: 3898411139036379769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 366
+        width: 72
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3849acbb722c824392da5b8a7bf20b8
+      internalID: 9159868624778723951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_2
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 477
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2975796c293d0134eb788f1603f94654
+      internalID: 7009506902790105684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 477
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6c49acf26f1944182fa6dfb6b392dc
+      internalID: -2747473114755181840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_4
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 465
+        width: 73
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41625ffd702174f44a92ddf56c530439
+      internalID: 8019853379374778495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 437
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391568ec915afb047bda93e148e65cec
+      internalID: 3635884407297849790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_6
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 376
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c1dec67dc9557438e645bf4079a20d
+      internalID: -6049413216602912772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_7
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 468
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360a0bf2a692c9146b23d762f0b378a4
+      internalID: 9145890170097419291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 261
+        width: 162
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ed52e2427994b42870c9e33531c792
+      internalID: 3162407819359447215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_9
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 256
+        width: 41
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e08cc07452272642a4b5579b355ce1e
+      internalID: -4639582442839900364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_10
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 333
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f231c687f77f2d441b0e7110f3c1d5d6
+      internalID: -5597133383724712675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 6
+        width: 231
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1fb54e00e73e944aff06cc326534ef
+      internalID: -8853704653167329881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_12
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 6
+        width: 231
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3dcf3a26474e342a94568cd5000302
+      internalID: -4164583840481174187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_13
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 371
+        width: 27
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a0c398e4ae13449b5c3f4ca3f54bcc
+      internalID: 4991770042666172683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_14
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 418
+        width: 69
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399dc024428437d45aca72686f8d16fd
+      internalID: 3344170941865658380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_15
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 363
+        width: 72
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5689bf82b24d5e745822688457424b9b
+      internalID: 3415574677157540578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_16
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 389
+        width: 69
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2fa11a5f631a84b81dc376d45d6124
+      internalID: 2884491151574769541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_17
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 388
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1234452bc2518478cc4e34d2334690
+      internalID: 3373454088862621557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_18
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 334
+        width: 71
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f903c37d2f7b0164eb2a24909611c0ae
+      internalID: -763717619905562009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_19
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 332
+        width: 103
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb24e181b062e484e8d2a5c42fc8feb1
+      internalID: 884989491931668345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_20
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 258
+        width: 71
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0926da964a9b2ad44935095d99deb2a6
+      internalID: -6311366490955765592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_21
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 262
+        width: 27
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9a54b83aee8f5458288c700f366a5c
+      internalID: -4721503018205742911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_22
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 258
+        width: 94
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ee7aa6411002b4994305098c422061
+      internalID: 2155896313156135900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_23
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 258
+        width: 94
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48460fdb5c69cb247896c338d1ad2d89
+      internalID: 6798991297470189800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_24
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 29
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27531c0d63314b14db3f79d3d569e3a8
+      internalID: 6707713996869260708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lobby_Relic_Objec_25
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 2
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee380bd8a070851498e211fd2f9ce1d1
+      internalID: -1859663196934118158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: eb648849fe15a0949aa23a7429f02837
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
