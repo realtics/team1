@@ -1,0 +1,967 @@
+fileFormatVersion: 2
+guid: d9555a5a30892f54c861457c407ff916
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1998178871073062101
+    second: slot_Atlas_0
+  - first:
+      213: 2519225433569630628
+    second: slot_Atlas_1
+  - first:
+      213: 6719721200128603674
+    second: slot_Atlas_2
+  - first:
+      213: -7970629718552426795
+    second: slot_Atlas_3
+  - first:
+      213: -1546107689178884538
+    second: slot_Atlas_4
+  - first:
+      213: 6326913121725480122
+    second: slot_Atlas_5
+  - first:
+      213: -2690653104187910120
+    second: slot_Atlas_6
+  - first:
+      213: 8972313209614425293
+    second: slot_Atlas_7
+  - first:
+      213: -8356755472889431296
+    second: slot_Atlas_8
+  - first:
+      213: -1171503910663341076
+    second: slot_Atlas_9
+  - first:
+      213: 7670424624043819177
+    second: slot_Atlas_10
+  - first:
+      213: -6557014303656886542
+    second: slot_Atlas_11
+  - first:
+      213: 4057637176858685023
+    second: slot_Atlas_12
+  - first:
+      213: 3321807566214256730
+    second: slot_Atlas_13
+  - first:
+      213: 5133751161810913228
+    second: slot_Atlas_14
+  - first:
+      213: -1899472540628544690
+    second: slot_Atlas_15
+  - first:
+      213: 3346813790100687284
+    second: slot_Atlas_16
+  - first:
+      213: 6512206478565807644
+    second: slot_Atlas_17
+  - first:
+      213: 4667068233645217395
+    second: slot_Atlas_20
+  - first:
+      213: 7929099889608364137
+    second: slot_Atlas_21
+  - first:
+      213: -6749845603785324584
+    second: slot_Atlas_18
+  - first:
+      213: 5829114932430310557
+    second: slot_Atlas_19
+  - first:
+      213: -9209502056510744224
+    second: slot_Atlas_22
+  - first:
+      213: -3807180960471123402
+    second: slot_Atlas_23
+  - first:
+      213: -6429239647054802234
+    second: slot_Atlas_24
+  - first:
+      213: 4527394498361777765
+    second: slot_Atlas_25
+  - first:
+      213: 8146221980495846147
+    second: slot_Atlas_27
+  - first:
+      213: -1896488583336772546
+    second: slot_Atlas_26
+  - first:
+      213: -384394673016873771
+    second: slot_Atlas_28
+  - first:
+      213: -9172624720680707070
+    second: slot_Atlas_29
+  - first:
+      213: 72463174538623767
+    second: slot_Atlas_30
+  - first:
+      213: -4068920312505622397
+    second: slot_Atlas_31
+  - first:
+      213: 198370471450720372
+    second: slot_Atlas_32
+  - first:
+      213: 4844932315023327625
+    second: slot_Atlas_33
+  - first:
+      213: 6708155284124989897
+    second: slot_Atlas_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: slot_Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491
+        width: 78
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20971d78b47cc4d4fa69f95c7b5ecfa0
+      internalID: -1998178871073062101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 491
+        width: 166
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e82f3cadf36834ea37641f523ca890
+      internalID: 2519225433569630628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 293
+        width: 40
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd4a12c1de0599419bdbc17a5b0f211
+      internalID: 6719721200128603674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 353
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7205073557ec84b8298003052bf355
+      internalID: -7970629718552426795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 430
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e49e2be8a2e4544e815375500538c60
+      internalID: -1546107689178884538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 448
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9455845f4f701504895b4287c39a367a
+      internalID: 6326913121725480122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 448
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6272a3ec1adb7d4392ec62fc76ceb14
+      internalID: -2690653104187910120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 450
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85462226ddbc9854cb86d457f8a66a52
+      internalID: 8972313209614425293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 444
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e3f48ef94c13e4c9012b12ee0481ce
+      internalID: -8356755472889431296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 410
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7651b869f5a4b1347a160a066e68fb5c
+      internalID: -1171503910663341076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 390
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed782b120dcf8c043b7ffbc55441691a
+      internalID: 7670424624043819177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 397
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6f829609e5f5b4e9bebb706a37ef4d
+      internalID: -6557014303656886542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 386
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa95255cd5694954791446caddb0ae21
+      internalID: 4057637176858685023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 402
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d777cb8fc96b5145a72e117af2798bd
+      internalID: 3321807566214256730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 383
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15d8d77fb9214742801d6d0f8cd0061
+      internalID: 5133751161810913228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 406
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04136fa2362c6a24bbc158bc371fc16a
+      internalID: -1899472540628544690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 406
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd6424288c16f847aa8ce23c3d61d9a
+      internalID: 3346813790100687284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 369
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb01a91357816794cb5b12cd15570e54
+      internalID: 6512206478565807644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 330
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd884c8e61551e40ab1dee5c28a9b2d
+      internalID: 4667068233645217395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8189d3a89991a4a94c7301eb9080c2
+      internalID: 7929099889608364137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 294
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018f5f2140ad9dc48ad7018f4767b4a2
+      internalID: -6749845603785324584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 354
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a9850118690754ca9ae233301f0496
+      internalID: 5829114932430310557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 392
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91945e38d2f65944bbf8e1a53bc7f585
+      internalID: -9209502056510744224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 402
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c75d77d3fa41ca4fae7649285831a48
+      internalID: -3807180960471123402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f897b9e00d1ade48a7cb258a22d11e4
+      internalID: -6429239647054802234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 184
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c360a10aed841f4f8c29c8c1c793dc2
+      internalID: 4527394498361777765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 267
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed4712754fd94343b1aeaae1021ef35
+      internalID: 8146221980495846147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 255
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b361e7304e72354eb34f89a0ceb0144
+      internalID: -1896488583336772546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 52
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6220bec64c67284eb317c8a649525b8
+      internalID: -384394673016873771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 340
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882bf9237492b354198c30cd9a65331d
+      internalID: -9172624720680707070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 435
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563901e6ef91aee4998163daa60cefab
+      internalID: 72463174538623767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee199d9776d2c941a8470f7c680870c
+      internalID: -4068920312505622397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 250
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7cbde5b864868d409eb4cc2ca6c1602
+      internalID: 198370471450720372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 168
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787151697682cc141a62df58aeca6d97
+      internalID: 4844932315023327625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 331
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286727535cc13d6429fece9db3ffe70d
+      internalID: 6708155284124989897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c2209a6ed29369f44aa29539b45674f9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

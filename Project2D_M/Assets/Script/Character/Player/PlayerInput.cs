@@ -50,7 +50,6 @@ public class PlayerInput : MonoBehaviour
     {
         if (m_playerState.IsPlayerAttack())
         {
-            Move(m_fMoveSpeed/5);
             return;
         }
 

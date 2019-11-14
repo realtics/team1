@@ -8,7 +8,7 @@ using TMPro;
 
 /*
  * 작성자         : 박종현
- * 최종 수정 날짜 : 2019.11.11
+ * 최종 수정 날짜 : 2019.11.14
  * 팀             : 1 Team
  * 스크립트 용도  : 다음 씬 로딩 중 text(% 숫자 표기) 와 fillAmount을 이용하여 progressbar 효과 적용을 위함.
 */
@@ -25,7 +25,7 @@ public class LoadingProgress : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(LoadScene());
+        StartCoroutine(nameof(LoadScene));
 
         //람다식으로 액션에 넣어주기
         PrintTextPersent = (float _fillamount) => { m_textLoadingPersent.text = ((int)(_fillamount * 100)).ToString() + "%"; };

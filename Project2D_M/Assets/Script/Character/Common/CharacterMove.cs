@@ -9,7 +9,6 @@ using UnityEngine;
  * 스크립트 용도   : 캐릭터의 좌, 우 움직임
  */
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BoxCollider2D))]
 public class CharacterMove : MonoBehaviour
 {
     private Rigidbody2D m_characterRigidbody = null;

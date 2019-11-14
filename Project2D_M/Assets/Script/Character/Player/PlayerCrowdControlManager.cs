@@ -24,7 +24,7 @@ public class PlayerCrowdControlManager : MonoBehaviour
 
     public void Stiffen(float _second)
     {
-        StartCoroutine("StiffenCoroutine", _second);
+        StartCoroutine(nameof(StiffenCoroutine), _second);
     }
 
     IEnumerator StiffenCoroutine(float _second)

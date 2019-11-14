@@ -1852,6 +1852,8 @@ namespace Spine.Unity.Editor {
 				if (i > 0)
 					Handles.DrawLine(lastVert, vert);
 
+               // Debug.Log("Editer : " + vert.x + "/"+ vert.y);
+
 				lastVert = vert;
 			}
 

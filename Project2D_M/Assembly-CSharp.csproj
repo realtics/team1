@@ -131,15 +131,14 @@
     <Compile Include="Assets\Script\Character\Common\AnimFuntion.cs" />
     <Compile Include="Assets\Script\Character\Common\CharacterJump.cs" />
     <Compile Include="Assets\Script\Character\Common\CharacterMove.cs" />
-    <Compile Include="Assets\Script\Character\Player\Anim\EffectCollider.cs" />
-    <Compile Include="Assets\Script\Character\Player\Anim\PlayerAnimToRigidbody.cs" />
+    <Compile Include="Assets\Script\Character\Common\SpineAnimCollider.cs" />
     <Compile Include="Assets\Script\Character\Player\Anim\PlayerAnimToState.cs" />
-    <Compile Include="Assets\Script\Character\Player\Collider\AttackCollision.cs" />
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerFootCollision.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerCrowdControlManager.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerInput.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerNormalAttack.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerState.cs" />
+    <Compile Include="Assets\Script\Monster\MonsterLupe.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxBackGround.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxCamera.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxLayer.cs" />
@@ -147,6 +146,8 @@
     <Compile Include="Assets\Script\UI\AnimatorFunctions.cs" />
     <Compile Include="Assets\Script\UI\ApplicationExit.cs" />
     <Compile Include="Assets\Script\UI\AtlasSeparator.cs" />
+    <Compile Include="Assets\Script\UI\InventoryButton.cs" />
+    <Compile Include="Assets\Script\UI\InventoryControl.cs" />
     <Compile Include="Assets\Script\UI\LoadingProgress.cs" />
     <Compile Include="Assets\Script\UI\LobbyParallax.cs" />
     <Compile Include="Assets\Script\UI\MenuButton.cs" />
