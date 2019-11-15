@@ -59,7 +59,7 @@ public class SpineAnimCollider : MonoBehaviour
 
     private Vector2[] DrawBoundingBox(Slot slot, BoundingBoxAttachment box, Transform t)
     {
-        if (box.Vertices.Length <= 2) return null; // Handle cases where user creates a BoundingBoxAttachment but doesn't actually define it.
+        if (box.Vertices.Length <= 2) return null;
 
         var worldVerts = new float[box.WorldVerticesLength];
         box.ComputeWorldVertices(slot, worldVerts);
@@ -78,8 +78,6 @@ public class SpineAnimCollider : MonoBehaviour
             if (ObjectTransform != null)
                 vert = ObjectTransform.InverseTransformPoint(vert);
             temp[i/2] = (Vector2)vert * 1f;
-
-            //Debug.Log("Code : " + vert.x + "/" + vert.y);
         }
         return temp;
     }

@@ -68,6 +68,12 @@ TextureImporter:
   - first:
       213: 2498669780566677601
     second: common_popup_m3_Atlas_21
+  - first:
+      213: -5242434967169260616
+    second: common_popup_m3_Atlas_22
+  - first:
+      213: -3905315565592178556
+    second: common_popup_m3_Atlas_23
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -517,11 +523,11 @@ TextureImporter:
         serializedVersion: 2
         x: 1428
         y: 739
-        width: 156
+        width: 154
         height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 60, y: 10, z: 60, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -633,6 +639,48 @@ TextureImporter:
       bones: []
       spriteID: 079d0881383a99940b8b2e064d23848a
       internalID: 2498669780566677601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_popup_m3_Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 249
+        width: 460
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 240, y: 32, z: 26, w: 28}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff083276a3eed8e4f84296b3377234a9
+      internalID: -5242434967169260616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_popup_m3_Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 1175
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eca943364cdbbb489e14c1deccee6ad
+      internalID: -3905315565592178556
       vertices: []
       indices: 
       edges: []

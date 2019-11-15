@@ -28,15 +28,14 @@ public class AnimFuntion : MonoBehaviour
             m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.99f);
     }
 
-    /// <summary>
-    /// _animTag의 애니메이션이 진행중인지
-    /// </summary>
-    /// <param name="_animTag"></param>
-    /// <returns></returns>
-    public bool IsAnimationPlayingTag(string _animTag)
+    public int tagGetHash()
     {
-        return (m_animator.GetCurrentAnimatorStateInfo(0).IsTag(_animTag) &&
-            m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.95f);
+        return m_animator.GetCurrentAnimatorStateInfo(0).tagHash;
+    }
+
+    public int tagGetHashst(string _tagname)
+    {
+        return Animator.StringToHash(_tagname);
     }
 
     /// <summary>

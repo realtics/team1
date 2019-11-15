@@ -23,6 +23,12 @@ TextureImporter:
   - first:
       213: -3936294900428925043
     second: magia_outgame_M3_6
+  - first:
+      213: 7176656988313224326
+    second: magia_outgame_M3_7
+  - first:
+      213: -8581755449153933007
+    second: magia_outgame_M3_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -253,7 +259,7 @@ TextureImporter:
         width: 56
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
@@ -261,6 +267,48 @@ TextureImporter:
       bones: []
       spriteID: 35350e5eaae591c40bd15b984bf3f336
       internalID: -3936294900428925043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_7
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1852
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3149f75802563f54facf73a760e4012e
+      internalID: 7176656988313224326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_8
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1853
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851a86199dfa2854085abee83b768676
+      internalID: -8581755449153933007
       vertices: []
       indices: 
       edges: []

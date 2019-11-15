@@ -26,25 +26,26 @@ public class PlayerState : MonoBehaviour
     }
 
     //캐릭터의 현재 액션
-    public enum PLAYER_STATE
+    public enum PLAYER_STATE_ACTION
     {
         PLAYER_STATE_STAND, //대기상태(서 있거나 이동할 때)
         PLAYER_STATE_ATTACK,
         PLAYER_STATE_JUMP,
     }
 
-    public PLAYER_STATE_POSITION playerStatePosition = PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND;
-    public PLAYER_STATE_JUMP playerJumpState = PLAYER_STATE_JUMP.PLAYER_STATE_NONEJUMP;
-    public PLAYER_STATE playerState  = PLAYER_STATE.PLAYER_STATE_STAND;
+    [Header("Player State")]
+    [SerializeField] private PLAYER_STATE_POSITION m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND;
+    [SerializeField] private PLAYER_STATE_JUMP m_jumpState = PLAYER_STATE_JUMP.PLAYER_STATE_NONEJUMP;
+    [SerializeField] private PLAYER_STATE_ACTION m_actionState  = PLAYER_STATE_ACTION.PLAYER_STATE_STAND;
 
     /// <summary>
     ///플레이어 상태 초기화
     /// </summary>
     public void PlayerStateReset()
     {
-        playerStatePosition = PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND;
-        playerJumpState = PLAYER_STATE_JUMP.PLAYER_STATE_NONEJUMP;
-        playerState = PLAYER_STATE.PLAYER_STATE_STAND;
+        m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND;
+        m_jumpState = PLAYER_STATE_JUMP.PLAYER_STATE_NONEJUMP;
+        m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_STAND;
     }
 
     /// <summary>
@@ -52,9 +53,17 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public void PlayerStateFalling()
     {
-        playerStatePosition = PLAYER_STATE_POSITION.PLAYER_POSITION_AIR;
-        playerJumpState = PLAYER_STATE_JUMP.PLAYER_STATE_JUMP;
-        playerState = PLAYER_STATE.PLAYER_STATE_JUMP;
+        m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_AIR;
+        m_jumpState = PLAYER_STATE_JUMP.PLAYER_STATE_JUMP;
+        m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_JUMP;
+    }
+
+    /// <summary>
+    /// 플레이어 상태를 공격으로
+    /// </summary>
+    public void PlayerStateAttack()
+    {
+        m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK;
     }
 
     /// <summary>
@@ -62,9 +71,9 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public void PlayerStateJump()
     {
-        playerStatePosition = PLAYER_STATE_POSITION.PLAYER_POSITION_AIR;
-        playerJumpState = PLAYER_STATE_JUMP.PLAYER_STATE_JUMP;
-        playerState = PLAYER_STATE.PLAYER_STATE_JUMP;
+        m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_AIR;
+        m_jumpState = PLAYER_STATE_JUMP.PLAYER_STATE_JUMP;
+        m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_JUMP;
     }
 
     /// <summary>
@@ -72,9 +81,9 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public void PlayerStateDoubleJump()
     {
-        playerStatePosition = PLAYER_STATE_POSITION.PLAYER_POSITION_AIR;
-        playerJumpState = PLAYER_STATE_JUMP.PLAYER_STATE_DOUBLEJUMP;
-        playerState = PLAYER_STATE.PLAYER_STATE_JUMP;
+        m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_AIR;
+        m_jumpState = PLAYER_STATE_JUMP.PLAYER_STATE_DOUBLEJUMP;
+        m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_JUMP;
     }
     
     /// <summary>
@@ -82,7 +91,7 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public bool IsPlayerAttack()
     {
-        if (playerState == PLAYER_STATE.PLAYER_STATE_ATTACK)
+        if (m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK)
             return true;
 
         return false;
@@ -93,7 +102,7 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public bool IsPlayerGround()
     {
-        if (playerStatePosition == PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND)
+        if (m_positionState == PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND)
             return true;
 
         return false;
@@ -104,10 +113,10 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public bool IsPlayerAirAttack()
     {
-        if (playerStatePosition != PLAYER_STATE_POSITION.PLAYER_POSITION_AIR)
+        if (m_positionState != PLAYER_STATE_POSITION.PLAYER_POSITION_AIR)
             return false;
 
-        playerState = PLAYER_STATE.PLAYER_STATE_JUMP;
+        m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_JUMP;
 
         return true;
     }
@@ -117,10 +126,10 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public bool IsPlayerDoubleJump()
     {
-        if (playerStatePosition != PLAYER_STATE_POSITION.PLAYER_POSITION_AIR)
+        if (m_positionState != PLAYER_STATE_POSITION.PLAYER_POSITION_AIR)
             return false;
 
-        if (playerJumpState == PLAYER_STATE_JUMP.PLAYER_STATE_DOUBLEJUMP)
+        if (m_jumpState == PLAYER_STATE_JUMP.PLAYER_STATE_DOUBLEJUMP)
             return false;
 
         return true;
@@ -131,10 +140,10 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public bool IsPlayerJump()
     {
-        if (playerStatePosition == PLAYER_STATE_POSITION.PLAYER_POSITION_AIR)
+        if (m_positionState == PLAYER_STATE_POSITION.PLAYER_POSITION_AIR)
             return false;
 
-        if (playerJumpState != PLAYER_STATE_JUMP.PLAYER_STATE_NONEJUMP)
+        if (m_jumpState != PLAYER_STATE_JUMP.PLAYER_STATE_NONEJUMP)
             return false;
 
         return true;

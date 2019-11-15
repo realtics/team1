@@ -20,6 +20,8 @@ public class PlayerInput : MonoBehaviour
     private PlayerNormalAttack m_playerNormalAttack = null;
     private Animator    m_animator = null;
 
+    private PlayerInfo temp;
+
     [SerializeField]
     private float m_fMoveSpeed = 10.0f;
     [SerializeField]
@@ -32,6 +34,8 @@ public class PlayerInput : MonoBehaviour
         m_characterJump  = this.GetComponent<CharacterJump>();
         m_animator       = this.transform.Find("PlayerSpineSprite").GetComponent<Animator>();
         m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
+
+        temp = this.GetComponent<PlayerInfo>();
     }
 
     private void FixedUpdate()
@@ -89,6 +93,7 @@ public class PlayerInput : MonoBehaviour
             {
                 m_playerState.PlayerStateJump();
                 Jump();
+
                 return;
             }
         }
@@ -104,7 +109,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            m_playerState.playerState = PlayerState.PLAYER_STATE.PLAYER_STATE_ATTACK;
+            m_playerState.PlayerStateAttack();
             m_playerNormalAttack.NormalAttack();
         }
     }
