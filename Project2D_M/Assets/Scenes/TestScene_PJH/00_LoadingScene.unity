@@ -653,6 +653,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_imgProgressBar: {fileID: 1277530545}
   m_textLoadingPersent: {fileID: 363219936}
+  m_backgroundObject: {fileID: 2001254968}
+  m_backgroundImages:
+  - {fileID: 21300000, guid: 9474bbfb87ba5e3449833b05d17423c1, type: 3}
+  - {fileID: 21300000, guid: 49e3aa84d5299144fa4521f89735ed19, type: 3}
+  - {fileID: 21300000, guid: 64fa0bf4f9e4e2741ab52541078903e9, type: 3}
+  - {fileID: 21300000, guid: a4018534ecc61c04089c238390e5fbc3, type: 3}
+  - {fileID: 21300000, guid: 08b1e487af913ac43adfe74ae1c95e84, type: 3}
+  - {fileID: 21300000, guid: c94167cc5478b5f4ea5b1b200ee9123f, type: 3}
+  - {fileID: 21300000, guid: 49a2807de4e78de43a4c478b5af6a8d4, type: 3}
+  - {fileID: 21300000, guid: dfcb4d6bb27dc4645ad2fee02837f079, type: 3}
+  - {fileID: 21300000, guid: 2a939473888bcb747b4620c682c00332, type: 3}
+  - {fileID: 21300000, guid: 9a802f91da482f144a232d4b09de4d59, type: 3}
+  - {fileID: 21300000, guid: b8731fa1e444a00419349d2b2582054b, type: 3}
+  - {fileID: 21300000, guid: bcb6af5626e51a8458ab96fd1957f66d, type: 3}
+  - {fileID: 21300000, guid: 19f4191ce4699bd4f8ae0a1839d956dd, type: 3}
+  - {fileID: 21300000, guid: eff2b69e3b3f6814fb20b9d67f8c5bcb, type: 3}
+  - {fileID: 21300000, guid: cbb6ce7c446e2ae4ba4d1f035e40144d, type: 3}
+  - {fileID: 21300000, guid: 2804ef45f96a6f9478a5a419520a2ac1, type: 3}
+  - {fileID: 21300000, guid: b78589d54aacd01459167a4f0fb59bcb, type: 3}
+  - {fileID: 21300000, guid: d3e8207839c19b14c9aee7fb3bb8a8d6, type: 3}
+  - {fileID: 21300000, guid: dface4842e5fc2e40becc950f8280ee1, type: 3}
 --- !u!4 &966041456
 Transform:
   m_ObjectHideFlags: 0

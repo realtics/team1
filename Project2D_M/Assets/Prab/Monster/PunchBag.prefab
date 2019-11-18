@@ -18,6 +18,9 @@ GameObject:
   - component: {fileID: 6682467094893289747}
   - component: {fileID: 6682467094893289744}
   - component: {fileID: 6682467094893289745}
+  - component: {fileID: 415796774}
+  - component: {fileID: 4185425711020192539}
+  - component: {fileID: 5022983026527771504}
   m_Layer: 10
   m_Name: PunchBag
   m_TagString: Monster
@@ -148,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 10
-  hp: 0
+  hp: 10
   defensive: 1
 --- !u!114 &6682467094893289746
 MonoBehaviour:
@@ -204,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9616a6aaaa40adc4d8655d70d9c61c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectTransform: {fileID: 6682467094893289736}
 --- !u!50 &6682467094893289745
 Rigidbody2D:
   serializedVersion: 4
@@ -226,3 +228,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &415796774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682467094893289750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe4af2fda3068649a5b15c494f33c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4185425711020192539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682467094893289750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e9cf3d92dc4a4c8944b093a80e079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5022983026527771504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682467094893289750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929dbd149006914d9681dc2aa0fbd8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

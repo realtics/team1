@@ -13,8 +13,11 @@ public class PlayerInfo : CharacterInfo
     [Header("플레이어 추가 정보")]
     [SerializeField] private int critical;
 
-    public class playerCharInfo : CharInfo
+    public struct playerCharInfo
     {
+        public int maxHp;
+        public int attack;
+        public int defensive;
         public int critical;
     }
 

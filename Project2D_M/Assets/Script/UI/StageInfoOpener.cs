@@ -1,20 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StageInfoOpener : MonoBehaviour
 {
     public GameObject stageInfoPanel;
 
+    public GameObject stageSelect;
+
+    public GameObject lobbyBackButton;
+    public GameObject stageBackButton;
+
+    public TextMeshProUGUI backButtonText;
+
+    private float m_waitMenuAnimation = 0.5f;
+
     public void OpenPanel()
     {
         stageInfoPanel.SetActive(true);
+        stageBackButton.SetActive(true);
+        lobbyBackButton.SetActive(false);
+
+        BackButtonTextChange("1.에페노바 숲");
 
         Animator animator = stageInfoPanel.GetComponent<Animator>();
 
         if (stageInfoPanel != null)
         {
             animator.SetBool("bOpen", true);
+            stageSelect.SetActive(false);
         }
     }
 
@@ -22,23 +38,31 @@ public class StageInfoOpener : MonoBehaviour
     {
         Animator animator = stageInfoPanel.GetComponent<Animator>();
 
+        BackButtonTextChange("월드맵");
+
         if (stageInfoPanel != null)
         {
             animator.SetBool("bOpen", false);
-            StartCoroutine(nameof(WaitOutPanel));
+            StartCoroutine(nameof(WaitInOutPanel));
         }
     }
 
-
-    private void Start()
+    void BackButtonTextChange(string _buttontext)
     {
-        stageInfoPanel.SetActive(false);
+        backButtonText.text = _buttontext;
     }
 
-    IEnumerator WaitOutPanel()
-    {
-        yield return new WaitForSeconds(0.5f);
 
+    IEnumerator WaitInOutPanel()
+    {
+        yield return new WaitForSeconds(m_waitMenuAnimation);
+
+        stageSelect.SetActive(true);
         stageInfoPanel.SetActive(false);
+
+        lobbyBackButton.SetActive(true);
+        stageBackButton.SetActive(false);
     }
+
+    
 }

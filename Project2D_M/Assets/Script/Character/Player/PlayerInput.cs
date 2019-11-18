@@ -47,7 +47,7 @@ public class PlayerInput : MonoBehaviour
 
     private void OnDisable()
     {
-        m_animator.SetBool("IsMove", false);
+        m_animator.SetBool("bMove", false);
     }
 
     private void MoveInput()
@@ -64,24 +64,24 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            m_animator.SetBool("IsMove", true);
+            m_animator.SetBool("bMove", true);
             m_characterMove.MoveLeft(_speed);
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            m_animator.SetBool("IsMove", true);
+            m_animator.SetBool("bMove", true);
             m_characterMove.MoveRight(_speed);
         }
         else
         {
-            m_animator.SetBool("IsMove", false);
+            m_animator.SetBool("bMove", false);
             m_characterMove.MoveStop();
         }
     }
 
     private void JumpInput()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !m_playerState.IsPlayerAttack())
         {
             if (m_playerState.IsPlayerDoubleJump())
             {
@@ -101,7 +101,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Jump()
     {
-        m_animator.SetTrigger("TriggerJump");
+        m_animator.SetTrigger("tJump");
         m_characterJump.Jump(m_fJumpforce);
     }
 

@@ -26,8 +26,8 @@ public class PlayerFootCollision : MonoBehaviour
     {
        if(collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
-            m_animator.SetTrigger("TriggerLend");
-            m_animator.ResetTrigger("TriggerFall");
+            m_animator.SetTrigger("tLend");
+            m_animator.ResetTrigger("tFall");
             m_playerState.PlayerStateReset();
             m_rigidbody2D.velocity = new Vector2(0, 0);
         }
@@ -39,9 +39,9 @@ public class PlayerFootCollision : MonoBehaviour
         {
             if (m_playerState.IsPlayerGround())
             {
-                m_animator.SetTrigger("TriggerFall");
+                m_animator.SetTrigger("tFall");
             }
-            m_animator.ResetTrigger("TriggerLend");
+            m_animator.ResetTrigger("tLend");
             m_playerState.PlayerStateJump();
         }
     }

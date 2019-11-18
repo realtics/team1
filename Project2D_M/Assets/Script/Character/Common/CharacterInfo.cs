@@ -12,16 +12,9 @@ public class CharacterInfo : MonoBehaviour
 {
     [Header("캐릭터 정보")]
     [SerializeField] protected int maxHp = 10;
-    [SerializeField] protected int hp;
+    [SerializeField] protected int hp = 10;
     [SerializeField] public int attack { get; protected set; } = 2;
     [SerializeField] protected int defensive = 1;
-
-    public class CharInfo
-    {
-        public int maxHp;
-        public int attack;
-        public int defensive;
-    }
 
     public void HpDamage(int _damage)
     {

@@ -22,7 +22,6 @@ public class MenuButton : MonoBehaviour
 
     [SerializeField] MenuButtonController        m_cMenuButtonController;
     [SerializeField] Animator                    m_cAnimator;
-  //[SerializeField] AnimatorFunctions           m_cAnimatorFunctions;
 
     public int                                   thisMenuIndex;
 
@@ -49,9 +48,6 @@ public class MenuButton : MonoBehaviour
             else if(m_cAnimator.GetBool("pressed"))
             {
                 m_cAnimator.SetBool("pressed", false);
-
-                //나중에 사운드 추가할때 수정.
-                //m_cAnimatorFunctions.m_bDisableOnce = true;
 
                 // 씬 전환.
                 if (thisMenuIndex == (int)MENU_INDEX.MENU_GAMESTART)

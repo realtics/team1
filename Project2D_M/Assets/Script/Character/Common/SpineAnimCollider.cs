@@ -16,25 +16,21 @@ public class SpineAnimCollider : MonoBehaviour
     private MeshRenderer m_meshRenderer = null;
     private SkeletonRenderer m_skeletonRenderer = null;
     private PolygonCollider2D m_meshCollider = null;
-
-    public Transform ObjectTransform;
+    private Transform m_objectTransform = null;
 
     private void Awake()
     {
         m_meshRenderer = this.GetComponent<MeshRenderer>();
         m_meshCollider = this.GetComponent<PolygonCollider2D>();
         m_skeletonRenderer = this.GetComponent<SkeletonRenderer>();
+        m_objectTransform = this.transform.root;
     }
-
-    // Update is called once per frame
-    private void Update()
+    public void ColliderDraw()
     {
-        if (m_meshRenderer.materials.Length > 0)
-            m_meshCollider.enabled = true;
-        else m_meshCollider.enabled = false;
+        if (m_meshRenderer.materials.Length == 0)
+            return;
 
-        if (m_meshCollider.enabled)
-            DrawBoundingBoxes(m_skeletonRenderer.transform, m_skeletonRenderer.skeleton);
+        DrawBoundingBoxes(m_skeletonRenderer.transform, m_skeletonRenderer.skeleton);
     }
 
     private void DrawBoundingBoxes(Transform transform, Skeleton skeleton)
@@ -75,8 +71,7 @@ public class SpineAnimCollider : MonoBehaviour
             vert.z = 0;
 
             vert = t.TransformPoint(vert);
-            if (ObjectTransform != null)
-                vert = ObjectTransform.InverseTransformPoint(vert);
+            vert = m_objectTransform.InverseTransformPoint(vert);
             temp[i/2] = (Vector2)vert * 1f;
         }
         return temp;

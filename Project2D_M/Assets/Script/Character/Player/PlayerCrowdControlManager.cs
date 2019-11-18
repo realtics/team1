@@ -9,7 +9,7 @@ using UnityEngine;
  * 스크립트 용도   : 플레이어의 상태이상 제어 스크립트
  */
 [RequireComponent(typeof(PlayerInput))]
-public class PlayerCrowdControlManager : MonoBehaviour
+public class PlayerCrowdControlManager : CrowdControlManager
 {
     private PlayerInput     m_playerInput = null;
     private CharacterMove   m_characterMove = null;
@@ -17,12 +17,12 @@ public class PlayerCrowdControlManager : MonoBehaviour
 
     private void Awake()
     {
-        m_playerInput = this.GetComponent<PlayerInput>();
         m_characterMove = this.GetComponent<CharacterMove>();
         m_characterJump = this.GetComponent<CharacterJump>();
+        m_playerInput = this.GetComponent<PlayerInput>();
     }
 
-    public void Stiffen(float _second)
+    public override void Stiffen(float _second)
     {
         StartCoroutine(nameof(StiffenCoroutine), _second);
     }

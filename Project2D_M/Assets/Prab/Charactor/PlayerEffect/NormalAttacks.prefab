@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3244062987736181036}
   - component: {fileID: 3244062987736181037}
   - component: {fileID: 3244062987736181038}
+  - component: {fileID: 4178254705648206156}
   m_Layer: 0
   m_Name: NormalAttacks
   m_TagString: Untagged
@@ -109,3 +110,16 @@ MonoBehaviour:
   _animationName: downsmash
   loop: 0
   timeScale: 1
+--- !u!114 &4178254705648206156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244062987736181039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e350b648bd013f4f8f9f383e408bb8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damage: 0

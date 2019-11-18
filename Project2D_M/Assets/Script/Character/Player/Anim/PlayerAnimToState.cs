@@ -23,7 +23,7 @@ public class PlayerAnimToState : MonoBehaviour
 
     public void PlayerStateReset()
     {
-        m_animator.ResetTrigger("TriggerNormalAttack");
+        m_animator.ResetTrigger("tNormalAttack");
         m_playerState.PlayerStateReset();
     }
 }

@@ -15,13 +15,6 @@ public class MenuButtonController : MonoBehaviour
     public int               menuIndex;
     [SerializeField] bool    m_bKeyDown;
     [SerializeField] int     m_iMaxIndex;
-    public AudioSource       menuClickAudio;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        menuClickAudio = GetComponent<AudioSource>();
-    }
 
     // Update is called once per frame
     void Update()

@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 26724394}
   - component: {fileID: 26724393}
   - component: {fileID: 26724392}
+  - component: {fileID: 26724395}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -488,7 +489,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 26724393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 26724395}
+        m_MethodName: LoadSceneInLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &26724393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +538,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26724390}
   m_CullTransparentMesh: 0
+--- !u!114 &26724395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26724390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100ae0ded3d0ff24ca211a31c910c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisMenuIndex: 0
 --- !u!1 &33633576
 GameObject:
   m_ObjectHideFlags: 0
@@ -11151,7 +11176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 334855663}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -11160,9 +11185,9 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_spriteAsset: {fileID: 0}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 334855663}
+  m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 833896507}
   m_TextComponent: {fileID: 1213012351}
   m_materialReferenceIndex: 1
@@ -15413,13 +15438,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1188857417}
-    characterCount: 6
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -15834,13 +15859,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.4096222, w: 0}
   m_textInfo:
     textComponent: {fileID: 1213012351}
-    characterCount: 5
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -21125,7 +21150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 334855663}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -21134,9 +21159,9 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_spriteAsset: {fileID: 0}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 334855663}
+  m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1639987575}
   m_TextComponent: {fileID: 1188857417}
   m_materialReferenceIndex: 1
@@ -22197,6 +22222,7 @@ GameObject:
   - component: {fileID: 1715942647}
   - component: {fileID: 1715942646}
   - component: {fileID: 1715942648}
+  - component: {fileID: 1715942649}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -22302,7 +22328,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1715942646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1715942649}
+        m_MethodName: LoadSceneInLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1715942649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715942644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100ae0ded3d0ff24ca211a31c910c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisMenuIndex: 1
 --- !u!1 &1716941324
 GameObject:
   m_ObjectHideFlags: 0
