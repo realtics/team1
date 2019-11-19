@@ -491,7 +491,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 26724395}
-        m_MethodName: LoadSceneInLobby
+        m_MethodName: GotoScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -547,10 +547,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 26724390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100ae0ded3d0ff24ca211a31c910c7af, type: 3}
+  m_Script: {fileID: 11500000, guid: ffe5ad7d3bb71d04d9b7b36b2dd573c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisMenuIndex: 0
+  wantToGoSceneName: 3
 --- !u!1 &33633576
 GameObject:
   m_ObjectHideFlags: 0
@@ -11139,7 +11139,7 @@ GameObject:
   - component: {fileID: 833896507}
   - component: {fileID: 833896506}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [LiberationSans SDF Material]
+  m_Name: TMP SubMeshUI [NotoSanSDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11187,7 +11187,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 5.282
   m_canvasRenderer: {fileID: 833896507}
   m_TextComponent: {fileID: 1213012351}
   m_materialReferenceIndex: 1
@@ -15438,13 +15438,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1188857417}
-    characterCount: 0
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -15859,13 +15859,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0.4096222, w: 0}
   m_textInfo:
     textComponent: {fileID: 1213012351}
-    characterCount: 0
+    characterCount: 5
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 0
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -21113,7 +21113,7 @@ GameObject:
   - component: {fileID: 1639987575}
   - component: {fileID: 1639987574}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [LiberationSans SDF Material]
+  m_Name: TMP SubMeshUI [NotoSanSDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21161,7 +21161,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 5.282
   m_canvasRenderer: {fileID: 1639987575}
   m_TextComponent: {fileID: 1188857417}
   m_materialReferenceIndex: 1
@@ -22330,7 +22330,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1715942649}
-        m_MethodName: LoadSceneInLobby
+        m_MethodName: GotoScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22349,10 +22349,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1715942644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100ae0ded3d0ff24ca211a31c910c7af, type: 3}
+  m_Script: {fileID: 11500000, guid: ffe5ad7d3bb71d04d9b7b36b2dd573c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisMenuIndex: 1
+  wantToGoSceneName: 4
 --- !u!1 &1716941324
 GameObject:
   m_ObjectHideFlags: 0

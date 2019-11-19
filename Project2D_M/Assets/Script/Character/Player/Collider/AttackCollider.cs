@@ -10,7 +10,7 @@ using UnityEngine;
  */
 public class AttackCollider : MonoBehaviour
 {
-    private PlayerInfo m_playerInfo = null;
+    private CharacterInfo characterInfo = null;
     private string m_sTagName = null;
     private PolygonCollider2D m_collider = null;
     private SpineAnimCollider m_spineAnimCollider = null;
@@ -19,8 +19,9 @@ public class AttackCollider : MonoBehaviour
 
     private void Awake()
     {
-        m_playerInfo = this.transform.root.GetComponent<PlayerInfo>();
+        characterInfo = this.transform.root.GetComponent<CharacterInfo>();
         m_collider = this.GetComponent<PolygonCollider2D>();
+
         m_spineAnimCollider = this.GetComponent<SpineAnimCollider>();
     }
 
@@ -38,7 +39,7 @@ public class AttackCollider : MonoBehaviour
     public void SetDamageColliderInfo(float _damage, string _tagName, Vector2 _attackForce)
     {
         m_sTagName = _tagName;
-        m_damage = (int)((m_playerInfo.attack * _damage) + 0.5f);
+        m_damage = (int)((characterInfo.attack * _damage) + 0.5f);
 
         if ((this.transform.root.transform.localScale.x > 0 && _attackForce.x < 0) ||
             (this.transform.root.transform.localScale.x < 0 && _attackForce.x > 0))

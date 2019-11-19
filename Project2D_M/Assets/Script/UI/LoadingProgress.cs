@@ -16,7 +16,8 @@ using TMPro;
 
 public class LoadingProgress : MonoBehaviour
 {
-    public static string nextSceneName;
+    //씬의 빌드 순서 넘버
+    public static int nextSceneNum;
 
     [SerializeField] private Image m_imgProgressBar;
     [SerializeField] private TextMeshProUGUI m_textLoadingPersent;
@@ -48,9 +49,9 @@ public class LoadingProgress : MonoBehaviour
         m_backgroundObject.GetComponent<Image>().SetNativeSize();
     }
 
-    public static void LoadScene(string _sceneName)
+    public static void LoadScene(int _sceneNum)
     {
-        nextSceneName = _sceneName;
+        nextSceneNum = _sceneNum;
         SceneManager.LoadScene("00_LoadingScene");
     }
 
@@ -58,7 +59,7 @@ public class LoadingProgress : MonoBehaviour
     {
         yield return null;
 
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(nextSceneName);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(nextSceneNum);
         asyncOperation.allowSceneActivation = false;
 
         float timer = 0.0f;

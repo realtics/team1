@@ -46,13 +46,13 @@ public class PlayerNormalAttack : MonoBehaviour
         m_NormalAttackDic.Add("attack_4", new AttackInfo(3.0f, new Vector2(2.0f, 10.0f)));
         m_NormalAttackDic.Add("attack_5", new AttackInfo(4.0f, new Vector2(10.0f, 10.0f)));
 
-        m_NormalAttackDic.Add("air_attack_1", new AttackInfo(1.0f, new Vector2(2f, 15.0f)));
-        m_NormalAttackDic.Add("air_attack_2", new AttackInfo(1.0f, new Vector2(2f, 15.0f)));
-        m_NormalAttackDic.Add("air_attack_3", new AttackInfo(1.0f, new Vector2(2f, 15.0f)));
-        m_NormalAttackDic.Add("air_attack_4", new AttackInfo(1.0f, new Vector2(5f, 15.0f)));
+        m_NormalAttackDic.Add("air_attack_1", new AttackInfo(1.0f, new Vector2(2f, 12.0f)));
+        m_NormalAttackDic.Add("air_attack_2", new AttackInfo(1.0f, new Vector2(2f, 12.0f)));
+        m_NormalAttackDic.Add("air_attack_3", new AttackInfo(1.0f, new Vector2(2f, 12.0f)));
+        m_NormalAttackDic.Add("air_attack_4", new AttackInfo(1.0f, new Vector2(5f, 12.0f)));
 
-        m_NormalAttackDic.Add("attack_upper", new AttackInfo(1.0f, new Vector2(2f, 28.0f)));
-        m_NormalAttackDic.Add("attack_downsmash", new AttackInfo(1.0f, new Vector2(2f, -25.0f)));
+        m_NormalAttackDic.Add("attack_upper", new AttackInfo(3.0f, new Vector2(2f, 30.0f)));
+        m_NormalAttackDic.Add("attack_downsmash", new AttackInfo(4.0f, new Vector2(2f, -25.0f)));
     }
 
     public void NormalAttack()
@@ -108,8 +108,6 @@ public class PlayerNormalAttack : MonoBehaviour
                 break;
             }
 
-            PlayingAnimSwitch(m_sAnimName);
-
             yield return 0;
         }
 
@@ -142,34 +140,20 @@ public class PlayerNormalAttack : MonoBehaviour
         }
     }
 
-    private void PlayingAnimSwitch(string _animName)
+    private void PlayingStartInvokeSwitch(string _animName)
     {
         if (m_animFuntion.IsTag("NormalAttack"))
         {
             switch (_animName)
             {
                 case "attack_3":
-                    if (m_animFuntion.GetCurrntClipTime() > 0.945f && m_animFuntion.GetCurrntClipTime() < 0.97f)
-                    {
-                        m_characterMove.MoveStop();
-                        m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic["attack_3_2"].damageRatio, "Monster", m_NormalAttackDic["attack_3_2"].damageForce);
-                        m_skeletonAnimation.AnimationState.SetAnimation(0, "attack_3_2", false);
-                    }
+                    Invoke(nameof(Attack3Plus), 0.97f);
                     break;
                 case "attack_upper":
-                    if (m_animFuntion.GetCurrntClipTime() > 0.30f && m_animFuntion.GetCurrntClipTime() < 0.35f)
-                    {   m_playerState.PlayerStateJump();
-                        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-                        m_rigidbody2D.AddForce(new Vector2(1f, 8f), ForceMode2D.Impulse);
-                    }
+                    Invoke(nameof(UpperJump), 0.3f);
                     break;
                 case "attack_downsmash":
-                    if (m_animFuntion.GetCurrntClipTime() > 0.30f && m_animFuntion.GetCurrntClipTime() < 0.35f)
-                    {
-                        m_playerState.PlayerStateJump();
-                        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-                        m_rigidbody2D.AddForce(new Vector2(1f, -8f), ForceMode2D.Impulse);
-                    }
+                    Invoke(nameof(SmashDown), 0.37f);
                     break;
                 default:
                     break;
@@ -197,6 +181,8 @@ public class PlayerNormalAttack : MonoBehaviour
                     m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic[_animName].damageRatio, "Monster", m_NormalAttackDic[_animName].damageForce);
                     break;
             }
+
+            PlayingStartInvokeSwitch(_animName);
         }
     }
     private void PlayEndSwitch(string _animName)
@@ -217,5 +203,26 @@ public class PlayerNormalAttack : MonoBehaviour
         {
             m_characterMove.MoveRight(_speed);
         }
+    }
+
+    //Invoke용 함수들
+    private void Attack3Plus()
+    {
+        m_characterMove.MoveStop();
+        m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic["attack_3_2"].damageRatio, "Monster", m_NormalAttackDic["attack_3_2"].damageForce);
+        m_skeletonAnimation.AnimationState.SetAnimation(0, "attack_3_2", false);
+    }
+
+    private void UpperJump()
+    {
+        m_playerState.PlayerStateJump();
+        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        m_rigidbody2D.AddForce(new Vector2(1f, 25f), ForceMode2D.Impulse);
+    }
+
+    private void SmashDown()
+    {
+        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        m_rigidbody2D.AddForce(new Vector2(1f, -40f), ForceMode2D.Impulse);
     }
 }

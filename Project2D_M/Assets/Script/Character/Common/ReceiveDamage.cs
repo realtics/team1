@@ -38,8 +38,10 @@ public class ReceiveDamage : MonoBehaviour
         m_rigidbody2D.velocity = Vector2.zero;
         if (Vector2.zero != _force)
         {
+
             m_animator.SetTrigger("tHit");
-            m_crowdControlManager.Stiffen(0.5f);
+            if (m_crowdControlManager != null)
+                m_crowdControlManager.Stiffen(0.5f);
         }
         m_rigidbody2D.AddForce(_force,ForceMode2D.Impulse);
     }

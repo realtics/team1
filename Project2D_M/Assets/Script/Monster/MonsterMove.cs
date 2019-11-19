@@ -20,6 +20,7 @@ public class MonsterMove : MonoBehaviour
     {
         m_monsterTransform = this.transform;
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        m_characterMove = GetComponent<CharacterMove>();
     }
 
     public void Move(float _speed)

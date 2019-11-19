@@ -1,0 +1,2287 @@
+fileFormatVersion: 2
+guid: 4d68f9f8e29f5ed49be1b9b384463a47
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4786015860671347414
+    second: ingame_M3_Atlas_0
+  - first:
+      213: 6476933548955310168
+    second: ingame_M3_Atlas_1
+  - first:
+      213: 914194459740973776
+    second: ingame_M3_Atlas_2
+  - first:
+      213: 7140114763353288702
+    second: ingame_M3_Atlas_3
+  - first:
+      213: -1357713118291517306
+    second: ingame_M3_Atlas_4
+  - first:
+      213: -4262904006688781294
+    second: ingame_M3_Atlas_5
+  - first:
+      213: 367960508341979187
+    second: ingame_M3_Atlas_6
+  - first:
+      213: -6872947315139192930
+    second: ingame_M3_Atlas_7
+  - first:
+      213: -2964726390074366920
+    second: ingame_M3_Atlas_8
+  - first:
+      213: 2912301936923665629
+    second: ingame_M3_Atlas_9
+  - first:
+      213: -6672571434446042199
+    second: ingame_M3_Atlas_10
+  - first:
+      213: -8643550823694033127
+    second: ingame_M3_Atlas_11
+  - first:
+      213: 5077432457983010849
+    second: ingame_M3_Atlas_12
+  - first:
+      213: -6827388130822900160
+    second: ingame_M3_Atlas_13
+  - first:
+      213: 3014618777547428126
+    second: ingame_M3_Atlas_15
+  - first:
+      213: 1104723803660276372
+    second: ingame_M3_Atlas_16
+  - first:
+      213: 4168046227776759053
+    second: ingame_M3_Atlas_17
+  - first:
+      213: -4630795888049101308
+    second: ingame_M3_Atlas_18
+  - first:
+      213: 9149090611793519814
+    second: ingame_M3_Atlas_19
+  - first:
+      213: -7004378887141397920
+    second: ingame_M3_Atlas_20
+  - first:
+      213: 418377456643745116
+    second: ingame_M3_Atlas_21
+  - first:
+      213: 5634886694704687729
+    second: ingame_M3_Atlas_22
+  - first:
+      213: -2710225762195949100
+    second: ingame_M3_Atlas_23
+  - first:
+      213: -6740294535789232102
+    second: ingame_M3_Atlas_24
+  - first:
+      213: -2091872352020814883
+    second: ingame_M3_Atlas_25
+  - first:
+      213: 8613868256432702671
+    second: ingame_M3_Atlas_26
+  - first:
+      213: -3927850706566126558
+    second: ingame_M3_Atlas_27
+  - first:
+      213: -3669994784101680328
+    second: ingame_M3_Atlas_28
+  - first:
+      213: 1987583276789455871
+    second: ingame_M3_Atlas_29
+  - first:
+      213: -8576265361112832728
+    second: ingame_M3_Atlas_30
+  - first:
+      213: 6938662177719815348
+    second: ingame_M3_Atlas_31
+  - first:
+      213: -7358328778443088334
+    second: ingame_M3_Atlas_32
+  - first:
+      213: -6016955869066769221
+    second: ingame_M3_Atlas_33
+  - first:
+      213: 5307405013140768490
+    second: ingame_M3_Atlas_34
+  - first:
+      213: 1860440512155672216
+    second: ingame_M3_Atlas_35
+  - first:
+      213: 3856863064263929538
+    second: ingame_M3_Atlas_36
+  - first:
+      213: -8016566631343059435
+    second: ingame_M3_Atlas_37
+  - first:
+      213: -206479682947940792
+    second: ingame_M3_Atlas_38
+  - first:
+      213: -1244478302997205694
+    second: ingame_M3_Atlas_39
+  - first:
+      213: -5140106034667471078
+    second: ingame_M3_Atlas_40
+  - first:
+      213: 8847739879203799682
+    second: ingame_M3_Atlas_41
+  - first:
+      213: -6574665630576606251
+    second: ingame_M3_Atlas_42
+  - first:
+      213: -3684143860928947281
+    second: ingame_M3_Atlas_43
+  - first:
+      213: 4725324653982718488
+    second: ingame_M3_Atlas_44
+  - first:
+      213: 833567921348347555
+    second: ingame_M3_Atlas_45
+  - first:
+      213: -5594461292173473687
+    second: ingame_M3_Atlas_46
+  - first:
+      213: 4692642608616468019
+    second: ingame_M3_Atlas_47
+  - first:
+      213: 7410782762111267943
+    second: ingame_M3_Atlas_48
+  - first:
+      213: -4498038233411527747
+    second: ingame_M3_Atlas_49
+  - first:
+      213: 1306637511914108465
+    second: ingame_M3_Atlas_50
+  - first:
+      213: 126565419471719387
+    second: ingame_M3_Atlas_51
+  - first:
+      213: -8124680933288128864
+    second: ingame_M3_Atlas_52
+  - first:
+      213: 4643023338779782126
+    second: ingame_M3_Atlas_53
+  - first:
+      213: -4457193091342802189
+    second: ingame_M3_Atlas_54
+  - first:
+      213: -8282666866600270844
+    second: ingame_M3_Atlas_55
+  - first:
+      213: -6474238680717521922
+    second: ingame_M3_Atlas_56
+  - first:
+      213: -469355120398143263
+    second: ingame_M3_Atlas_57
+  - first:
+      213: -3149968845369135648
+    second: ingame_M3_Atlas_58
+  - first:
+      213: -7129143402233391464
+    second: ingame_M3_Atlas_59
+  - first:
+      213: 6565234922213332365
+    second: ingame_M3_Atlas_60
+  - first:
+      213: 3672503800887453235
+    second: ingame_M3_Atlas_61
+  - first:
+      213: 2795300237992365515
+    second: ingame_M3_Atlas_62
+  - first:
+      213: -2728385288067553189
+    second: ingame_M3_Atlas_63
+  - first:
+      213: 6010772734110339405
+    second: ingame_M3_Atlas_64
+  - first:
+      213: -3576385099958618475
+    second: ingame_M3_Atlas_65
+  - first:
+      213: -479803692755073352
+    second: ingame_M3_Atlas_66
+  - first:
+      213: -8103471427436774996
+    second: ingame_M3_Atlas_67
+  - first:
+      213: -415811847048286654
+    second: ingame_M3_Atlas_68
+  - first:
+      213: -5446333913641836857
+    second: ingame_M3_Atlas_69
+  - first:
+      213: 3929038801091425510
+    second: ingame_M3_Atlas_70
+  - first:
+      213: 6634669232222630743
+    second: ingame_M3_Atlas_71
+  - first:
+      213: 2375193778891556620
+    second: ingame_M3_Atlas_72
+  - first:
+      213: 729957615050085710
+    second: ingame_M3_Atlas_73
+  - first:
+      213: -6291999668569981213
+    second: ingame_M3_Atlas_74
+  - first:
+      213: -1845485175283324160
+    second: ingame_M3_Atlas_75
+  - first:
+      213: -8021592583913618889
+    second: ingame_M3_Atlas_76
+  - first:
+      213: 7705528517322231244
+    second: ingame_M3_Atlas_77
+  - first:
+      213: 4879416912901545898
+    second: ingame_M3_Atlas_78
+  - first:
+      213: -3386838808540446843
+    second: ingame_M3_Atlas_79
+  - first:
+      213: -4523411947883686410
+    second: ingame_M3_Atlas_80
+  - first:
+      213: -7976355502983566692
+    second: ingame_M3_Atlas_81
+  - first:
+      213: 3805340496599055558
+    second: ingame_M3_Atlas_82
+  - first:
+      213: -4281555137479374202
+    second: ingame_M3_Atlas_83
+  - first:
+      213: 8781774666313217356
+    second: ingame_M3_Atlas_84
+  - first:
+      213: 8851330517254469791
+    second: ingame_M3_Atlas_85
+  - first:
+      213: 8252539049114518597
+    second: ingame_M3_Atlas_86
+  - first:
+      213: 3246365440919353086
+    second: ingame_M3_Atlas_87
+  - first:
+      213: 2785571644559766758
+    second: ingame_M3_Atlas_88
+  - first:
+      213: -1224574395933255793
+    second: ingame_M3_Atlas_89
+  - first:
+      213: 2445350762749393411
+    second: ingame_M3_Atlas_90
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1017
+        width: 254
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c356da6c1e9e7654d8a037d45a8dcc75
+      internalID: 4786015860671347414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1013
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d3d5c4b8426684e9a4ec47ba5a9f13
+      internalID: 6476933548955310168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1013
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba28f80c8ef5bd74482b9fef54d305e3
+      internalID: 914194459740973776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1012
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73a4a09f5a5def40ab77fa2fa7baba3
+      internalID: 7140114763353288702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 969
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0109c9c75811d3749b7c474f2b71a673
+      internalID: -1357713118291517306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 895
+        width: 135
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bef22fe42f475a4db466ac9948e8f8f
+      internalID: -4262904006688781294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 927
+        width: 75
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1871aee72d1cb3f4891d6385741058a9
+      internalID: 367960508341979187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 927
+        width: 76
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0c053e319a86b4380f3afb0a088aa8
+      internalID: -6872947315139192930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 998
+        width: 50
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda64681381215848886b21dfddb9c29
+      internalID: -2964726390074366920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 893
+        width: 60
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eca28ff861d95f46a4f1d0ce5be3500
+      internalID: 2912301936923665629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 920
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e581336c798b8c4bb735735e492ee8c
+      internalID: -6672571434446042199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 960
+        width: 50
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e9f0654ba213043b5218d03b3e20da
+      internalID: -8643550823694033127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 944
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9c736eab3179b4a8e6b50808984259
+      internalID: 5077432457983010849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 944
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a2daeac7a036c4c95fa5d162e13222
+      internalID: -6827388130822900160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 814
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39438c1c517e625489d5f190c58a4f80
+      internalID: 3014618777547428126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 893
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1fe6c127af5e44f96f6bed0ebbc59c
+      internalID: 1104723803660276372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 869
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2252ceb22d1305f47a924dfeea4a5e24
+      internalID: 4168046227776759053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 910
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d8f4b5944321449a93bc440cf51150
+      internalID: -4630795888049101308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 894
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662e48d293ed8eb47a72c976bbd5bd61
+      internalID: 9149090611793519814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 156
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da859c1dc703e104aa6369c0b5a2504e
+      internalID: -7004378887141397920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 720
+        width: 148
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122cc2d0b6979c844924e41f3f8349a5
+      internalID: 418377456643745116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 814
+        width: 27
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e218c1325e62ea5498135b3b0cfa3fc9
+      internalID: 5634886694704687729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 807
+        width: 128
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee5a7177ca2dd9419f1bffb0858d0b4
+      internalID: -2710225762195949100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 860
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44aeb8bb5ef74942b84a5ee157e3e79
+      internalID: -6740294535789232102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 860
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c286c78ad68154cb14e00526836498
+      internalID: -2091872352020814883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 840
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c234ce8d113519f4cb1638ce3f29de9d
+      internalID: 8613868256432702671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 808
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9bce4ef28096044b76b53dce2cc742
+      internalID: -3927850706566126558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 840
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f215224381d9e3f458921f34de5a333b
+      internalID: -3669994784101680328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 720
+        width: 210
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b306d736ccc84c4badc445e816cf4ab
+      internalID: 1987583276789455871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 750
+        width: 72
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410953b47ff01dc46b12ac0789cd88a6
+      internalID: -8576265361112832728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 781
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf227350279a90e4c8f1e041a1c82969
+      internalID: 6938662177719815348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 721
+        width: 201
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec8f9430cccd4949b3635519a84cd8e
+      internalID: -7358328778443088334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 785
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be3dd7b58576074c8670dba58224317
+      internalID: -6016955869066769221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 750
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9543c647036083f4789fe7f75b9c4432
+      internalID: 5307405013140768490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 735
+        width: 49
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95475664560253b4ba31c2252171e832
+      internalID: 1860440512155672216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 648
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5150675129b134458d1ff08405326ad
+      internalID: 3856863064263929538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 723
+        width: 50
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c09654dbe7ae7e44a7d1db3f05bb6c5
+      internalID: -8016566631343059435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 545
+        width: 312
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2def91755cb6e334ea45d011c1656972
+      internalID: -206479682947940792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 684
+        width: 124
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c389d9c97dfc2a41b5aee7793eb9daf
+      internalID: -1244478302997205694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 648
+        width: 75
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6224eece715d2574f89c3161e26e246a
+      internalID: -5140106034667471078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 608
+        width: 84
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006363c09cd98c947beff7163c3dae4b
+      internalID: 8847739879203799682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 684
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbfdf796e5190649bfbf4a010095b70
+      internalID: -6574665630576606251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 685
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e15c4d2e4879da44d9fbbab1db8dee96
+      internalID: -3684143860928947281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 684
+        width: 50
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95faefdd492d9f24c98540935a815f94
+      internalID: 4725324653982718488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 652
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589b5af865c30b24581c481d3980a25a
+      internalID: 833567921348347555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 539
+        width: 124
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bfb6426e8a74e41a61a056054815c5
+      internalID: -5594461292173473687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 528
+        width: 123
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f892f7a2ed6be4b80d2da367f32b17
+      internalID: 4692642608616468019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 610
+        width: 34
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ebdf1d70b1f9b438f3b982c13d96bc
+      internalID: 7410782762111267943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 596
+        width: 120
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff9a7addd07b734881a981559779548
+      internalID: -4498038233411527747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 638
+        width: 148
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13772551ae4b4054db5863a66e0e4ba1
+      internalID: 1306637511914108465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 503
+        width: 87
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f86938084ebdd04c9643ae5e00c3ef4
+      internalID: 126565419471719387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 596
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7505a838d5e44cd46b2fa13b3d680979
+      internalID: -8124680933288128864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 552
+        width: 60
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b67cc160034554f945d8d8fd404c0c
+      internalID: 4643023338779782126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 552
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e54990c1cb3c5e4458a5db2b60350c98
+      internalID: -4457193091342802189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 272
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5c8ecab1ffe754fa0e79ec8e6923d3
+      internalID: -8282666866600270844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 444
+        width: 211
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15e03332d5f72f488eb6e048b73e455
+      internalID: -6474238680717521922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_57
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 268
+        width: 130
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03653eb326055bf4d975c031fd62708a
+      internalID: -469355120398143263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_58
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 376
+        width: 112
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918ece607924a604bae30dac98bf8107
+      internalID: -3149968845369135648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_59
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 480
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89726490a403f1448234837926b0727
+      internalID: -7129143402233391464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_60
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 469
+        width: 148
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe1a591eb8b33e4db549cb8c9fe9f34
+      internalID: 6565234922213332365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_61
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 274
+        width: 146
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6cde2cba3ae1745808b0e34c840fe4
+      internalID: 3672503800887453235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_62
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 424
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c01f063dc5acda48a7678af8e88d08b
+      internalID: 2795300237992365515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_63
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 436
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0ca36a48c04314eb493efbb07d8009
+      internalID: -2728385288067553189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_64
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 436
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3085fd43f34cb4a80f277ca66fda4b
+      internalID: 6010772734110339405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_65
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 321
+        width: 151
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f04f20220b17404b81e8bac52db20f1
+      internalID: -3576385099958618475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_66
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 332
+        width: 168
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70c27c19a5e4d641b512adc852f86f3
+      internalID: -479803692755073352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_67
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 403
+        width: 150
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040288616471e3c45b172f1406461d66
+      internalID: -8103471427436774996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_68
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 403
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ba8dadb6f0d67458691987a85a4f1f
+      internalID: -415811847048286654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_69
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 332
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390ff16e24ed3f64ca46c77c86c056bf
+      internalID: -5446333913641836857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_70
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 300
+        width: 190
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a2898d0c9df914182500a29f74776c
+      internalID: 3929038801091425510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_71
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 352
+        width: 62
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4761898223ac749b63c0cb6aef52ef
+      internalID: 6634669232222630743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_72
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 268
+        width: 140
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de24e4fc771d9db4ea0b8bd8eb3b660e
+      internalID: 2375193778891556620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_73
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 244
+        width: 164
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693cc93846824404aa1f241eae57976b
+      internalID: 729957615050085710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_74
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 274
+        width: 155
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777b091a52c56a34baf660b41b5b7e6a
+      internalID: -6291999668569981213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_75
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 247
+        width: 6
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21ee21622e7b0d428baf090454e508b
+      internalID: -1845485175283324160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_76
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 165
+        width: 205
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18becc366b897cd42bdda559a224ca37
+      internalID: -8021592583913618889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_77
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 247
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b78404619d0eb408ed1f963aefac37
+      internalID: 7705528517322231244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_78
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 143
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de904ecd56d1baa498cb66a3fd209c7d
+      internalID: 4879416912901545898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_79
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 0
+        width: 138
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fa09a509df5704aa846e0eb5755f63
+      internalID: -3386838808540446843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_80
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 152
+        width: 160
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c036b967debb3c741b66a4efdffa179c
+      internalID: -4523411947883686410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_81
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 162
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbd623a0dc94284b86a53c277b13534
+      internalID: -7976355502983566692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_82
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 88
+        width: 69
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d294bd85ce76214e84c8fb30bc71d20
+      internalID: 3805340496599055558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_83
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 88
+        width: 75
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a7423d456b01d4192d15cdfa36b61e
+      internalID: -4281555137479374202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_84
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 136
+        width: 20
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469458147d375c44aa2a6cebe68d641e
+      internalID: 8781774666313217356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_85
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 128
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9fbaabd34505e468b7f967ff57dc23
+      internalID: 8851330517254469791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_86
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 0
+        width: 77
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2404b57e6b8e5a546b7e5c090422088a
+      internalID: 8252539049114518597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_87
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 0
+        width: 110
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c66aea289d9c884e840a00fe85658fe
+      internalID: 3246365440919353086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_88
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 119
+        width: 122
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6ed51419d39f04c88fa35de8b7bf2e
+      internalID: 2785571644559766758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_89
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 115
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e9c8a76d9be234c8207b58aaf1458a
+      internalID: -1224574395933255793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_90
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 0
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797110ce3b7bad743af8334d36b17069
+      internalID: 2445350762749393411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f7b6fb86a38e039479615dabe1f93cac
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

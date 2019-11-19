@@ -74,6 +74,9 @@ TextureImporter:
   - first:
       213: -3905315565592178556
     second: common_popup_m3_Atlas_23
+  - first:
+      213: -2610976672725382173
+    second: common_popup_m3_Atlas_24
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -681,6 +684,27 @@ TextureImporter:
       bones: []
       spriteID: 3eca943364cdbbb489e14c1deccee6ad
       internalID: -3905315565592178556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_popup_m3_Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 893
+        width: 248
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 88, y: 7, z: 88, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97761fd2b378ccb46acd73b676b81e89
+      internalID: -2610976672725382173
       vertices: []
       indices: 
       edges: []

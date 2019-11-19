@@ -12,8 +12,6 @@ using UnityEngine;
 public class PlayerCrowdControlManager : CrowdControlManager
 {
     private PlayerInput     m_playerInput = null;
-    private CharacterMove   m_characterMove = null;
-    private CharacterJump   m_characterJump = null;
 
     private void Awake()
     {

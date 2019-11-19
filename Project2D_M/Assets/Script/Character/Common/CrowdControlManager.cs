@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CrowdControlManager : MonoBehaviour
 {
-    private CharacterMove m_characterMove = null;
-    private CharacterJump m_characterJump = null;
+    protected CharacterMove m_characterMove = null;
+    protected CharacterJump m_characterJump = null;
 
     private void Awake()
     {
@@ -20,12 +20,18 @@ public class CrowdControlManager : MonoBehaviour
 
     IEnumerator StiffenCoroutine(float _second)
     {
-        m_characterMove.enabled = false;
-        m_characterJump.enabled = false;
+        if (m_characterMove != null)
+            m_characterMove.enabled = false;
+
+        if (m_characterJump != null)
+            m_characterJump.enabled = false;
 
         yield return new WaitForSeconds(_second);
 
-        m_characterMove.enabled = true;
-        m_characterJump.enabled = true;
+        if (m_characterMove != null)
+            m_characterMove.enabled = true;
+
+        if (m_characterJump != null)
+            m_characterJump.enabled = true;
     }
 }

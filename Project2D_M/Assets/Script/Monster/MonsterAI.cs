@@ -29,6 +29,8 @@ public class MonsterAI : MonoBehaviour
     private MonsterMove m_monsterMove;
     private Transform m_playerTransform;
     private MonsterAttack m_monsterAttack;
+    private AnimFuntion m_animFunction;
+    private ReceiveDamage m_receiveDamage;
     private bool m_bLive;
 
     private Animator m_animator;
@@ -54,7 +56,7 @@ public class MonsterAI : MonoBehaviour
         StageManager.Inst.playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         m_playerTransform = StageManager.Inst.playerTransform;
 
-        attackDistance = 4.0f;
+        attackDistance = 2.5f;
         m_eState = MONSTER_STATE.APPEAR;
 
         InitMonsterInfo();
@@ -67,12 +69,6 @@ public class MonsterAI : MonoBehaviour
         StartCoroutine(Action());
     }
 
-    //private void OnEnable()
-    //{
-    //    StartCoroutine(StateCheck());
-    //    StartCoroutine(Action());
-    //}
-
     // Update is called once per frame
     void Update()
     {
@@ -82,14 +78,13 @@ public class MonsterAI : MonoBehaviour
     IEnumerator StateCheck()
     {
         //오브젝트 풀에 생성시 다른 스크립트의 초기화를 위해 대기
-        yield return m_secondsDelay;
+        yield return new WaitForSeconds(1.0f);
 
-        while(m_bLive)
+        while (m_bLive)
         {
             if (m_bLive == false)
                 yield break;
 
-            float dirctionToPlayer = m_playerTransform.position.x - this.transform.position.x;
             float distanceToPlayer = Vector2.Distance(m_playerTransform.position, this.transform.position);
 
             if (distanceToPlayer < attackDistance)
@@ -100,23 +95,31 @@ public class MonsterAI : MonoBehaviour
             {
                 m_eState = MONSTER_STATE.MOVE;
             }
+            else
+            {
+                m_eState = MONSTER_STATE.APPEAR;
+            }
 
-
+            //yield return m_secondsDelay;
+            yield return null;
         }
+
     }
 
     IEnumerator Action()
     {
         while (m_bLive)
         {
-            yield return m_secondsDelay;
+            yield return null;
+            //yield return m_secondsDelay;
 
             switch (m_eState)
             {
                 case MONSTER_STATE.ATTACK:
-                    m_animator.SetTrigger(m_hashTAttack);
-                    m_monsterAttack.Attack();
+                    if (m_animFunction.GetCurrntAnimClipName() != "attack_1")
+                       // m_monsterAttack.Attack();
 
+                    m_animator.SetTrigger(m_hashTAttack);
                     break;
 
                 case MONSTER_STATE.HIT:
@@ -133,7 +136,8 @@ public class MonsterAI : MonoBehaviour
 
                 case MONSTER_STATE.MOVE:
                     m_animator.SetFloat(m_hashFSpeed, speed);
-                    m_monsterMove.Move(speed);
+                    if(m_animFunction.GetCurrntAnimClipName()=="move")
+                        m_monsterMove.Move(speed);
                     break;
 
                 case MONSTER_STATE.STUN:
@@ -142,6 +146,7 @@ public class MonsterAI : MonoBehaviour
 
             }
         }
+
     }
 
     void InitMonsterInfo()
@@ -152,14 +157,20 @@ public class MonsterAI : MonoBehaviour
         monsterCharInfo.attack = 10;
         m_monsterInfo = GetComponent<MonsterInfo>();
         m_monsterInfo.SetInfo(monsterCharInfo);
+        
+        m_monsterMove = GetComponent<MonsterMove>();
+        m_monsterAttack = GetComponent<MonsterAttack>();
+        m_animFunction = GetComponent<AnimFuntion>();
+        m_receiveDamage = GetComponent<ReceiveDamage>();
+
+        m_bLive = true;
     }
+
 
     void InitAniamation()
     {
         m_animator = GetComponent<Animator>();
         m_animator.SetBool(m_hashBLive, true);
-        //m_animator.SetFloat(hashFSpeed, speed);
-
     }
 
 }
