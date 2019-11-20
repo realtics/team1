@@ -17,17 +17,17 @@ using TMPro;
 public class LoadingProgress : MonoBehaviour
 {
     //씬의 빌드 순서 넘버
-    public static int nextSceneNum;
+    public static int nextSceneNum = 0;
 
-    [SerializeField] private Image m_imgProgressBar;
-    [SerializeField] private TextMeshProUGUI m_textLoadingPersent;
+    [SerializeField] private Image m_imgProgressBar = null;
+    [SerializeField] private TextMeshProUGUI m_textLoadingPersent = null;
 
     //c#의 Action 사용해봄. using System; 을 넣어주어야함.
     private Action<float> PrintTextPersent;
 
-    private int randomImageNum;
-    [SerializeField] private GameObject m_backgroundObject;
-    [SerializeField] private Sprite[] m_backgroundImages; 
+    private int randomImageNum = 0;
+    [SerializeField] private GameObject m_backgroundObject = null;
+    [SerializeField] private Sprite[] m_backgroundImages = null; 
 
     void Start()
     {

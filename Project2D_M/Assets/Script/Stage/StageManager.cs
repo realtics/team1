@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class StageManager :Singletone<StageManager>
 {
-    //싱글턴에 접근하기 위한 Static 변수 선언
-    //public static StageManager instance = null;
-
     private Transform m_monsterTransform;
     private Transform m_playerTransform;
-    // Start is called before the first frame update
 
-    //private StageManager() { }
-    //private StageManager m_instance;
-    //public StageManager Getinstance()
-    //{
-    //    if (m_instance == null)
-    //        m_instance = new StageManager();
-    //    return m_instance;
-    //}
+    private int m_iMonsterCount = 0;
+    private bool m_bUserDie;
 
-    //private void Awake()
-    //{
-    //    if(instance == null)
+    public int test = 0;
+    public void Update()
+    {
+        test = m_iMonsterCount;
+        if(m_iMonsterCount <= 0)
+        {
 
-    //}
+        }
+    }
 
-
-
+    public void AddMonsterCount()
+    {
+        m_iMonsterCount++;
+    }
     public Transform monsterTransform
     {
         get

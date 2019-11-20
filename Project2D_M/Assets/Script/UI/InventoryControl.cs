@@ -16,13 +16,13 @@ public class InventoryControl : MonoBehaviour
     private List<PlayerItem> m_PlayerItemList;
 
     [SerializeField]
-    private GameObject m_objButtonTemplate;
+    private GameObject m_objButtonTemplate = null;
 
     [SerializeField]
-    private GridLayoutGroup m_gridGroup;
+    private GridLayoutGroup m_gridGroup = null;
 
     [SerializeField]
-    private Sprite[] m_IconSprites;
+    private Sprite[] m_IconSprites = null;
 
     // Start is called before the first frame update
     void Start()

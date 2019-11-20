@@ -10,7 +10,6 @@ using UnityEngine;
  */
 public class MonsterInfo : CharacterInfo
 {
-    // Start is called before the first frame update
     public struct MonsterCharInfo
     {
         public int maxHp;
@@ -21,6 +20,8 @@ public class MonsterInfo : CharacterInfo
     public override int DamageCalculation(int _damage)
     {
         int returnDamage = _damage - defensive;
+        if (returnDamage < 0)
+            returnDamage = 0;
         return returnDamage;
     }
 

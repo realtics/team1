@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_20
+ * 팀              : 1팀
+ * 스크립트 용도   : 상태이상 담당 클래스 부모
+ */
 public class CrowdControlManager : MonoBehaviour
 {
     protected CharacterMove m_characterMove = null;

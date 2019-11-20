@@ -1,0 +1,13 @@
+
+Effect_rootee.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+LineEffect01
+  rotate: false
+  xy: 2, 75
+  size: 120, 47
+  orig: 120, 47
+  offset: 0, 0
+  index: -1

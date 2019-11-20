@@ -11,10 +11,10 @@ using UnityEngine;
 public class CharacterInfo : MonoBehaviour
 {
     [Header("캐릭터 정보")]
-    [SerializeField] protected int maxHp = 10;
-    [SerializeField] protected int hp = 10;
-    [SerializeField] public int attack { get; protected set; } = 2;
-    [SerializeField] protected int defensive = 1;
+    [SerializeField] protected int maxHp = 100;
+    [SerializeField] protected int hp = 100;
+    [SerializeField] public int attack { get; protected set; } = 15;
+    [SerializeField] protected int defensive = 10;
 
     public void HpDamage(int _damage)
     {

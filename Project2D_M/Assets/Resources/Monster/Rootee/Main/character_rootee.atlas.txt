@@ -1,0 +1,432 @@
+
+character_rootee.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+PollutedRootee/Layer 101 copy
+  rotate: false
+  xy: 234, 208
+  size: 20, 46
+  orig: 20, 46
+  offset: 0, 0
+  index: -1
+PollutedRootee/LineEffect01
+  rotate: false
+  xy: 2, 199
+  size: 140, 55
+  orig: 140, 55
+  offset: 0, 0
+  index: -1
+PollutedRootee/body_01
+  rotate: false
+  xy: 2, 100
+  size: 95, 97
+  orig: 95, 97
+  offset: 0, 0
+  index: -1
+PollutedRootee/body_02
+  rotate: false
+  xy: 2, 49
+  size: 64, 49
+  orig: 64, 49
+  offset: 0, 0
+  index: -1
+PollutedRootee/body_03
+  rotate: false
+  xy: 2, 2
+  size: 46, 45
+  orig: 46, 45
+  offset: 0, 0
+  index: -1
+PollutedRootee/body_acc_01
+  rotate: false
+  xy: 171, 119
+  size: 13, 20
+  orig: 13, 20
+  offset: 0, 0
+  index: -1
+PollutedRootee/body_acc_02
+  rotate: false
+  xy: 50, 4
+  size: 13, 7
+  orig: 13, 7
+  offset: 0, 0
+  index: -1
+PollutedRootee/bodyleaf_1
+  rotate: true
+  xy: 230, 169
+  size: 22, 11
+  orig: 22, 11
+  offset: 0, 0
+  index: -1
+PollutedRootee/bodyleaf_2
+  rotate: true
+  xy: 101, 14
+  size: 33, 12
+  orig: 33, 12
+  offset: 0, 0
+  index: -1
+PollutedRootee/bodyleaf_3
+  rotate: false
+  xy: 141, 68
+  size: 26, 13
+  orig: 26, 13
+  offset: 0, 0
+  index: -1
+PollutedRootee/bodyleaf_4
+  rotate: false
+  xy: 141, 83
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+PollutedRootee/flower_1
+  rotate: false
+  xy: 243, 160
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+PollutedRootee/flower_2
+  rotate: false
+  xy: 208, 126
+  size: 18, 15
+  orig: 18, 15
+  offset: 0, 0
+  index: -1
+PollutedRootee/flower_3
+  rotate: false
+  xy: 233, 193
+  size: 18, 13
+  orig: 18, 13
+  offset: 0, 0
+  index: -1
+PollutedRootee/flower_4
+  rotate: true
+  xy: 168, 104
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+PollutedRootee/flower_5
+  rotate: false
+  xy: 186, 125
+  size: 20, 16
+  orig: 20, 16
+  offset: 0, 0
+  index: -1
+PollutedRootee/l_arm
+  rotate: false
+  xy: 185, 143
+  size: 43, 52
+  orig: 43, 52
+  offset: 0, 0
+  index: -1
+PollutedRootee/l_eye
+  rotate: true
+  xy: 140, 120
+  size: 19, 29
+  orig: 19, 29
+  offset: 0, 0
+  index: -1
+PollutedRootee/l_leg
+  rotate: false
+  xy: 68, 49
+  size: 40, 49
+  orig: 40, 49
+  offset: 0, 0
+  index: -1
+PollutedRootee/leaf_1
+  rotate: true
+  xy: 110, 60
+  size: 41, 12
+  orig: 41, 12
+  offset: 0, 0
+  index: -1
+PollutedRootee/leaf_2
+  rotate: true
+  xy: 124, 66
+  size: 35, 15
+  orig: 35, 15
+  offset: 0, 0
+  index: -1
+PollutedRootee/leaf_3
+  rotate: false
+  xy: 99, 103
+  size: 37, 29
+  orig: 37, 29
+  offset: 0, 0
+  index: -1
+PollutedRootee/mouth_1
+  rotate: false
+  xy: 144, 213
+  size: 88, 41
+  orig: 88, 41
+  offset: 0, 0
+  index: -1
+PollutedRootee/mouth_2
+  rotate: false
+  xy: 144, 197
+  size: 87, 14
+  orig: 87, 14
+  offset: 0, 0
+  index: -1
+PollutedRootee/mouth_3
+  rotate: true
+  xy: 99, 134
+  size: 63, 39
+  orig: 63, 39
+  offset: 0, 0
+  index: -1
+PollutedRootee/r_arm
+  rotate: false
+  xy: 140, 141
+  size: 43, 54
+  orig: 43, 54
+  offset: 0, 0
+  index: -1
+PollutedRootee/r_eye
+  rotate: true
+  xy: 138, 103
+  size: 15, 28
+  orig: 15, 28
+  offset: 0, 0
+  index: -1
+PollutedRootee/r_leg
+  rotate: true
+  xy: 50, 13
+  size: 34, 49
+  orig: 34, 49
+  offset: 0, 0
+  index: -1
+PollutedRootee/tooth_1
+  rotate: false
+  xy: 186, 106
+  size: 13, 17
+  orig: 13, 17
+  offset: 0, 0
+  index: -1
+PollutedRootee/tooth_2
+  rotate: false
+  xy: 243, 175
+  size: 11, 16
+  orig: 11, 16
+  offset: 0, 0
+  index: -1
+
+character_rootee2.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Rootee/Layer 101 copy
+  rotate: false
+  xy: 234, 208
+  size: 20, 46
+  orig: 20, 46
+  offset: 0, 0
+  index: -1
+Rootee/LineEffect01
+  rotate: false
+  xy: 2, 199
+  size: 140, 55
+  orig: 140, 55
+  offset: 0, 0
+  index: -1
+Rootee/body_01
+  rotate: false
+  xy: 2, 100
+  size: 95, 97
+  orig: 95, 97
+  offset: 0, 0
+  index: -1
+Rootee/body_02
+  rotate: false
+  xy: 2, 49
+  size: 64, 49
+  orig: 64, 49
+  offset: 0, 0
+  index: -1
+Rootee/body_03
+  rotate: false
+  xy: 2, 2
+  size: 46, 45
+  orig: 46, 45
+  offset: 0, 0
+  index: -1
+Rootee/body_acc_01
+  rotate: false
+  xy: 171, 119
+  size: 13, 20
+  orig: 13, 20
+  offset: 0, 0
+  index: -1
+Rootee/body_acc_02
+  rotate: false
+  xy: 50, 4
+  size: 13, 7
+  orig: 13, 7
+  offset: 0, 0
+  index: -1
+Rootee/bodyleaf_1
+  rotate: true
+  xy: 230, 169
+  size: 22, 11
+  orig: 22, 11
+  offset: 0, 0
+  index: -1
+Rootee/bodyleaf_2
+  rotate: true
+  xy: 101, 14
+  size: 33, 12
+  orig: 33, 12
+  offset: 0, 0
+  index: -1
+Rootee/bodyleaf_3
+  rotate: false
+  xy: 141, 68
+  size: 26, 13
+  orig: 26, 13
+  offset: 0, 0
+  index: -1
+Rootee/bodyleaf_4
+  rotate: false
+  xy: 141, 83
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Rootee/flower_1
+  rotate: false
+  xy: 243, 160
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+Rootee/flower_2
+  rotate: false
+  xy: 208, 126
+  size: 18, 15
+  orig: 18, 15
+  offset: 0, 0
+  index: -1
+Rootee/flower_3
+  rotate: false
+  xy: 233, 193
+  size: 18, 13
+  orig: 18, 13
+  offset: 0, 0
+  index: -1
+Rootee/flower_4
+  rotate: true
+  xy: 168, 104
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+Rootee/flower_5
+  rotate: false
+  xy: 186, 125
+  size: 20, 16
+  orig: 20, 16
+  offset: 0, 0
+  index: -1
+Rootee/l_arm
+  rotate: false
+  xy: 185, 143
+  size: 43, 52
+  orig: 43, 52
+  offset: 0, 0
+  index: -1
+Rootee/l_eye
+  rotate: true
+  xy: 140, 120
+  size: 19, 29
+  orig: 19, 29
+  offset: 0, 0
+  index: -1
+Rootee/l_leg
+  rotate: false
+  xy: 68, 49
+  size: 40, 49
+  orig: 40, 49
+  offset: 0, 0
+  index: -1
+Rootee/leaf_1
+  rotate: true
+  xy: 110, 60
+  size: 41, 12
+  orig: 41, 12
+  offset: 0, 0
+  index: -1
+Rootee/leaf_2
+  rotate: true
+  xy: 124, 66
+  size: 35, 15
+  orig: 35, 15
+  offset: 0, 0
+  index: -1
+Rootee/leaf_3
+  rotate: false
+  xy: 99, 103
+  size: 37, 29
+  orig: 37, 29
+  offset: 0, 0
+  index: -1
+Rootee/mouth_1
+  rotate: false
+  xy: 144, 213
+  size: 88, 41
+  orig: 88, 41
+  offset: 0, 0
+  index: -1
+Rootee/mouth_2
+  rotate: false
+  xy: 144, 197
+  size: 87, 14
+  orig: 87, 14
+  offset: 0, 0
+  index: -1
+Rootee/mouth_3
+  rotate: true
+  xy: 99, 134
+  size: 63, 39
+  orig: 63, 39
+  offset: 0, 0
+  index: -1
+Rootee/r_arm
+  rotate: false
+  xy: 140, 141
+  size: 43, 54
+  orig: 43, 54
+  offset: 0, 0
+  index: -1
+Rootee/r_eye
+  rotate: true
+  xy: 138, 103
+  size: 15, 28
+  orig: 15, 28
+  offset: 0, 0
+  index: -1
+Rootee/r_leg
+  rotate: true
+  xy: 50, 13
+  size: 34, 49
+  orig: 34, 49
+  offset: 0, 0
+  index: -1
+Rootee/tooth_1
+  rotate: false
+  xy: 186, 106
+  size: 13, 17
+  orig: 13, 17
+  offset: 0, 0
+  index: -1
+Rootee/tooth_2
+  rotate: false
+  xy: 243, 175
+  size: 11, 16
+  orig: 11, 16
+  offset: 0, 0
+  index: -1

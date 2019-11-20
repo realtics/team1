@@ -23,7 +23,7 @@ public class MonsterAttack : MonoBehaviour
     private AnimFuntion m_animFuntion = null;
     private SkeletonAnimation m_skeletonAnimation = null;
     private CharacterMove m_characterMove = null;
-    private AttackManager m_attackManager = null;
+    private AttackCollider m_attackcollider = null;
     private PlayerState m_playerState = null;
     private bool m_bAttacking;
 
@@ -32,10 +32,8 @@ public class MonsterAttack : MonoBehaviour
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_animFuntion = this.GetComponent<AnimFuntion>();
         m_skeletonAnimation = this.GetComponentInChildren<AttackManager>().GetComponentInChildren<SkeletonAnimation>();
-        //m_skeletonAnimation = this.transform.Find("AttackManager").transform.Find("MeleeAttack").GetComponent<SkeletonAnimation>();
         m_characterMove = this.GetComponent<CharacterMove>();
-        //m_attackManager = this.transform.Find("AttackManager").GetComponent<AttackManager>();
-        m_attackManager = this.GetComponentInChildren<AttackManager>();
+        m_attackcollider = this.GetComponentInChildren<AttackCollider>();
         m_playerState = this.GetComponent<PlayerState>();
         m_bAttacking = false;
 
@@ -51,9 +49,10 @@ public class MonsterAttack : MonoBehaviour
     public void Attack()
     {
 
-        m_attackManager.SetDamageColliderInfo(m_normalAttackDic["Attack_1"].damageRatio
-    , "Player", m_normalAttackDic["Attack_1"].damageForce);
-        m_skeletonAnimation.AnimationState.SetAnimation(0, "Attack_1", false);
+        m_attackcollider.SetDamageColliderInfo(m_normalAttackDic["Attack_1"].damageRatio
+        , "Player", m_normalAttackDic["Attack_1"].damageForce);
+
+        //m_skeletonAnimation.AnimationState.SetAnimation(0, "Attack_1", false);
 
         if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > 0)
         {

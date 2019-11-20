@@ -15,7 +15,7 @@ public class AtlasSeparator : MonoBehaviour
     public Dictionary<string, Sprite> spriteDic = new Dictionary<string, Sprite>();
 
    //Resoures폴더 안에서 분리하고싶은 아틀라스가 저장된 폴더 이름을 적어준다. (폴더안에 있는 (슬라이스 된)아틀라스 모두 잘라줌)
-   [SerializeField] private string m_strFolderName;
+   [SerializeField] private string m_strFolderName = null;
 
     private void Start()
     {
@@ -79,7 +79,7 @@ public class AtlasSeparator : MonoBehaviour
             System.IO.File.WriteAllBytes(savePath, bytes); //파일로 쓰기
             Debug.Log("MakeFile : " + _sprite.name);
         }
-        catch (System.Exception ex)
+        catch (System.Exception)
         {
 
         }

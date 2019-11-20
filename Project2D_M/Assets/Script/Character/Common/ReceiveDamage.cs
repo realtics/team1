@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_20
+ * 팀              : 1팀
+ * 스크립트 용도   : 공격(데미지와 공격의 힘)을 받는 클래스
+ */
 public class ReceiveDamage : MonoBehaviour
 {
     private CharacterInfo m_characterInfo = null;
@@ -10,19 +16,11 @@ public class ReceiveDamage : MonoBehaviour
     private CrowdControlManager m_crowdControlManager = null;
     private void Awake()
     {
-        m_animator = this.GetComponent<Animator>();
+        m_animator = this.GetComponentInChildren<Animator>();
 
         m_characterInfo = this.GetComponent<CharacterInfo>();
-        if(m_characterInfo == null)
-            m_characterInfo = this.transform.root.transform.GetComponent<CharacterInfo>();
-
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
-        if(m_rigidbody2D == null)
-            m_rigidbody2D = this.transform.root.transform.GetComponent<Rigidbody2D>();
-
         m_crowdControlManager = this.GetComponent<CrowdControlManager>();
-        if(m_crowdControlManager == null)
-            m_crowdControlManager = this.transform.root.transform.GetComponent<CrowdControlManager>();
     }
     public void Receive(int _damage)
     {
@@ -30,16 +28,16 @@ public class ReceiveDamage : MonoBehaviour
         m_characterInfo.HpDamage(damage);
         if (m_characterInfo.IsCharacterDie())
             m_animator.SetTrigger("tDie");
-        Debug.Log("Damage: " + damage);
+       
     }
 
     public void AddDamageForce(Vector2 _force)
     {
-        m_rigidbody2D.velocity = Vector2.zero;
         if (Vector2.zero != _force)
         {
-
+            m_rigidbody2D.velocity = Vector2.zero;
             m_animator.SetTrigger("tHit");
+
             if (m_crowdControlManager != null)
                 m_crowdControlManager.Stiffen(0.5f);
         }

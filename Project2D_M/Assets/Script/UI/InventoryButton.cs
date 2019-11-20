@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 public class InventoryButton : MonoBehaviour
 {
-    [SerializeField] private Image m_imgSlot;
+    [SerializeField] private Image m_imgSlot = null;
 
     public void SetIcon(Sprite _image)
     {

@@ -19,13 +19,21 @@ public enum MONSTER_STATE
     ATTACK,
     HIT,
     STUN,
-    DIE
+    DIE,
+    IDLE
 }
 public class MonsterAI : MonoBehaviour
 
 {
-    private MONSTER_STATE   m_eState;
-    private MonsterInfo     m_monsterInfo;
+    enum Monster_Position
+    {
+        Monster_Position_Air,
+        Monster_Position_Ground
+    }
+
+    [SerializeField] private Monster_Position m_monsterPosition;
+    private MONSTER_STATE m_eState;
+    private MonsterInfo m_monsterInfo;
     private MonsterMove m_monsterMove;
     private Transform m_playerTransform;
     private MonsterAttack m_monsterAttack;
@@ -45,7 +53,7 @@ public class MonsterAI : MonoBehaviour
     private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
     private readonly int m_hashFDistanceToPlayer = Animator.StringToHash("fDistanceToPlayer");
 
-    private WaitForSeconds m_secondsDelay  = new WaitForSeconds(0.3f);
+    private WaitForSeconds m_secondsDelay = new WaitForSeconds(0.3f);
 
 
     private void Awake()
@@ -61,18 +69,14 @@ public class MonsterAI : MonoBehaviour
 
         InitMonsterInfo();
         InitAniamation();
+
+        StageManager.Inst.AddMonsterCount();
     }
 
     private void Start()
     {
         StartCoroutine(StateCheck());
         StartCoroutine(Action());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator StateCheck()
@@ -91,7 +95,7 @@ public class MonsterAI : MonoBehaviour
             {
                 m_eState = MONSTER_STATE.ATTACK;
             }
-            else if(m_eState == MONSTER_STATE.APPEAR)
+            else if (m_eState == MONSTER_STATE.APPEAR)
             {
                 m_eState = MONSTER_STATE.MOVE;
             }
@@ -100,6 +104,11 @@ public class MonsterAI : MonoBehaviour
                 m_eState = MONSTER_STATE.APPEAR;
             }
 
+            if (m_monsterPosition != Monster_Position.Monster_Position_Ground)
+            {
+                m_eState = MONSTER_STATE.IDLE;
+                ResetAnim();
+            }
             //yield return m_secondsDelay;
             yield return null;
         }
@@ -113,38 +122,42 @@ public class MonsterAI : MonoBehaviour
             yield return null;
             //yield return m_secondsDelay;
 
-            switch (m_eState)
-            {
-                case MONSTER_STATE.ATTACK:
-                    if (m_animFunction.GetCurrntAnimClipName() != "attack_1")
-                       // m_monsterAttack.Attack();
+            if (m_monsterPosition == Monster_Position.Monster_Position_Ground)
+                switch (m_eState)
+                {
+                    case MONSTER_STATE.ATTACK:
+                        if (m_animFunction.GetCurrntAnimClipName() != "attack_1")
+                        {
+                            if (this.transform.localScale.x > 0 && m_playerTransform.position.x < this.transform.position.x)
+                                this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                            else if (this.transform.localScale.x < 0 && m_playerTransform.position.x > this.transform.position.x)
+                                this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
 
-                    m_animator.SetTrigger(m_hashTAttack);
-                    break;
-
-                case MONSTER_STATE.HIT:
-                    m_animator.SetTrigger(m_hashTHit);
-                    break;
-
-                case MONSTER_STATE.DIE:
-                    m_animator.SetBool(m_hashBLive, false);
-                    break;
-
-                case MONSTER_STATE.APPEAR:
-                    m_animator.SetBool(m_hashBAppear, true);
-                    break;
-
-                case MONSTER_STATE.MOVE:
-                    m_animator.SetFloat(m_hashFSpeed, speed);
-                    if(m_animFunction.GetCurrntAnimClipName()=="move")
-                        m_monsterMove.Move(speed);
-                    break;
-
-                case MONSTER_STATE.STUN:
-                    break;
-
-
-            }
+                            m_monsterAttack.Attack();
+                            m_animator.SetTrigger(m_hashTAttack);
+                            m_animator.SetFloat(m_hashFSpeed, 0);
+                            yield return new WaitForSeconds(2f);
+                        }
+                        break;
+                    case MONSTER_STATE.HIT:
+                        m_animator.SetTrigger(m_hashTHit);
+                        break;
+                    case MONSTER_STATE.DIE:
+                        m_animator.SetBool(m_hashBLive, false);
+                        break;
+                    case MONSTER_STATE.APPEAR:
+                        m_animator.SetBool(m_hashBAppear, true);
+                        break;
+                    case MONSTER_STATE.MOVE:
+                        m_animator.SetFloat(m_hashFSpeed, speed);
+                        if (m_animFunction.GetCurrntAnimClipName() == "move")
+                            m_monsterMove.Move(speed);
+                        break;
+                    case MONSTER_STATE.STUN:
+                        break;
+                    default:
+                        break;
+                }
         }
 
     }
@@ -157,11 +170,13 @@ public class MonsterAI : MonoBehaviour
         monsterCharInfo.attack = 10;
         m_monsterInfo = GetComponent<MonsterInfo>();
         m_monsterInfo.SetInfo(monsterCharInfo);
-        
+
         m_monsterMove = GetComponent<MonsterMove>();
         m_monsterAttack = GetComponent<MonsterAttack>();
-        m_animFunction = GetComponent<AnimFuntion>();
+        m_animFunction = transform.GetComponentInChildren<AnimFuntion>();
         m_receiveDamage = GetComponent<ReceiveDamage>();
+
+        m_monsterPosition = Monster_Position.Monster_Position_Ground;
 
         m_bLive = true;
     }
@@ -169,8 +184,23 @@ public class MonsterAI : MonoBehaviour
 
     void InitAniamation()
     {
-        m_animator = GetComponent<Animator>();
+        m_animator = this.GetComponentInChildren<Animator>();
         m_animator.SetBool(m_hashBLive, true);
     }
 
+    public void SetMonsterPositionAir()
+    {
+        m_monsterPosition = Monster_Position.Monster_Position_Air;
+    }
+
+    public void SetMonsterPositionGround()
+    {
+        m_monsterPosition = Monster_Position.Monster_Position_Ground;
+    }
+
+    private void ResetAnim()
+    {
+        m_animator.SetFloat(m_hashFSpeed, 0);
+        m_animator.ResetTrigger(m_hashTAttack);
+    }
 }
