@@ -79,6 +79,16 @@ public class MonsterAI : MonoBehaviour
         StartCoroutine(Action());
     }
 
+    private void Update()
+    {
+        //if(m_monsterInfo.IsCharacterDie())
+        if(m_animFunction.GetCurrntAnimClipName()== "knockdown" && m_bLive == true)
+        {
+            m_eState = MONSTER_STATE.DIE;
+            m_bLive = false;
+            StageManager.Inst.RemoveMonsterCount();
+        }
+    }
     IEnumerator StateCheck()
     {
         //오브젝트 풀에 생성시 다른 스크립트의 초기화를 위해 대기
@@ -86,8 +96,11 @@ public class MonsterAI : MonoBehaviour
 
         while (m_bLive)
         {
+
             if (m_bLive == false)
                 yield break;
+            yield return new WaitForSeconds(0.4f);
+
 
             float distanceToPlayer = Vector2.Distance(m_playerTransform.position, this.transform.position);
 

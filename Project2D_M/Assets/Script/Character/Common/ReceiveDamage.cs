@@ -22,13 +22,20 @@ public class ReceiveDamage : MonoBehaviour
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_crowdControlManager = this.GetComponent<CrowdControlManager>();
     }
+
+    private void Start()
+    {
+        
+    }
     public void Receive(int _damage)
     {
         int damage = m_characterInfo.DamageCalculation(_damage);
         m_characterInfo.HpDamage(damage);
         if (m_characterInfo.IsCharacterDie())
+        {
             m_animator.SetTrigger("tDie");
-       
+            this.enabled = false;
+        }
     }
 
     public void AddDamageForce(Vector2 _force)

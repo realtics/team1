@@ -1165,7 +1165,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 545
-        width: 312
+        width: 152
         height: 174
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1751,9 +1751,9 @@ TextureImporter:
       name: ingame_M3_Atlas_66
       rect:
         serializedVersion: 2
-        x: 656
+        x: 665
         y: 332
-        width: 168
+        width: 63
         height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

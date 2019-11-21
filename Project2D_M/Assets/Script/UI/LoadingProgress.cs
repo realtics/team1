@@ -18,6 +18,7 @@ public class LoadingProgress : MonoBehaviour
 {
     //씬의 빌드 순서 넘버
     public static int nextSceneNum = 0;
+    private static int m_iLoadingSceneNum = 0;
 
     [SerializeField] private Image m_imgProgressBar = null;
     [SerializeField] private TextMeshProUGUI m_textLoadingPersent = null;
@@ -31,13 +32,17 @@ public class LoadingProgress : MonoBehaviour
 
     void Start()
     {
+        Initialized();
+    }
+
+    private void Initialized()
+    {
         RandomBackgroundImage();
 
         StartCoroutine(nameof(LoadScene));
 
         //람다식으로 액션에 넣어주기
         PrintTextPersent = (float _fillamount) => { m_textLoadingPersent.text = ((int)(_fillamount * 100)).ToString() + "%"; };
-
     }
 
     public void RandomBackgroundImage()
@@ -52,7 +57,7 @@ public class LoadingProgress : MonoBehaviour
     public static void LoadScene(int _sceneNum)
     {
         nextSceneNum = _sceneNum;
-        SceneManager.LoadScene("00_LoadingScene");
+        SceneManager.LoadScene(m_iLoadingSceneNum);
     }
 
     IEnumerator LoadScene()

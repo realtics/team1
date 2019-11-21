@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class PlayerUiInput : MonoBehaviour
 {
+    public enum JOYSTICK_STATE
+    {
+        JOYSTICK_UP,
+        JOYSTICK_DOWN,
+        JOYSTICK_LEFT,
+        JOYSTICK_RIGHT,
+        JOYSTICK_CENTER,
+    }
+
     private PlayerState m_playerState = null;
     private CharacterMove m_characterMove = null;
     private CharacterJump m_characterJump = null;
     private PlayerNormalAttack m_playerNormalAttack = null;
     private Animator m_animator = null;
 
-    private PlayerInfo temp;
-
-    public JoyStick joyStick;
-
-    [SerializeField]
-    private float m_fMoveSpeed = 10.0f;
-    [SerializeField]
-    private float m_fJumpforce = 25.0f;
+    [SerializeField] public JOYSTICK_STATE joystickState;
+    [SerializeField] private float m_fMoveSpeed = 10.0f;
+    [SerializeField] private float m_fJumpforce = 17.0f;
 
     void Start()
     {
@@ -26,15 +30,7 @@ public class PlayerUiInput : MonoBehaviour
         m_characterJump = this.GetComponent<CharacterJump>();
         m_animator = this.transform.Find("PlayerSpineSprite").GetComponent<Animator>();
         m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
-
-        temp = this.GetComponent<PlayerInfo>();
-    }
-
-    private void FixedUpdate()
-    {
-        MoveInput();
-        //JumpInput();
-        //AttackInput();
+        joystickState = JOYSTICK_STATE.JOYSTICK_CENTER;
     }
 
     private void OnDisable()
@@ -42,29 +38,22 @@ public class PlayerUiInput : MonoBehaviour
         m_animator.SetBool("bMove", false);
     }
 
-    private void MoveInput()
+    private void FixedUpdate()
     {
         if (m_playerState.IsPlayerAttack())
         {
             return;
         }
 
-        Move(m_fMoveSpeed);
-    }
-
-    private void Move(float _speed)
-    {
-        if (joyStick.GetHorizontal() < 0)
+        if (joystickState == JOYSTICK_STATE.JOYSTICK_LEFT)
         {
-            Debug.Log(joyStick.GetHorizontal());
             m_animator.SetBool("bMove", true);
-            m_characterMove.MoveLeft(_speed);
+            m_characterMove.MoveLeft(m_fMoveSpeed);
         }
-        else if (joyStick.GetHorizontal() > 0)
+        else if (joystickState == JOYSTICK_STATE.JOYSTICK_RIGHT)
         {
-            Debug.Log(joyStick.GetHorizontal());
             m_animator.SetBool("bMove", true);
-            m_characterMove.MoveRight(_speed);
+            m_characterMove.MoveRight(m_fMoveSpeed);
         }
         else
         {
@@ -73,9 +62,36 @@ public class PlayerUiInput : MonoBehaviour
         }
     }
 
-    private void JumpInput()
+    public void JoyStickMove(JOYSTICK_STATE _joyStickState)
     {
-        if (Input.GetButtonDown("Jump") && !m_playerState.IsPlayerAttack())
+        if (m_playerState.IsPlayerAttack())
+        {
+            return;
+        }
+
+        Debug.Log(_joyStickState);
+        joystickState = _joyStickState;
+
+        if (_joyStickState == JOYSTICK_STATE.JOYSTICK_LEFT)
+        {
+            m_animator.SetBool("bMove", true);
+            m_characterMove.MoveLeft(m_fMoveSpeed);
+        }
+        else if (_joyStickState == JOYSTICK_STATE.JOYSTICK_RIGHT)
+        {
+            m_animator.SetBool("bMove", true);
+            m_characterMove.MoveRight(m_fMoveSpeed);
+        }
+        else
+        {
+            m_animator.SetBool("bMove", false);
+            m_characterMove.MoveStop();
+        }
+    }
+
+    public void JumpInput()
+    {
+        if (!m_playerState.IsPlayerAttack())
         {
             if (m_playerState.IsPlayerDoubleJump())
             {
@@ -99,12 +115,14 @@ public class PlayerUiInput : MonoBehaviour
         m_characterJump.Jump(m_fJumpforce);
     }
 
-    private void AttackInput()
+    public void AttackInput()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            m_playerState.PlayerStateAttack();
-            m_playerNormalAttack.NormalAttack();
-        }
+        m_playerState.PlayerStateAttack();
+        m_playerNormalAttack.NormalAttack();
+    }
+
+    public void SetJoyStickState(JOYSTICK_STATE _joyStickState)
+    {
+        joystickState = _joyStickState;
     }
 }

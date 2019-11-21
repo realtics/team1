@@ -1453,6 +1453,7 @@ GameObject:
   - component: {fileID: 2498222798842262237}
   - component: {fileID: 4063295413354117836}
   - component: {fileID: 1188840288893757484}
+  - component: {fileID: 3654613824508178645}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1629,6 +1630,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 5.127899}
   m_EdgeRadius: 0
+--- !u!114 &3654613824508178645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619171480891344486}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81f182987d4a8c4d9d9e7acd98f8a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystickState: 0
+  m_fMoveSpeed: 10
+  m_fJumpforce: 25
 --- !u!1 &4619171481762083628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,8 +2095,7 @@ PrefabInstance:
       propertyPath: _animationName
       value: attack_1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4178254705648206156, guid: 6a643a7d160a65b409baaf6ce4d5ea1d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a643a7d160a65b409baaf6ce4d5ea1d, type: 3}
 --- !u!1 &7863194669252827703 stripped
 GameObject:

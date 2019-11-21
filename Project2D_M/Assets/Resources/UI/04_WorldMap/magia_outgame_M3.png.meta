@@ -29,6 +29,9 @@ TextureImporter:
   - first:
       213: -8581755449153933007
     second: magia_outgame_M3_8
+  - first:
+      213: -4598845527979967805
+    second: magia_outgame_M3_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -309,6 +312,27 @@ TextureImporter:
       bones: []
       spriteID: 851a86199dfa2854085abee83b768676
       internalID: -8581755449153933007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_9
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1662
+        width: 60
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b59105fcf87f2c4a84c4f7eb95b63f9
+      internalID: -4598845527979967805
       vertices: []
       indices: 
       edges: []

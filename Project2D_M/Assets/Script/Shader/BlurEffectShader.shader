@@ -1,4 +1,11 @@
-﻿Shader "Hidden/BlurEffectShader"
+﻿/*
+ * 작성자         : 박종현
+ * 최종 수정 날짜 : 2019.11.20
+ * 팀             : 1 Team
+ * 스크립트 용도  : https://forum.unity.com/threads/solved-dynamic-blurred-background-on-ui.345083/  를 참조하여 만든 블러 쉐이더
+*/
+
+Shader "Hidden/BlurEffectShader"
 {
     Properties
     {

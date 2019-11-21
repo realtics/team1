@@ -12,12 +12,13 @@ using UnityEngine;
 public class PlayerCrowdControlManager : CrowdControlManager
 {
     private PlayerInput     m_playerInput = null;
-
+    private PlayerUiInput m_playerUiInput = null;
     private void Awake()
     {
         m_characterMove = this.GetComponent<CharacterMove>();
         m_characterJump = this.GetComponent<CharacterJump>();
         m_playerInput = this.GetComponent<PlayerInput>();
+        m_playerUiInput = this.GetComponent<PlayerUiInput>();
     }
 
     public override void Stiffen(float _second)
@@ -27,8 +28,17 @@ public class PlayerCrowdControlManager : CrowdControlManager
 
     IEnumerator StiffenCoroutine(float _second)
     {
-        m_playerInput.enabled = false;
-        yield return new WaitForSeconds(_second);
-        m_playerInput.enabled = true;
+        if (m_playerInput.enabled == true)
+        {
+            m_playerInput.enabled = false;
+            yield return new WaitForSeconds(_second);
+            m_playerInput.enabled = true;
+        }
+        else if (m_playerUiInput.enabled == true)
+        {
+            m_playerUiInput.enabled = false;
+            yield return new WaitForSeconds(_second);
+            m_playerUiInput.enabled = true;
+        }
     }
 }

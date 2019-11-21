@@ -1,0 +1,55 @@
+
+DamageFont_ArmorBreak.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shield_bot
+  rotate: true
+  xy: 206, 190
+  size: 64, 42
+  orig: 64, 42
+  offset: 0, 0
+  index: -1
+shield_top
+  rotate: true
+  xy: 2, 2
+  size: 65, 45
+  orig: 65, 45
+  offset: 0, 0
+  index: -1
+text_armorbreak_bot
+  rotate: false
+  xy: 2, 69
+  size: 162, 51
+  orig: 162, 51
+  offset: 0, 0
+  index: -1
+text_armorbreak_mid
+  rotate: false
+  xy: 2, 179
+  size: 202, 75
+  orig: 202, 75
+  offset: 0, 0
+  index: -1
+text_armorbreak_top
+  rotate: false
+  xy: 2, 122
+  size: 187, 55
+  orig: 187, 55
+  offset: 0, 0
+  index: -1
+text_exclamation_bot
+  rotate: true
+  xy: 49, 12
+  size: 55, 78
+  orig: 55, 78
+  offset: 0, 0
+  index: -1
+text_exclamation_top
+  rotate: true
+  xy: 129, 12
+  size: 55, 78
+  orig: 55, 78
+  offset: 0, 0
+  index: -1

@@ -4,6 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/*
+ * 작성자         : 박종현
+ * 최종 수정 날짜 : 2019.11.18
+ * 팀             : 1 Team
+ * 스크립트 용도  : 스테이지 선택 씬에서 스테이지 정보를 애니메이션 연출과 함께 open/close 해주는 스크립트.
+ *                  
+*/
+
 public class StageInfoOpener : MonoBehaviour
 {
     public GameObject stageInfoPanel;

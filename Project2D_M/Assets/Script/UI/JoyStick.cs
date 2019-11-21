@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class JoyStick : MonoBehaviour
 {
+    public PlayerUiInput playerInput { get; set; }
     private Transform m_stick;
     private Vector3 m_stickFirstPos;
     private Vector3 m_joyVec;
@@ -13,7 +14,7 @@ public class JoyStick : MonoBehaviour
     void Start()
     {
         m_radius = GetComponent<RectTransform>().sizeDelta.y * 0.5f;
-        m_stick = this.transform.Find("JoyStick");
+        m_stick = this.transform.Find("JoyStickCon");
         m_stickFirstPos = m_stick.transform.position;
 
         float Can = transform.parent.GetComponent<RectTransform>().localScale.x;
@@ -34,7 +35,7 @@ public class JoyStick : MonoBehaviour
         else
             m_stick.position = m_stickFirstPos + m_joyVec * m_radius;
 
-        m_stickPos = m_joyVec;
+        m_stickPos = m_joyVec;   
     }
 
     // 드래그 끝.
@@ -44,15 +45,48 @@ public class JoyStick : MonoBehaviour
         m_joyVec = Vector3.zero;
 
         m_stickPos = m_joyVec;
+
+        playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_CENTER);
     }
 
-    public int GetHorizontal()
+    public void Click()
     {
-        if (m_stickPos.x < -0.5f)
-            return -1;
-        else if (m_stickPos.x > 0.5f)
-            return 1;
+        StartCoroutine(nameof(PlayerMove));
+    }
 
-        return 0;
+    IEnumerator PlayerMove()
+    {
+        while(true)
+        {
+            if (m_stickPos.x < -0.5f)
+                Debug.Log("x : -1");
+            else if (m_stickPos.x > 0.5f)
+                Debug.Log("x : 1");
+            else if (m_stickPos.y > 0.5f)
+                Debug.Log("y : -1");
+            else if (m_stickPos.y < -0.5f)
+                Debug.Log("y : 1");
+
+            //if (m_stickPos.x < -0.5f)
+            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT);
+            //else if (m_stickPos.x > 0.5f)
+            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_RIGHT);
+            //else if (m_stickPos.y > 0.5f)
+            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_UP);
+            //else if (m_stickPos.y < -0.5f)
+            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_DOWN);
+
+            if (m_stickPos.x < -0.5f)
+                playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT);
+            else if (m_stickPos.x > 0.5f)
+                playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_RIGHT);
+            else if (m_stickPos.y > 0.5f)
+                playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_UP);
+            else if (m_stickPos.y < -0.5f)
+                playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_DOWN);
+
+
+            yield return null;
+        }
     }
 }

@@ -25,6 +25,7 @@ public class PlayerNormalAttack : MonoBehaviour
     private CharacterMove m_characterMove = null;
     private AttackManager m_attackCollider = null;
     private PlayerState m_playerState = null;
+    private PlayerUiInput m_playerUiInput = null;
     private bool m_bAttacking;
 
     private void Awake()
@@ -35,6 +36,7 @@ public class PlayerNormalAttack : MonoBehaviour
         m_characterMove = this.GetComponent<CharacterMove>();
         m_attackCollider = this.transform.Find("AttackManager").GetComponent<AttackManager>();
         m_playerState = this.GetComponent<PlayerState>();
+        m_playerUiInput = this.GetComponent<PlayerUiInput>();
         m_bAttacking = false;
 
         m_NormalAttackDic = new Dictionary<string, AttackInfo>();
@@ -59,11 +61,11 @@ public class PlayerNormalAttack : MonoBehaviour
     {
         m_animFuntion.SetTrigger("tNormalAttack");
 
-        if(Input.GetAxisRaw("Vertical") > 0)
+        if(Input.GetAxisRaw("Vertical") > 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_UP)
         {
             m_animFuntion.SetTrigger("tUpper");
         }
-        else if (Input.GetAxisRaw("Vertical") < 0)
+        else if (Input.GetAxisRaw("Vertical") < 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_DOWN)
         {
             m_animFuntion.SetTrigger("tDownsmash");
         }
@@ -73,6 +75,10 @@ public class PlayerNormalAttack : MonoBehaviour
             StartCoroutine(AttackCoroutine());
             m_bAttacking = true;
         }
+
+        string str = "12346598";
+        for(int i = 0; i < str.Length; ++i)
+            Debug.Log(str[i]);
     }
 
     private IEnumerator AttackCoroutine()
@@ -195,11 +201,11 @@ public class PlayerNormalAttack : MonoBehaviour
 
     private void AddMeve(float _speed)
     {
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if (Input.GetAxisRaw("Horizontal") < 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT)
         {
             m_characterMove.MoveLeft(_speed);
         }
-        else if (Input.GetAxisRaw("Horizontal") > 0)
+        else if (Input.GetAxisRaw("Horizontal") > 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_RIGHT)
         {
             m_characterMove.MoveRight(_speed);
         }

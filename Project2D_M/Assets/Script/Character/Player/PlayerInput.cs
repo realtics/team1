@@ -32,7 +32,7 @@ public class PlayerInput : MonoBehaviour
         m_playerState    = this.GetComponent<PlayerState>();
         m_characterMove  = this.GetComponent<CharacterMove>();
         m_characterJump  = this.GetComponent<CharacterJump>();
-        m_animator       = this.transform.Find("PlayerSpineSprite").GetComponent<Animator>();
+        m_animator = this.GetComponentInChildren<Animator>();
         m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
 
         temp = this.GetComponent<PlayerInfo>();
