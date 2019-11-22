@@ -2159,9 +2159,23 @@ AnimationClip:
     functionName: ColliderLifeCycleOn
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0.25
+    floatParameter: 0.08
     intParameter: 0
     messageOptions: 1
+  - time: 0.4
+    functionName: ColliderLifeCycleOn
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.08
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.55
+    functionName: ColliderLifeCycleOn
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0.08
+    intParameter: 0
+    messageOptions: 0
   - time: 1.1166667
     functionName: ColliderLifeCycleOn
     data: 

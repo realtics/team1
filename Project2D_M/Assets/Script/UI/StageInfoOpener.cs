@@ -18,6 +18,7 @@ public class StageInfoOpener : MonoBehaviour
 
     public GameObject stageSelect;
 
+
     public GameObject lobbyBackButton;
     public GameObject stageBackButton;
 

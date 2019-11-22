@@ -16,21 +16,23 @@ public class Singletone<T> : MonoBehaviour where T : MonoBehaviour
                 return m_Inst;
             }
 
-            if (null == m_Obj)
+            m_Inst = (T)FindObjectOfType(typeof(T));
+
+            if(m_Inst == null)
             {
                 m_Obj = new GameObject(typeof(T).Name);
                 m_Inst = m_Obj.AddComponent<T>();
             }
 
-            else
-            {
-                m_Inst = m_Obj.GetComponent<T>();
+            //else
+            //{
+            //    m_Inst = m_Obj.GetComponent<T>();
 
-                if (null == m_Inst)
-                {
-                    m_Inst = m_Obj.AddComponent<T>();
-                }
-            }
+            //    if (null == m_Inst)
+            //    {
+            //        m_Inst = m_Obj.AddComponent<T>();
+            //    }
+            //}
 
             return m_Inst;
         }

@@ -15,6 +15,7 @@ public class CharacterInfo : MonoBehaviour
     [SerializeField] protected int hp = 100;
     [SerializeField] public int attack { get; protected set; } = 15;
     [SerializeField] protected int defensive = 10;
+    [SerializeField] protected int critical = 0;
 
     public void HpDamage(int _damage)
     {
@@ -33,5 +34,19 @@ public class CharacterInfo : MonoBehaviour
             return true;
 
         return false;
+    }
+
+    public bool IsCritical()
+    {
+        int randNum = Random.Range(1, 101);
+
+        if (randNum <= critical)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

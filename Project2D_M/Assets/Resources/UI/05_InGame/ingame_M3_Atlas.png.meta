@@ -275,6 +275,18 @@ TextureImporter:
   - first:
       213: -6847366558660968278
     second: ingame_M3_Atlas_14
+  - first:
+      213: -307632421643516121
+    second: ingame_M3_Atlas_91
+  - first:
+      213: -3003555227738516694
+    second: ingame_M3_Atlas_92
+  - first:
+      213: 8280398082177343225
+    second: ingame_M3_Atlas_93
+  - first:
+      213: 4307337141202959036
+    second: ingame_M3_Atlas_94
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1039,7 +1051,7 @@ TextureImporter:
         serializedVersion: 2
         x: 618
         y: 721
-        width: 201
+        width: 75
         height: 85
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1100,10 +1112,10 @@ TextureImporter:
       name: ingame_M3_Atlas_35
       rect:
         serializedVersion: 2
-        x: 771
+        x: 770
         y: 735
-        width: 49
-        height: 25
+        width: 50
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1310,10 +1322,10 @@ TextureImporter:
       name: ingame_M3_Atlas_45
       rect:
         serializedVersion: 2
-        x: 820
-        y: 652
-        width: 40
-        height: 40
+        x: 826
+        y: 657
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1631,7 +1643,7 @@ TextureImporter:
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1776,8 +1788,8 @@ TextureImporter:
         y: 403
         width: 150
         height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2152,8 +2164,8 @@ TextureImporter:
         serializedVersion: 2
         x: 947
         y: 0
-        width: 77
-        height: 135
+        width: 75
+        height: 85
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2289,6 +2301,90 @@ TextureImporter:
       bones: []
       spriteID: 048c0aff2c238b34298ca4fc36905dbb
       internalID: 3929038801091425510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_91
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 0
+        width: 160
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95de887e114b80478613ec9d01f0029
+      internalID: -307632421643516121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_92
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 882
+        width: 182
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d242d8c8d8781fb4499f7d17ae6677a8
+      internalID: -3003555227738516694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_93
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 939
+        width: 26
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b49d25e163564f4a887d94948bbbbec
+      internalID: 8280398082177343225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_94
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 274
+        width: 165
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83575a93e638fc4391af0900360bec9
+      internalID: 4307337141202959036
       vertices: []
       indices: 
       edges: []

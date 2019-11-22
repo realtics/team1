@@ -6,7 +6,7 @@ using UnityEngine;
 
 /*
  * 작성자             : 한승훈
- * 최종 수정 날짜     : 2019.11.14
+ * 최종 수정 날짜     : 2019.11.22
  * 팀                 : 1팀
  * 스크립트 용도      : 몬스터 AI스크립트
  */
@@ -139,29 +139,44 @@ public class MonsterAI : MonoBehaviour
                 switch (m_eState)
                 {
                     case MONSTER_STATE.ATTACK:
-                        if (m_animFunction.GetCurrntAnimClipName() != "attack_1")
-                        {
-                            if (this.transform.localScale.x > 0 && m_playerTransform.position.x < this.transform.position.x)
-                                this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
-                            else if (this.transform.localScale.x < 0 && m_playerTransform.position.x > this.transform.position.x)
-                                this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                        if (this.transform.localScale.x > 0 && m_playerTransform.position.x < this.transform.position.x)
+                            this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                        else if (this.transform.localScale.x < 0 && m_playerTransform.position.x > this.transform.position.x)
+                            this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                        m_monsterAttack.m_bAttack = true;
+                        //if (m_animFunction.GetCurrntAnimClipName() != "attack_1")
+                        //{
+                        //    if (this.transform.localScale.x > 0 && m_playerTransform.position.x < this.transform.position.x)
+                        //        this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                        //    else if (this.transform.localScale.x < 0 && m_playerTransform.position.x > this.transform.position.x)
+                        //        this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
 
-                            m_monsterAttack.Attack();
-                            m_animator.SetTrigger(m_hashTAttack);
-                            m_animator.SetFloat(m_hashFSpeed, 0);
-                            yield return new WaitForSeconds(2f);
-                        }
+                        //    m_monsterAttack.Attack();
+                        //    m_animator.SetFloat(m_hashFSpeed, 0);
+                        //    yield return new WaitForSeconds(2f);
+                        //}
                         break;
                     case MONSTER_STATE.HIT:
+                        m_monsterAttack.m_bAttack = false;
                         m_animator.SetTrigger(m_hashTHit);
                         break;
                     case MONSTER_STATE.DIE:
+                        m_monsterAttack.m_bAttack = false;
+
                         m_animator.SetBool(m_hashBLive, false);
                         break;
                     case MONSTER_STATE.APPEAR:
+                        m_monsterAttack.m_bAttack = false;
+
                         m_animator.SetBool(m_hashBAppear, true);
                         break;
                     case MONSTER_STATE.MOVE:
+                        m_monsterAttack.m_bAttack = false;
+
+                        if (this.transform.localScale.x > 0 && m_playerTransform.position.x < this.transform.position.x)
+                            this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                        else if (this.transform.localScale.x < 0 && m_playerTransform.position.x > this.transform.position.x)
+                            this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
                         m_animator.SetFloat(m_hashFSpeed, speed);
                         if (m_animFunction.GetCurrntAnimClipName() == "move")
                             m_monsterMove.Move(speed);

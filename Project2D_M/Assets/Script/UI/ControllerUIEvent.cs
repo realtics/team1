@@ -33,7 +33,7 @@ public class ControllerUIEvent : MonoBehaviour
 
         dragEndEvent = new EventTrigger.Entry();
         dragEndEvent.eventID = EventTriggerType.EndDrag;
-        dragEndEvent.callback.AddListener((BaseEventData) => joyStick.StopCoroutine("PlayerMove"));
+        dragEndEvent.callback.AddListener((BaseEventData) => joyStick.StopPlayerMove());
         eventTrigger.triggers.Add(dragEndEvent);
 
         //클릭다운
@@ -45,7 +45,7 @@ public class ControllerUIEvent : MonoBehaviour
         //클릭업
         EventTrigger.Entry clickUpEvent = new EventTrigger.Entry();
         clickUpEvent.eventID = EventTriggerType.PointerUp;
-        clickUpEvent.callback.AddListener((BaseEventData) => joyStick.StopCoroutine("PlayerMove"));
+        clickUpEvent.callback.AddListener((BaseEventData) => joyStick.StopPlayerMove());
         eventTrigger.triggers.Add(clickUpEvent);
     }
 

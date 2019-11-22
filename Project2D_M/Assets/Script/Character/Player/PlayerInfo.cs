@@ -10,8 +10,7 @@ using UnityEngine;
  */
 public class PlayerInfo : CharacterInfo
 {
-    [Header("플레이어 추가 정보")]
-    [SerializeField] public int critical;
+    //[Header("플레이어 추가 정보")]
 
     public struct playerCharInfo
     {

@@ -54,28 +54,16 @@ public class JoyStick : MonoBehaviour
         StartCoroutine(nameof(PlayerMove));
     }
 
+    public void StopPlayerMove()
+    {
+        StopCoroutine(nameof(PlayerMove));
+        playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_CENTER);
+    }
+
     IEnumerator PlayerMove()
     {
         while(true)
         {
-            if (m_stickPos.x < -0.5f)
-                Debug.Log("x : -1");
-            else if (m_stickPos.x > 0.5f)
-                Debug.Log("x : 1");
-            else if (m_stickPos.y > 0.5f)
-                Debug.Log("y : -1");
-            else if (m_stickPos.y < -0.5f)
-                Debug.Log("y : 1");
-
-            //if (m_stickPos.x < -0.5f)
-            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT);
-            //else if (m_stickPos.x > 0.5f)
-            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_RIGHT);
-            //else if (m_stickPos.y > 0.5f)
-            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_UP);
-            //else if (m_stickPos.y < -0.5f)
-            //    playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_DOWN);
-
             if (m_stickPos.x < -0.5f)
                 playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT);
             else if (m_stickPos.x > 0.5f)
@@ -84,7 +72,7 @@ public class JoyStick : MonoBehaviour
                 playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_UP);
             else if (m_stickPos.y < -0.5f)
                 playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_DOWN);
-
+            else playerInput.SetJoyStickState(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_CENTER);
 
             yield return null;
         }

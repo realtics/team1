@@ -36,17 +36,17 @@ public class SpineAnimCollider : MonoBehaviour
     private void DrawBoundingBoxes(Transform transform, Skeleton skeleton)
     {
         int count = 1;
-        Vector2[] temp;
-        foreach (var slot in skeleton.Slots)
+        ExposedList<Slot>.Enumerator enmerator = skeleton.slots.GetEnumerator();
+        while(enmerator.MoveNext())
         {
-            var bba = slot.Attachment as BoundingBoxAttachment;
+            BoundingBoxAttachment bba = enmerator.Current.Attachment as BoundingBoxAttachment;
             if (bba != null)
             {
-                temp = DrawBoundingBox(slot, bba, transform);
-                if (temp != null)
+                Vector2[] boxArray = DrawBoundingBox(enmerator.Current, bba, transform);
+                if (boxArray != null)
                 {
                     m_meshCollider.pathCount = count;
-                    m_meshCollider.SetPath(count - 1, temp);
+                    m_meshCollider.SetPath(count - 1, boxArray);
                     count++;
                 }
             }

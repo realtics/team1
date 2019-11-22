@@ -43,7 +43,7 @@ public class PlayerNormalAttack : MonoBehaviour
 
         m_NormalAttackDic.Add("attack_1", new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
         m_NormalAttackDic.Add("attack_2", new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
-        m_NormalAttackDic.Add("attack_3_1", new AttackInfo(1.0f, new Vector2(2.0f, 13.0f)));
+        m_NormalAttackDic.Add("attack_3_1", new AttackInfo(0.5f, new Vector2(2.0f, 5.0f)));
         m_NormalAttackDic.Add("attack_3_2", new AttackInfo(2.0f, new Vector2(2.0f, -10.0f)));
         m_NormalAttackDic.Add("attack_4", new AttackInfo(3.0f, new Vector2(2.0f, 10.0f)));
         m_NormalAttackDic.Add("attack_5", new AttackInfo(4.0f, new Vector2(10.0f, 10.0f)));
@@ -75,10 +75,6 @@ public class PlayerNormalAttack : MonoBehaviour
             StartCoroutine(AttackCoroutine());
             m_bAttacking = true;
         }
-
-        string str = "12346598";
-        for(int i = 0; i < str.Length; ++i)
-            Debug.Log(str[i]);
     }
 
     private IEnumerator AttackCoroutine()

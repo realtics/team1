@@ -64,13 +64,12 @@ public class PlayerUiInput : MonoBehaviour
 
     public void JoyStickMove(JOYSTICK_STATE _joyStickState)
     {
+        joystickState = _joyStickState;
+
         if (m_playerState.IsPlayerAttack())
         {
             return;
         }
-
-        Debug.Log(_joyStickState);
-        joystickState = _joyStickState;
 
         if (_joyStickState == JOYSTICK_STATE.JOYSTICK_LEFT)
         {

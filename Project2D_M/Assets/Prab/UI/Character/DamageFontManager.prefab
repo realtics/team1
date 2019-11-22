@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5939710007836638078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5939710007836638079}
+  - component: {fileID: 5939710007836638076}
+  m_Layer: 9
+  m_Name: DamageFontManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5939710007836638079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939710007836638078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.76, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5939710007836638076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939710007836638078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c5e5ce3534b0d478f2278dec76f4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageFontName: DamageFont
+  fontSize: {x: 1, y: 1}
+  fontSpace: 33
+  upSpeed: 5
+  clearSpeed: 2.5
+  criticalMark: {fileID: -3005577025958114290, guid: a6d9617c6ba73af4fb9669852341aa7d,
+    type: 3}
+  criticalDamageFont:
+  - {fileID: -1038309425234879001, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 3751736015247211685, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 6681071060621623760, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: -3119306904323288528, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: -6804538041624397280, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 6479876048568962717, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: -6925505851377653511, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: -6511175539875018106, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 2046685797221307022, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 2611703064054767457, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  normalDamageFont:
+  - {fileID: 2089849340872612379, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: -5937037898318927582, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 5673379976439293686, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 1376342960624823979, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 2539169216122099233, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 3926915496636086527, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: -702030814519185854, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 8408837097110091643, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: 495308957370884277, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}
+  - {fileID: -7227692955348553699, guid: a6d9617c6ba73af4fb9669852341aa7d, type: 3}

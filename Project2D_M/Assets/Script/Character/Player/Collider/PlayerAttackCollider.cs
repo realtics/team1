@@ -13,14 +13,40 @@ public class PlayerAttackCollider : AttackCollider
         m_spineAnimCollider = this.GetComponent<SpineAnimCollider>();
     }
 
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == m_sTagName)
+        {
+            ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
+            if (receiveDamage.enabled != false)
+            {
+                receiveDamage.AddDamageForce(attackForce);
+
+                if (m_playerInfo.IsCritical())
+                {
+                    m_damage = (int)((m_damage * 1.5f) + 0.5f);
+                    receiveDamage.Receive(m_damage, true);
+                }
+                else
+                {
+                    receiveDamage.Receive(m_damage, false);
+                }
+            }
+        }
+    }
+
+    public override void ColliderLifeCycleOn(float _time)
+    {
+        StartCoroutine(ColliderLifeCycle(_time));
+    }
+
+
     public override void SetDamageColliderInfo(float _damage, string _tagName, Vector2 _attackForce)
     {
         m_sTagName = _tagName;
         int randNum = Random.Range(1, 101);
 
-        if(randNum <= m_playerInfo.critical)
-            m_damage = (int)((m_playerInfo.attack * _damage * 1.5f) + 0.5f);
-        else m_damage = (int)((m_playerInfo.attack * _damage) + 0.5f);
+        m_damage = (int)(_damage * m_playerInfo.attack + 0.5f);
 
         if ((this.transform.root.transform.localScale.x > 0 && _attackForce.x < 0) ||
             (this.transform.root.transform.localScale.x < 0 && _attackForce.x > 0))

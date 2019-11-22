@@ -27,10 +27,11 @@ public class ReceiveDamage : MonoBehaviour
     {
         
     }
-    public void Receive(int _damage)
+    public void Receive(int _damage, bool _bCritical = false)
     {
         int damage = m_characterInfo.DamageCalculation(_damage);
-        m_characterInfo.HpDamage(damage);
+        DamageFontManager.Inst.ShowDamage(damage, DamageShowPosition(), _bCritical);
+        m_characterInfo.HpDamage(damage); 
         if (m_characterInfo.IsCharacterDie())
         {
             m_animator.SetTrigger("tDie");
@@ -49,5 +50,11 @@ public class ReceiveDamage : MonoBehaviour
                 m_crowdControlManager.Stiffen(0.5f);
         }
         m_rigidbody2D.AddForce(_force,ForceMode2D.Impulse);
+    }
+
+    private Vector3 DamageShowPosition()
+    {
+        Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + 3f, this.transform.position.z);
+        return pos;
     }
 }

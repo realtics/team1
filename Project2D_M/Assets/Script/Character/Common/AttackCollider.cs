@@ -25,7 +25,7 @@ public class AttackCollider : MonoBehaviour
         m_spineAnimCollider = this.GetComponent<SpineAnimCollider>();
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == m_sTagName)
         {
@@ -33,7 +33,7 @@ public class AttackCollider : MonoBehaviour
             if (receiveDamage.enabled != false)
             {
                 receiveDamage.AddDamageForce(attackForce);
-                receiveDamage.Receive(m_damage);
+                receiveDamage.Receive(m_damage, false);
             }
         }
     }
@@ -51,7 +51,7 @@ public class AttackCollider : MonoBehaviour
         attackForce = _attackForce;
     }
 
-    public void ColliderLifeCycleOn(float _time)
+    public virtual void ColliderLifeCycleOn(float _time)
     {
         StartCoroutine(ColliderLifeCycle(_time));
     }
@@ -74,7 +74,7 @@ public class AttackCollider : MonoBehaviour
         }
     }
 
-    IEnumerator ColliderLifeCycle(float _time)
+    protected IEnumerator ColliderLifeCycle(float _time)
     {
         ColliderOn();
         yield return new WaitForSeconds(_time);
