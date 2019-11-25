@@ -23,7 +23,13 @@ public class PlayerCrowdControlManager : CrowdControlManager
 
     public override void Stiffen(float _second)
     {
-        StartCoroutine(nameof(StiffenCoroutine), _second);
+        if (m_bStiffen == false)
+            StartCoroutine(nameof(StiffenCoroutine), _second);
+        else
+        {
+            StopCoroutine(nameof(StiffenCoroutine));
+            StartCoroutine(nameof(StiffenCoroutine), _second);
+        }
     }
 
     IEnumerator StiffenCoroutine(float _second)

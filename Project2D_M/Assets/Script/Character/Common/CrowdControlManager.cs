@@ -12,7 +12,7 @@ public class CrowdControlManager : MonoBehaviour
 {
     protected CharacterMove m_characterMove = null;
     protected CharacterJump m_characterJump = null;
-
+    protected bool m_bStiffen = false;
     private void Awake()
     {
         m_characterMove = this.GetComponent<CharacterMove>();
@@ -21,11 +21,19 @@ public class CrowdControlManager : MonoBehaviour
 
     public virtual void Stiffen(float _second)
     {
-        StartCoroutine(nameof(StiffenCoroutine), _second);
+        if (m_bStiffen == false)
+            StartCoroutine(nameof(StiffenCoroutine), _second);
+        else
+        {
+            StopCoroutine(nameof(StiffenCoroutine));
+            StartCoroutine(nameof(StiffenCoroutine), _second);
+        }
     }
 
     IEnumerator StiffenCoroutine(float _second)
     {
+        m_bStiffen = true;
+
         if (m_characterMove != null)
             m_characterMove.enabled = false;
 
@@ -39,5 +47,8 @@ public class CrowdControlManager : MonoBehaviour
 
         if (m_characterJump != null)
             m_characterJump.enabled = true;
+
+        m_bStiffen = false;
+
     }
 }

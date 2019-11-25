@@ -153,10 +153,10 @@
     <Compile Include="Assets\Script\Character\Player\PlayerNormalAttack.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerState.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerUiInput.cs" />
-    <Compile Include="Assets\Script\Data\DataManager.cs" />
-    <Compile Include="Assets\Script\Data\GameData.cs" />
-    <Compile Include="Assets\Script\Data\GameDataObject.cs" />
-    <Compile Include="Assets\Script\Data\ItemInfo.cs" />
+    <Compile Include="Assets\Script\Data\BinaryManager.cs" />
+    <Compile Include="Assets\Script\Data\GameDataManager.cs" />
+    <Compile Include="Assets\Script\Data\GameSaveData.cs" />
+    <Compile Include="Assets\Script\Data\PlayerDataManager.cs" />
     <Compile Include="Assets\Script\Monster\AttackToEffectAnim.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAI.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAnimation.cs" />

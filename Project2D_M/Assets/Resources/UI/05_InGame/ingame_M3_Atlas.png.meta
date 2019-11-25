@@ -287,6 +287,9 @@ TextureImporter:
   - first:
       213: 4307337141202959036
     second: ingame_M3_Atlas_94
+  - first:
+      213: -7309253572986342308
+    second: ingame_M3_Atlas_95
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -862,7 +865,7 @@ TextureImporter:
         serializedVersion: 2
         x: 621
         y: 807
-        width: 128
+        width: 75
         height: 85
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2385,6 +2388,27 @@ TextureImporter:
       bones: []
       spriteID: d83575a93e638fc4391af0900360bec9
       internalID: 4307337141202959036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_M3_Atlas_95
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 721
+        width: 75
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f53f757968c904884d86718c8656d3
+      internalID: -7309253572986342308
       vertices: []
       indices: 
       edges: []

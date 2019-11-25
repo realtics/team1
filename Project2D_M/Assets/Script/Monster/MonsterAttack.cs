@@ -30,6 +30,8 @@ public class MonsterAttack : MonoBehaviour
     private AttackCollider m_attackcollider = null;
     private bool m_bAttacking;
     private Animator m_animator;
+    private float m_fAttackDelay = 2.0f;
+    private float m_fNextAttackTime = 0.0f;
 
 
     //수정중인 사항
@@ -55,15 +57,25 @@ public class MonsterAttack : MonoBehaviour
     private void Update()
     {
         //if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("move"))
+
+
         if (!m_animator.GetCurrentAnimatorStateInfo(0).IsTag("attack"))
         {
             m_bAttacking = false;
         }
-        if(!m_bAttacking && m_bAttack)
+        if (!m_bAttacking && m_bAttack)
         {
-            Attack();
-            m_bAttacking = true;
+            if (Time.time >= m_fNextAttackTime)
+            {
+                Attack();
+                m_bAttacking = true;
+
+                m_fNextAttackTime = Time.time + m_fAttackDelay;
+            }
+
         }
+
+
     }
 
     public void Attack()

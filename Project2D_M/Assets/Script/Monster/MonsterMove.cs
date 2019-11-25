@@ -14,6 +14,8 @@ public class MonsterMove : MonoBehaviour
     private Transform m_monsterTransform;
     private Transform m_playerTransform;
     private CharacterMove m_characterMove;
+    private float m_fSpeed =0.0f;
+    public bool isMove = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,6 +23,17 @@ public class MonsterMove : MonoBehaviour
         m_monsterTransform = this.transform;
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         m_characterMove = GetComponent<CharacterMove>();
+    }
+
+    private void Update()
+    {
+        if(isMove)
+        {
+            Move(m_fSpeed);
+        }
+        else
+            m_characterMove.MoveStop();
+
     }
 
     public void Move(float _speed)
@@ -33,5 +46,14 @@ public class MonsterMove : MonoBehaviour
         {
             m_characterMove.MoveLeft(_speed);
         }
+    }
+
+    public void SetSpeed(float _speed)
+    {
+        m_fSpeed = _speed;
+    }
+    public void MoveDir()
+    {
+        Move(0.001f);
     }
 }

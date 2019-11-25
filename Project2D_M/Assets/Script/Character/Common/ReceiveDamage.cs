@@ -47,9 +47,10 @@ public class ReceiveDamage : MonoBehaviour
             m_animator.SetTrigger("tHit");
 
             if (m_crowdControlManager != null)
-                m_crowdControlManager.Stiffen(0.5f);
+                m_crowdControlManager.Stiffen(1.5f);
         }
         m_rigidbody2D.AddForce(_force,ForceMode2D.Impulse);
+        Debug.Log(_force);
     }
 
     private Vector3 DamageShowPosition()

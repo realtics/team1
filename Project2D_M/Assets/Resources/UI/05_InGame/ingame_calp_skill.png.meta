@@ -1,0 +1,703 @@
+fileFormatVersion: 2
+guid: 0c4b47a1e0f8a3a4f8e2a7398976b504
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1605538900805045857
+    second: ingame_calp_skill_0
+  - first:
+      213: 5675760080697306760
+    second: ingame_calp_skill_1
+  - first:
+      213: -580294780097494281
+    second: ingame_calp_skill_2
+  - first:
+      213: -1153641287313354496
+    second: ingame_calp_skill_3
+  - first:
+      213: -7564799144985975105
+    second: ingame_calp_skill_4
+  - first:
+      213: 7485294033984036758
+    second: ingame_calp_skill_5
+  - first:
+      213: -229346630224473088
+    second: ingame_calp_skill_6
+  - first:
+      213: -7469864479147385448
+    second: ingame_calp_skill_7
+  - first:
+      213: -2264811507414700365
+    second: ingame_calp_skill_8
+  - first:
+      213: 7296499120464699232
+    second: ingame_calp_skill_9
+  - first:
+      213: -7611682855042660282
+    second: ingame_calp_skill_10
+  - first:
+      213: -385327992933273534
+    second: ingame_calp_skill_11
+  - first:
+      213: 4654827127722444630
+    second: ingame_calp_skill_12
+  - first:
+      213: -4890565124111239272
+    second: ingame_calp_skill_13
+  - first:
+      213: 5593698571184992836
+    second: ingame_calp_skill_14
+  - first:
+      213: -1129241042668674396
+    second: ingame_calp_skill_15
+  - first:
+      213: -5625975307353445437
+    second: ingame_calp_skill_16
+  - first:
+      213: -8723112371961841303
+    second: ingame_calp_skill_17
+  - first:
+      213: -8738962290656763015
+    second: ingame_calp_skill_18
+  - first:
+      213: -8494681761361415047
+    second: ingame_calp_skill_19
+  - first:
+      213: -7754059834043529412
+    second: ingame_calp_skill_20
+  - first:
+      213: 485122412439444736
+    second: ingame_calp_skill_21
+  - first:
+      213: 1864146076093780049
+    second: ingame_calp_skill_22
+  - first:
+      213: -3634046508135499465
+    second: ingame_calp_skill_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ingame_calp_skill_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 140
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17af1cf1f0e93e847a6f662eabfce1c0
+      internalID: -1605538900805045857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 483
+        width: 129
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27a8a714ea45f44a9d2ed2132eed340
+      internalID: 5675760080697306760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_2
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 457
+        width: 129
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f87bd526af93847ad46f3d42ac0466
+      internalID: -580294780097494281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_3
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 448
+        width: 140
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d7e9ec9df82a94db5ba35fef272ff3
+      internalID: -1153641287313354496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 193
+        width: 152
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68a0c4e04ed14149a28c9e42bb60cd8
+      internalID: -7564799144985975105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_5
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 342
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b552a6e21ef86549ad1ca8388aca642
+      internalID: 7485294033984036758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_6
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 316
+        width: 142
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16296400486731145be6097abc396722
+      internalID: -229346630224473088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_7
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 316
+        width: 129
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dffdfc6a3118d949bcef040e5e2ce82
+      internalID: -7469864479147385448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_8
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 316
+        width: 91
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709dae9643ac8fc48923c28a66968280
+      internalID: -2264811507414700365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_9
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 311
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87c5e03fe985b646b6cc4bb237a5a08
+      internalID: 7296499120464699232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_10
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 309
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797cc369ac8e2b94c8970c004e6a7339
+      internalID: -7611682855042660282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_11
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 201
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e21e06b72e28a4daa9111ad983e06c
+      internalID: -385327992933273534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_12
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 175
+        width: 141
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05052f81a85adf54d98d2f0a32713431
+      internalID: 4654827127722444630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_13
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 175
+        width: 142
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaeca18b0592e6b4aa3cf02358192dc9
+      internalID: -4890565124111239272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_14
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 170
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9797e9adbd5694483a9ce980452d67
+      internalID: 5593698571184992836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_15
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 154
+        width: 132
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3339e59c0b0c9f44b23e98d4d333a4e
+      internalID: -1129241042668674396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_16
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 193
+        width: 20
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30f06348b138f344a62759738833418
+      internalID: -5625975307353445437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 184
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2cb4e53d491514cabf2d2a73737f50
+      internalID: -8723112371961841303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 196
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb48e76edc7884498c67e5d2bd8d8f0
+      internalID: -8738962290656763015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_19
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 175
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7832ae2b13d0a24b81e064414d66826
+      internalID: -8494681761361415047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_20
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 0
+        width: 152
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d722e23de935c904f81a55d00c9adbbd
+      internalID: -7754059834043529412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_21
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 0
+        width: 152
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8129a6e84c5d54da8fa9fcaa6e155a
+      internalID: 485122412439444736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_22
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 0
+        width: 146
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058d7818519ab1b438e5ff6d8169acaa
+      internalID: 1864146076093780049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ingame_calp_skill_23
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 0
+        width: 138
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c9f066eb90d1149b98f70c11554c8c
+      internalID: -3634046508135499465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b42424c75dcb11c4f9214848e21d269c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
