@@ -17,7 +17,10 @@ namespace GameSaveData
         public int level;
         public int exp;
         public int gold;
-        public int fatigability;
+        public int cash;
+        public int fatigability; //피로도
+
+        //아이템 장착 정보 추가해야함
     }
 
     [System.Serializable]

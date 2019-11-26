@@ -50,7 +50,7 @@ public class DamageFont : MonoBehaviour
         for (int i = 0; i < damageStr.Length; ++i)
         {
             m_spriteRenderer[i].enabled = true;
-            m_spriteRenderer[i].sprite = currntSprites[(int)(damageStr[i] - '0')];
+            m_spriteRenderer[i].sprite  = currntSprites[(int)(damageStr[i] - '0')];
         }
 
         StartCoroutine(nameof(FontMove));

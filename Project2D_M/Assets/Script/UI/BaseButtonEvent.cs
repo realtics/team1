@@ -14,8 +14,8 @@ public class BaseButtonEvent : MonoBehaviour
 {
     public GameObject selectObject;
     public int eventNum;
-    public void OpenEventButton()
-    {
+    public void OpenEventButton() 
+    { 
         if(!selectObject)
         {
             Debug.Log("오픈할 버튼이 없습니다.");

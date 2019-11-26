@@ -32,8 +32,8 @@ public class AttackCollider : MonoBehaviour
             ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
             if (receiveDamage.enabled != false)
             {
-                receiveDamage.AddDamageForce(attackForce);
                 receiveDamage.Receive(m_damage, false);
+                receiveDamage.AddDamageForce(attackForce);
             }
         }
     }

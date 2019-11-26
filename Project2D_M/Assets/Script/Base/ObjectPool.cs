@@ -37,7 +37,7 @@ public class ObjectPool : Singletone<ObjectPool>
     {
         for (int ix = 0; ix < objectPool.Count; ++ix)
         {
-            if (objectPool[ix].poolItemName.Equals(itemName))
+            if (objectPool[ix].prefab.name.Equals(itemName))
                 return objectPool[ix];
         }
 

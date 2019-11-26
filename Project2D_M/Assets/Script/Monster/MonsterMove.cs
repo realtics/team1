@@ -31,8 +31,8 @@ public class MonsterMove : MonoBehaviour
         {
             Move(m_fSpeed);
         }
-        else
-            m_characterMove.MoveStop();
+        //else
+            //m_characterMove.MoveStop();
 
     }
 
@@ -55,5 +55,10 @@ public class MonsterMove : MonoBehaviour
     public void MoveDir()
     {
         Move(0.001f);
+    }
+
+    public CharacterMove GetMoveParent()
+    {
+        return m_characterMove;
     }
 }

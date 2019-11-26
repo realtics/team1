@@ -10,11 +10,14 @@ using UnityEngine;
  */
 public class MonsterInfo : CharacterInfo
 {
+    private float m_attackDistance;
     public struct MonsterCharInfo
     {
+        public int level;
         public int maxHp;
         public int attack;
         public int defensive;
+        public float attackDistance;
     }
 
     public override int DamageCalculation(int _damage)
@@ -27,9 +30,16 @@ public class MonsterInfo : CharacterInfo
 
     public void SetInfo(MonsterCharInfo _charInfo)
     {
+        level = _charInfo.level;
         maxHp = _charInfo.maxHp;
         hp = maxHp;
         attack = _charInfo.attack;
         defensive = _charInfo.defensive;
+        m_attackDistance = _charInfo.attackDistance;
+    }
+
+    public float GetAttackDistance()
+    {
+        return m_attackDistance;
     }
 }

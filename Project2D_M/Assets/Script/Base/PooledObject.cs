@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PooledObject
 {
-    public string poolItemName = string.Empty;
+    private string poolItemName = string.Empty;
     public GameObject prefab = null;
     public int poolCount = 0;
     [SerializeField]

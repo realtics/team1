@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
+[RequireComponent(typeof(CinemachineImpulseSource))]
 public class PlayerAttackCollider : AttackCollider
 {
     private PlayerInfo m_playerInfo = null;
+    private CinemachineImpulseSource m_cinemachineImpulse = null;
     private void Awake()
     {
         m_playerInfo = this.transform.root.GetComponent<PlayerInfo>();
         m_collider = this.GetComponent<PolygonCollider2D>();
-
+        m_cinemachineImpulse = this.GetComponent<CinemachineImpulseSource>();
         m_spineAnimCollider = this.GetComponent<SpineAnimCollider>();
     }
 
@@ -20,7 +23,11 @@ public class PlayerAttackCollider : AttackCollider
             ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
             if (receiveDamage.enabled != false)
             {
-                receiveDamage.AddDamageForce(attackForce);
+                if (attackForce != Vector2.zero)
+                {
+                    receiveDamage.AddDamageForce(attackForce);
+                    m_cinemachineImpulse.GenerateImpulse();
+                }
 
                 if (m_playerInfo.IsCritical())
                 {
@@ -32,6 +39,7 @@ public class PlayerAttackCollider : AttackCollider
                     receiveDamage.Receive(m_damage, false);
                 }
             }
+
         }
     }
 

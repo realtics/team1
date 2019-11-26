@@ -38,12 +38,13 @@ public class MonsterAI : MonoBehaviour
     private Transform m_playerTransform;
     private MonsterAttack m_monsterAttack;
     private AnimFuntion m_animFunction;
+    private MonsterHpBar m_monsterHpBar;
     private ReceiveDamage m_receiveDamage;
     private bool m_bLive;
 
     private Animator m_animator;
     public float speed;
-    public float attackDistance;
+    private float m_attackDistance;
 
     private readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
     private readonly int m_hashBLive = Animator.StringToHash("bLive");
@@ -51,7 +52,6 @@ public class MonsterAI : MonoBehaviour
     private readonly int m_hashBAppear = Animator.StringToHash("bAppear");
     private readonly int m_hashTHit = Animator.StringToHash("tHit");
     private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
-    private readonly int m_hashFDistanceToPlayer = Animator.StringToHash("fDistanceToPlayer");
 
     private WaitForSeconds m_secondsDelay = new WaitForSeconds(0.3f);
 
@@ -64,11 +64,12 @@ public class MonsterAI : MonoBehaviour
         StageManager.Inst.playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         m_playerTransform = StageManager.Inst.playerTransform;
 
-        attackDistance = 2.5f;
         m_eState = MONSTER_STATE.APPEAR;
 
         InitMonsterInfo();
         InitAniamation();
+
+        m_attackDistance = m_monsterInfo.GetAttackDistance();
 
         StageManager.Inst.AddMonsterCount();
     }
@@ -81,7 +82,8 @@ public class MonsterAI : MonoBehaviour
 
     private void Update()
     {
-
+        m_monsterHpBar.SetHPBar(m_monsterInfo);
+        m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
     }
     IEnumerator StateCheck()
     {
@@ -97,11 +99,15 @@ public class MonsterAI : MonoBehaviour
 
             float distanceToPlayer = Vector2.Distance(m_playerTransform.position, this.transform.position);
 
+
+            if (m_animFunction.GetCurrntAnimClipName() == "hit")
+                yield return null;
+
             if (m_monsterInfo.IsCharacterDie())
             {
                 m_eState = MONSTER_STATE.DIE;
             }
-            else if (distanceToPlayer < attackDistance)
+            else if (distanceToPlayer < m_attackDistance)
             {
                 m_eState = MONSTER_STATE.ATTACK;
             }
@@ -139,6 +145,7 @@ public class MonsterAI : MonoBehaviour
                             m_monsterMove.MoveDir();
                         m_monsterAttack.m_bAttack = true;
                         m_animator.SetFloat(m_hashFSpeed, 0);
+                        m_monsterMove.GetMoveParent().MoveStop();
                         //m_monsterMove.SetSpeed(0.0f);
                         break;
                     case MONSTER_STATE.HIT:
@@ -147,9 +154,10 @@ public class MonsterAI : MonoBehaviour
                         break;
                     case MONSTER_STATE.DIE:
                         m_monsterAttack.m_bAttack = false;
+                        m_monsterMove.isMove = false;
 
                         m_animator.SetBool(m_hashBLive, false);
-                        m_animator.SetTrigger("tDie");
+                        //m_animator.SetTrigger("tDie");
 
                         if (m_animFunction.GetCurrntAnimClipName() == "knockdown")
                         {
@@ -182,16 +190,20 @@ public class MonsterAI : MonoBehaviour
     void InitMonsterInfo()
     {
         MonsterInfo.MonsterCharInfo monsterCharInfo;
-        monsterCharInfo.maxHp = 10000;
+
+        monsterCharInfo.level = 1;
+        monsterCharInfo.maxHp = 300;
         monsterCharInfo.defensive = 10;
-        monsterCharInfo.attack = 10;
+        monsterCharInfo.attack = 100;
+        monsterCharInfo.attackDistance = 2.5f;
         m_monsterInfo = GetComponent<MonsterInfo>();
-        //m_monsterInfo.SetInfo(monsterCharInfo);
+        m_monsterInfo.SetInfo(monsterCharInfo);
 
         m_monsterMove = GetComponent<MonsterMove>();
         m_monsterAttack = GetComponent<MonsterAttack>();
         m_animFunction = transform.GetComponentInChildren<AnimFuntion>();
         m_receiveDamage = GetComponent<ReceiveDamage>();
+        m_monsterHpBar = GetComponentInChildren<MonsterHpBar>();
 
         m_monsterPosition = Monster_Position.Monster_Position_Ground;
 

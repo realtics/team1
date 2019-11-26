@@ -17,7 +17,6 @@ public class SpineAnimCollider : MonoBehaviour
     private SkeletonRenderer m_skeletonRenderer = null;
     private PolygonCollider2D m_meshCollider = null;
     private Transform m_objectTransform = null;
-
     private void Awake()
     {
         m_meshRenderer = this.GetComponent<MeshRenderer>();

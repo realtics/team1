@@ -12,8 +12,9 @@ public class PlayerInfo : CharacterInfo
 {
     //[Header("플레이어 추가 정보")]
 
-    public struct playerCharInfo
+    public struct PlayerCharInfo
     {
+        public int level;
         public int maxHp;
         public int attack;
         public int defensive;
@@ -23,11 +24,14 @@ public class PlayerInfo : CharacterInfo
     public override int DamageCalculation(int _damage)
     {
         int returnDamage = _damage - defensive;
+        if (returnDamage < 0)
+            returnDamage = 0;
         return returnDamage;
     }
 
-    public void SetInfo(playerCharInfo _charInfo)
+    public void SetInfo(PlayerCharInfo _charInfo)
     {
+        level = _charInfo.level;
         maxHp = _charInfo.maxHp;
         hp = maxHp;
         attack = _charInfo.attack;

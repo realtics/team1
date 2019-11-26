@@ -11,6 +11,7 @@ using UnityEngine;
 public class CharacterInfo : MonoBehaviour
 {
     [Header("캐릭터 정보")]
+    [SerializeField] protected int level = 1;
     [SerializeField] protected int maxHp = 100;
     [SerializeField] protected int hp = 100;
     [SerializeField] public int attack { get; protected set; } = 15;
@@ -20,11 +21,16 @@ public class CharacterInfo : MonoBehaviour
     public void HpDamage(int _damage)
     {
         hp -= _damage;
+
+        if (hp <= 0)
+            hp = 0;
     }
 
     public virtual int DamageCalculation(int _damage)
     {
         int returnDamage = _damage - defensive;
+        if (returnDamage < 0)
+            return 0;
         return returnDamage;
     }
 
@@ -48,5 +54,15 @@ public class CharacterInfo : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public int GetHP()
+    {
+        return hp;
+    }
+
+    public int GetMaxHP()
+    {
+        return maxHp;
     }
 }

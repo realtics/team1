@@ -1588,8 +1588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bceec71e3b5ba14ea6be635264377bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
   maxHp: 100
-  hp: 20
+  hp: 200000
   defensive: 0
   critical: 0
 --- !u!114 &4063295413354117836
@@ -1642,7 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81f182987d4a8c4d9d9e7acd98f8a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickState: 0
+  joystickState: 4
   m_fMoveSpeed: 10
   m_fJumpforce: 25
 --- !u!1 &4619171481762083628
@@ -1947,6 +1948,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed136dbcb806784d852caf46b986b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1844174782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863194669252827703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 20a705aea2d80e0478fb89b6f43d8530, type: 2}
+    m_AmplitudeGain: 0.1
+    m_FrequencyGain: 4
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.52
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
 --- !u!1001 &4619171482743780120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2014,13 +2056,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3244062987736181036, guid: 6a643a7d160a65b409baaf6ce4d5ea1d,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a643a7d160a65b409baaf6ce4d5ea1d, type: 3}
+--- !u!1 &7863194669252827703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3244062987736181039, guid: 6a643a7d160a65b409baaf6ce4d5ea1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4619171482743780120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7863194669252827699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3244062987736181035, guid: 6a643a7d160a65b409baaf6ce4d5ea1d,

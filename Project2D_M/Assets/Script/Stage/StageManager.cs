@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class StageManager :Singletone<StageManager>
 {
@@ -13,7 +15,7 @@ public class StageManager :Singletone<StageManager>
     private bool m_bUserDie = false;
 
     public int test = 0;
-
+    public TextMeshProUGUI thisText;
     public void Start()
     {
         m_playerInfo = m_playerTransform.GetComponent<CharacterInfo>();
@@ -28,7 +30,9 @@ public class StageManager :Singletone<StageManager>
         {
             m_endUI.SetActive(true);
         }
-        
+
+        thisText.text = m_playerInfo.GetHP().ToString();
+       
     }
 
     public void AddMonsterCount()

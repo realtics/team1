@@ -12,12 +12,14 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterMove))]
 [RequireComponent(typeof(CharacterJump))]
 [RequireComponent(typeof(PlayerNormalAttack))]
+[RequireComponent(typeof(PlayerEvasion))]
 public class PlayerInput : MonoBehaviour
 {
     private PlayerState     m_playerState = null;
     private CharacterMove   m_characterMove = null;
     private CharacterJump   m_characterJump = null;
     private PlayerNormalAttack m_playerNormalAttack = null;
+    private PlayerEvasion m_playerEvasion = null;
     private Animator    m_animator = null;
 
     private PlayerInfo temp;
@@ -34,6 +36,7 @@ public class PlayerInput : MonoBehaviour
         m_characterJump  = this.GetComponent<CharacterJump>();
         m_animator = this.GetComponentInChildren<Animator>();
         m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
+        m_playerEvasion = this.GetComponent<PlayerEvasion>();
 
         temp = this.GetComponent<PlayerInfo>();
     }
@@ -43,6 +46,7 @@ public class PlayerInput : MonoBehaviour
         MoveInput();
         JumpInput();
         AttackInput();
+        Evasion();
     }
 
     private void OnDisable()
@@ -111,6 +115,14 @@ public class PlayerInput : MonoBehaviour
         {
             m_playerState.PlayerStateAttack();
             m_playerNormalAttack.NormalAttack();
+        }
+    }
+
+    private void Evasion()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            m_playerEvasion.Evasion();
         }
     }
 }

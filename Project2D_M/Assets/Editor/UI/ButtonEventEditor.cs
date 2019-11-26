@@ -42,13 +42,14 @@ public class ButtonEventEditor : Editor
             m_buttonEvent.selectObject = (GameObject)EditorGUILayout.ObjectField("Select Object", m_buttonEvent.selectObject,typeof(GameObject),true);
             EditorGUILayout.EndHorizontal();
         }
+
         if (m_buttonEvent.eventNum == (int)EVENT_TYPE.ANIMATION)
         {
             EditorGUILayout.BeginHorizontal();
             m_buttonEvent.selectObject = (GameObject)EditorGUILayout.ObjectField("Select Object", m_buttonEvent.selectObject, typeof(GameObject), true);
             EditorGUILayout.EndHorizontal();
         }
-
+        
         if (GUI.changed)
         {
             EditorUtility.SetDirty(target);

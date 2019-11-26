@@ -2,38 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameSaveData;
+using GameSaveDataIO;
 
-public class GameDataManager : Singletone<GameDataManager>
+public class GameDataManager : MonoBehaviour
 {
     public string dataname = "Data.dat";
 
+    public PlayerDataScriptableObject dataIO;
     private SaveData data;
     private void Awake()
     {
-        data = BinaryManager.Load<SaveData>(dataname);
-        if(data == null)
+        DontDestroyOnLoad(gameObject);
+        data = BinaryManager.Load<SaveData>(Application.dataPath + dataname);
+        if (data == null)
             InitData();
+
+        if (dataIO == null)
+            dataIO = (PlayerDataScriptableObject)Resources.Load("Data/PlayerDataScript");
+
+        data.playerData.level = dataIO.level;
+        data.playerData.exp = dataIO.exp;
+        data.playerData.gold = dataIO.gold;
+        data.playerData.cash = dataIO.cash;
+        data.playerData.fatigability = dataIO.fatigability;
+
+        BinaryManager.Save(data, dataname);
     }
 
-    public PlayerData getPlayerData()
+    public PlayerData GetPlayerData()
     {
         return data.playerData;
     }
 
-    private void OnGUI()
+    public void SavePlayerData(GameSaveData.PlayerData _playerData)
     {
-        if (GUI.Button(new Rect(10, 10, 200, 20), "Save"))
-        {
-            BinaryManager.Save(data, dataname);
-        }
+        data.playerData = _playerData;
 
-        if (GUI.Button(new Rect(10, 30, 200, 20), "LV_Up"))
-        {
-            data.playerData.level += 1;
-        }
+        dataIO.level = data.playerData.level;
+        dataIO.exp = data.playerData.exp;
+        dataIO.gold = data.playerData.gold;
+        dataIO.cash = data.playerData.cash;
+        dataIO.fatigability = data.playerData.fatigability;
 
-        GUI.Box(new Rect(10, 60, 100, 20), "Level :" + data.playerData.level);
+        BinaryManager.Save(data, dataname);
     }
+
 
     private void InitData()
     {
@@ -46,5 +59,6 @@ public class GameDataManager : Singletone<GameDataManager>
         data.playerData.fatigability = 25;
 
         data.stageData = new StageData();
+        BinaryManager.Save(data, dataname);
     }
 }
