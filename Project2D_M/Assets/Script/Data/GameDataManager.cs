@@ -57,8 +57,6 @@ public class GameDataManager : MonoBehaviour
         data.playerData.exp = 0;
         data.playerData.gold = 0;
         data.playerData.fatigability = 25;
-
-        data.stageData = new StageData();
         BinaryManager.Save(data, dataname);
     }
 }

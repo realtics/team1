@@ -12,13 +12,21 @@ public class CrowdControlManager : MonoBehaviour
 {
     protected CharacterMove m_characterMove = null;
     protected CharacterJump m_characterJump = null;
+    protected ReceiveDamage m_receiveDamage = null;
+
     protected bool m_bStiffen = false;
+    protected bool m_bImpenetrable = false;
     private void Awake()
     {
         m_characterMove = this.GetComponent<CharacterMove>();
         m_characterJump = this.GetComponent<CharacterJump>();
+        m_receiveDamage = this.GetComponent<ReceiveDamage>();
     }
 
+    /// <summary>
+    /// 경직
+    /// </summary>
+    /// <param name="_second"></param>
     public virtual void Stiffen(float _second)
     {
         if (m_bStiffen == false)
@@ -49,6 +57,48 @@ public class CrowdControlManager : MonoBehaviour
             m_characterJump.enabled = true;
 
         m_bStiffen = false;
+    }
 
+    /// <summary>
+    /// 무적(시간)
+    /// </summary>
+    public virtual void Impenetrable(float _second)
+    {
+        if (m_bImpenetrable == false)
+            StartCoroutine(nameof(ImpenetrableCoroutine), _second);
+        else
+        {
+            StopCoroutine(nameof(ImpenetrableCoroutine));
+            StartCoroutine(nameof(ImpenetrableCoroutine), _second);
+        }
+    }
+
+    /// <summary>
+    /// 무적 킴
+    /// </summary>
+    public virtual void ImpenetrableOn()
+    {
+        m_bImpenetrable = true;
+        m_receiveDamage.enabled = false;
+    }
+
+    /// <summary>
+    /// 무적 끄기
+    /// </summary>
+    public virtual void ImpenetrableOff()
+    {
+        m_receiveDamage.enabled = true;
+        m_bImpenetrable = false;
+    }
+
+    IEnumerator ImpenetrableCoroutine(float _second)
+    {
+        m_bImpenetrable = true;
+        m_receiveDamage.enabled = false;
+
+        yield return new WaitForSeconds(_second);
+
+        m_receiveDamage.enabled = true;
+        m_bImpenetrable = false;
     }
 }

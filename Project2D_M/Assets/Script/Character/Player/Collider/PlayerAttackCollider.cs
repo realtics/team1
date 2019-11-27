@@ -8,9 +8,11 @@ public class PlayerAttackCollider : AttackCollider
 {
     private PlayerInfo m_playerInfo = null;
     private CinemachineImpulseSource m_cinemachineImpulse = null;
+    private PlayerCombo m_playerCombo = null;
     private void Awake()
     {
         m_playerInfo = this.transform.root.GetComponent<PlayerInfo>();
+        m_playerCombo = this.transform.root.GetComponent<PlayerCombo>();
         m_collider = this.GetComponent<PolygonCollider2D>();
         m_cinemachineImpulse = this.GetComponent<CinemachineImpulseSource>();
         m_spineAnimCollider = this.GetComponent<SpineAnimCollider>();
@@ -38,6 +40,8 @@ public class PlayerAttackCollider : AttackCollider
                 {
                     receiveDamage.Receive(m_damage, false);
                 }
+
+                m_playerCombo.plusCombo();
             }
 
         }

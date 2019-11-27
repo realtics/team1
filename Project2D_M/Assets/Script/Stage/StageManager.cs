@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 
 public class StageManager :Singletone<StageManager>
 {
@@ -11,11 +11,17 @@ public class StageManager :Singletone<StageManager>
     private CharacterInfo m_playerInfo;
     private GameObject m_endUI;
 
+    [SerializeField]
     private int m_iMonsterCount = 0;
     private bool m_bUserDie = false;
 
-    public int test = 0;
-    public TextMeshProUGUI thisText;
+    //playerUI _ hp
+    [SerializeField]
+    private TextMeshProUGUI thisText = null;
+    [SerializeField]
+    private CharacterHpBar m_playerHpBar = null;
+
+
     public void Start()
     {
         m_playerInfo = m_playerTransform.GetComponent<CharacterInfo>();
@@ -25,14 +31,13 @@ public class StageManager :Singletone<StageManager>
     public void Update()
     {
         m_bUserDie = m_playerInfo.IsCharacterDie();
-        test = m_iMonsterCount;
         if(m_iMonsterCount <= 0 || m_bUserDie)
         {
             m_endUI.SetActive(true);
         }
+        UpdatePlayerUI();
 
-        thisText.text = m_playerInfo.GetHP().ToString();
-       
+
     }
 
     public void AddMonsterCount()
@@ -67,4 +72,11 @@ public class StageManager :Singletone<StageManager>
             m_playerTransform = value;
         }
     }
+
+    private void UpdatePlayerUI()
+    {
+        thisText.text = m_playerInfo.GetHP().ToString();
+        m_playerHpBar.SetHPBar(m_playerInfo);
+    }
+
 }

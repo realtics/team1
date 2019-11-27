@@ -18,10 +18,11 @@ public class PlayerNormalAttack : MonoBehaviour
         }
     }
 
+    public EffectAnimFuntion m_effectAnimFuntion;
+
     private Dictionary<string, AttackInfo> m_NormalAttackDic;
     private Rigidbody2D m_rigidbody2D = null;
     private AnimFuntion m_animFuntion = null;
-    private SkeletonAnimation m_skeletonAnimation = null;
     private CharacterMove m_characterMove = null;
     private AttackManager m_attackCollider = null;
     private PlayerState m_playerState = null;
@@ -32,7 +33,6 @@ public class PlayerNormalAttack : MonoBehaviour
     {
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<AnimFuntion>();
-        m_skeletonAnimation = this.transform.Find("AttackManager").transform.Find("NormalAttacks").GetComponent<SkeletonAnimation>();
         m_characterMove = this.GetComponent<CharacterMove>();
         m_attackCollider = this.transform.Find("AttackManager").GetComponent<AttackManager>();
         m_playerState = this.GetComponent<PlayerState>();
@@ -72,6 +72,7 @@ public class PlayerNormalAttack : MonoBehaviour
 
         if (!m_bAttacking)
         {
+            m_effectAnimFuntion.EffectOn();
             StartCoroutine(AttackCoroutine());
             m_bAttacking = true;
         }
@@ -80,8 +81,6 @@ public class PlayerNormalAttack : MonoBehaviour
     private IEnumerator AttackCoroutine()
     {
         yield return 0;
-
-        PlayerState playerState = GetComponent<PlayerState>();
 
         if (!m_animFuntion.IsTag("NormalAttack"))
         {
@@ -107,6 +106,7 @@ public class PlayerNormalAttack : MonoBehaviour
             if (!m_animFuntion.IsTag("NormalAttack"))
             {
                 PlayEndSwitch(m_sAnimName);
+                m_effectAnimFuntion.EffectOff();
                 break;
             }
 
@@ -116,8 +116,11 @@ public class PlayerNormalAttack : MonoBehaviour
         m_bAttacking = false;
         m_sAnimName = "";
 
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        m_rigidbody2D.AddForce(new Vector2(0.1f, 0.1f));
+        if (!m_playerState.IsPlayerEvasion())
+        {
+            m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+            m_rigidbody2D.AddForce(new Vector2(0.1f, 0.1f));
+        }
     }
 
     private void PlayAnimEffect(string _animName)
@@ -127,16 +130,16 @@ public class PlayerNormalAttack : MonoBehaviour
             switch (_animName)
             {
                 case "attack_3":
-                    m_skeletonAnimation.AnimationState.SetAnimation(0, "attack_3_1", false);
+                    m_effectAnimFuntion.EffectPlay("attack_3_1", false);
                     break;
                 case "attack_upper":
-                    m_skeletonAnimation.AnimationState.SetAnimation(0, "upper", false);
+                    m_effectAnimFuntion.EffectPlay("upper", false);
                     break;
                 case "attack_downsmash":
-                    m_skeletonAnimation.AnimationState.SetAnimation(0, "downsmash", false);
+                    m_effectAnimFuntion.EffectPlay("downsmash", false);
                     break;
                 default:
-                    m_skeletonAnimation.AnimationState.SetAnimation(0, _animName, false);
+                    m_effectAnimFuntion.EffectPlay(_animName, false);
                     break;
             }
         }
@@ -212,7 +215,7 @@ public class PlayerNormalAttack : MonoBehaviour
     {
         m_characterMove.MoveStop();
         m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic["attack_3_2"].damageRatio, "Monster", m_NormalAttackDic["attack_3_2"].damageForce);
-        m_skeletonAnimation.AnimationState.SetAnimation(0, "attack_3_2", false);
+        m_effectAnimFuntion.EffectPlay("attack_3_2", false);
     }
 
     private void UpperJump()

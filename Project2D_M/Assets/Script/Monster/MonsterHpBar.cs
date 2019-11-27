@@ -6,17 +6,40 @@ using UnityEngine.UI;
 public class MonsterHpBar : MonoBehaviour
 {
     [SerializeField]
-    private Image hpbar = null;
-    private MonsterInfo m_monsterInfo;
-    
-    public void SetHPBar(MonsterInfo _info)
+    protected Image hpBar = null;
+    [SerializeField]
+    protected Image mainHpBar = null;
+    [SerializeField]
+    protected Image damageBar = null;
+
+    private float m_fDamgeTime;
+    private const float DAMAGE_MAX_TIME = 1.0f;
+
+    private void Update()
+    {
+        m_fDamgeTime -= Time.deltaTime;
+        if(m_fDamgeTime<0)
+        {
+            if(hpBar.fillAmount < damageBar.fillAmount)
+            {
+                float speed = 0.5f;
+                damageBar.fillAmount -= speed * Time.deltaTime;
+            }
+        }
+    }
+
+    public void SetHPBar(CharacterInfo _info)
     {
         float maxhp = _info.GetMaxHP(); ;
         float hp = _info.GetHP();
 
-        hpbar.fillAmount = hp / maxhp;
+        hpBar.fillAmount = hp / maxhp;
+        if(m_fDamgeTime >0)
+            m_fDamgeTime = DAMAGE_MAX_TIME;
+        if (mainHpBar != null)
+            mainHpBar.fillAmount = hp / maxhp;
     }
-    
+
     public void SetHpBarDirection(float _x)
     {
         Vector3 a = this.transform.localScale;

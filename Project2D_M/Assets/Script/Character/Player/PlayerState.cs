@@ -30,6 +30,7 @@ public class PlayerState : MonoBehaviour
     {
         PLAYER_STATE_STAND, //대기상태(서 있거나 이동할 때)
         PLAYER_STATE_ATTACK,
+        PlAYER_STATE_EVASION,
         PLAYER_STATE_JUMP,
     }
 
@@ -67,6 +68,14 @@ public class PlayerState : MonoBehaviour
     }
 
     /// <summary>
+    /// 플레이어 상태를 회비로
+    /// </summary>
+    public void PlayerStateEvasion()
+    {
+        m_actionState = PLAYER_STATE_ACTION.PlAYER_STATE_EVASION;
+    }
+
+    /// <summary>
     /// 플레이어가 한번 점프한 상태
     /// </summary>
     public void PlayerStateJump()
@@ -87,14 +96,36 @@ public class PlayerState : MonoBehaviour
     }
     
     /// <summary>
-    /// 플레이어가 대기상태인가?
+    /// 플레이어가 이동 조작이 가능한가?
     /// </summary>
-    public bool IsPlayerAttack()
+    public bool IsPlayerMove()
     {
-        if (m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK)
+        if (m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK || m_actionState == PLAYER_STATE_ACTION.PlAYER_STATE_EVASION)
+            return false;
+
+        return true;
+    }
+
+
+    /// <summary>
+    /// 플레이어가 회피상태인가?
+    /// </summary>
+    public bool IsPlayerEvasion()
+    {
+        if (m_actionState == PLAYER_STATE_ACTION.PlAYER_STATE_EVASION)
             return true;
 
         return false;
+    }
+
+    /// <summary>
+    /// 플레이어가 오른쪽을 보는가?
+    /// </summary>
+    public bool IsPlayerLookRight()
+    {
+        if (this.transform.localScale.x < 0)
+            return false;
+        return true;
     }
 
     /// <summary>

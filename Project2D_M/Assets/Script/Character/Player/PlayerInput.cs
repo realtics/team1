@@ -28,6 +28,8 @@ public class PlayerInput : MonoBehaviour
     private float m_fMoveSpeed = 10.0f;
     [SerializeField]
     private float m_fJumpforce = 25.0f;
+    [SerializeField]
+    private GameObject m_underUI;
 
     void Start()
     {
@@ -56,7 +58,7 @@ public class PlayerInput : MonoBehaviour
 
     private void MoveInput()
     {
-        if (m_playerState.IsPlayerAttack())
+        if (!m_playerState.IsPlayerMove())
         {
             return;
         }
@@ -70,11 +72,13 @@ public class PlayerInput : MonoBehaviour
         {
             m_animator.SetBool("bMove", true);
             m_characterMove.MoveLeft(_speed);
+            m_underUI.transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
             m_animator.SetBool("bMove", true);
             m_characterMove.MoveRight(_speed);
+            m_underUI.transform.localScale= new Vector3(1,1,1);
         }
         else
         {
@@ -85,7 +89,7 @@ public class PlayerInput : MonoBehaviour
 
     private void JumpInput()
     {
-        if (Input.GetButtonDown("Jump") && !m_playerState.IsPlayerAttack())
+        if (Input.GetButtonDown("Jump") && m_playerState.IsPlayerMove())
         {
             if (m_playerState.IsPlayerDoubleJump())
             {
@@ -122,6 +126,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
+            m_playerState.PlayerStateEvasion();
             m_playerEvasion.Evasion();
         }
     }

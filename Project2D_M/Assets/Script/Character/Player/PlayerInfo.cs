@@ -10,8 +10,8 @@ using UnityEngine;
  */
 public class PlayerInfo : CharacterInfo
 {
-    //[Header("플레이어 추가 정보")]
-
+    [Header("플레이어 추가 정보")]
+    [SerializeField]private int maxCombo = 0;
     public struct PlayerCharInfo
     {
         public int level;
@@ -37,5 +37,11 @@ public class PlayerInfo : CharacterInfo
         attack = _charInfo.attack;
         defensive = _charInfo.defensive;
         critical = _charInfo.critical;
+    }
+
+    public void SetMaxCombo(int _maxCombo)
+    {
+        if(_maxCombo > maxCombo)
+            maxCombo = _maxCombo;
     }
 }

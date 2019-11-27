@@ -65,4 +65,9 @@ public class CharacterInfo : MonoBehaviour
     {
         return maxHp;
     }
+
+    public int GetMaxMp()
+    {
+        return 0;
+    }
 }

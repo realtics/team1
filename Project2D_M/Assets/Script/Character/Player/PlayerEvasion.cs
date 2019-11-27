@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerEvasion : MonoBehaviour
 {
+    [SerializeField] private float m_speed = 800.0f;
+    [SerializeField] private float m_speedAir = 700.0f;
     [SerializeField] private int m_count = 3;
     private bool m_bCoroutinePlay = false;
     private bool m_bEvasion = false;
@@ -12,6 +14,7 @@ public class PlayerEvasion : MonoBehaviour
     private Rigidbody2D m_rigidbody2D = null;
     private CharacterMove m_characterMove = null;
     private PlayerUiInput m_playerUiInput = null;
+    private PlayerCrowdControlManager m_crowdControlManager = null;
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class PlayerEvasion : MonoBehaviour
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_characterMove = this.GetComponent<CharacterMove>();
         m_playerUiInput = this.GetComponent<PlayerUiInput>();
+        m_crowdControlManager = this.GetComponent<PlayerCrowdControlManager>();
     }
 
     public void Evasion()
@@ -59,21 +63,18 @@ public class PlayerEvasion : MonoBehaviour
 
     IEnumerator EvasionCoroutine()
     {
+        m_crowdControlManager.ImpenetrableOn();
+        yield return new WaitForSeconds(0.1f);
 
-        yield return 0;
-
-        //if (!m_animFuntion.IsTag("Evasion"))
-        //{
-        //    m_bEvasion = false;
-        //    yield break;
-        //}
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-        AddMeve(10.0f);
-        Debug.Log(m_rigidbody2D.velocity);
+        if (!m_playerState.IsPlayerGround())
+        {
+            m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            AddMeve(m_speedAir);
+        }
+        else AddMeve(m_speed);
 
         while (true)
         {
-            Debug.Log(m_animFuntion.GetCurrntAnimClipName());
             if (!m_animFuntion.IsTag("Evasion"))
             {
                 break;
@@ -83,24 +84,21 @@ public class PlayerEvasion : MonoBehaviour
         }
 
         m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        m_rigidbody2D.AddForce(new Vector2(0.1f, 0.1f));
+        m_rigidbody2D.velocity = new Vector2(0.0f, 0.1f);
         m_bEvasion = false;
+        m_crowdControlManager.ImpenetrableOff();
+
+        if (m_playerState.IsPlayerGround())
+            m_playerState.PlayerStateReset();
+        else m_playerState.PlayerStateDoubleJump();
     }
 
     private void AddMeve(float _speed)
     {
-        if (Input.GetAxisRaw("Horizontal") < 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT)
-        {
-            m_characterMove.MoveLeft(_speed);
-        }
-        else if (Input.GetAxisRaw("Horizontal") > 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_RIGHT)
-        {
-            m_characterMove.MoveRight(_speed);
-        }
-        else if (Input.GetAxisRaw("Horizontal") == 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_CENTER)
-        {
-
-        }
+        m_rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
+        if (m_playerState.IsPlayerLookRight())
+            m_rigidbody2D.AddForce(new Vector2(_speed, 0.0f));
+        else m_rigidbody2D.AddForce(new Vector2(-_speed, 0.0f));
 
     }
 }

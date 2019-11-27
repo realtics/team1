@@ -7,7 +7,6 @@ namespace GameSaveData
     public class SaveData
     {
         public PlayerData playerData;
-        public StageData stageData;
     }
 
     [System.Serializable]
@@ -21,11 +20,5 @@ namespace GameSaveData
         public int fatigability; //피로도
 
         //아이템 장착 정보 추가해야함
-    }
-
-    [System.Serializable]
-    public class StageData
-    {
-
     }
 }

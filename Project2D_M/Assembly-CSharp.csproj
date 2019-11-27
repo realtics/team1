@@ -86,6 +86,7 @@
     <Compile Include="Assets\Script\Character\Common\CharacterJump.cs" />
     <Compile Include="Assets\Script\Character\Common\CharacterMove.cs" />
     <Compile Include="Assets\Script\Character\Common\CrowdControlManager.cs" />
+    <Compile Include="Assets\Script\Character\Common\EffectAnimFuntion.cs" />
     <Compile Include="Assets\Script\Character\Common\ReceiveDamage.cs" />
     <Compile Include="Assets\Script\Character\Common\SpineAnimCollider.cs" />
     <Compile Include="Assets\Script\Character\Player\Anim\PlayerAnimToState.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerFootCollision.cs" />
     <Compile Include="Assets\Script\Character\Player\DamageFont.cs" />
     <Compile Include="Assets\Script\Character\Player\DamageFontManager.cs" />
+    <Compile Include="Assets\Script\Character\Player\PlayerCombo.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerCrowdControlManager.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerEvasion.cs" />
     <Compile Include="Assets\Script\Character\Player\PlayerInfo.cs" />
@@ -105,10 +107,14 @@
     <Compile Include="Assets\Script\Data\BinaryManager.cs" />
     <Compile Include="Assets\Script\Data\GameDataManager.cs" />
     <Compile Include="Assets\Script\Data\GameSaveData.cs" />
+    <Compile Include="Assets\Script\Data\Item\ItemData.cs" />
+    <Compile Include="Assets\Script\Data\Item\ItemDataManager.cs" />
+    <Compile Include="Assets\Script\Data\Item\ItemDataObject.cs" />
     <Compile Include="Assets\Script\Data\PlayerDataManager.cs" />
     <Compile Include="Assets\Script\Data\PlayerDataScriptableObject.cs" />
     <Compile Include="Assets\Script\Data\StagePlayerDataLode.cs" />
     <Compile Include="Assets\Script\Monster\AttackToEffectAnim.cs" />
+    <Compile Include="Assets\Script\Monster\CharacterHpBar.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAI.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAnimation.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAttack.cs" />
@@ -123,6 +129,8 @@
     <Compile Include="Assets\Script\Stage\StageManager.cs" />
     <Compile Include="Assets\Script\UI\AtlasSeparator.cs" />
     <Compile Include="Assets\Script\UI\BaseButtonEvent.cs" />
+    <Compile Include="Assets\Script\UI\ComboUI.cs" />
+    <Compile Include="Assets\Script\UI\ComboUIManager.cs" />
     <Compile Include="Assets\Script\UI\ControllerUIEvent.cs" />
     <Compile Include="Assets\Script\UI\InfoFillAmount.cs" />
     <Compile Include="Assets\Script\UI\InfoText.cs" />
@@ -248,7 +256,7 @@
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\ShaderShared.cginc" />
     <None Include="Assets\Spine\spine-unity\Modules\CustomMaterials\SkeletonRendererCustomMaterials.txt" />
     <None Include="Assets\Resources\Monster\New Folder\character_lupe.atlas.txt" />
-    <None Include="Assets\Resources\UI\DamageFont\DamageFont_ArmorBreak.atlas.txt" />
+    <None Include="Assets\Resources\UI\ImageFont\DamageFont_ArmorBreak.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Straight Alpha\Spine-Straight-Skeleton-Tint.shader" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

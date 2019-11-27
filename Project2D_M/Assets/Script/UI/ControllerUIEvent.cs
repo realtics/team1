@@ -9,6 +9,7 @@ public class ControllerUIEvent : MonoBehaviour
     [SerializeField] private JoyStick m_joyStick;
     [SerializeField] private EventTrigger m_normalAttackEvent;
     [SerializeField] private EventTrigger m_jumpEvent;
+    [SerializeField] private EventTrigger m_evasionEvent;
 
     // Start is called before the first frame update
     private void Start()
@@ -16,6 +17,7 @@ public class ControllerUIEvent : MonoBehaviour
         JoyStickConnect();
         NormalAttackConnect();
         JumpConnect();
+        EvasionConnect();
     }
 
     private void JoyStickConnect()
@@ -68,5 +70,14 @@ public class ControllerUIEvent : MonoBehaviour
         dounEvent.callback.AddListener(BaseEventData => m_playerUiInput.JumpInput());
 
         m_jumpEvent.triggers.Add(dounEvent);
+    }
+
+    private void EvasionConnect()
+    {
+        EventTrigger.Entry dounEvent = new EventTrigger.Entry();
+        dounEvent.eventID = EventTriggerType.PointerDown;
+        dounEvent.callback.AddListener(BaseEventData => m_playerUiInput.EvasionInput());
+
+        m_evasionEvent.triggers.Add(dounEvent);
     }
 }

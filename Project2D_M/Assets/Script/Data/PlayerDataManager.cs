@@ -25,7 +25,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
     private void Awake()
     {
         m_dataManager = this.GetComponent<GameDataManager>();
-
     }
 
     private void Start()

@@ -19,6 +19,7 @@ public class PlayerCrowdControlManager : CrowdControlManager
         m_characterJump = this.GetComponent<CharacterJump>();
         m_playerInput = this.GetComponent<PlayerInput>();
         m_playerUiInput = this.GetComponent<PlayerUiInput>();
+        m_receiveDamage = this.GetComponent<ReceiveDamage>();
     }
 
     public override void Stiffen(float _second)
