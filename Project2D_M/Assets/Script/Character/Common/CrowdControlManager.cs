@@ -79,7 +79,7 @@ public class CrowdControlManager : MonoBehaviour
     public virtual void ImpenetrableOn()
     {
         m_bImpenetrable = true;
-        m_receiveDamage.enabled = false;
+        m_receiveDamage.bScriptEnable = false;
     }
 
     /// <summary>
@@ -87,18 +87,18 @@ public class CrowdControlManager : MonoBehaviour
     /// </summary>
     public virtual void ImpenetrableOff()
     {
-        m_receiveDamage.enabled = true;
+        m_receiveDamage.bScriptEnable = true;
         m_bImpenetrable = false;
     }
 
     IEnumerator ImpenetrableCoroutine(float _second)
     {
         m_bImpenetrable = true;
-        m_receiveDamage.enabled = false;
+        m_receiveDamage.bScriptEnable = false;
 
         yield return new WaitForSeconds(_second);
 
-        m_receiveDamage.enabled = true;
+        m_receiveDamage.bScriptEnable = true;
         m_bImpenetrable = false;
     }
 }

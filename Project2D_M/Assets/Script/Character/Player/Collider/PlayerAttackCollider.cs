@@ -28,7 +28,12 @@ public class PlayerAttackCollider : AttackCollider
                 if (attackForce != Vector2.zero)
                 {
                     receiveDamage.AddDamageForce(attackForce);
-                    m_cinemachineImpulse.GenerateImpulse();
+                    if(m_playerInfo.IsCritical())
+                    {
+                        m_cinemachineImpulse.GenerateImpulse(new Vector3(10f, 10f, 0f));
+                        Debug.Log("crei");
+                    }
+                    else m_cinemachineImpulse.GenerateImpulse();
                 }
 
                 if (m_playerInfo.IsCritical())

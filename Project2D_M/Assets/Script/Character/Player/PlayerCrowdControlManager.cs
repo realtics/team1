@@ -35,17 +35,17 @@ public class PlayerCrowdControlManager : CrowdControlManager
 
     IEnumerator StiffenCoroutine(float _second)
     {
-        if (m_playerInput.enabled == true)
+        if (m_playerInput.bScriptEnable == true)
         {
-            m_playerInput.enabled = false;
+            m_playerInput.bScriptEnable = false;
             yield return new WaitForSeconds(_second);
-            m_playerInput.enabled = true;
+            m_playerInput.bScriptEnable = true;
         }
-        else if (m_playerUiInput.enabled == true)
+        else if (m_playerUiInput.bScriptEnable == true)
         {
-            m_playerUiInput.enabled = false;
+            m_playerUiInput.bScriptEnable = false;
             yield return new WaitForSeconds(_second);
-            m_playerUiInput.enabled = true;
+            m_playerUiInput.bScriptEnable = true;
         }
     }
 }

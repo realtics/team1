@@ -13,7 +13,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterJump))]
 [RequireComponent(typeof(PlayerNormalAttack))]
 [RequireComponent(typeof(PlayerEvasion))]
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : ScriptEnable
 {
     private PlayerState     m_playerState = null;
     private CharacterMove   m_characterMove = null;
@@ -45,6 +45,9 @@ public class PlayerInput : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!bScriptEnable)
+            return;
+
         MoveInput();
         JumpInput();
         AttackInput();

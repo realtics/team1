@@ -6141,6 +6141,7 @@ GameObject:
   - component: {fileID: 6470256990398865311}
   - component: {fileID: 6470256990398865304}
   - component: {fileID: 6470256991056701802}
+  - component: {fileID: 947391406}
   m_Layer: 5
   m_Name: StopButton
   m_TagString: Untagged
@@ -6258,6 +6259,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 947391406}
+        m_MethodName: PulseOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6470256991056701802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6272,6 +6284,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectObject: {fileID: 5919499782875553299}
   eventNum: 0
+--- !u!114 &947391406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470256990398865306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cd58e7c139df24584f974511d177b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6470256990403743816
 GameObject:
   m_ObjectHideFlags: 0
@@ -7288,6 +7312,7 @@ GameObject:
   - component: {fileID: 6470256990519574231}
   - component: {fileID: 6470256990519574229}
   - component: {fileID: 6470256990519574230}
+  - component: {fileID: 68491464}
   m_Layer: 5
   m_Name: LevelText
   m_TagString: Untagged
@@ -7434,6 +7459,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &68491464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470256990519574224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dbb04b0b7bfc741893a4aee3831030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoData: 0
+  thisText: {fileID: 6470256990519574230}
 --- !u!1 &6470256990541384091
 GameObject:
   m_ObjectHideFlags: 0
@@ -12762,6 +12801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6470256991619679889}
   - component: {fileID: 6470256991619679888}
+  - component: {fileID: 916223819}
   m_Layer: 5
   m_Name: HPText
   m_TagString: Untagged
@@ -12816,6 +12856,20 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &916223819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470256991619679890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dbb04b0b7bfc741893a4aee3831030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoData: 1
+  thisText: {fileID: 6470256991597210664}
 --- !u!1 &6470256991624790705
 GameObject:
   m_ObjectHideFlags: 0
@@ -14398,6 +14452,7 @@ GameObject:
   - component: {fileID: 2410951444585389834}
   - component: {fileID: 8372832303888073518}
   - component: {fileID: 6470256991056701800}
+  - component: {fileID: 433463018}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -14516,6 +14571,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 433463018}
+        m_MethodName: PulseOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6470256991056701800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14530,6 +14596,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectObject: {fileID: 5919499782875553299}
   eventNum: 0
+--- !u!114 &433463018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919039258036117442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cd58e7c139df24584f974511d177b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7491254300854782608
 GameObject:
   m_ObjectHideFlags: 0

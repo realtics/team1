@@ -41,8 +41,8 @@ public class PlayerNormalAttack : MonoBehaviour
 
         m_NormalAttackDic = new Dictionary<string, AttackInfo>();
 
-        m_NormalAttackDic.Add("attack_1", new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
-        m_NormalAttackDic.Add("attack_2", new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
+        m_NormalAttackDic.Add("attack_1", new AttackInfo(1.0f, new Vector2(2.0f, 3f)));
+        m_NormalAttackDic.Add("attack_2", new AttackInfo(1.0f, new Vector2(2.0f, 3f)));
         m_NormalAttackDic.Add("attack_3_1", new AttackInfo(0.5f, new Vector2(2.0f, 5.0f)));
         m_NormalAttackDic.Add("attack_3_2", new AttackInfo(2.0f, new Vector2(2.0f, -10.0f)));
         m_NormalAttackDic.Add("attack_4", new AttackInfo(3.0f, new Vector2(2.0f, 10.0f)));

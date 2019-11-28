@@ -416,6 +416,36 @@ MonoBehaviour:
   scale: 1
   zPosition: 1
   overrideAlpha: 1
+--- !u!1 &643674258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 643674259}
+  m_Layer: 9
+  m_Name: LookAtPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &643674259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643674258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4619171480891344489}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &687550393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,6 +1508,7 @@ Transform:
   - {fileID: 4619171481762083631}
   - {fileID: 1783790160987964609}
   - {fileID: 193141571675277998}
+  - {fileID: 643674259}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1514,6 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218bda08f2b20d14c862f77d9e2d1520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bScriptEnable: 1
   m_fMoveSpeed: 10
   m_fJumpforce: 17
   m_underUI: {fileID: 193141571675277993}
@@ -1542,6 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344e9cf3d92dc4a4c8944b093a80e079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bScriptEnable: 1
 --- !u!114 &77044988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,6 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b929dbd149006914d9681dc2aa0fbd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bScriptEnable: 1
 --- !u!114 &77044991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1611,6 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e9eb3ec48005b4eb0a4ce62b7aa472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bScriptEnable: 1
 --- !u!61 &1188840288893757484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1644,11 +1679,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4619171480891344486}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b81f182987d4a8c4d9d9e7acd98f8a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bScriptEnable: 0
   joystickState: 4
   m_fMoveSpeed: 10
   m_fJumpforce: 17

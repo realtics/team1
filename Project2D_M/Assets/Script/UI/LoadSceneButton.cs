@@ -15,8 +15,8 @@ public class LoadSceneButton : MonoBehaviour
 {
     public enum SCENE_NAME
     {
-        LOADING,
         TITLE,
+        LOADING,
         LOBBY,
         INVENTORY,
         WORLDMAP,

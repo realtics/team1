@@ -12,7 +12,7 @@ using UnityEngine;
 public class PlayerFootCollision : MonoBehaviour
 {
     private PlayerState m_playerState = null;
-    private Animator    m_animator = null;
+    private Animator m_animator = null;
     private Rigidbody2D m_rigidbody2D = null;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class PlayerFootCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
             m_animator.SetTrigger("tLend");
             m_animator.ResetTrigger("tFall");

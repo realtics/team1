@@ -9,7 +9,7 @@ using UnityEngine;
  * 스크립트 용도   : 캐릭터의 좌, 우 움직임
  */
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterMove : MonoBehaviour
+public class CharacterMove : ScriptEnable
 {
     private Rigidbody2D m_characterRigidbody = null;
     private bool m_bFlipX = false;
@@ -20,6 +20,8 @@ public class CharacterMove : MonoBehaviour
     }
     public void MoveLeft(float _speed)
     {
+        if (!bScriptEnable)
+            return;
         if (!m_bFlipX)
         {
             m_bFlipX = true;
@@ -30,6 +32,8 @@ public class CharacterMove : MonoBehaviour
 
     public void MoveRight(float _speed)
     {
+        if (!bScriptEnable)
+            return;
         if (m_bFlipX)
         {
             m_bFlipX = false;
@@ -40,6 +44,8 @@ public class CharacterMove : MonoBehaviour
 
     public void MoveStop()
     {
+        if (!bScriptEnable)
+            return;
         m_characterRigidbody.velocity = new Vector2(0, m_characterRigidbody.velocity.y);
     }
 }

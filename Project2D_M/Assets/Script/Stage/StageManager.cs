@@ -10,17 +10,20 @@ public class StageManager :Singletone<StageManager>
     private Transform m_playerTransform;
     private CharacterInfo m_playerInfo;
     private GameObject m_endUI;
-
+     
     [SerializeField]
     private int m_iMonsterCount = 0;
     private bool m_bUserDie = false;
 
     //playerUI _ hp
     [SerializeField]
-    private TextMeshProUGUI thisText = null;
+    private TextMeshProUGUI m_plyaerHpText = null;
     [SerializeField]
     private CharacterHpBar m_playerHpBar = null;
+    [SerializeField]
+    private TextMeshProUGUI m_stageTimeObject = null;
 
+    private float m_stageTime = 0;
 
     public void Start()
     {
@@ -30,9 +33,11 @@ public class StageManager :Singletone<StageManager>
     }
     public void Update()
     {
+        m_stageTime += Time.deltaTime;
         m_bUserDie = m_playerInfo.IsCharacterDie();
-        if(m_iMonsterCount <= 0 || m_bUserDie)
+        if((m_iMonsterCount <= 0 || m_bUserDie ) && m_endUI.activeSelf ==false)
         {
+            EndTime();
             m_endUI.SetActive(true);
         }
         UpdatePlayerUI();
@@ -75,8 +80,26 @@ public class StageManager :Singletone<StageManager>
 
     private void UpdatePlayerUI()
     {
-        thisText.text = m_playerInfo.GetHP().ToString();
+        m_plyaerHpText.text = m_playerInfo.GetHP().ToString();
         m_playerHpBar.SetHPBar(m_playerInfo);
+
+    }
+
+    private void EndTime()
+    {
+        int tempfloat = (int)Mathf.Round(m_stageTime * 100);
+
+        int min = tempfloat / 1000;
+        int sec;
+        int ms;
+
+        
+
+        string tempStr;
+        tempStr = ((int)m_stageTime).ToString();
+        m_stageTimeObject.text = tempfloat.ToString();
+
+
     }
 
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterJump))]
 [RequireComponent(typeof(PlayerNormalAttack))]
 [RequireComponent(typeof(PlayerEvasion))]
-public class PlayerUiInput : MonoBehaviour
+public class PlayerUiInput : ScriptEnable
 {
     public enum JOYSTICK_STATE
     {
@@ -39,14 +39,15 @@ public class PlayerUiInput : MonoBehaviour
         joystickState = JOYSTICK_STATE.JOYSTICK_CENTER;
     }
 
-    private void OnDisable()
+    private void Start()
     {
-        joystickState = JOYSTICK_STATE.JOYSTICK_CENTER;
-        m_animator.SetBool("bMove", false);
+        
     }
-
     public void JoyStickMove(JOYSTICK_STATE _joyStickState)
     {
+        if (!bScriptEnable)
+            return;
+
         joystickState = _joyStickState;
 
         if (!m_playerState.IsPlayerMove())
@@ -71,8 +72,17 @@ public class PlayerUiInput : MonoBehaviour
         }
     }
 
+    private void Jump()
+    {
+        m_animator.SetTrigger("tJump");
+        m_characterJump.Jump(m_fJumpforce);
+    }
+
     public void JumpInput()
     {
+        if (!bScriptEnable)
+            return;
+
         if (m_playerState.IsPlayerMove())
         {
             if (m_playerState.IsPlayerDoubleJump())
@@ -91,20 +101,20 @@ public class PlayerUiInput : MonoBehaviour
         }
     }
 
-    private void Jump()
-    {
-        m_animator.SetTrigger("tJump");
-        m_characterJump.Jump(m_fJumpforce);
-    }
-
     public void AttackInput()
     {
+        if (!bScriptEnable)
+            return;
+
         m_playerState.PlayerStateAttack();
         m_playerNormalAttack.NormalAttack();
     }
 
     public void EvasionInput()
     {
+        if (!bScriptEnable)
+            return;
+
         m_playerState.PlayerStateEvasion();
         m_playerEvasion.Evasion();
     }

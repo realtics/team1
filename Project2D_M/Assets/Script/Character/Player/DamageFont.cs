@@ -25,7 +25,7 @@ public class DamageFont : MonoBehaviour
         this.transform.localScale = new Vector3(m_option.fontSize.x, m_option.fontSize.y, 1);
     }
 
-    public void SetDamage(int _damage, bool _bCritical = false)
+    public void SetDamage(int _damage, bool _bCritical)
     {
         if (_damage > 99999)
             _damage = 99999;

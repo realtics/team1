@@ -18,7 +18,7 @@ public class LoadingProgress : MonoBehaviour
 {
     //씬의 빌드 순서 넘버
     public static int nextSceneNum = 0;
-    private static int m_iLoadingSceneNum = 0;
+    private static int m_iLoadingSceneNum = 1;
 
     [SerializeField] private Image m_imgProgressBar = null;
     [SerializeField] private TextMeshProUGUI m_textLoadingPersent = null;

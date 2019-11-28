@@ -8,7 +8,7 @@ using UnityEngine;
  * 팀              : 1팀
  * 스크립트 용도   : 공격(데미지와 공격의 힘)을 받는 클래스
  */
-public class ReceiveDamage : MonoBehaviour
+public class ReceiveDamage : ScriptEnable
 {
     private CharacterInfo m_characterInfo = null;
     private Animator m_animator = null;
@@ -23,12 +23,10 @@ public class ReceiveDamage : MonoBehaviour
         m_crowdControlManager = this.GetComponent<CrowdControlManager>();
     }
 
-    private void Start()
+    public void Receive(int _damage, bool _bCritical)
     {
-        
-    }
-    public void Receive(int _damage, bool _bCritical = false)
-    {
+        if (!bScriptEnable)
+            return;
         int damage = m_characterInfo.DamageCalculation(_damage);
         DamageFontManager.Inst.ShowDamage(damage, DamageShowPosition(), _bCritical);
         m_characterInfo.HpDamage(damage); 
@@ -41,6 +39,8 @@ public class ReceiveDamage : MonoBehaviour
 
     public void AddDamageForce(Vector2 _force)
     {
+        if (!bScriptEnable)
+            return;
         if (Vector2.zero != _force)
         {
             m_rigidbody2D.velocity = Vector2.zero;

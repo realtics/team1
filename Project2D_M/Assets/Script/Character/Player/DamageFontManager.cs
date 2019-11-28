@@ -32,7 +32,7 @@ public class DamageFontManager : Singletone<DamageFontManager>
         damageFontOption.clearSpeed = clearSpeed / 100;
 
     }
-    public void ShowDamage(int _damage, Vector3 _position, bool _bCritical = false)
+    public void ShowDamage(int _damage, Vector3 _position, bool _bCritical)
     {
         GameObject damgeFontObj = ObjectPool.Inst.PopFromPool(damageFontName);
         damgeFontObj.SetActive(true);
