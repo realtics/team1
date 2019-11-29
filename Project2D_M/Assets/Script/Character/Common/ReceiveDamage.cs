@@ -27,9 +27,11 @@ public class ReceiveDamage : ScriptEnable
     {
         if (!bScriptEnable)
             return;
+
         int damage = m_characterInfo.DamageCalculation(_damage);
         DamageFontManager.Inst.ShowDamage(damage, DamageShowPosition(), _bCritical);
-        m_characterInfo.HpDamage(damage); 
+        m_characterInfo.HpDamage(damage);
+
         if (m_characterInfo.IsCharacterDie())
         {
             m_animator.SetTrigger("tDie");

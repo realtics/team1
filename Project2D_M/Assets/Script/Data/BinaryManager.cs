@@ -4,6 +4,12 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : 바이너리 데이터의 저장과 로드를 제네릭으로 묶은 static함수 스크립트
+ */
 public class BinaryManager
 {
     public static void Save<T>(T _data, string _dataPath)

@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_19
+ * 팀              : 1팀
+ * 스크립트 용도   : 플에이어에 연결해 행동을 조절할 UI 조이스틱 관련 함수
+ */
 public class JoyStick : MonoBehaviour
 {
     public PlayerUiInput playerInput { get; set; }

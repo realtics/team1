@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : 데미지폰트의 크기,이미지등 관련 속성과 오브젝트 풀에서의 가져오는 역활
+ */
 public class DamageFontManager : Singletone<DamageFontManager>
 {
 
@@ -15,6 +21,7 @@ public class DamageFontManager : Singletone<DamageFontManager>
 
     [Header("데미지 폰트 스프라이트")]
     public Sprite criticalMark;
+	public Sprite missMark;
     public Sprite[] criticalDamageFont;
     public Sprite[] normalDamageFont;
 
@@ -24,7 +31,9 @@ public class DamageFontManager : Singletone<DamageFontManager>
     {
         damageFontOption.criticalMark = criticalMark;
         damageFontOption.criticalDamageFont = criticalDamageFont;
-        damageFontOption.normalDamageFont = normalDamageFont;
+		damageFontOption.missMark = missMark;
+
+		damageFontOption.normalDamageFont = normalDamageFont;
 
         damageFontOption.fontSize = fontSize;
         damageFontOption.fontSpace = fontSpace / 100;

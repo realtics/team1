@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우, 박종현
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : 플레이어 데이터, 아이템 데이터 구조
+ */
 namespace GameSaveData
 {
     [System.Serializable]

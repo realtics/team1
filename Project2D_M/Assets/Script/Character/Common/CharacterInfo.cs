@@ -17,13 +17,18 @@ public class CharacterInfo : MonoBehaviour
     [SerializeField] public int attack { get; protected set; } = 15;
     [SerializeField] protected int defensive = 10;
     [SerializeField] protected int critical = 0;
+	[SerializeField] public bool bOverKill { get; protected set; } = false;
 
-    public void HpDamage(int _damage)
+	public void HpDamage(int _damage)
     {
-        hp -= _damage;
+		hp -= _damage;
 
-        if (hp <= 0)
-            hp = 0;
+		if (hp <= 0)
+		{
+			if (maxHp / 10 * 3 < _damage)
+				bOverKill = true;
+			hp = 0;
+		}
     }
 
     public virtual int DamageCalculation(int _damage)

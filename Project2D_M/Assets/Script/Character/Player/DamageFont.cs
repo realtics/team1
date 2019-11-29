@@ -2,11 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : 데미지폰트의 데미지에 따른 출력과 사라지는 연출
+ */
 public class DamageFont : MonoBehaviour
 {
+	private enum FONT_MARK
+	{
+		CRITICAL_MARK = 5,
+		MISS_MARK
+	}
+
     public struct DamageFontOption
     {
         public Sprite criticalMark;
+		public Sprite missMark;
         public Sprite[] criticalDamageFont;
         public Sprite[] normalDamageFont;
 
@@ -27,23 +40,33 @@ public class DamageFont : MonoBehaviour
 
     public void SetDamage(int _damage, bool _bCritical)
     {
+
+		if (m_spriteRenderer == null)
+		{
+			SpriteRenderersInit();
+		}
+
+		if (_damage == 0)
+		{
+			m_spriteRenderer[(int)FONT_MARK.MISS_MARK].enabled = true;
+			m_spriteRenderer[(int)FONT_MARK.MISS_MARK].sprite = m_option.missMark;
+			StartCoroutine(nameof(FontMove));
+			return;
+		}
+
         if (_damage > 99999)
             _damage = 99999;
 
         string damageStr = _damage.ToString();
-
-        if(m_spriteRenderer == null)
-        {
-            SpriteRenderersInit();
-        }
         
         Sprite[] currntSprites;
 
         if (_bCritical)
         {
             currntSprites = m_option.criticalDamageFont;
-            m_spriteRenderer[m_spriteRenderer.Length - 1].enabled = true;
-            m_spriteRenderer[m_spriteRenderer.Length - 1].sprite = m_option.criticalMark;
+            m_spriteRenderer[(int)FONT_MARK.CRITICAL_MARK].enabled = true;
+            m_spriteRenderer[(int)FONT_MARK.CRITICAL_MARK].sprite = m_option.criticalMark;
+            Debug.Log("crei2");
         }
         else currntSprites = m_option.normalDamageFont;
 
@@ -70,7 +93,7 @@ public class DamageFont : MonoBehaviour
         }
 
         if (m_option.criticalDamageFont != null)
-        m_option.criticalDamageFont.Initialize();
+			m_option.criticalDamageFont.Initialize();
 
         StopCoroutine(nameof(FontMove));
     }
@@ -98,7 +121,7 @@ public class DamageFont : MonoBehaviour
     private void SpriteRenderersInit()
     {
         m_spriteRenderer = this.GetComponentsInChildren<SpriteRenderer>();
-        for (int i = 0; i < m_spriteRenderer.Length-1; ++i)
+        for (int i = 0; i < (int)FONT_MARK.CRITICAL_MARK; ++i)
         { 
             m_spriteRenderer[i].transform.position += new Vector3(m_option.fontSpace * i, 0, 0);
         }

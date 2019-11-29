@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_20
+ * 팀              : 1팀
+ * 스크립트 용도   : 이펙트로 사용될 spine 애니메이션 관련 함수
+ */
 [RequireComponent(typeof(SkeletonAnimation))]
 public class EffectAnimFuntion : MonoBehaviour
 {

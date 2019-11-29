@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_28
+ * 팀              : 1팀
+ * 스크립트 용도   : 콤보 숫자 출력 함수
+ */
 public class ComboUI : MonoBehaviour
 {
     private enum IMAGE_NUM

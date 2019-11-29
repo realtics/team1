@@ -4,6 +4,12 @@ using UnityEngine;
 using GameSaveData;
 using GameSaveDataIO;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : 플레이어 데이터 접근 스크립트
+ */
 public class PlayerDataManager : Singletone<PlayerDataManager>
 {
     public string dataname = "PlayerData.dat";

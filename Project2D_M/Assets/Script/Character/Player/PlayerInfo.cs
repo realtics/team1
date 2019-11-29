@@ -10,8 +10,10 @@ using UnityEngine;
  */
 public class PlayerInfo : CharacterInfo
 {
-    [Header("플레이어 추가 정보")]
-    [SerializeField]private int maxCombo = 0;
+	[Header("플레이어 추가 정보")]
+	[SerializeField] private int maxCombo = 0;
+	[SerializeField] private int airAttackCount = 0;
+
     public struct PlayerCharInfo
     {
         public int level;
@@ -20,6 +22,12 @@ public class PlayerInfo : CharacterInfo
         public int defensive;
         public int critical;
     }
+
+	public struct PlayerCharEndInfo
+	{
+		public int maxCombo;
+		public int airAttackCount;
+	}
 
     public override int DamageCalculation(int _damage)
     {
@@ -44,4 +52,18 @@ public class PlayerInfo : CharacterInfo
         if(_maxCombo > maxCombo)
             maxCombo = _maxCombo;
     }
+
+	public void PlusAirAttackCount()
+	{
+		airAttackCount++;
+	}
+
+	public PlayerCharEndInfo GetEndInfo()
+	{
+		PlayerCharEndInfo playerCharEndInfo;
+		playerCharEndInfo.airAttackCount = this.airAttackCount;
+		playerCharEndInfo.maxCombo = this.maxCombo;
+
+		return playerCharEndInfo;
+	}
 }

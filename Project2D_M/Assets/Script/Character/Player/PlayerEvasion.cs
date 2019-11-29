@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_26
+ * 팀              : 1팀
+ * 스크립트 용도   : 플레이어 회피관련 함수
+ */
 public class PlayerEvasion : MonoBehaviour
 {
     [SerializeField] private float m_speed = 800.0f;
@@ -12,8 +18,6 @@ public class PlayerEvasion : MonoBehaviour
     private PlayerState m_playerState = null;
     private AnimFuntion m_animFuntion = null;
     private Rigidbody2D m_rigidbody2D = null;
-    private CharacterMove m_characterMove = null;
-    private PlayerUiInput m_playerUiInput = null;
     private PlayerCrowdControlManager m_crowdControlManager = null;
 
     private void Awake()
@@ -21,8 +25,6 @@ public class PlayerEvasion : MonoBehaviour
         m_playerState = GetComponent<PlayerState>();
         m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<AnimFuntion>();
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
-        m_characterMove = this.GetComponent<CharacterMove>();
-        m_playerUiInput = this.GetComponent<PlayerUiInput>();
         m_crowdControlManager = this.GetComponent<PlayerCrowdControlManager>();
     }
 

@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : 플레이어 데이터를 ScriptableObject로 게임 테스트를 편리하게 하기위한 스크립트
+ */
 namespace GameSaveDataIO
 {
     [CreateAssetMenu(fileName = "PlayerDataScript", menuName = "PlayerData", order = 1)]

@@ -1,7 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Spine.Unity;
+
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_17
+ * 팀              : 1팀
+ * 스크립트 용도   : 플레이어 평타 공격 관련 스크립트
+ */
 public class PlayerNormalAttack : MonoBehaviour
 {
     struct AttackInfo

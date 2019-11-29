@@ -70,8 +70,6 @@ public class MonsterAI : MonoBehaviour
         InitAniamation();
 
         m_attackDistance = m_monsterInfo.GetAttackDistance();
-
-        StageManager.Inst.AddMonsterCount();
     }
 
     private void Start()
@@ -161,7 +159,7 @@ public class MonsterAI : MonoBehaviour
 
                         if (m_animFunction.GetCurrntAnimClipName() == "knockdown")
                         {
-                            StageManager.Inst.RemoveMonsterCount();
+                            StageManager.Inst.SetMonsterCount(m_monsterInfo.bOverKill);
                             m_bLive = false;
                         }
                         break;

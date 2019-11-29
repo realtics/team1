@@ -5606,7 +5606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900035229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.496857, y: 2.2999997, z: -10}
+  m_LocalPosition: {x: -29.007324, y: 2.2999997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12963,10 +12963,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975e72fca334f5443a3c4b56667fa485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iMonsterCount: 0
+  m_iKillMonsterCount: 0
+  m_iOverKillMonsterCount: 0
+  m_iMaxMonsterNum: 1
   m_plyaerHpText: {fileID: 1503238900}
   m_playerHpBar: {fileID: 1398562098}
-  m_stageTimeObject: {fileID: 1695990930}
+  m_stageTimeText: {fileID: 1094117007}
+  m_stageMonsterText: {fileID: 229347085}
+  m_stageMaxComboText: {fileID: 1668899859}
+  m_stageAirAttckText: {fileID: 1909197341}
+  m_stageOverKillText: {fileID: 2133320818}
 --- !u!4 &2005306258
 Transform:
   m_ObjectHideFlags: 0

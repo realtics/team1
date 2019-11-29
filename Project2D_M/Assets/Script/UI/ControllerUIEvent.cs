@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : UI컨트롤러와 PlayerUiInput스크립트 연결 스크립트
+ */
 public class ControllerUIEvent : MonoBehaviour
 {
     [SerializeField] private PlayerUiInput m_playerUiInput;

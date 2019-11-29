@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_25
+ * 팀              : 1팀
+ * 스크립트 용도   : 플레이어 UI 컨트롤러로 조작을 위한 스크립트
+ */
 [RequireComponent(typeof(CharacterMove))]
 [RequireComponent(typeof(CharacterJump))]
 [RequireComponent(typeof(PlayerNormalAttack))]

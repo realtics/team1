@@ -27,8 +27,8 @@ public class LoadSceneButton : MonoBehaviour
 
     public void GotoScene()
     {
-        LoadingProgress.LoadScene((int)wantToGoSceneName);
-    }
+		LoadingProgress.LoadScene((int)wantToGoSceneName);
+	}
 
     public void OnClickExit()
     {

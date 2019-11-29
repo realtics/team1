@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 
+/*
+ * 작성자          : 고은우
+ * 최종 수정 날짜  : 11_29
+ * 팀              : 1팀
+ * 스크립트 용도   : 자식 오브젝트의 공격관련 함수 매니저
+ */
 public class AttackManager : MonoBehaviour
 {
     private AttackCollider[] m_attackColliders;
