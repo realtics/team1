@@ -1483,9 +1483,10 @@ GameObject:
   - component: {fileID: 2498222798842262237}
   - component: {fileID: 4063295413354117836}
   - component: {fileID: 1188840288893757484}
-  - component: {fileID: 3654613824508178645}
   - component: {fileID: 1858371714}
   - component: {fileID: 1827683345}
+  - component: {fileID: 1752575781}
+  - component: {fileID: 1752575782}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1546,8 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bScriptEnable: 1
-  m_fMoveSpeed: 10
-  m_fJumpforce: 17
+  joystickState: 4
   m_underUI: {fileID: 193141571675277993}
 --- !u!114 &77044986
 MonoBehaviour:
@@ -1633,6 +1633,9 @@ MonoBehaviour:
   defensive: 0
   critical: 50
   maxCombo: 0
+  airAttackCount: 0
+  fMoveSpeed: 10
+  fJumpforce: 17
 --- !u!114 &4063295413354117836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,22 +1675,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 5.127899}
   m_EdgeRadius: 0
---- !u!114 &3654613824508178645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4619171480891344486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81f182987d4a8c4d9d9e7acd98f8a00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bScriptEnable: 0
-  joystickState: 4
-  m_fMoveSpeed: 10
-  m_fJumpforce: 17
 --- !u!114 &1858371714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,6 +1706,89 @@ MonoBehaviour:
   m_fComboTime: 3
   m_fTickTime: 0
   comboUIManager: {fileID: 0}
+--- !u!114 &1752575781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619171480891344486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: c74f4b9c061b3df44ae481b2861121c0, type: 2}
+    - {fileID: 11400000, guid: 97bd3eb308d82c74ebe63aa6a536e5a6, type: 2}
+    - {fileID: 11400000, guid: cc7f729f798061b4d984ff4fea9cda7e, type: 2}
+    - {fileID: 11400000, guid: 17e477383307b5145815ebe12140e5cb, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1752575782}
+          m_MethodName: MoveStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1752575782}
+          m_MethodName: MoveStop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1752575782}
+          m_MethodName: InputFreeze
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1752575782}
+          m_MethodName: InputUnFreeze
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1752575782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619171480891344486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2936c9938395f440a43428cbd511d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4619171481762083628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,8 +1874,8 @@ GameObject:
   - component: {fileID: 4619171482053815374}
   - component: {fileID: 1608382168}
   - component: {fileID: 1127028382}
-  - component: {fileID: 1614660504872141991}
   - component: {fileID: 3542008875137607112}
+  - component: {fileID: 1534769828}
   m_Layer: 9
   m_Name: PlayerSpineSprite
   m_TagString: Player
@@ -1952,18 +2022,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRoot: {fileID: 1866777661}
   skeletonRenderer: {fileID: 4619171482053815374}
---- !u!114 &1614660504872141991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4619171482053815366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7d011f5afbd564694566ac8867dd13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3542008875137607112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1977,6 +2035,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackManager: {fileID: 1106001723212249306}
+--- !u!114 &1534769828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619171482053815366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac0800387741d34c92b55e8484edcc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6195477788716663386
 GameObject:
   m_ObjectHideFlags: 0

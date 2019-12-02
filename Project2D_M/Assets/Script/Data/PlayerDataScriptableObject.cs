@@ -8,17 +8,15 @@ using UnityEngine;
  * 팀              : 1팀
  * 스크립트 용도   : 플레이어 데이터를 ScriptableObject로 게임 테스트를 편리하게 하기위한 스크립트
  */
-namespace GameSaveDataIO
+
+[CreateAssetMenu(fileName = "PlayerDataScript", menuName = "PlayerData", order = 1)]
+[System.Serializable]
+public class PlayerDataScriptableObject : ScriptableObject
 {
-    [CreateAssetMenu(fileName = "PlayerDataScript", menuName = "PlayerData", order = 1)]
-    [System.Serializable]
-    public class PlayerDataScriptableObject : ScriptableObject
-    {
-        public string charactorName;
-        public int level;
-        public int exp;
-        public int gold;
-        public int cash;
-        public int fatigability;
-    }
+	public string charactorName;
+	public int level;
+	public int exp;
+	public int gold;
+	public int cash;
+	public int fatigability;
 }

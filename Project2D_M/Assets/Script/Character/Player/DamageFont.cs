@@ -66,7 +66,6 @@ public class DamageFont : MonoBehaviour
             currntSprites = m_option.criticalDamageFont;
             m_spriteRenderer[(int)FONT_MARK.CRITICAL_MARK].enabled = true;
             m_spriteRenderer[(int)FONT_MARK.CRITICAL_MARK].sprite = m_option.criticalMark;
-            Debug.Log("crei2");
         }
         else currntSprites = m_option.normalDamageFont;
 

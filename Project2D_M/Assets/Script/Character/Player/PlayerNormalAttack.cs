@@ -10,7 +10,7 @@ using UnityEngine;
  */
 public class PlayerNormalAttack : MonoBehaviour
 {
-    struct AttackInfo
+    private struct AttackInfo
     {
         public float damageRatio;
         public Vector2 damageForce;
@@ -28,21 +28,21 @@ public class PlayerNormalAttack : MonoBehaviour
 
     private Dictionary<string, AttackInfo> m_NormalAttackDic;
     private Rigidbody2D m_rigidbody2D = null;
-    private AnimFuntion m_animFuntion = null;
+    private PlayerAnimFuntion m_animFuntion = null;
     private CharacterMove m_characterMove = null;
     private AttackManager m_attackCollider = null;
     private PlayerState m_playerState = null;
-    private PlayerUiInput m_playerUiInput = null;
+    private PlayerInput m_playerInput = null;
     private bool m_bAttacking;
 
     private void Awake()
     {
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
-        m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<AnimFuntion>();
+        m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<PlayerAnimFuntion>();
         m_characterMove = this.GetComponent<CharacterMove>();
         m_attackCollider = this.transform.Find("AttackManager").GetComponent<AttackManager>();
         m_playerState = this.GetComponent<PlayerState>();
-        m_playerUiInput = this.GetComponent<PlayerUiInput>();
+        m_playerInput = this.GetComponent<PlayerInput>();
         m_bAttacking = false;
 
         m_NormalAttackDic = new Dictionary<string, AttackInfo>();
@@ -65,15 +65,15 @@ public class PlayerNormalAttack : MonoBehaviour
 
     public void NormalAttack()
     {
-        m_animFuntion.SetTrigger("tNormalAttack");
+        m_animFuntion.SetTrigger(m_animFuntion.hashTNormalAttack);
 
-        if(Input.GetAxisRaw("Vertical") > 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_UP)
+        if(Input.GetAxisRaw("Vertical") > 0 || m_playerInput.joystickState == PlayerInput.JOYSTICK_STATE.JOYSTICK_UP)
         {
-            m_animFuntion.SetTrigger("tUpper");
+            m_animFuntion.SetTrigger(m_animFuntion.hashTUpper);
         }
-        else if (Input.GetAxisRaw("Vertical") < 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_DOWN)
+        else if (Input.GetAxisRaw("Vertical") < 0 || m_playerInput.joystickState == PlayerInput.JOYSTICK_STATE.JOYSTICK_DOWN)
         {
-            m_animFuntion.SetTrigger("tDownsmash");
+            m_animFuntion.SetTrigger(m_animFuntion.hasTDownsmash);
         }
 
         if (!m_bAttacking)
@@ -94,7 +94,8 @@ public class PlayerNormalAttack : MonoBehaviour
             yield break;
         }
 
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+		if(!m_playerState.IsPlayerGround())
+			m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
         string m_sAnimName = m_animFuntion.GetCurrntAnimClipName();
         PlayAnimEffect(m_sAnimName);
@@ -206,11 +207,11 @@ public class PlayerNormalAttack : MonoBehaviour
 
     private void AddMeve(float _speed)
     {
-        if (Input.GetAxisRaw("Horizontal") < 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT)
+        if (Input.GetAxisRaw("Horizontal") < 0 || m_playerInput.joystickState == PlayerInput.JOYSTICK_STATE.JOYSTICK_LEFT)
         {
             m_characterMove.MoveLeft(_speed);
         }
-        else if (Input.GetAxisRaw("Horizontal") > 0 || m_playerUiInput.joystickState == PlayerUiInput.JOYSTICK_STATE.JOYSTICK_RIGHT)
+        else if (Input.GetAxisRaw("Horizontal") > 0 || m_playerInput.joystickState == PlayerInput.JOYSTICK_STATE.JOYSTICK_RIGHT)
         {
             m_characterMove.MoveRight(_speed);
         }

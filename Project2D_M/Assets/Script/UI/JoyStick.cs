@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
  */
 public class JoyStick : MonoBehaviour
 {
-    public PlayerUiInput playerInput { get; set; }
+    public PlayerInput playerInput { get; set; }
     private Transform m_stick;
     private Vector3 m_stickFirstPos;
     private Vector3 m_joyVec;
@@ -53,7 +53,7 @@ public class JoyStick : MonoBehaviour
 
         m_stickPos = m_joyVec;
 
-        playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_CENTER);
+        playerInput.JoyStickMove(PlayerInput.JOYSTICK_STATE.JOYSTICK_CENTER);
     }
 
     public void Click()
@@ -64,7 +64,7 @@ public class JoyStick : MonoBehaviour
     public void StopPlayerMove()
     {
         StopCoroutine(nameof(PlayerMove));
-        playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_CENTER);
+        playerInput.JoyStickMove(PlayerInput.JOYSTICK_STATE.JOYSTICK_CENTER);
     }
 
     IEnumerator PlayerMove()
@@ -72,14 +72,14 @@ public class JoyStick : MonoBehaviour
         while(true)
         {
             if (m_stickPos.x < -0.5f)
-                playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_LEFT);
+                playerInput.JoyStickMove(PlayerInput.JOYSTICK_STATE.JOYSTICK_LEFT);
             else if (m_stickPos.x > 0.5f)
-                playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_RIGHT);
+                playerInput.JoyStickMove(PlayerInput.JOYSTICK_STATE.JOYSTICK_RIGHT);
             else if (m_stickPos.y > 0.5f)
-                playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_UP);
+                playerInput.JoyStickMove(PlayerInput.JOYSTICK_STATE.JOYSTICK_UP);
             else if (m_stickPos.y < -0.5f)
-                playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_DOWN);
-            else playerInput.JoyStickMove(PlayerUiInput.JOYSTICK_STATE.JOYSTICK_CENTER);
+                playerInput.JoyStickMove(PlayerInput.JOYSTICK_STATE.JOYSTICK_DOWN);
+            else playerInput.JoyStickMove(PlayerInput.JOYSTICK_STATE.JOYSTICK_CENTER);
 
             yield return null;
         }

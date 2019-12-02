@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameSaveData;
-using GameSaveDataIO;
 
 /*
  * 작성자          : 고은우
@@ -13,13 +12,15 @@ using GameSaveDataIO;
 public class PlayerDataManager : Singletone<PlayerDataManager>
 {
     public string dataname = "PlayerData.dat";
-    public PlayerDataScriptableObject dataIO;
+    public PlayerDataScriptableObject dataSO;
+
+    private DataUIPlayerLeval m_dataUIPlayerLeval;
+
     public class PlayerData
     {
         public enum DATA_ENUM
         {
             DATA_ENUM_LEVEL,
-            DATA_ENUM_EXP,
             DATA_ENUM_GOLD,
             DATA_ENUM_CASH,
             DATA_ENUM_FATIGABILITY
@@ -35,24 +36,26 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         public int gold;
         public int cash;
         public int fatigability; //피로도
-    }
+		public int maxFatigability;
+	}
 
     private PlayerData m_playerData = null;
     private PlayerSaveData m_playerSaveData = null;
     private void Awake()
     {
+        m_dataUIPlayerLeval = GetComponentInChildren<DataUIPlayerLeval>();
         m_playerSaveData = BinaryManager.Load<PlayerSaveData>(dataname);
         if (m_playerSaveData == null)
             InitData();
 
-        if (dataIO == null)
-            dataIO = (PlayerDataScriptableObject)Resources.Load("Data/PlayerDataScript");
+        if (dataSO == null)
+			dataSO = (PlayerDataScriptableObject)Resources.Load("Data/PlayerDataScript");
 
-        m_playerSaveData.level = dataIO.level;
-        m_playerSaveData.exp = dataIO.exp;
-        m_playerSaveData.gold = dataIO.gold;
-        m_playerSaveData.cash = dataIO.cash;
-        m_playerSaveData.fatigability = dataIO.fatigability;
+        m_playerSaveData.level = dataSO.level;
+        m_playerSaveData.exp = dataSO.exp;
+        m_playerSaveData.gold = dataSO.gold;
+        m_playerSaveData.cash = dataSO.cash;
+        m_playerSaveData.fatigability = dataSO.fatigability;
 
         BinaryManager.Save(m_playerSaveData, dataname);
     }
@@ -72,16 +75,16 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerData = _playerData;
 
         m_playerSaveData.level = m_playerData.level;
-        m_playerSaveData.exp = LevelUp(_playerData.exp);
+        m_playerSaveData.exp = m_playerData.exp;
         m_playerSaveData.gold = m_playerData.gold;
         m_playerSaveData.cash = m_playerData.cash;
         m_playerSaveData.fatigability = m_playerData.fatigability;
 
-        dataIO.level = m_playerSaveData.level;
-        dataIO.exp = m_playerSaveData.exp;
-        dataIO.gold = m_playerSaveData.gold;
-        dataIO.cash = m_playerSaveData.cash;
-        dataIO.fatigability = m_playerSaveData.fatigability;
+        dataSO.level = m_playerSaveData.level;
+        dataSO.exp = m_playerSaveData.exp;
+        dataSO.gold = m_playerSaveData.gold;
+        dataSO.cash = m_playerSaveData.cash;
+        dataSO.fatigability = m_playerSaveData.fatigability;
 
         BinaryManager.Save(m_playerSaveData, dataname);
     }
@@ -92,23 +95,19 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         {
             case PlayerData.DATA_ENUM.DATA_ENUM_LEVEL:
                 m_playerSaveData.level = _value;
-                dataIO.level = m_playerSaveData.level;
-                break;
-            case PlayerData.DATA_ENUM.DATA_ENUM_EXP:
-                m_playerSaveData.exp = LevelUp(_value);
-                dataIO.exp = m_playerSaveData.exp;
+                dataSO.level = m_playerSaveData.level;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_GOLD:
                 m_playerSaveData.gold = _value;
-                dataIO.gold = m_playerSaveData.gold;
+                dataSO.gold = m_playerSaveData.gold;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_CASH:
                 m_playerSaveData.cash = _value;
-                dataIO.cash = m_playerSaveData.cash;
+                dataSO.cash = m_playerSaveData.cash;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_FATIGABILITY:
                 m_playerSaveData.fatigability = _value;
-                dataIO.fatigability = m_playerSaveData.fatigability;
+                dataSO.fatigability = m_playerSaveData.fatigability;
                 break;
         }
 
@@ -125,12 +124,8 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerData.cash = m_playerSaveData.cash;
         m_playerData.fatigability = m_playerSaveData.fatigability;
 
-        m_playerData.attack = 10 + m_playerData.level * 9;
-        m_playerData.defensive = 5 + m_playerData.level * 7;
-        m_playerData.critical = 10 + m_playerData.level * 3;
-        m_playerData.maxExp = 150 + m_playerData.level * 15;
-        m_playerData.maxHp = 100 + m_playerData.level * 20;
-    }
+		LevelToPlayerData();
+	}
 
     private void InitData()
     {
@@ -143,20 +138,44 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         BinaryManager.Save(m_playerSaveData, dataname);
     }
 
-    private int LevelUp(int _exp)
+    public bool PlusExp(int _exp)
     {
+        _exp += m_playerData.exp;
+
         if (m_playerData.maxExp <= _exp)
         {
-            m_playerSaveData.level++;
+            int prevLevel = m_playerData.level;
 
-            m_playerData.attack = 10 + m_playerData.level * 9;
-            m_playerData.defensive = 5 + m_playerData.level * 7;
-            m_playerData.critical = 10 + m_playerData.level * 3;
-            m_playerData.maxExp = 150 + m_playerData.level * 15;
-            m_playerData.maxHp = 100 + m_playerData.level * 20;
+            while (m_playerData.maxExp <= _exp)
+            {
+                _exp -= m_playerData.maxExp;
+                m_playerData.level++;
 
-            _exp -= m_playerData.maxExp;
-        }
-        return _exp;
+				LevelToPlayerData();
+
+				m_playerData.exp = _exp;
+				if (m_playerData.fatigability < m_playerData.maxFatigability)
+					m_playerData.fatigability = m_playerData.maxFatigability;
+			}
+
+            //m_dataUIPlayerLeval.ShowPlayerLevelData(prevLevel, m_playerData.level);
+
+			SavePlayerData(m_playerData);
+			return true;
+		}
+
+        SavePlayerData(m_playerData);
+
+        return false;
     }
+
+	private void LevelToPlayerData()
+	{
+		m_playerData.attack = 10 + m_playerData.level * 9;
+		m_playerData.defensive = 5 + m_playerData.level * 7;
+		m_playerData.critical = 10 + m_playerData.level * 3;
+		m_playerData.maxExp = 40 * m_playerData.level;
+		m_playerData.maxHp = 100 + m_playerData.level * 20;
+		m_playerData.maxFatigability = 10 + m_playerData.level * 2;
+	}
 }

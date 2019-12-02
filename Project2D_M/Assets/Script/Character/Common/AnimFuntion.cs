@@ -66,22 +66,22 @@ public class AnimFuntion : MonoBehaviour
         return GetCurrntAnimClipName() == _animName;
     }
 
-    public void SetTrigger(string _triggerName)
+    public void SetTrigger(int _triggerName)
     {
         m_animator.SetTrigger(_triggerName);
     }
 
-    public void ResetTrigger(string _triggerName)
+    public void ResetTrigger(int _triggerName)
     {
         m_animator.ResetTrigger(_triggerName);
     }
 
-    public void SetBool(string _boolName, bool _bool)
+    public void SetBool(int _boolName, bool _bool)
     {
         m_animator.SetBool(_boolName, _bool);
     }
 
-    public bool GetBool(string _boolName)
+    public bool GetBool(int _boolName)
     {
         return m_animator.GetBool(_boolName);
     }

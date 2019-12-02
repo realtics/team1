@@ -16,14 +16,14 @@ public class PlayerEvasion : MonoBehaviour
     private bool m_bCoroutinePlay = false;
     private bool m_bEvasion = false;
     private PlayerState m_playerState = null;
-    private AnimFuntion m_animFuntion = null;
+    private PlayerAnimFuntion m_animFuntion = null;
     private Rigidbody2D m_rigidbody2D = null;
     private PlayerCrowdControlManager m_crowdControlManager = null;
 
     private void Awake()
     {
         m_playerState = GetComponent<PlayerState>();
-        m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<AnimFuntion>();
+        m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<PlayerAnimFuntion>();
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_crowdControlManager = this.GetComponent<PlayerCrowdControlManager>();
     }
@@ -37,8 +37,8 @@ public class PlayerEvasion : MonoBehaviour
             if (!m_bEvasion)
             {
                 if (m_playerState.IsPlayerGround())
-                    m_animFuntion.SetTrigger("tEvasion");
-                else m_animFuntion.SetTrigger("tEvasionAir");
+                    m_animFuntion.SetTrigger(m_animFuntion.hashTEvasion);
+                else m_animFuntion.SetTrigger(m_animFuntion.hashTEvasionAir);
 
                 m_bEvasion = true;
                 StartCoroutine(nameof(EvasionCoroutine));

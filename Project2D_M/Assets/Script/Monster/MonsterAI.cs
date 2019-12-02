@@ -148,7 +148,7 @@ public class MonsterAI : MonoBehaviour
                         break;
                     case MONSTER_STATE.HIT:
                         m_monsterAttack.m_bAttack = false;
-                        m_animator.SetTrigger(m_hashTHit);
+						m_animator.SetTrigger(m_hashTHit);
                         break;
                     case MONSTER_STATE.DIE:
                         m_monsterAttack.m_bAttack = false;

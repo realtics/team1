@@ -11,11 +11,11 @@ using UnityEngine.EventSystems;
  */
 public class ControllerUIEvent : MonoBehaviour
 {
-    [SerializeField] private PlayerUiInput m_playerUiInput;
-    [SerializeField] private JoyStick m_joyStick;
-    [SerializeField] private EventTrigger m_normalAttackEvent;
-    [SerializeField] private EventTrigger m_jumpEvent;
-    [SerializeField] private EventTrigger m_evasionEvent;
+    [SerializeField] private PlayerInput m_playerInput = null;
+    [SerializeField] private JoyStick m_joyStick = null;
+    [SerializeField] private EventTrigger m_normalAttackEvent = null;
+    [SerializeField] private EventTrigger m_jumpEvent = null;
+    [SerializeField] private EventTrigger m_evasionEvent = null;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,7 +29,7 @@ public class ControllerUIEvent : MonoBehaviour
     private void JoyStickConnect()
     {
         EventTrigger eventTrigger = m_joyStick.transform.GetComponentInChildren<EventTrigger>();
-        m_joyStick.playerInput = m_playerUiInput;
+        m_joyStick.playerInput = m_playerInput;
         //드레그
         EventTrigger.Entry dragEvent = new EventTrigger.Entry();
         dragEvent.eventID = EventTriggerType.Drag;
@@ -64,7 +64,7 @@ public class ControllerUIEvent : MonoBehaviour
     {
         EventTrigger.Entry dounEvent = new EventTrigger.Entry();
         dounEvent.eventID = EventTriggerType.PointerDown;
-        dounEvent.callback.AddListener(BaseEventData => m_playerUiInput.AttackInput());
+        dounEvent.callback.AddListener(BaseEventData => m_playerInput.AttackInput());
 
         m_normalAttackEvent.triggers.Add(dounEvent);
     }
@@ -73,16 +73,16 @@ public class ControllerUIEvent : MonoBehaviour
     {
         EventTrigger.Entry dounEvent = new EventTrigger.Entry();
         dounEvent.eventID = EventTriggerType.PointerDown;
-        dounEvent.callback.AddListener(BaseEventData => m_playerUiInput.JumpInput());
+        dounEvent.callback.AddListener(BaseEventData => m_playerInput.JumpInput());
 
         m_jumpEvent.triggers.Add(dounEvent);
     }
 
-    private void EvasionConnect()
+    private void EvasionConnect() 
     {
         EventTrigger.Entry dounEvent = new EventTrigger.Entry();
         dounEvent.eventID = EventTriggerType.PointerDown;
-        dounEvent.callback.AddListener(BaseEventData => m_playerUiInput.EvasionInput());
+        dounEvent.callback.AddListener(BaseEventData => m_playerInput.EvasionInput());
 
         m_evasionEvent.triggers.Add(dounEvent);
     }

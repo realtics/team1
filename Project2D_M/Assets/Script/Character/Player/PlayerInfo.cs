@@ -13,6 +13,8 @@ public class PlayerInfo : CharacterInfo
 	[Header("플레이어 추가 정보")]
 	[SerializeField] private int maxCombo = 0;
 	[SerializeField] private int airAttackCount = 0;
+    [SerializeField] public float fMoveSpeed = 10.0f;
+    [SerializeField] public float fJumpforce = 25.0f;
 
     public struct PlayerCharInfo
     {

@@ -6313,7 +6313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6470256990403743823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11884,7 +11884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6470256991517576769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13582,7 +13582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dcdd65448e586242b8cd45ecd9b4d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerUiInput: {fileID: 0}
+  m_playerInput: {fileID: 0}
   m_joyStick: {fileID: 6470256991231030342}
   m_normalAttackEvent: {fileID: 6470256989800506316}
   m_jumpEvent: {fileID: 6470256990640730266}

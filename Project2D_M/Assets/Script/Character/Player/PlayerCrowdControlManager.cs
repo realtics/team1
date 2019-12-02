@@ -12,13 +12,11 @@ using UnityEngine;
 public class PlayerCrowdControlManager : CrowdControlManager
 {
     private PlayerInput     m_playerInput = null;
-    private PlayerUiInput m_playerUiInput = null;
     private void Awake()
     {
         m_characterMove = this.GetComponent<CharacterMove>();
         m_characterJump = this.GetComponent<CharacterJump>();
         m_playerInput = this.GetComponent<PlayerInput>();
-        m_playerUiInput = this.GetComponent<PlayerUiInput>();
         m_receiveDamage = this.GetComponent<ReceiveDamage>();
     }
 
@@ -40,12 +38,6 @@ public class PlayerCrowdControlManager : CrowdControlManager
             m_playerInput.bScriptEnable = false;
             yield return new WaitForSeconds(_second);
             m_playerInput.bScriptEnable = true;
-        }
-        else if (m_playerUiInput.bScriptEnable == true)
-        {
-            m_playerUiInput.bScriptEnable = false;
-            yield return new WaitForSeconds(_second);
-            m_playerUiInput.bScriptEnable = true;
         }
     }
 }

@@ -25,7 +25,7 @@ public class LoadSceneButton : MonoBehaviour
 
     public SCENE_NAME wantToGoSceneName;
 
-    public void GotoScene()
+    public virtual void GotoScene()
     {
 		LoadingProgress.LoadScene((int)wantToGoSceneName);
 	}

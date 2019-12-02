@@ -12,12 +12,12 @@ using UnityEngine;
 public class PlayerFootCollision : MonoBehaviour
 {
     private PlayerState m_playerState = null;
-    private Animator m_animator = null;
+    private PlayerAnimFuntion m_animFuntion = null;
     private Rigidbody2D m_rigidbody2D = null;
 
     private void Awake()
     {
-        m_animator = this.transform.parent.transform.Find("PlayerSpineSprite").GetComponent<Animator>();
+		m_animFuntion = this.transform.parent.transform.Find("PlayerSpineSprite").GetComponent<PlayerAnimFuntion>();
         m_playerState = this.transform.parent.GetComponent<PlayerState>();
         m_rigidbody2D = this.transform.parent.GetComponent<Rigidbody2D>();
     }
@@ -26,8 +26,8 @@ public class PlayerFootCollision : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
-            m_animator.SetTrigger("tLend");
-            m_animator.ResetTrigger("tFall");
+			m_animFuntion.SetTrigger(m_animFuntion.hashTLend);
+			m_animFuntion.ResetTrigger(m_animFuntion.hashTFall);
             m_playerState.PlayerStateReset();
             m_rigidbody2D.velocity = new Vector2(0, 0);
         }
@@ -39,9 +39,9 @@ public class PlayerFootCollision : MonoBehaviour
         {
             if (m_playerState.IsPlayerGround())
             {
-                m_animator.SetTrigger("tFall");
+				m_animFuntion.SetTrigger(m_animFuntion.hashTFall);
             }
-            m_animator.ResetTrigger("tLend");
+			m_animFuntion.ResetTrigger(m_animFuntion.hashTLend);
             m_playerState.PlayerStateJump();
         }
     }

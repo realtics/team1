@@ -44,7 +44,6 @@ public class PlayerAttackCollider : AttackCollider
                 {
                     m_damage = (int)((m_damage * 1.5f) + 0.5f);
                     receiveDamage.Receive(m_damage, true);
-                    Debug.Log("crei");
                 }
                 else
                 {

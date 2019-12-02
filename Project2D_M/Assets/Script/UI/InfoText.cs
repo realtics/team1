@@ -66,15 +66,17 @@ public class InfoText : MonoBehaviour
                 thisText.text = GetThousandCommaText(PlayerDataManager.Inst.GetPlayerData().cash);
                 break;
             case INFO_TYPE.FATIGABILITY:
-                // /9는 임시 최대 피로도 이다.
-                thisText.text = GetThousandCommaText(PlayerDataManager.Inst.GetPlayerData().fatigability) + "/9";
+                thisText.text = GetThousandCommaText(PlayerDataManager.Inst.GetPlayerData().fatigability) + "/"
+					+ GetThousandCommaText(PlayerDataManager.Inst.GetPlayerData().maxFatigability);
                 break;
         }
     }
 
     public string GetThousandCommaText(int data)
     {
-        return string.Format("{0:#,###}", data);
+		if (data == 0)
+			return data.ToString();
+		return string.Format("{0:#,###}", data);
     }
 
 }

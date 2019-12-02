@@ -15,32 +15,36 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerEvasion))]
 public class PlayerInput : ScriptEnable
 {
+    public enum JOYSTICK_STATE
+    {
+        JOYSTICK_UP,
+        JOYSTICK_DOWN,
+        JOYSTICK_LEFT,
+        JOYSTICK_RIGHT,
+        JOYSTICK_CENTER,
+    }
+
     private PlayerState     m_playerState = null;
     private CharacterMove   m_characterMove = null;
     private CharacterJump   m_characterJump = null;
     private PlayerNormalAttack m_playerNormalAttack = null;
     private PlayerEvasion m_playerEvasion = null;
-    private Animator    m_animator = null;
+    private PlayerAnimFuntion m_animFuntion= null;
+    private PlayerInfo m_playerInfo;
+    private bool m_bUiMove = false;
 
-    private PlayerInfo temp;
-
-    [SerializeField]
-    private float m_fMoveSpeed = 10.0f;
-    [SerializeField]
-    private float m_fJumpforce = 25.0f;
-    [SerializeField]
-    private GameObject m_underUI;
+	[SerializeField] public JOYSTICK_STATE joystickState = JOYSTICK_STATE.JOYSTICK_CENTER;
+    [SerializeField] private GameObject m_underUI = null;
 
     void Start()
     {
         m_playerState    = this.GetComponent<PlayerState>();
         m_characterMove  = this.GetComponent<CharacterMove>();
         m_characterJump  = this.GetComponent<CharacterJump>();
-        m_animator = this.GetComponentInChildren<Animator>();
+		m_animFuntion = this.GetComponentInChildren<PlayerAnimFuntion>();
         m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
         m_playerEvasion = this.GetComponent<PlayerEvasion>();
-
-        temp = this.GetComponent<PlayerInfo>();
+        m_playerInfo = this.GetComponent<PlayerInfo>();
     }
 
     private void FixedUpdate()
@@ -49,50 +53,94 @@ public class PlayerInput : ScriptEnable
             return;
 
         MoveInput();
-        JumpInput();
-        AttackInput();
-        Evasion();
-    }
 
-    private void OnDisable()
-    {
-        m_animator.SetBool("bMove", false);
-    }
+        if (Input.GetButtonDown("Jump") && m_playerState.IsPlayerMove())
+            JumpInput();
+
+        if (Input.GetButtonDown("Fire1"))
+            AttackInput();
+
+        if (Input.GetButtonDown("Fire2"))
+            EvasionInput();
+
+		if (Input.GetButtonDown("Fire3"))
+		{
+			//m_animFuntion.Play("skill3_flame_haze_1_start", -1,0); 
+		}
+
+	}
 
     private void MoveInput()
     {
+        if (!m_playerState.IsPlayerMove() || m_bUiMove)
+        {
+            return;
+        }
+
+        Move();
+    }
+
+    private void Move()
+    {
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+			m_animFuntion.SetBool(m_animFuntion.hashBMove, true);
+            m_characterMove.MoveLeft(m_playerInfo.fMoveSpeed);
+            m_underUI.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+			m_animFuntion.SetBool(m_animFuntion.hashBMove, true);
+            m_characterMove.MoveRight(m_playerInfo.fMoveSpeed);
+            m_underUI.transform.localScale= new Vector3(1,1,1);
+        }
+        else
+        {
+			m_animFuntion.SetBool(m_animFuntion.hashBMove, false);
+            m_characterMove.MoveStop();
+        }
+    }
+
+    public void JoyStickMove(JOYSTICK_STATE _joyStickState)
+    {
+        if (!bScriptEnable)
+            return;
+
+        joystickState = _joyStickState;
+
         if (!m_playerState.IsPlayerMove())
         {
             return;
         }
 
-        Move(m_fMoveSpeed);
-    }
+        m_bUiMove = true;
 
-    private void Move(float _speed)
-    {
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if (_joyStickState == JOYSTICK_STATE.JOYSTICK_LEFT)
         {
-            m_animator.SetBool("bMove", true);
-            m_characterMove.MoveLeft(_speed);
+			m_animFuntion.SetBool(m_animFuntion.hashBMove, true);
+            m_characterMove.MoveLeft(m_playerInfo.fMoveSpeed);
             m_underUI.transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (Input.GetAxisRaw("Horizontal") > 0)
+        else if (_joyStickState == JOYSTICK_STATE.JOYSTICK_RIGHT)
         {
-            m_animator.SetBool("bMove", true);
-            m_characterMove.MoveRight(_speed);
-            m_underUI.transform.localScale= new Vector3(1,1,1);
+			m_animFuntion.SetBool(m_animFuntion.hashBMove, true);
+            m_characterMove.MoveRight(m_playerInfo.fMoveSpeed);
+            m_underUI.transform.localScale = new Vector3(1, 1, 1);
         }
         else
         {
-            m_animator.SetBool("bMove", false);
+            m_bUiMove = false;
+			m_animFuntion.SetBool(m_animFuntion.hashBMove, false);
             m_characterMove.MoveStop();
         }
     }
 
-    private void JumpInput()
+    public void JumpInput()
     {
-        if (Input.GetButtonDown("Jump") && m_playerState.IsPlayerMove())
+        if (!bScriptEnable)
+            return;
+
+        if (m_playerState.IsPlayerMove())
         {
             if (m_playerState.IsPlayerDoubleJump())
             {
@@ -100,7 +148,7 @@ public class PlayerInput : ScriptEnable
                 Jump();
                 return;
             }
-            else if(m_playerState.IsPlayerJump())
+            else if (m_playerState.IsPlayerJump())
             {
                 m_playerState.PlayerStateJump();
                 Jump();
@@ -112,25 +160,25 @@ public class PlayerInput : ScriptEnable
 
     private void Jump()
     {
-        m_animator.SetTrigger("tJump");
-        m_characterJump.Jump(m_fJumpforce);
+		m_animFuntion.SetTrigger(m_animFuntion.hashBJump);
+        m_characterJump.Jump(m_playerInfo.fJumpforce);
     }
 
-    private void AttackInput()
+    public void AttackInput()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            m_playerState.PlayerStateAttack();
-            m_playerNormalAttack.NormalAttack();
-        }
+        if (!bScriptEnable)
+            return;
+
+        m_playerState.PlayerStateAttack();
+        m_playerNormalAttack.NormalAttack();
     }
 
-    private void Evasion()
+    public void EvasionInput()
     {
-        if (Input.GetButtonDown("Fire2"))
-        {
-            m_playerState.PlayerStateEvasion();
-            m_playerEvasion.Evasion();
-        }
+        if (!bScriptEnable)
+            return;
+
+        m_playerState.PlayerStateEvasion();
+        m_playerEvasion.Evasion();
     }
 }
