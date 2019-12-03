@@ -42,6 +42,8 @@ public class StageInfoOpener : MonoBehaviour
     public TextMeshProUGUI rewordGold;
     public TextMeshProUGUI rewordExp;
 
+	public GameObject StageStartButton2;
+
     public void OpenPanel()
     {
         SetStageInfo();
@@ -101,14 +103,20 @@ public class StageInfoOpener : MonoBehaviour
                 stageExplanationText.text = "그라노스 왕성마을 바로 근처 에페노바 근교 숲 어귀";
                 rewordGold.text = GetThousandCommaText(320);
                 rewordExp.text = GetThousandCommaText(50);
-                break;
+				StageStartButton2.GetComponent<StageLoadSceneButton>().wantToGoSceneName = LoadSceneButton.SCENE_NAME.STAGE_1;
+				StageDataManager.Inst.nowStage = StageDataManager.StageNameEnum.STAGE_1_1;
+
+				break;
             case STAGE_NUM_TYPE.STAGE_01_2:
                 selectStageImage.sprite = stageImages[(int)STAGE_NUM_TYPE.STAGE_01_2];
                 stageName.text = "[1-2] 근교 숲 진입로";
                 stageExplanationText.text = "에페노바 근교 숲으로 들어서는 진입로";
                 rewordGold.text = GetThousandCommaText(500);
                 rewordExp.text = GetThousandCommaText(70);
-                break;
+				StageStartButton2.GetComponent<StageLoadSceneButton>().wantToGoSceneName = LoadSceneButton.SCENE_NAME.STAGE_2;
+				StageDataManager.Inst.nowStage = StageDataManager.StageNameEnum.STAGE_1_2;
+
+				break;
             case STAGE_NUM_TYPE.STAGE_01_3:
                 selectStageImage.sprite = stageImages[(int)STAGE_NUM_TYPE.STAGE_01_3];
                 stageName.text = "[1-3] 중간 숲 푹신한 흙바닥";

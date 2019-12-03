@@ -148,6 +148,7 @@
     <Compile Include="Assets\Script\UI\StageDecoMove.cs" />
     <Compile Include="Assets\Script\UI\StageInfoOpener.cs" />
     <Compile Include="Assets\Script\UI\StageLoadSceneButton.cs" />
+    <Compile Include="Assets\Script\UI\StageOpenManager.cs" />
     <Compile Include="Assets\Script\UI\StartUIInit.cs" />
     <Compile Include="Assets\Spine\spine-csharp\Animation.cs" />
     <Compile Include="Assets\Spine\spine-csharp\AnimationState.cs" />

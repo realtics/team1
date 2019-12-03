@@ -57,7 +57,7 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.cash = dataSO.cash;
         m_playerSaveData.fatigability = dataSO.fatigability;
 
-        BinaryManager.Save(m_playerSaveData, dataname);
+        //BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     public PlayerData GetPlayerData()
@@ -86,7 +86,7 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         dataSO.cash = m_playerSaveData.cash;
         dataSO.fatigability = m_playerSaveData.fatigability;
 
-        BinaryManager.Save(m_playerSaveData, dataname);
+        //BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     public void SavePlayerData(PlayerData.DATA_ENUM _data_enum, int _value)
@@ -98,8 +98,8 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
                 dataSO.level = m_playerSaveData.level;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_GOLD:
-                m_playerSaveData.gold = _value;
-                dataSO.gold = m_playerSaveData.gold;
+				//m_playerSaveData.gold += _value;
+				dataSO.gold += _value;// = m_playerSaveData.gold;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_CASH:
                 m_playerSaveData.cash = _value;
@@ -111,7 +111,7 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
                 break;
         }
 
-        BinaryManager.Save(m_playerSaveData, dataname);
+        //BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     private void InitPlayerData()
@@ -135,7 +135,9 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.exp = 0;
         m_playerSaveData.gold = 0;
         m_playerSaveData.fatigability = 25;
-        BinaryManager.Save(m_playerSaveData, dataname);
+
+
+        //BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     public bool PlusExp(int _exp)
@@ -144,8 +146,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
 
         if (m_playerData.maxExp <= _exp)
         {
-            int prevLevel = m_playerData.level;
-
             while (m_playerData.maxExp <= _exp)
             {
                 _exp -= m_playerData.maxExp;
@@ -158,12 +158,11 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
 					m_playerData.fatigability = m_playerData.maxFatigability;
 			}
 
-            //m_dataUIPlayerLeval.ShowPlayerLevelData(prevLevel, m_playerData.level);
-
 			SavePlayerData(m_playerData);
 			return true;
 		}
 
+        m_playerData.exp = _exp;
         SavePlayerData(m_playerData);
 
         return false;

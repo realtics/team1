@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\UI\ButtonEventEditor.cs" />
+    <Compile Include="Assets\Editor\UI\ItemDataManagerEditor.cs" />
     <Compile Include="Assets\Spine\spine-unity\Editor\AnimationReferenceAssetEditor.cs" />
     <Compile Include="Assets\Spine\spine-unity\Editor\AssetDatabaseAvailabilityDetector.cs" />
     <Compile Include="Assets\Spine\spine-unity\Editor\AtlasAssetInspector.cs" />

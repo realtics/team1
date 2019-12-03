@@ -11,6 +11,7 @@ public class StageManager : Singletone<StageManager>
 	private CharacterInfo m_playerInfo;
 	private GameObject m_endUI;
 
+
 	[SerializeField]
 	private int m_iKillMonsterCount = 0;
 	[SerializeField]
@@ -51,23 +52,44 @@ public class StageManager : Singletone<StageManager>
 	private Image m_stageExpBar = null;
 	[SerializeField]
 	private TextMeshProUGUI m_stageMaxEndCurExp = null;
+    [SerializeField]
+    private GameObject m_LevelUpUI = null;
 
+    [SerializeField]
+    private GameObject m_rewardUI = null;
+    [SerializeField]
+    private GameObject m_resultUiBG = null;
+    [SerializeField]
+    private GameObject m_resultUiClear = null;
+    [SerializeField]
+    private GameObject m_resultUiFail = null;
+    private float m_fRewardTime = 0;
 
-
-
-	private float m_stageTime = -3.0f;
+    private float m_stageTime = -3.0f;
 	private bool m_bStageSuccess = false;
+    private StageDataManager.StageNameEnum m_nowStageIndex;
+    private float m_fRewardExp;
+    private float m_fPrevExp;
+    private float m_fPrevMaxExp;
+    private float m_fCurrentExp;
+    private float m_fCurrentMaxExp;
 
-	public void Start()
+    public void Start()
 	{
 		m_playerInfo = m_playerTransform.GetComponent<CharacterInfo>();
 		m_endUI = GameObject.Find("EndUI");
-		m_endUI.SetActive(false);		
+        m_endUI.SetActive(false);		
 		m_bStageSuccess = false;
 		m_stageTime = 0;
 		m_fRewardTime = 3.0f;
-	}
-	public void Update()
+        m_stageExpBar.fillAmount = (float)(PlayerDataManager.Inst.GetPlayerData().exp) / (float)(PlayerDataManager.Inst.GetPlayerData().maxExp);
+        m_stageExpText.text = ((m_stageExpBar.fillAmount) * 100).ToString();
+        m_stageExpText.text += "%";
+        m_nowStageIndex = StageDataManager.Inst.nowStage;
+        m_fRewardExp = StageDataManager.Inst.stageDataSO.MainStageData[(int)m_nowStageIndex].rewardExp;
+    }
+
+	public void FixedUpdate()
 	{
 		float deltaTime = Time.deltaTime;
 		m_stageTime += deltaTime;
@@ -85,37 +107,66 @@ public class StageManager : Singletone<StageManager>
 			m_endUI.SetActive(true);
 			EndUIActive();
 		}
+
 		if(m_endUI.activeSelf == true && m_fRewardTime >0)
 		{
-			m_fRewardTime -= deltaTime;
-			if(m_fRewardTime<0)
+			m_fRewardTime -= Time.fixedDeltaTime;
+			if(m_fRewardTime<=0)
 			{
+
+				if (m_bStageSuccess)
+				{
+					m_fPrevExp = (float)PlayerDataManager.Inst.GetPlayerData().exp;
+					m_fPrevMaxExp = (float)PlayerDataManager.Inst.GetPlayerData().maxExp;
+					PlayerDataManager.Inst.PlusExp(StageDataManager.Inst.stageDataSO.MainStageData[(int)m_nowStageIndex].rewardExp);
+					m_fCurrentExp = (float)PlayerDataManager.Inst.GetPlayerData().exp;
+					m_fCurrentMaxExp = (float)PlayerDataManager.Inst.GetPlayerData().maxExp;
+
+					PlayerDataManager.Inst.SavePlayerData(PlayerDataManager.PlayerData.DATA_ENUM.DATA_ENUM_GOLD,
+						StageDataManager.Inst.stageDataSO.MainStageData[(int)m_nowStageIndex].rewardGold);
+				}
+
 				m_rewardUI.SetActive(true);
 				m_resultUiFail.SetActive(false);
 				m_resultUiClear.SetActive(false);
 				m_resultUiBG.SetActive(false);
+				//StageEnd();
 
-				int nowStage = (int)StageDataManager.Inst.nowStage;
-				PlayerDataManager.Inst.PlusExp(StageDataManager.Inst.stageDataSO.MainStageData[nowStage].rewardExp);
+				UpdateMaxStage();
 			}
 		}
 
 
-		if(m_rewardUI.activeSelf == true && m_bStageSuccess)
-		{
-			if (m_stageExpBar.fillAmount < PlayerDataManager.Inst.GetPlayerData().exp / PlayerDataManager.Inst.GetPlayerData().maxExp)
-			{
-				float tempSpeed = 0.5f;
-				m_stageExpBar.fillAmount += tempSpeed * deltaTime;
-			}
-		}
-
-
-
-		UpdatePlayerUI();
+        if (m_rewardUI.activeSelf == true && m_bStageSuccess)
+        {
+            if (m_stageExpBar.fillAmount < ((float)m_fPrevExp + m_fRewardExp) / (float)m_fPrevMaxExp)
+            {
+                float tempSpeed = 0.3f;
+                m_stageExpBar.fillAmount += tempSpeed * Time.fixedDeltaTime;
+                m_stageExpText.text = (Mathf.Round(m_stageExpBar.fillAmount * 10000) / 100).ToString();
+                m_stageExpText.text += "%";
+            }
+            
+            if (m_stageExpBar.fillAmount >= 1)
+            {
+                m_fPrevExp = m_fCurrentExp;
+                m_fPrevMaxExp = m_fCurrentMaxExp;
+                m_stageExpBar.fillAmount = 0;
+                m_fRewardExp = 0;
+                m_LevelUpUI.SetActive(true);
+				SetPlayerInfoInUI();
+				Invoke(nameof(LevelUpUIOff), 2f);
+            }
+        }
+        UpdatePlayerUI();
 	}
 
-	public void SetMonsterCount(bool _overKill)
+    private void LevelUpUIOff()
+    {
+        m_LevelUpUI.SetActive(false);
+    }
+
+    public void SetMonsterCount(bool _overKill)
 	{
 		m_iKillMonsterCount++;
 		if (_overKill)
@@ -146,6 +197,12 @@ public class StageManager : Singletone<StageManager>
 		}
 	}
 
+	private void UpdateMaxStage()
+	{
+		if (StageDataManager.Inst.nowStage == StageDataManager.StageNameEnum.STAGE_1_1 && m_bStageSuccess)
+			StageDataManager.Inst.stageDataSO.maxStage = StageDataManager.StageNameEnum.STAGE_1_2;
+	}
+
 	private void UpdatePlayerUI()
 	{
 		m_plyaerHpText.text = m_playerInfo.GetHP().ToString();
@@ -162,26 +219,17 @@ public class StageManager : Singletone<StageManager>
 		RewardText();
 	}
 
-	[SerializeField]
-	private GameObject m_rewardUI = null;
-	[SerializeField]
-	private GameObject m_resultUiBG = null;
-	[SerializeField]
-	private GameObject m_resultUiClear = null;
-	[SerializeField]
-	private GameObject m_resultUiFail = null;
-	private float m_fRewardTime = 0;
 
 	private void EndUIActive()
 	{
 		if(m_bStageSuccess)
 		{
-			m_resultUiBG.GetComponent<Image>().color = new Color((136.0f / 255.0f) , (106.0f / 255.0f) , (1.0f / 255.0f), 1.0f);
+            m_resultUiBG.GetComponent<Image>().color = new Color((136.0f / 255.0f), (106.0f / 255.0f), (1.0f / 255.0f), 230.0f / 255.0f);
 			m_resultUiClear.SetActive(true);
 		}
 		else
 		{
-			m_resultUiBG.GetComponent<Image>().color = new Color(15 / 255, 15 / 255, 15 / 255);
+			m_resultUiBG.GetComponent<Image>().color = new Color(15f / 255f, 15f / 255f, 15f / 255f, 230f/255f);
 			m_resultUiFail.SetActive(true);
 		}
 	}
@@ -255,15 +303,20 @@ public class StageManager : Singletone<StageManager>
 
 	private void SetEndTime()
     {
+
         int tempfloat = (int)Mathf.Round(m_stageTime * 100);
 		CheckTimeRecord(tempfloat);
-		SetTimeText(m_stageTimeText, tempfloat);
+		if (m_bStageSuccess)
+		{
+			SetTimeText(m_stageTimeText, tempfloat);
+
+		}
 	}
 
 	private void CheckTimeRecord(int _nowTime)
 	{
 		int nowStage = (int)StageDataManager.Inst.nowStage;
-		if(StageDataManager.Inst.stageDataSO.MainStageData[nowStage].timeRecord > _nowTime || StageDataManager.Inst.stageDataSO.MainStageData[nowStage].timeRecord == 0)
+		if((StageDataManager.Inst.stageDataSO.MainStageData[nowStage].timeRecord > _nowTime || StageDataManager.Inst.stageDataSO.MainStageData[nowStage].timeRecord == 0)&&m_bStageSuccess)
 		{
 			StageDataManager.Inst.stageDataSO.MainStageData[nowStage].timeRecord = _nowTime;
 		}

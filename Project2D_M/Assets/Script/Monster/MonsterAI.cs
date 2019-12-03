@@ -41,9 +41,11 @@ public class MonsterAI : MonoBehaviour
     private MonsterHpBar m_monsterHpBar;
     private ReceiveDamage m_receiveDamage;
     private bool m_bLive;
+    private bool m_bAppear;
 
     private Animator m_animator;
-    public float speed;
+    [SerializeField]
+    public float m_fSpeed;
     private float m_attackDistance;
 
     private readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
@@ -55,6 +57,11 @@ public class MonsterAI : MonoBehaviour
 
     private WaitForSeconds m_secondsDelay = new WaitForSeconds(0.3f);
 
+    [SerializeField]
+    private float m_fAppearTime;
+    [SerializeField]
+    private CrowdControlManager m_crowdControlMg;
+
 
     private void Awake()
     {
@@ -65,6 +72,8 @@ public class MonsterAI : MonoBehaviour
         m_playerTransform = StageManager.Inst.playerTransform;
 
         m_eState = MONSTER_STATE.APPEAR;
+        
+
 
         InitMonsterInfo();
         InitAniamation();
@@ -74,14 +83,32 @@ public class MonsterAI : MonoBehaviour
 
     private void Start()
     {
+        //나중에 바꿀거
+        m_monsterHpBar.transform.gameObject.SetActive(false);
+        //
+        m_bAppear = m_animator.GetBool(m_hashBAppear);
         StartCoroutine(StateCheck());
         StartCoroutine(Action());
+        m_crowdControlMg.Impenetrable(m_fAppearTime);
     }
 
     private void Update()
     {
+        if(m_fAppearTime >0)
+            m_fAppearTime -= Time.deltaTime;
+        if(m_bAppear ==false && m_fAppearTime <= 0)
+        {
+            m_bAppear = true;
+            m_animator.SetBool(m_hashBAppear, true);
+            m_monsterHpBar.transform.gameObject.SetActive(true);
+        }
         m_monsterHpBar.SetHPBar(m_monsterInfo);
         m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
+        // 다시볼것
+        if (m_animFunction.GetCurrntAnimClipName() == "hit")
+        {
+            m_monsterAttack.m_bAttack = false;
+        }
     }
     IEnumerator StateCheck()
     {
@@ -90,6 +117,12 @@ public class MonsterAI : MonoBehaviour
 
         while (m_bLive)
         {
+            if (m_bAppear == false)
+            {
+                yield return new WaitForSeconds(0.5f);
+                continue;
+            }
+            //    yield return null;
 
             if (m_bLive == false)
                 yield break;
@@ -120,8 +153,10 @@ public class MonsterAI : MonoBehaviour
 
             if (m_monsterPosition != Monster_Position.Monster_Position_Ground)
             {
-                m_eState = MONSTER_STATE.IDLE;
+                m_eState = MONSTER_STATE.HIT;
                 ResetAnim();
+                if (m_monsterInfo.IsCharacterDie())
+                    m_eState = MONSTER_STATE.DIE;
             }
             yield return m_secondsDelay;
         }
@@ -129,8 +164,10 @@ public class MonsterAI : MonoBehaviour
 
     IEnumerator Action()
     {
-        while (m_bLive)
+        while (m_bLive )
         {
+            if (m_bAppear == false)
+                yield return null;
             //yield return null;
             yield return m_secondsDelay;
 
@@ -155,24 +192,26 @@ public class MonsterAI : MonoBehaviour
                         m_monsterMove.isMove = false;
 
                         m_animator.SetBool(m_hashBLive, false);
-                        //m_animator.SetTrigger("tDie");
 
-                        if (m_animFunction.GetCurrntAnimClipName() == "knockdown")
-                        {
-                            StageManager.Inst.SetMonsterCount(m_monsterInfo.bOverKill);
-                            m_bLive = false;
-                        }
+                        StageManager.Inst.SetMonsterCount(m_monsterInfo.bOverKill);
+                        m_bLive = false;
+                        //m_animator.SetTrigger("tDie");
+                        //if (m_animFunction.IsTag("knockdown"))
+                        //{
+                        //    StageManager.Inst.SetMonsterCount(m_monsterInfo.bOverKill);
+                        //    m_bLive = false;
+                        //}
                         break;
                     case MONSTER_STATE.APPEAR:
                         m_monsterAttack.m_bAttack = false;
 
-                        m_animator.SetBool(m_hashBAppear, true);
+                        //m_animator.SetBool(m_hashBAppear, true);
                         break;
                     case MONSTER_STATE.MOVE:
                         m_monsterAttack.m_bAttack = false;
                         if (m_animFunction.GetCurrntAnimClipName() == "idle")
                         {
-                            m_animator.SetFloat(m_hashFSpeed, speed);
+                            m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
                             m_monsterMove.isMove = true;
                         }
                         break;
@@ -188,15 +227,26 @@ public class MonsterAI : MonoBehaviour
     void InitMonsterInfo()
     {
         MonsterInfo.MonsterCharInfo monsterCharInfo;
-
-        monsterCharInfo.level = 1;
-        monsterCharInfo.maxHp = 300;
-        monsterCharInfo.defensive = 10;
-        monsterCharInfo.attack = 100;
-        monsterCharInfo.attackDistance = 2.5f;
-        m_monsterInfo = GetComponent<MonsterInfo>();
-        m_monsterInfo.SetInfo(monsterCharInfo);
-
+		if(StageDataManager.Inst.nowStage == StageDataManager.StageNameEnum.STAGE_1_1)
+		{
+			monsterCharInfo.level = 1;
+			monsterCharInfo.maxHp = 300;
+			monsterCharInfo.defensive = 10;
+			monsterCharInfo.attack = 70;
+			monsterCharInfo.attackDistance = 2.5f;
+			m_monsterInfo = GetComponent<MonsterInfo>();
+			m_monsterInfo.SetInfo(monsterCharInfo);
+		}
+		else if (StageDataManager.Inst.nowStage == StageDataManager.StageNameEnum.STAGE_1_2)
+		{
+			monsterCharInfo.level = 1;
+			monsterCharInfo.maxHp = 700;
+			monsterCharInfo.defensive = 10;
+			monsterCharInfo.attack = 150;
+			monsterCharInfo.attackDistance = 2.5f;
+			m_monsterInfo = GetComponent<MonsterInfo>();
+			m_monsterInfo.SetInfo(monsterCharInfo);
+		}
         m_monsterMove = GetComponent<MonsterMove>();
         m_monsterAttack = GetComponent<MonsterAttack>();
         m_animFunction = transform.GetComponentInChildren<AnimFuntion>();
@@ -205,7 +255,7 @@ public class MonsterAI : MonoBehaviour
 
         m_monsterPosition = Monster_Position.Monster_Position_Ground;
 
-        m_monsterMove.SetSpeed(speed);
+        m_monsterMove.SetSpeed(m_fSpeed);
         m_bLive = true;
     }
 

@@ -53,15 +53,15 @@ public class StageDataManager : Singletone<StageDataManager>
     public void SaveStageData()
     {
 		m_stageData.MainStageData = stageDataSO.MainStageData;
-        BinaryManager.Save(m_stageData, dataName);
+		m_stageData.maxStage = stageDataSO.maxStage;
+		BinaryManager.Save(m_stageData, dataName);
     }
 
 	public void ConnectData()
 	{
 		m_stageData = new AllStageData();
 
-		//m_stageData.MainStageData.Capacity = stageDataSO.MainStageData.Count;
 		m_stageData.MainStageData = stageDataSO.MainStageData;
-
+		m_stageData.maxStage = stageDataSO.maxStage;
 	}
 }

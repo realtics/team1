@@ -58,7 +58,6 @@ public class MonsterAttack : MonoBehaviour
     {
         //if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("move"))
 
-
         if (!m_animator.GetCurrentAnimatorStateInfo(0).IsTag("attack"))
         {
             m_bAttacking = false;

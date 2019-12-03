@@ -21,6 +21,7 @@ public class LoadSceneButton : MonoBehaviour
         INVENTORY,
         WORLDMAP,
         STAGE_1,
+		STAGE_2
     }
 
     public SCENE_NAME wantToGoSceneName;

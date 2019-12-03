@@ -35,7 +35,7 @@ public class ReceiveDamage : ScriptEnable
         if (m_characterInfo.IsCharacterDie())
         {
             m_animator.SetTrigger("tDie");
-            this.enabled = false;
+            this.bScriptEnable = false;
         }
     }
 

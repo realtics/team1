@@ -32,7 +32,7 @@ public class PlayerAttackCollider : AttackCollider
         if (collision.tag == m_sTagName)
         {
             ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
-            if (receiveDamage.enabled != false)
+            if (receiveDamage.bScriptEnable != false)
             {
                 if (attackForce != Vector2.zero)
                 {

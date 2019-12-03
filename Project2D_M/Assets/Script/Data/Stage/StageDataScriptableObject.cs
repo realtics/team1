@@ -11,6 +11,7 @@ namespace GameSaveDataIO
     [System.Serializable]
     public class StageDataScriptableObject : ScriptableObject
     {
-        public List<StageData> MainStageData;
+		public StageDataManager.StageNameEnum maxStage = StageDataManager.StageNameEnum.STAGE_1_1;
+		public List<StageData> MainStageData;
     }
 }
