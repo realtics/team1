@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using GameSaveDataIO;
 using UnityEngine;
 
 /*
@@ -23,7 +25,48 @@ namespace GameSaveData
         //아이템 장착 정보 추가해야함
     }
 
-    [System.Serializable]
+	[System.Serializable]
+	public class ItemSaveData
+	{
+		public List<ItemInfoData> itemSaveList = new List<ItemInfoData>();
+		public class ItemInfoData
+		{
+			public enum ITEM_RATING
+			{
+				NOMAL,
+				MAGIC,
+				RARE,
+				EPIC,
+				UNIQUE,
+			}
+			public enum ITEM_TYPE
+			{
+				WEAPON,
+				ARMOR,
+				ACCESSORIES,
+			}
+
+			public string itemName;
+			public int level;
+			public Sprite image;
+
+			public ITEM_RATING itemRating;
+			public string ratingName;
+			public int frameColorR;
+			public int frameColorG;
+			public int frameColorB;
+			public int frameColorA;
+
+			public ITEM_TYPE itemType;
+			public string typeName;
+			public int equipmentAttack;
+			public int equipmentArmor;
+			public int equipmentMaxHealth;
+
+		}
+	}
+
+	[System.Serializable]
     public class AllStageData
     {
 		public StageDataManager.StageNameEnum maxStage = StageDataManager.StageNameEnum.STAGE_1_1;

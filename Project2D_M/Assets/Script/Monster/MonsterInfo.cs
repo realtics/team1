@@ -10,7 +10,9 @@ using UnityEngine;
  */
 public class MonsterInfo : CharacterInfo
 {
-    private float m_attackDistance;
+	[SerializeField]
+    protected float m_attackDistance;
+
     public struct MonsterCharInfo
     {
         public int level;

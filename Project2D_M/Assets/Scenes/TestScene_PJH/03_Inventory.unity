@@ -2432,20 +2432,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ba6ce5e473ab245b12fa4f96171269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataname: ItemData.dat
   m_itemData: {fileID: 11400000, guid: 998f2f55151ec25498e657e090e78dfc, type: 2}
-  m_itemNameKey:
-  - "\uD6C8\uB828\uC6A9 \uC218\uC815"
-  m_values:
-  - level: 1
-    image: {fileID: 21300000, guid: 124080627df9a4ae5a15ef14370641c6, type: 3}
-    itemRating: 3
-    ratingName: "\uC5D0\uD53D"
-    frameColorR: 76
-    frameColorG: 22
-    frameColorB: 117
+  m_itemList:
+  - itemName: "\uD6C8\uB828\uC6A9 \uC218\uC815"
+    level: 1
+    image: {fileID: -7066549804016900418, guid: e377d7d68a0cf2949b8c4a6b886eb034,
+      type: 3}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
     frameColorA: 255
     itemType: 0
     typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: "\uD6C8\uB828\uC6A9 \uB098\uC774\uD504"
+    level: 1
+    image: {fileID: -7066549804016900418, guid: e377d7d68a0cf2949b8c4a6b886eb034,
+      type: 3}
+    itemRating: 1
+    ratingName: "\uB9E4\uC9C1"
+    frameColorR: 68
+    frameColorG: 102
+    frameColorB: 28
+    frameColorA: 255
+    itemType: 1
+    typeName: "\uBC29\uC5B4\uAD6C"
     equipmentAttack: 0
     equipmentArmor: 0
     equipmentMaxHealth: 0

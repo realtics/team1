@@ -38,13 +38,18 @@ public class AnimFuntion : MonoBehaviour
         return Animator.StringToHash(_tagname);
     }
 
+	public void PlayAnim(string _animName)
+	{
+		m_animator.Play(_animName);
+	}
+
     /// <summary>
     /// 현재 진행중인 애니메이션 클립의 이름
     /// </summary>
     /// <returns></returns>
     public string GetCurrntAnimClipName()
     {
-        return m_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+		return m_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
     }
 
     /// <summary>

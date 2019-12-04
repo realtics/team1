@@ -16,7 +16,7 @@ public class SpineAnimCollider : MonoBehaviour
     private MeshRenderer m_meshRenderer = null;
     private SkeletonRenderer m_skeletonRenderer = null;
     private PolygonCollider2D m_meshCollider = null;
-    private Transform m_objectTransform = null;
+	private Transform m_objectTransform = null;
     private void Awake()
     {
         m_meshRenderer = this.GetComponent<MeshRenderer>();
@@ -24,15 +24,15 @@ public class SpineAnimCollider : MonoBehaviour
         m_skeletonRenderer = this.GetComponent<SkeletonRenderer>();
         m_objectTransform = this.transform.root;
     }
-    public void ColliderDraw()
+    public void ColliderDraw(float _collisionSize = 1.0f)
     {
         if (m_meshRenderer.materials.Length == 0)
             return;
 
-        DrawBoundingBoxes(m_skeletonRenderer.transform, m_skeletonRenderer.skeleton);
+        DrawBoundingBoxes(m_skeletonRenderer.transform, m_skeletonRenderer.skeleton,_collisionSize);
     }
 
-    private void DrawBoundingBoxes(Transform transform, Skeleton skeleton)
+    private void DrawBoundingBoxes(Transform transform, Skeleton skeleton,float _collisionSize)
     {
         int count = 1;
         ExposedList<Slot>.Enumerator enmerator = skeleton.slots.GetEnumerator();
@@ -41,7 +41,7 @@ public class SpineAnimCollider : MonoBehaviour
             BoundingBoxAttachment bba = enmerator.Current.Attachment as BoundingBoxAttachment;
             if (bba != null)
             {
-                Vector2[] boxArray = DrawBoundingBox(enmerator.Current, bba, transform);
+                Vector2[] boxArray = DrawBoundingBox(enmerator.Current, bba, transform, _collisionSize);
                 if (boxArray != null)
                 {
                     m_meshCollider.pathCount = count;
@@ -52,7 +52,7 @@ public class SpineAnimCollider : MonoBehaviour
         }
     }
 
-    private Vector2[] DrawBoundingBox(Slot slot, BoundingBoxAttachment box, Transform t)
+    private Vector2[] DrawBoundingBox(Slot slot, BoundingBoxAttachment box, Transform t, float _collisionSize)
     {
         if (box.Vertices.Length <= 2) return null;
 
@@ -71,7 +71,7 @@ public class SpineAnimCollider : MonoBehaviour
 
             vert = t.TransformPoint(vert);
             vert = m_objectTransform.InverseTransformPoint(vert);
-            temp[i/2] = (Vector2)vert * 1f;
+            temp[i/2] = (Vector2)vert * _collisionSize;
         }
         return temp;
     }

@@ -30,6 +30,7 @@ public class PlayerInput : ScriptEnable
     private PlayerNormalAttack m_playerNormalAttack = null;
     private PlayerEvasion m_playerEvasion = null;
     private PlayerAnimFuntion m_animFuntion= null;
+	private SkillManager m_skillManager = null;
     private PlayerInfo m_playerInfo;
     private bool m_bUiMove = false;
 
@@ -42,7 +43,8 @@ public class PlayerInput : ScriptEnable
         m_characterMove  = this.GetComponent<CharacterMove>();
         m_characterJump  = this.GetComponent<CharacterJump>();
 		m_animFuntion = this.GetComponentInChildren<PlayerAnimFuntion>();
-        m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
+		m_skillManager = this.GetComponentInChildren<SkillManager>();
+		m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
         m_playerEvasion = this.GetComponent<PlayerEvasion>();
         m_playerInfo = this.GetComponent<PlayerInfo>();
     }
@@ -65,7 +67,7 @@ public class PlayerInput : ScriptEnable
 
 		if (Input.GetButtonDown("Fire3"))
 		{
-			//m_animFuntion.Play("skill3_flame_haze_1_start", -1,0); 
+			m_skillManager.SkillAction("FlameHaze");
 		}
 
 	}

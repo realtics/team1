@@ -16,12 +16,12 @@ public class AttackCollider : MonoBehaviour
     protected SpineAnimCollider m_spineAnimCollider = null;
     [SerializeField] protected int m_damage;
     [SerializeField] protected Vector2 attackForce;
+	public float iCollisionSize = 1.0f;
 
-    private void Awake()
+	private void Awake()
     {
         m_characterInfo = this.transform.root.GetComponent<CharacterInfo>();
         m_collider = this.GetComponent<PolygonCollider2D>();
-
         m_spineAnimCollider = this.GetComponent<SpineAnimCollider>();
     }
 
@@ -53,6 +53,7 @@ public class AttackCollider : MonoBehaviour
 
     public virtual void ColliderLifeCycleOn(float _time)
     {
+		Debug.Log("on");
         StartCoroutine(ColliderLifeCycle(_time));
     }
 
@@ -61,8 +62,7 @@ public class AttackCollider : MonoBehaviour
         if (m_collider.enabled == false)
         {
             m_collider.enabled = true;
-            m_spineAnimCollider.ColliderDraw();
-
+            m_spineAnimCollider.ColliderDraw(iCollisionSize);
         }
     }
 

@@ -25,12 +25,12 @@ public class PlayerNormalAttack : MonoBehaviour
     }
 
     public EffectAnimFuntion m_effectAnimFuntion;
-
+	public GameObject NormalAttackEffect;
+	private AttackCollider m_attackCollider;
     private Dictionary<string, AttackInfo> m_NormalAttackDic;
     private Rigidbody2D m_rigidbody2D = null;
     private PlayerAnimFuntion m_animFuntion = null;
     private CharacterMove m_characterMove = null;
-    private AttackManager m_attackCollider = null;
     private PlayerState m_playerState = null;
     private PlayerInput m_playerInput = null;
     private bool m_bAttacking;
@@ -39,8 +39,8 @@ public class PlayerNormalAttack : MonoBehaviour
     {
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<PlayerAnimFuntion>();
-        m_characterMove = this.GetComponent<CharacterMove>();
-        m_attackCollider = this.transform.Find("AttackManager").GetComponent<AttackManager>();
+		m_attackCollider = NormalAttackEffect.GetComponent<AttackCollider>();
+		m_characterMove = this.GetComponent<CharacterMove>();
         m_playerState = this.GetComponent<PlayerState>();
         m_playerInput = this.GetComponent<PlayerInput>();
         m_bAttacking = false;

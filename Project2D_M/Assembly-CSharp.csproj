@@ -92,7 +92,8 @@
     <Compile Include="Assets\Script\Character\Common\SpineAnimCollider.cs" />
     <Compile Include="Assets\Script\Character\Player\Anim\PlayerAnimToState.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\AnimToAttackManager.cs" />
-    <Compile Include="Assets\Script\Character\Player\Attack\AttackManager.cs" />
+    <Compile Include="Assets\Script\Character\Player\Attack\SkillFuntion.cs" />
+    <Compile Include="Assets\Script\Character\Player\Attack\SkillManager.cs" />
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerAttackCollider.cs" />
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerFootCollision.cs" />
     <Compile Include="Assets\Script\Character\Player\DamageFont.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Assets\Script\Monster\MonsterHpBar.cs" />
     <Compile Include="Assets\Script\Monster\MonsterInfo.cs" />
     <Compile Include="Assets\Script\Monster\MonsterMove.cs" />
+    <Compile Include="Assets\Script\Monster\StateMachine.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxBackGround.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxCamera.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxLayer.cs" />

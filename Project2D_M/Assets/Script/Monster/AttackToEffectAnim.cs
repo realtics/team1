@@ -10,11 +10,11 @@ using UnityEngine;
  */
 public class AttackToEffectAnim : MonoBehaviour
 {
-    public AttackManager attackManager;
+    public SkillManager skillManager;
 
     //애니메이션 이벤트 사용
-    public void PlayAnim(string _animname, string _attackObjectName = null, bool _roof = false)
+    public void PlayAnim(string _animname)
     {
-        attackManager.PlayAnim(_animname, _attackObjectName, _roof);
+		skillManager.PlayAnim(_animname);
     }
 }

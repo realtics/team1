@@ -9,13 +9,9 @@ namespace GameSaveDataIO
     public class ItemDataScriptableObject : ScriptableObject
     {
         [SerializeField]
-        List<string> itemNameKeyList = new List<string>();
+        List<ItemInfoData> itemList = new List<ItemInfoData>();
 
-        [SerializeField]
-        List<ItemInfoData> valueList = new List<ItemInfoData>();
-
-        public List<string> ItemNameKeyList { get => itemNameKeyList; set => itemNameKeyList = value; }
-        public List<ItemInfoData> ValueList { get => valueList; set => valueList = value; }
+        public List<ItemInfoData> ItemList { get => itemList; set => itemList = value; }
 
         [System.Serializable]
         public class ItemInfoData
@@ -35,25 +31,27 @@ namespace GameSaveDataIO
                 ACCESSORIES,
             }
 
-            public ITEM_RATING itemRating;
-            public ITEM_TYPE itemType;
+			public string itemName;
             public int level;
             public Sprite image;
 
-            public string ratingName;
+			public ITEM_RATING itemRating;
+			public string ratingName;
             public int frameColorR;
             public int frameColorG;
             public int frameColorB;
             public int frameColorA;
 
-            public string typeName;
+			public ITEM_TYPE itemType;
+			public string typeName;
             public int equipmentAttack;
             public int equipmentArmor;
             public int equipmentMaxHealth;
 
-            public ItemInfoData(ITEM_RATING _itemRating, ITEM_TYPE _itemType, int _level, Sprite _image)
-            {
-                itemRating = _itemRating;
+			public ItemInfoData(string _itemName, ITEM_RATING _itemRating, ITEM_TYPE _itemType, int _level, Sprite _image)
+			{
+				itemName = _itemName;
+				itemRating = _itemRating;
                 itemType = _itemType;
                 level = _level;
                 image = _image;

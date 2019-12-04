@@ -12,19 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25acb3b79ea94724f98154e5034ee377, type: 3}
   m_Name: ItemDataSO
   m_EditorClassIdentifier: 
-  itemNameKeyList:
-  - "\uD6C8\uB828\uC6A9 \uC218\uC815"
-  valueList:
-  - itemRating: 0
-    itemType: 2
-    level: 1
-    image: {fileID: 21300000, guid: 124080627df9a4ae5a15ef14370641c6, type: 3}
-    ratingName: "\uB9E4\uC9C1"
-    frameColorR: 68
-    frameColorG: 102
-    frameColorB: 28
-    frameColorA: 255
-    typeName: "\uBC29\uC5B4\uAD6C"
-    equipmentAttack: 0
-    equipmentArmor: 0
-    equipmentMaxHealth: 0
+  itemList: []

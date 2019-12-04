@@ -1,19 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using GameSaveData;
+using GameSaveData;
 using GameSaveDataIO;
 
 public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallbackReceiver
 {
-    [SerializeField]
+	public string dataname = "ItemData.dat";
+
+	[SerializeField]
     private ItemDataScriptableObject m_itemData;
 
     [SerializeField]
-    private List<string> m_itemNameKey = new List<string>();
-
-    [SerializeField]
-    private List<ItemInfoData> m_values = new List<ItemInfoData>();
+    private List<ItemInfoData> m_itemList = new List<ItemInfoData>();
 
     private Dictionary<string, ItemInfoData> m_itemDic = new Dictionary<string, ItemInfoData>();
 
@@ -34,6 +33,8 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
             ARMOR,
             ACCESSORIES,
         }
+
+		public string itemName;
         public int level;
         public Sprite image;
 
@@ -50,9 +51,10 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
         public int equipmentArmor;
         public int equipmentMaxHealth;
 
-        public ItemInfoData(ITEM_RATING _itemRating, ITEM_TYPE _itemType, int _level, Sprite _image)
+        public ItemInfoData(string _itemName, ITEM_RATING _itemRating, ITEM_TYPE _itemType, int _level, Sprite _image)
         {
-            itemRating = _itemRating;
+			itemName = _itemName;
+			itemRating = _itemRating;
             itemType = _itemType;
             level = _level;
             image = _image;
@@ -113,24 +115,65 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
 
     public bool modifyValues;
 
-    private void Awake()
+
+	private ItemInfoData m_itemInfoData = null;
+	private ItemSaveData m_itemSaveData = null;
+
+	private void Awake()
     {
-        for (int i = 0; i < Mathf.Min(m_itemData.ItemNameKeyList.Count, m_itemData.ValueList.Count); i++)
+        for (int i = 0; i < m_itemData.ItemList.Count; i++)
         {
-           m_itemDic.Add(m_itemData.ItemNameKeyList[i], new ItemInfoData((ItemInfoData.ITEM_RATING)m_itemData.ValueList[i].itemRating, (ItemInfoData.ITEM_TYPE)m_itemData.ValueList[i].itemType, m_itemData.ValueList[i].level, m_itemData.ValueList[i].image));
+           m_itemDic.Add(m_itemData.ItemList[i].itemName, new ItemInfoData(m_itemData.ItemList[i].itemName,
+																		   (ItemInfoData.ITEM_RATING)m_itemData.ItemList[i].itemRating,
+																		   (ItemInfoData.ITEM_TYPE)m_itemData.ItemList[i].itemType,
+																		   m_itemData.ItemList[i].level,
+																		   m_itemData.ItemList[i].image));
         }
     }
+
+	public ItemInfoData GetItemInfoData()
+	{
+		return m_itemInfoData;
+	}
+
+	public void SaveItemData()
+	{
+		// 변환문제 때문에 고민중인 함수
+
+		for (int i = 0; i < m_itemList.Count; i++)
+		{
+			m_itemSaveData.itemSaveList[i].itemName = m_itemList[i].itemName;
+			m_itemSaveData.itemSaveList[i].level = m_itemList[i].level;
+			m_itemSaveData.itemSaveList[i].image = m_itemList[i].image;
+			m_itemSaveData.itemSaveList[i].itemRating = (ItemSaveData.ItemInfoData.ITEM_RATING)m_itemList[i].itemRating;
+			m_itemSaveData.itemSaveList[i].ratingName = m_itemList[i].ratingName;
+			m_itemSaveData.itemSaveList[i].frameColorR = m_itemList[i].frameColorR;
+			m_itemSaveData.itemSaveList[i].frameColorG = m_itemList[i].frameColorG;
+			m_itemSaveData.itemSaveList[i].frameColorB = m_itemList[i].frameColorB;
+			m_itemSaveData.itemSaveList[i].frameColorA = m_itemList[i].frameColorA;
+			m_itemSaveData.itemSaveList[i].itemType = (ItemSaveData.ItemInfoData.ITEM_TYPE)m_itemList[i].itemType;
+			m_itemSaveData.itemSaveList[i].typeName = m_itemList[i].typeName;
+			m_itemSaveData.itemSaveList[i].equipmentAttack = m_itemList[i].equipmentAttack;
+			m_itemSaveData.itemSaveList[i].equipmentArmor = m_itemList[i].equipmentArmor;
+			m_itemSaveData.itemSaveList[i].equipmentMaxHealth = m_itemList[i].equipmentMaxHealth;
+		}
+
+		BinaryManager.Save(m_itemSaveData, dataname);
+	}
 
     public void OnBeforeSerialize()
     {
         if(modifyValues ==false)
         {
-            m_itemNameKey.Clear();
-            m_values.Clear();
-            for(int i=0 ; i < Mathf.Min(m_itemData.ItemNameKeyList.Count, m_itemData.ValueList.Count); i++)
+            m_itemList.Clear();
+
+            for(int i=0 ; i <  m_itemData.ItemList.Count; i++)
             {
-                m_itemNameKey.Add(m_itemData.ItemNameKeyList[i]);
-                m_values.Add(new ItemInfoData((ItemInfoData.ITEM_RATING)m_itemData.ValueList[i].itemRating, (ItemInfoData.ITEM_TYPE)m_itemData.ValueList[i].itemType, m_itemData.ValueList[i].level, m_itemData.ValueList[i].image));
+                m_itemList.Add(new ItemInfoData(m_itemData.ItemList[i].itemName,
+											 (ItemInfoData.ITEM_RATING)m_itemData.ItemList[i].itemRating,
+											 (ItemInfoData.ITEM_TYPE)m_itemData.ItemList[i].itemType,
+											 m_itemData.ItemList[i].level,
+											 m_itemData.ItemList[i].image));
             }
         }
     }
@@ -145,14 +188,16 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
         Debug.Log("Deserialize");
         m_itemDic = new Dictionary<string, ItemInfoData>();
 
-        m_itemData.ItemNameKeyList.Clear();
-        m_itemData.ValueList.Clear();
+        m_itemData.ItemList.Clear();
 
-        for(int i = 0; i< Mathf.Min(m_itemNameKey.Count, m_values.Count); i++)
+        for(int i = 0; i< m_itemList.Count; i++)
         {
-            m_itemData.ItemNameKeyList.Add(m_itemNameKey[i]);
-            m_itemData.ValueList.Add(new ItemDataScriptableObject.ItemInfoData((ItemDataScriptableObject.ItemInfoData.ITEM_RATING)m_values[i].itemRating, (ItemDataScriptableObject.ItemInfoData.ITEM_TYPE)m_values[i].itemType, m_values[i].level, m_values[i].image));
-            m_itemDic.Add(m_itemNameKey[i], m_values[i]);
+            m_itemData.ItemList.Add(new ItemDataScriptableObject.ItemInfoData(m_itemList[i].itemName,
+																			   (ItemDataScriptableObject.ItemInfoData.ITEM_RATING)m_itemList[i].itemRating,
+																			   (ItemDataScriptableObject.ItemInfoData.ITEM_TYPE)m_itemList[i].itemType,
+																			   m_itemList[i].level,
+																			   m_itemList[i].image));
+            m_itemDic.Add(m_itemList[i].itemName, m_itemList[i]);
         }
 
         modifyValues = false;
