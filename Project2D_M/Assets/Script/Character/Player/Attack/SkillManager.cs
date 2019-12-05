@@ -14,8 +14,10 @@ public class SkillManager : MonoBehaviour
     private AttackCollider[] m_attackColliders;
     private SkeletonAnimation[] m_skeletonAnimations;
 	private SkillFuntion[] m_skillFuntions;
-	[SerializeField]private AnimFuntion m_animFuntion = null;
-    private void Awake()
+	[SerializeField] private PlayerAnimFuntion m_animFuntion = null;
+	[SerializeField] private PlayerState m_playerState = null;
+
+	private void Awake()
     {
         m_attackColliders = this.GetComponentsInChildren<AttackCollider>();
         m_skeletonAnimations = this.GetComponentsInChildren<SkeletonAnimation>();
@@ -23,7 +25,7 @@ public class SkillManager : MonoBehaviour
 
 		for (int i = 0; i < m_skillFuntions.Length; ++i)
 		{
-			m_skillFuntions[i].InitSkill(m_animFuntion);
+			m_skillFuntions[i].InitSkill(m_animFuntion, m_playerState);
 		}
 	}
 
@@ -31,12 +33,21 @@ public class SkillManager : MonoBehaviour
     {
         for(int i = 0; i < m_attackColliders.Length; ++i)
         {
-			if (m_skillFuntions[i].sSkillClipName.Equals(_animName))
+			if (m_animFuntion.IsTag(m_skillFuntions[i].sSkillName))
 				m_attackColliders[i].ColliderLifeCycleOn(_time);
         }
     }
 
-    public void SetDamageColliderInfo(float _damageRatio, string _tagName, Vector2 _attackForce)
+	public void ColliderLifeCycleOnDraw(float _time, string _animName)
+	{
+		for (int i = 0; i < m_attackColliders.Length; ++i)
+		{
+			if (m_animFuntion.IsTag(m_skillFuntions[i].sSkillName))
+				m_attackColliders[i].ColliderLifeCycleOnDraw(_time);
+		}
+	}
+
+	public void SetDamageColliderInfo(float _damageRatio, string _tagName, Vector2 _attackForce)
     {
 		for (int i = 0; i < m_attackColliders.Length; ++i)
 		{

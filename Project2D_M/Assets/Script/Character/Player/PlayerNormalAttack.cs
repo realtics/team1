@@ -59,7 +59,7 @@ public class PlayerNormalAttack : MonoBehaviour
         m_NormalAttackDic.Add("air_attack_3", new AttackInfo(1.0f, new Vector2(2f, 12.0f)));
         m_NormalAttackDic.Add("air_attack_4", new AttackInfo(1.0f, new Vector2(5f, 12.0f)));
 
-        m_NormalAttackDic.Add("attack_upper", new AttackInfo(3.0f, new Vector2(2f, 30.0f)));
+        m_NormalAttackDic.Add("attack_upper", new AttackInfo(3.0f, new Vector2(1f, 30.0f)));
         m_NormalAttackDic.Add("attack_downsmash", new AttackInfo(4.0f, new Vector2(2f, -25.0f)));
     }
 
@@ -98,10 +98,11 @@ public class PlayerNormalAttack : MonoBehaviour
 			m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
         string m_sAnimName = m_animFuntion.GetCurrntAnimClipName();
-        PlayAnimEffect(m_sAnimName);
-        PlayStartSwitch(m_sAnimName);
 
-        while (true)
+        PlayStartSwitch(m_sAnimName);
+		PlayAnimEffect(m_sAnimName);
+
+		while (true)
         {
             if (!m_animFuntion.IsName(m_sAnimName))
             {
@@ -117,7 +118,9 @@ public class PlayerNormalAttack : MonoBehaviour
                 break;
             }
 
-            yield return 0;
+
+			Debug.Log("AirAttackking");
+			yield return 0;
         }
 
         m_bAttacking = false;
@@ -127,7 +130,15 @@ public class PlayerNormalAttack : MonoBehaviour
         {
             m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
             m_rigidbody2D.AddForce(new Vector2(0.1f, 0.1f));
-        }
+			Debug.Log("AirAttackEnd");
+		}
+
+		if(!m_playerState.IsPlayerGround())
+		{
+			m_playerState.PlayerStateDoubleJump();
+		}
+
+		Debug.Log("AttackEnd");
     }
 
     private void PlayAnimEffect(string _animName)
@@ -162,10 +173,11 @@ public class PlayerNormalAttack : MonoBehaviour
                     Invoke(nameof(Attack3Plus), 0.97f);
                     break;
                 case "attack_upper":
-                    Invoke(nameof(UpperJump), 0.3f);
+					m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+					Invoke(nameof(UpperJump), 0.3f);
                     break;
                 case "attack_downsmash":
-                    Invoke(nameof(SmashDown), 0.37f);
+					Invoke(nameof(SmashDown), 0.37f);
                     break;
                 default:
                     break;
@@ -177,7 +189,6 @@ public class PlayerNormalAttack : MonoBehaviour
     {
         if (m_animFuntion.IsTag("NormalAttack"))
         {
-            PlayAnimEffect(_animName);
             switch (_animName)
             {
                 case "attack_3":
@@ -194,7 +205,8 @@ public class PlayerNormalAttack : MonoBehaviour
                     break;
             }
 
-            PlayingStartInvokeSwitch(_animName);
+			PlayAnimEffect(_animName);
+			PlayingStartInvokeSwitch(_animName);
         }
     }
     private void PlayEndSwitch(string _animName)
@@ -228,13 +240,12 @@ public class PlayerNormalAttack : MonoBehaviour
     private void UpperJump()
     {
         m_playerState.PlayerStateJump();
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         m_rigidbody2D.AddForce(new Vector2(1f, 25f), ForceMode2D.Impulse);
     }
 
     private void SmashDown()
     {
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        m_rigidbody2D.AddForce(new Vector2(1f, -40f), ForceMode2D.Impulse);
+		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+		m_rigidbody2D.AddForce(new Vector2(1f, -40f), ForceMode2D.Impulse);
     }
 }

@@ -12,75 +12,50 @@ using UnityEngine;
  */
 namespace GameSaveData
 {
-    [System.Serializable]
-    public class PlayerSaveData
-    {
-        public string charactorName;
-        public int level;
-        public int exp;
-        public int gold;
-        public int cash;
-        public int fatigability; //피로도
-
-        //아이템 장착 정보 추가해야함
-    }
-
 	[System.Serializable]
-	public class ItemSaveData
+	public class PlayerSaveData
 	{
-		public List<ItemInfoData> itemSaveList = new List<ItemInfoData>();
-		public class ItemInfoData
-		{
-			public enum ITEM_RATING
-			{
-				NOMAL,
-				MAGIC,
-				RARE,
-				EPIC,
-				UNIQUE,
-			}
-			public enum ITEM_TYPE
-			{
-				WEAPON,
-				ARMOR,
-				ACCESSORIES,
-			}
+		public string charactorName;
+		public int level;
+		public int exp;
+		public int gold;
+		public int cash;
+		public int fatigability; //피로도
 
-			public string itemName;
-			public int level;
-			public Sprite image;
-
-			public ITEM_RATING itemRating;
-			public string ratingName;
-			public int frameColorR;
-			public int frameColorG;
-			public int frameColorB;
-			public int frameColorA;
-
-			public ITEM_TYPE itemType;
-			public string typeName;
-			public int equipmentAttack;
-			public int equipmentArmor;
-			public int equipmentMaxHealth;
-
-		}
+		public EquipmentInfo equipmentInfo;
 	}
 
 	[System.Serializable]
-    public class AllStageData
-    {
+	public class EquipmentInfo
+	{
+		public string weapon;
+		public string hat;
+		public string top;
+		public string gloves;
+		public string pants;
+		public string shoes;
+		public string necklace;
+		public string earring_one;
+		public string earring_two;
+		public string ring_one;
+		public string ring_two;
+	}
+
+	[System.Serializable]
+	public class AllStageData
+	{
 		public StageDataManager.StageNameEnum maxStage = StageDataManager.StageNameEnum.STAGE_1_1;
-        public List<StageData> MainStageData = new List<StageData>();
-    }
+		public List<StageData> MainStageData = new List<StageData>();
+	}
 
-    [System.Serializable]
-    public class StageData
-    {
-        public int rewardExp = 0;
-        public int rewardGold = 0;
-        public int monsterNum = 0;
-        public int monsterLevel = 1;
+	[System.Serializable]
+	public class StageData
+	{
+		public int rewardExp = 0;
+		public int rewardGold = 0;
+		public int monsterNum = 0;
+		public int monsterLevel = 1;
 
-        public int timeRecord = 0;
-    }
+		public int timeRecord = 0;
+	}
 }

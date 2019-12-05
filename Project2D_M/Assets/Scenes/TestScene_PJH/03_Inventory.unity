@@ -2432,13 +2432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ba6ce5e473ab245b12fa4f96171269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataname: ItemData.dat
   m_itemData: {fileID: 11400000, guid: 998f2f55151ec25498e657e090e78dfc, type: 2}
   m_itemList:
   - itemName: "\uD6C8\uB828\uC6A9 \uC218\uC815"
     level: 1
-    image: {fileID: -7066549804016900418, guid: e377d7d68a0cf2949b8c4a6b886eb034,
-      type: 3}
+    image: {fileID: 21300000, guid: 124080627df9a4ae5a15ef14370641c6, type: 3}
     itemRating: 0
     ratingName: "\uC77C\uBC18"
     frameColorR: 79
@@ -2447,21 +2445,6 @@ MonoBehaviour:
     frameColorA: 255
     itemType: 0
     typeName: "\uBB34\uAE30"
-    equipmentAttack: 0
-    equipmentArmor: 0
-    equipmentMaxHealth: 0
-  - itemName: "\uD6C8\uB828\uC6A9 \uB098\uC774\uD504"
-    level: 1
-    image: {fileID: -7066549804016900418, guid: e377d7d68a0cf2949b8c4a6b886eb034,
-      type: 3}
-    itemRating: 1
-    ratingName: "\uB9E4\uC9C1"
-    frameColorR: 68
-    frameColorG: 102
-    frameColorB: 28
-    frameColorA: 255
-    itemType: 1
-    typeName: "\uBC29\uC5B4\uAD6C"
     equipmentAttack: 0
     equipmentArmor: 0
     equipmentMaxHealth: 0
@@ -6730,7 +6713,7 @@ GameObject:
   - component: {fileID: 436290526}
   - component: {fileID: 436290525}
   m_Layer: 5
-  m_Name: OffensePower
+  m_Name: AttributeTypeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19233,7 +19216,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325537672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -27066,7 +27049,7 @@ GameObject:
   - component: {fileID: 1898311021}
   - component: {fileID: 1898311020}
   m_Layer: 5
-  m_Name: OffensePowerText
+  m_Name: AttributeValueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29510,7 +29493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2083772186
 RectTransform:
   m_ObjectHideFlags: 0

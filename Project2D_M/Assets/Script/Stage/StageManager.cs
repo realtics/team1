@@ -77,7 +77,7 @@ public class StageManager : Singletone<StageManager>
     public void Start()
 	{
 		m_playerInfo = m_playerTransform.GetComponent<CharacterInfo>();
-		m_endUI = GameObject.Find("EndUI");
+		m_endUI = GameObject.Find("EndUI"); //변경 해야함
         m_endUI.SetActive(false);		
 		m_bStageSuccess = false;
 		m_stageTime = 0;

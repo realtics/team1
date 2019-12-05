@@ -53,11 +53,15 @@ public class AttackCollider : MonoBehaviour
 
     public virtual void ColliderLifeCycleOn(float _time)
     {
-		Debug.Log("on");
         StartCoroutine(ColliderLifeCycle(_time));
     }
 
-    protected void ColliderOn()
+	public virtual void ColliderLifeCycleOnDraw(float _time)
+	{
+		StartCoroutine(ColliderLifeCycleDraw(_time));
+	}
+
+	protected void ColliderOn()
     {
         if (m_collider.enabled == false)
         {
@@ -80,4 +84,21 @@ public class AttackCollider : MonoBehaviour
         yield return new WaitForSeconds(_time);
         ColliderOff();
     }
+
+	protected IEnumerator ColliderLifeCycleDraw(float _time)
+	{
+		ColliderOn();
+		m_spineAnimCollider.ColliderDraw(iCollisionSize);
+		float time = 0;
+
+		while (time <= _time)
+		{
+			Debug.Log(time);
+			m_spineAnimCollider.ColliderDraw(iCollisionSize);
+			yield return new WaitForSeconds(0.01f);
+			time += Time.fixedDeltaTime;
+		}
+
+		ColliderOff();
+	}
 }

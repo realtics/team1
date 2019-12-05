@@ -82,6 +82,7 @@ public class PlayerState : MonoBehaviour
     {
         m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_AIR;
         m_jumpState = PLAYER_STATE_JUMP.PLAYER_STATE_JUMP;
+		if(m_actionState != PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK)
         m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_JUMP;
     }
 

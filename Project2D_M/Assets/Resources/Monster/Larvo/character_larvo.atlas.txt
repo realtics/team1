@@ -1,0 +1,648 @@
+
+character_larvo.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+character_larvo_1/L_eye
+  rotate: false
+  xy: 76, 80
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+character_larvo_1/L_leg1
+  rotate: false
+  xy: 76, 93
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+character_larvo_1/L_leg2
+  rotate: true
+  xy: 74, 54
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+character_larvo_1/L_leg3
+  rotate: false
+  xy: 247, 244
+  size: 7, 10
+  orig: 7, 10
+  offset: 0, 0
+  index: -1
+character_larvo_1/L_tooth
+  rotate: false
+  xy: 247, 235
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+character_larvo_1/Pupa_1
+  rotate: false
+  xy: 2, 188
+  size: 88, 66
+  orig: 88, 66
+  offset: 0, 0
+  index: -1
+character_larvo_1/Pupa_2
+  rotate: false
+  xy: 2, 122
+  size: 74, 64
+  orig: 74, 64
+  offset: 0, 0
+  index: -1
+character_larvo_1/R_eye
+  rotate: false
+  xy: 16, 7
+  size: 12, 11
+  orig: 12, 11
+  offset: 0, 0
+  index: -1
+character_larvo_1/R_leg_1
+  rotate: false
+  xy: 2, 6
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+character_larvo_1/R_leg_2
+  rotate: false
+  xy: 74, 66
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+character_larvo_1/R_leg_3
+  rotate: false
+  xy: 76, 107
+  size: 12, 13
+  orig: 12, 13
+  offset: 0, 0
+  index: -1
+character_larvo_1/R_leg_4
+  rotate: true
+  xy: 90, 108
+  size: 12, 11
+  orig: 12, 11
+  offset: 0, 0
+  index: -1
+character_larvo_1/R_tooth
+  rotate: false
+  xy: 204, 178
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+character_larvo_1/back_bug1
+  rotate: true
+  xy: 137, 177
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+character_larvo_1/back_bug2
+  rotate: false
+  xy: 43, 83
+  size: 31, 37
+  orig: 31, 37
+  offset: 0, 0
+  index: -1
+character_larvo_1/back_bug3
+  rotate: false
+  xy: 174, 188
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+character_larvo_1/body_1
+  rotate: false
+  xy: 38, 27
+  size: 28, 26
+  orig: 28, 26
+  offset: 0, 0
+  index: -1
+character_larvo_1/body_2
+  rotate: false
+  xy: 43, 55
+  size: 29, 26
+  orig: 29, 26
+  offset: 0, 0
+  index: -1
+character_larvo_1/body_3
+  rotate: false
+  xy: 174, 221
+  size: 35, 33
+  orig: 35, 33
+  offset: 0, 0
+  index: -1
+character_larvo_1/body_4
+  rotate: false
+  xy: 210, 191
+  size: 37, 27
+  orig: 37, 27
+  offset: 0, 0
+  index: -1
+character_larvo_1/body_5
+  rotate: true
+  xy: 78, 122
+  size: 24, 19
+  orig: 24, 19
+  offset: 0, 0
+  index: -1
+character_larvo_1/body_6
+  rotate: false
+  xy: 174, 168
+  size: 28, 18
+  orig: 28, 18
+  offset: 0, 0
+  index: -1
+character_larvo_1/bug_1
+  rotate: false
+  xy: 137, 209
+  size: 35, 45
+  orig: 35, 45
+  offset: 0, 0
+  index: -1
+character_larvo_1/bug_2
+  rotate: false
+  xy: 92, 190
+  size: 43, 64
+  orig: 43, 64
+  offset: 0, 0
+  index: -1
+character_larvo_1/bug_3
+  rotate: false
+  xy: 2, 66
+  size: 39, 54
+  orig: 39, 54
+  offset: 0, 0
+  index: -1
+character_larvo_1/bug_4
+  rotate: false
+  xy: 211, 220
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+character_larvo_1/head
+  rotate: true
+  xy: 38, 2
+  size: 23, 19
+  orig: 23, 19
+  offset: 0, 0
+  index: -1
+character_larvo_1/leave_1
+  rotate: true
+  xy: 78, 148
+  size: 38, 8
+  orig: 38, 8
+  offset: 0, 0
+  index: -1
+character_larvo_1/leave_2
+  rotate: true
+  xy: 2, 20
+  size: 44, 34
+  orig: 44, 34
+  offset: 0, 0
+  index: -1
+character_larvo_1/leave_3
+  rotate: true
+  xy: 59, 2
+  size: 23, 14
+  orig: 23, 14
+  offset: 0, 0
+  index: -1
+
+character_larvo2.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+character_larvo_2/B_L_eye
+  rotate: false
+  xy: 239, 83
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_L_leg1
+  rotate: false
+  xy: 223, 11
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_L_leg2
+  rotate: false
+  xy: 239, 63
+  size: 13, 18
+  orig: 13, 18
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_L_leg3
+  rotate: false
+  xy: 162, 22
+  size: 10, 14
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_L_tooth
+  rotate: false
+  xy: 130, 2
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_R_eye
+  rotate: false
+  xy: 162, 2
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_R_leg_1
+  rotate: false
+  xy: 182, 10
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_R_leg_2
+  rotate: false
+  xy: 194, 171
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_R_leg_3
+  rotate: true
+  xy: 202, 11
+  size: 16, 19
+  orig: 16, 19
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_R_leg_4
+  rotate: true
+  xy: 239, 101
+  size: 17, 15
+  orig: 17, 15
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_R_tooth
+  rotate: true
+  xy: 118, 2
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_back_bug1
+  rotate: true
+  xy: 194, 120
+  size: 48, 55
+  orig: 48, 55
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_back_bug2
+  rotate: false
+  xy: 73, 36
+  size: 49, 58
+  orig: 49, 58
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_back_bug3
+  rotate: false
+  xy: 186, 71
+  size: 51, 47
+  orig: 51, 47
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_body_1
+  rotate: false
+  xy: 210, 213
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_body_2
+  rotate: false
+  xy: 210, 170
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_body_3
+  rotate: false
+  xy: 128, 92
+  size: 56, 51
+  orig: 56, 51
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_body_4
+  rotate: false
+  xy: 134, 145
+  size: 58, 43
+  orig: 58, 43
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_body_5
+  rotate: false
+  xy: 179, 29
+  size: 38, 28
+  orig: 38, 28
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_body_6
+  rotate: false
+  xy: 73, 6
+  size: 43, 28
+  orig: 43, 28
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_bug_1
+  rotate: false
+  xy: 70, 96
+  size: 56, 72
+  orig: 56, 72
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_bug_2
+  rotate: false
+  xy: 2, 155
+  size: 66, 99
+  orig: 66, 99
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_bug_3
+  rotate: false
+  xy: 70, 170
+  size: 62, 84
+  orig: 62, 84
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_bug_4
+  rotate: false
+  xy: 124, 38
+  size: 53, 52
+  orig: 53, 52
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_head
+  rotate: false
+  xy: 219, 29
+  size: 35, 28
+  orig: 35, 28
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_leave_1
+  rotate: false
+  xy: 179, 59
+  size: 58, 10
+  orig: 58, 10
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_leave_2
+  rotate: false
+  xy: 2, 8
+  size: 69, 55
+  orig: 69, 55
+  offset: 0, 0
+  index: -1
+character_larvo_2/B_leave_3
+  rotate: false
+  xy: 124, 15
+  size: 36, 21
+  orig: 36, 21
+  offset: 0, 0
+  index: -1
+character_larvo_2/Pupa_1
+  rotate: true
+  xy: 2, 65
+  size: 88, 66
+  orig: 88, 66
+  offset: 0, 0
+  index: -1
+character_larvo_2/Pupa_2
+  rotate: false
+  xy: 134, 190
+  size: 74, 64
+  orig: 74, 64
+  offset: 0, 0
+  index: -1
+
+character_larvo3.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+character_SpottedLarvo/B_L_eye
+  rotate: false
+  xy: 239, 83
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_L_leg1
+  rotate: false
+  xy: 223, 11
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_L_leg2
+  rotate: false
+  xy: 239, 63
+  size: 13, 18
+  orig: 13, 18
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_L_leg3
+  rotate: false
+  xy: 162, 22
+  size: 10, 14
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_L_tooth
+  rotate: false
+  xy: 130, 2
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_R_eye
+  rotate: false
+  xy: 162, 2
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_R_leg_1
+  rotate: false
+  xy: 182, 10
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_R_leg_2
+  rotate: false
+  xy: 194, 171
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_R_leg_3
+  rotate: true
+  xy: 202, 11
+  size: 16, 19
+  orig: 16, 19
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_R_leg_4
+  rotate: true
+  xy: 239, 101
+  size: 17, 15
+  orig: 17, 15
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_R_tooth
+  rotate: true
+  xy: 118, 2
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_back_bug1
+  rotate: true
+  xy: 194, 120
+  size: 48, 55
+  orig: 48, 55
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_back_bug2
+  rotate: false
+  xy: 73, 36
+  size: 49, 58
+  orig: 49, 58
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_back_bug3
+  rotate: false
+  xy: 186, 71
+  size: 51, 47
+  orig: 51, 47
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_body_1
+  rotate: false
+  xy: 210, 213
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_body_2
+  rotate: false
+  xy: 210, 170
+  size: 44, 41
+  orig: 44, 41
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_body_3
+  rotate: false
+  xy: 128, 92
+  size: 56, 51
+  orig: 56, 51
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_body_4
+  rotate: false
+  xy: 134, 145
+  size: 58, 43
+  orig: 58, 43
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_body_5
+  rotate: false
+  xy: 179, 29
+  size: 38, 28
+  orig: 38, 28
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_body_6
+  rotate: false
+  xy: 73, 6
+  size: 43, 28
+  orig: 43, 28
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_bug_1
+  rotate: false
+  xy: 70, 96
+  size: 56, 72
+  orig: 56, 72
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_bug_2
+  rotate: false
+  xy: 2, 155
+  size: 66, 99
+  orig: 66, 99
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_bug_3
+  rotate: false
+  xy: 70, 170
+  size: 62, 84
+  orig: 62, 84
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_bug_4
+  rotate: false
+  xy: 124, 38
+  size: 53, 52
+  orig: 53, 52
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_head
+  rotate: false
+  xy: 219, 29
+  size: 35, 28
+  orig: 35, 28
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_leave_1
+  rotate: false
+  xy: 179, 59
+  size: 58, 10
+  orig: 58, 10
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_leave_2
+  rotate: false
+  xy: 2, 8
+  size: 69, 55
+  orig: 69, 55
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/B_leave_3
+  rotate: false
+  xy: 124, 15
+  size: 36, 21
+  orig: 36, 21
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/Pupa_1
+  rotate: true
+  xy: 2, 65
+  size: 88, 66
+  orig: 88, 66
+  offset: 0, 0
+  index: -1
+character_SpottedLarvo/Pupa_2
+  rotate: false
+  xy: 134, 190
+  size: 74, 64
+  orig: 74, 64
+  offset: 0, 0
+  index: -1

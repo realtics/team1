@@ -5,17 +5,27 @@ using UnityEngine;
 
 public class StateMachine : MonsterInfo
 {
-	
+	public enum ENEMY_STATE
+	{
+		APPEAR,
+		IDLE,
+		ATTACK,
+		MOVE,
+		DIE,
+		HIT
+	}
 
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
+	public ENEMY_STATE state;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
+	WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
+
+	protected void Start()
+	{
+		state = ENEMY_STATE.APPEAR;
+	}
+
+	protected virtual void InitMonster() { }
+
+
 }

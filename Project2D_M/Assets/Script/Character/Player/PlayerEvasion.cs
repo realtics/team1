@@ -65,7 +65,9 @@ public class PlayerEvasion : MonoBehaviour
 
     IEnumerator EvasionCoroutine()
     {
-        m_crowdControlManager.ImpenetrableOn();
+		Debug.Log("EvasionStart");
+
+		m_crowdControlManager.ImpenetrableOn();
         yield return new WaitForSeconds(0.1f);
 
         if (!m_playerState.IsPlayerGround())
@@ -79,10 +81,11 @@ public class PlayerEvasion : MonoBehaviour
         {
             if (!m_animFuntion.IsTag("Evasion"))
             {
+				Debug.Log("EvasionIng");
                 break;
             }
 
-            yield return 0;
+            yield return new WaitForSeconds(0.02f);
         }
 
         m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -93,9 +96,11 @@ public class PlayerEvasion : MonoBehaviour
         if (m_playerState.IsPlayerGround())
             m_playerState.PlayerStateReset();
         else m_playerState.PlayerStateDoubleJump();
-    }
 
-    private void AddMeve(float _speed)
+		Debug.Log("EvasionEnd");
+	}
+
+	private void AddMeve(float _speed)
     {
         m_rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
         if (m_playerState.IsPlayerLookRight())

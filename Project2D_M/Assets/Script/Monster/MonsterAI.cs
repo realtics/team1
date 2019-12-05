@@ -72,8 +72,6 @@ public class MonsterAI : MonoBehaviour
         m_playerTransform = StageManager.Inst.playerTransform;
 
         m_eState = MONSTER_STATE.APPEAR;
-        
-
 
         InitMonsterInfo();
         InitAniamation();

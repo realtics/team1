@@ -6,8 +6,6 @@ using GameSaveDataIO;
 
 public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallbackReceiver
 {
-	public string dataname = "ItemData.dat";
-
 	[SerializeField]
     private ItemDataScriptableObject m_itemData;
 
@@ -117,7 +115,6 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
 
 
 	private ItemInfoData m_itemInfoData = null;
-	private ItemSaveData m_itemSaveData = null;
 
 	private void Awake()
     {
@@ -129,36 +126,19 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
 																		   m_itemData.ItemList[i].level,
 																		   m_itemData.ItemList[i].image));
         }
-    }
-
-	public ItemInfoData GetItemInfoData()
-	{
-		return m_itemInfoData;
 	}
 
-	public void SaveItemData()
+	public ItemInfoData GetItemInfoData(string _itemName)
 	{
-		// 변환문제 때문에 고민중인 함수
-
-		for (int i = 0; i < m_itemList.Count; i++)
+		if (m_itemDic.TryGetValue(_itemName, out m_itemInfoData))
 		{
-			m_itemSaveData.itemSaveList[i].itemName = m_itemList[i].itemName;
-			m_itemSaveData.itemSaveList[i].level = m_itemList[i].level;
-			m_itemSaveData.itemSaveList[i].image = m_itemList[i].image;
-			m_itemSaveData.itemSaveList[i].itemRating = (ItemSaveData.ItemInfoData.ITEM_RATING)m_itemList[i].itemRating;
-			m_itemSaveData.itemSaveList[i].ratingName = m_itemList[i].ratingName;
-			m_itemSaveData.itemSaveList[i].frameColorR = m_itemList[i].frameColorR;
-			m_itemSaveData.itemSaveList[i].frameColorG = m_itemList[i].frameColorG;
-			m_itemSaveData.itemSaveList[i].frameColorB = m_itemList[i].frameColorB;
-			m_itemSaveData.itemSaveList[i].frameColorA = m_itemList[i].frameColorA;
-			m_itemSaveData.itemSaveList[i].itemType = (ItemSaveData.ItemInfoData.ITEM_TYPE)m_itemList[i].itemType;
-			m_itemSaveData.itemSaveList[i].typeName = m_itemList[i].typeName;
-			m_itemSaveData.itemSaveList[i].equipmentAttack = m_itemList[i].equipmentAttack;
-			m_itemSaveData.itemSaveList[i].equipmentArmor = m_itemList[i].equipmentArmor;
-			m_itemSaveData.itemSaveList[i].equipmentMaxHealth = m_itemList[i].equipmentMaxHealth;
+			return m_itemInfoData;
 		}
-
-		BinaryManager.Save(m_itemSaveData, dataname);
+		else
+		{
+			Debug.Log("장비정보가 잘못됨.");
+			return null;
+		}
 	}
 
     public void OnBeforeSerialize()

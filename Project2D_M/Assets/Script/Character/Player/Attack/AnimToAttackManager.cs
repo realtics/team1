@@ -24,11 +24,18 @@ public class AnimToAttackManager : MonoBehaviour
 		normalAttackCollider.ColliderLifeCycleOn(_time);
     }
 
+	//애니메이션 이벤트 사용
 	public void ColliderSkillLifeCycleOn(float _time)
 	{
-		Debug.Log(m_animFuntion.GetCurrntAnimClipName());
 		SkillManager.ColliderLifeCycleOn(_time, m_animFuntion.GetCurrntAnimClipName());
 	}
+
+	//애니메이션 이벤트 사용
+	public void ColliderSkillLifeCycleOnDraw(float _time)
+	{
+		SkillManager.ColliderLifeCycleOnDraw(_time, m_animFuntion.GetCurrntAnimClipName());
+	}
+
 
 	//애니메이션 이벤트 사용
 	public void PlayAnim(string _animname)

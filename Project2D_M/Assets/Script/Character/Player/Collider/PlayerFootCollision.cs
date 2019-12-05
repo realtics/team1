@@ -28,7 +28,9 @@ public class PlayerFootCollision : MonoBehaviour
         {
 			m_animFuntion.SetTrigger(m_animFuntion.hashTLend);
 			m_animFuntion.ResetTrigger(m_animFuntion.hashTFall);
-            m_playerState.PlayerStateReset();
+			m_animFuntion.ResetTrigger(m_animFuntion.hashTEvasion);
+			m_animFuntion.ResetTrigger(m_animFuntion.hashTEvasionAir);
+			m_playerState.PlayerStateReset();
             m_rigidbody2D.velocity = new Vector2(0, 0);
         }
     }

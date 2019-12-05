@@ -76,6 +76,7 @@
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_DemoPlaySound.cs" />
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_OpenOtherScene.cs" />
     <Compile Include="Assets\InventoryManger.cs" />
+    <Compile Include="Assets\PlayerLendBehavior.cs" />
     <Compile Include="Assets\Script\Base\ObjectPool.cs" />
     <Compile Include="Assets\Script\Base\PooledObject.cs" />
     <Compile Include="Assets\Script\Base\Pulse.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Assets\Script\UI\LoadingProgress.cs" />
     <Compile Include="Assets\Script\UI\LoadSceneButton.cs" />
     <Compile Include="Assets\Script\UI\LobbyParallax.cs" />
+    <Compile Include="Assets\Script\UI\SlotInfo.cs" />
     <Compile Include="Assets\Script\UI\StageDecoMove.cs" />
     <Compile Include="Assets\Script\UI\StageInfoOpener.cs" />
     <Compile Include="Assets\Script\UI\StageLoadSceneButton.cs" />
@@ -265,10 +267,10 @@
     <None Include="Assets\Spine\spine-unity\Modules\SkeletonGraphic\Shaders\Spine-SkeletonGraphic-TintBlack.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\ShaderShared.cginc" />
     <None Include="Assets\Spine\spine-unity\Modules\CustomMaterials\SkeletonRendererCustomMaterials.txt" />
-    <None Include="Assets\Resources\Monster\New Folder\character_lupe.atlas.txt" />
     <None Include="Assets\Resources\UI\ImageFont\DamageFont_ArmorBreak.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Straight Alpha\Spine-Straight-Skeleton-Tint.shader" />
+    <None Include="Assets\Resources\Monster\Larvo\character_larvo.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\CGIncludes\SpriteLighting.cginc" />
     <None Include="Assets\Spine\spine-unity\Modules\SlotBlendModes\Spine-Skeleton-PMA-Screen.shader" />

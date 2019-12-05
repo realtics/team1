@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * 작성자          : 고은우
- * 최종 수정 날짜  : 11_15
+ * 작성자          : 고은우 ,한승훈
+ * 최종 수정 날짜  : 11_27
  * 팀              : 1팀
  * 스크립트 용도   : 몬스터의 정보 스크립트, hp계산 스크립트
  */

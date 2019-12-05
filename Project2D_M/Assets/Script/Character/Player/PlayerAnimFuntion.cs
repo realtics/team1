@@ -15,4 +15,5 @@ public class PlayerAnimFuntion : AnimFuntion
 	public readonly int hasTHit = Animator.StringToHash("tHit");
 	public readonly int hashTEvasionAir = Animator.StringToHash("tEvasionAir");
 	public readonly int hashTEvasion = Animator.StringToHash("tEvasion");
+	public readonly int hashTAirSkill = Animator.StringToHash("tAirSkill");
 }
