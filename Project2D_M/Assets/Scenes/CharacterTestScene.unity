@@ -120,6 +120,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &322469175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 77044985, guid: e4e46492e23ee58468fae3a5aafc3ea7,
+    type: 3}
+  m_PrefabInstance: {fileID: 4619171480967797393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218bda08f2b20d14c862f77d9e2d1520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &341622088 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 77044991, guid: e4e46492e23ee58468fae3a5aafc3ea7,
@@ -600,6 +612,11 @@ PrefabInstance:
       propertyPath: m_playerUiInput
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6470256991674006874, guid: 3a6b38bd0c091804db3084761d8bbad5,
+        type: 3}
+      propertyPath: m_playerInput
+      value: 
+      objectReference: {fileID: 322469175}
     - target: {fileID: 6470256991528525840, guid: 3a6b38bd0c091804db3084761d8bbad5,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -919,6 +936,38 @@ PrefabInstance:
       propertyPath: m_playerState
       value: 
       objectReference: {fileID: 341622088}
+    - target: {fileID: 77044986, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: fAirAttackDistansce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858371714, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: m_speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858371714, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: m_speedAir
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619171481762083630, guid: e4e46492e23ee58468fae3a5aafc3ea7,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.24270724
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619171481762083630, guid: e4e46492e23ee58468fae3a5aafc3ea7,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19830891
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619171481784954011, guid: e4e46492e23ee58468fae3a5aafc3ea7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495000521643856154, guid: e4e46492e23ee58468fae3a5aafc3ea7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
 --- !u!1001 &5464745098757987517
@@ -1240,6 +1289,42 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682467094893289737, guid: c0b89b2e1649e3446a24f7ba5566a4b5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e667efea4334ff4ebed624befd80af2, type: 2}
+    - target: {fileID: 6682467094893289743, guid: c0b89b2e1649e3446a24f7ba5566a4b5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 72388ba6509826943bc30ca289213112, type: 2}
+    - target: {fileID: 6682467094893289743, guid: c0b89b2e1649e3446a24f7ba5566a4b5,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1450764655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682467094893289743, guid: c0b89b2e1649e3446a24f7ba5566a4b5,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682467094893289740, guid: c0b89b2e1649e3446a24f7ba5566a4b5,
+        type: 3}
+      propertyPath: skeletonDataAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: caca9c181e7d56e4188fa7f31b1e0b96,
+        type: 2}
+    - target: {fileID: 6682467094893289745, guid: c0b89b2e1649e3446a24f7ba5566a4b5,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682467094893289745, guid: c0b89b2e1649e3446a24f7ba5566a4b5,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6682467094893289744, guid: c0b89b2e1649e3446a24f7ba5566a4b5, type: 3}

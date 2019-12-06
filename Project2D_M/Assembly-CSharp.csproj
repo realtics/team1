@@ -75,7 +75,6 @@
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_Demo08.cs" />
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_DemoPlaySound.cs" />
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_OpenOtherScene.cs" />
-    <Compile Include="Assets\InventoryManger.cs" />
     <Compile Include="Assets\PlayerLendBehavior.cs" />
     <Compile Include="Assets\Script\Base\ObjectPool.cs" />
     <Compile Include="Assets\Script\Base\PooledObject.cs" />
@@ -120,6 +119,9 @@
     <Compile Include="Assets\Script\Data\Stage\StageDataManager.cs" />
     <Compile Include="Assets\Script\Data\Stage\StageDataScriptableObject.cs" />
     <Compile Include="Assets\Script\Data\StagePlayerDataLode.cs" />
+    <Compile Include="Assets\Script\Inventory\InventoryManger.cs" />
+    <Compile Include="Assets\Script\Inventory\Item.cs" />
+    <Compile Include="Assets\Script\Inventory\ItemSlot.cs" />
     <Compile Include="Assets\Script\Monster\AttackToEffectAnim.cs" />
     <Compile Include="Assets\Script\Monster\CharacterHpBar.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAI.cs" />
@@ -154,6 +156,7 @@
     <Compile Include="Assets\Script\UI\StageLoadSceneButton.cs" />
     <Compile Include="Assets\Script\UI\StageOpenManager.cs" />
     <Compile Include="Assets\Script\UI\StartUIInit.cs" />
+    <Compile Include="Assets\Script\Utility\Debug_UI.cs" />
     <Compile Include="Assets\Spine\spine-csharp\Animation.cs" />
     <Compile Include="Assets\Spine\spine-csharp\AnimationState.cs" />
     <Compile Include="Assets\Spine\spine-csharp\AnimationStateData.cs" />

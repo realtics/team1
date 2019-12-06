@@ -73,6 +73,9 @@ public class SpineAnimCollider : MonoBehaviour
             vert = m_objectTransform.InverseTransformPoint(vert);
             temp[i/2] = (Vector2)vert * _collisionSize;
         }
-        return temp;
+
+		Debug.Log(temp.Length);
+
+		return temp;
     }
 }

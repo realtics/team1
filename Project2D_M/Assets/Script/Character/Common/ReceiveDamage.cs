@@ -51,7 +51,7 @@ public class ReceiveDamage : ScriptEnable
             if (m_crowdControlManager != null)
                 m_crowdControlManager.Stiffen(0.5f);
         }
-        m_rigidbody2D.AddForce(_force,ForceMode2D.Impulse);
+        m_rigidbody2D.velocity = _force;
     }
 
     private Vector3 DamageShowPosition()

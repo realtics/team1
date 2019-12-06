@@ -2434,9 +2434,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemData: {fileID: 11400000, guid: 998f2f55151ec25498e657e090e78dfc, type: 2}
   m_itemList:
-  - itemName: "\uD6C8\uB828\uC6A9 \uC218\uC815"
-    level: 1
-    image: {fileID: 21300000, guid: 124080627df9a4ae5a15ef14370641c6, type: 3}
+  - itemName: e
+    level: 0
+    image: {fileID: 0}
     itemRating: 0
     ratingName: "\uC77C\uBC18"
     frameColorR: 79
@@ -2448,7 +2448,133 @@ MonoBehaviour:
     equipmentAttack: 0
     equipmentArmor: 0
     equipmentMaxHealth: 0
-  modifyValues: 0
+  - itemName: 3
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 4
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 6
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 7
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 23
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 24
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 25
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 12
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: 52
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: "\uC77C\uBC18"
+    frameColorR: 79
+    frameColorG: 79
+    frameColorB: 79
+    frameColorA: 255
+    itemType: 0
+    typeName: "\uBB34\uAE30"
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  modifyValues: 1
 --- !u!4 &138664882
 Transform:
   m_ObjectHideFlags: 0
@@ -6189,7 +6315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &429732216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7231,7 +7357,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498315296}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -8338,7 +8464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &569057173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9320,7 +9446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637142493}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -9435,7 +9561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645272498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -9507,7 +9633,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648805672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -11538,7 +11664,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852823816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -14326,7 +14452,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020610573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -15544,7 +15670,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069108990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -15588,7 +15714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1069407484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16742,6 +16868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e86001f6c5cc14daf1196ad14eb4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
+  itemParent: {fileID: 0}
+  itemSlots: []
 --- !u!4 &1124218168
 Transform:
   m_ObjectHideFlags: 0
@@ -20825,7 +20954,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425147642}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -21125,7 +21254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446489583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -21495,7 +21624,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475865336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -21567,7 +21696,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478991842}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -26372,7 +26501,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839633893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -27658,7 +27787,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939641997}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -27994,7 +28123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954313102}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -30744,6 +30873,41 @@ PrefabInstance:
     - target: {fileID: 1664320892054639794, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664320892054639794, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524510878157618374, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524510878157618374, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524510878157618374, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524510878157618374, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524510878157618374, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524510878157618374, guid: 5f2ec6f4ae5581948af00b0a6cd3b435,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

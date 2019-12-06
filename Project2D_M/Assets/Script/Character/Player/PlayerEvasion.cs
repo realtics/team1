@@ -36,10 +36,6 @@ public class PlayerEvasion : MonoBehaviour
 
             if (!m_bEvasion)
             {
-                if (m_playerState.IsPlayerGround())
-                    m_animFuntion.SetTrigger(m_animFuntion.hashTEvasion);
-                else m_animFuntion.SetTrigger(m_animFuntion.hashTEvasionAir);
-
                 m_bEvasion = true;
                 StartCoroutine(nameof(EvasionCoroutine));
 
@@ -65,14 +61,14 @@ public class PlayerEvasion : MonoBehaviour
 
     IEnumerator EvasionCoroutine()
     {
-		Debug.Log("EvasionStart");
-
 		m_crowdControlManager.ImpenetrableOn();
-        yield return new WaitForSeconds(0.1f);
+		m_animFuntion.SetTrigger(m_animFuntion.hashTEvasion);
+
+		yield return new WaitForSeconds(0.1f);
 
         if (!m_playerState.IsPlayerGround())
         {
-            m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+			m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             AddMeve(m_speedAir);
         }
         else AddMeve(m_speed);
@@ -81,7 +77,6 @@ public class PlayerEvasion : MonoBehaviour
         {
             if (!m_animFuntion.IsTag("Evasion"))
             {
-				Debug.Log("EvasionIng");
                 break;
             }
 
@@ -89,7 +84,7 @@ public class PlayerEvasion : MonoBehaviour
         }
 
         m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        m_rigidbody2D.velocity = new Vector2(0.0f, 0.1f);
+        m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x /3, 0.1f);
         m_bEvasion = false;
         m_crowdControlManager.ImpenetrableOff();
 
@@ -97,15 +92,13 @@ public class PlayerEvasion : MonoBehaviour
             m_playerState.PlayerStateReset();
         else m_playerState.PlayerStateDoubleJump();
 
-		Debug.Log("EvasionEnd");
+
 	}
 
 	private void AddMeve(float _speed)
     {
-        m_rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
-        if (m_playerState.IsPlayerLookRight())
-            m_rigidbody2D.AddForce(new Vector2(_speed, 0.0f));
-        else m_rigidbody2D.AddForce(new Vector2(-_speed, 0.0f));
-
+		if (m_playerState.IsPlayerLookRight())
+            m_rigidbody2D.velocity = (new Vector2(_speed, 0.0f));
+        else m_rigidbody2D.velocity = (new Vector2(-_speed, 0.0f));
     }
 }

@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PlayerLendBehavior : StateMachineBehaviour
 {
+	private Rigidbody2D m_rigidbody2D = null;
+
 	// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		animator.transform.root.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-		Debug.Log(animator.transform.root.name);
+		if (m_rigidbody2D == null)
+		{
+			m_rigidbody2D = animator.transform.root.GetComponent<Rigidbody2D>();
+		}
+
+		m_rigidbody2D.velocity = new Vector2(0,0);
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

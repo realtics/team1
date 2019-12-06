@@ -26,6 +26,7 @@ public class PlayerNormalAttack : MonoBehaviour
 
     public EffectAnimFuntion m_effectAnimFuntion;
 	public GameObject NormalAttackEffect;
+	public float fAirAttackDistansce = 2;
 	private AttackCollider m_attackCollider;
     private Dictionary<string, AttackInfo> m_NormalAttackDic;
     private Rigidbody2D m_rigidbody2D = null;
@@ -35,7 +36,7 @@ public class PlayerNormalAttack : MonoBehaviour
     private PlayerInput m_playerInput = null;
     private bool m_bAttacking;
 
-    private void Awake()
+	private void Awake()
     {
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_animFuntion = this.transform.Find("PlayerSpineSprite").GetComponent<PlayerAnimFuntion>();
@@ -59,15 +60,29 @@ public class PlayerNormalAttack : MonoBehaviour
         m_NormalAttackDic.Add("air_attack_3", new AttackInfo(1.0f, new Vector2(2f, 12.0f)));
         m_NormalAttackDic.Add("air_attack_4", new AttackInfo(1.0f, new Vector2(5f, 12.0f)));
 
-        m_NormalAttackDic.Add("attack_upper", new AttackInfo(3.0f, new Vector2(1f, 30.0f)));
+        m_NormalAttackDic.Add("attack_upper", new AttackInfo(3.0f, new Vector2(1f, 22.0f)));
         m_NormalAttackDic.Add("attack_downsmash", new AttackInfo(4.0f, new Vector2(2f, -25.0f)));
     }
 
-    public void NormalAttack()
-    {
-        m_animFuntion.SetTrigger(m_animFuntion.hashTNormalAttack);
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
 
-        if(Input.GetAxisRaw("Vertical") > 0 || m_playerInput.joystickState == PlayerInput.JOYSTICK_STATE.JOYSTICK_UP)
+		Gizmos.DrawRay(this.transform.position, -this.transform.up * fAirAttackDistansce);
+	}
+
+	public void NormalAttack()
+    {	
+		if (!m_playerState.IsPlayerGround() && Physics2D.Raycast(this.transform.position, -this.transform.up, fAirAttackDistansce, 1 << LayerMask.NameToLayer("Floor")))
+		{
+			return;
+		}
+
+		m_playerState.PlayerStateAttack();
+
+		m_animFuntion.SetTrigger(m_animFuntion.hashTNormalAttack);
+
+		if (Input.GetAxisRaw("Vertical") > 0 || m_playerInput.joystickState == PlayerInput.JOYSTICK_STATE.JOYSTICK_UP)
         {
             m_animFuntion.SetTrigger(m_animFuntion.hashTUpper);
         }
@@ -78,24 +93,20 @@ public class PlayerNormalAttack : MonoBehaviour
 
         if (!m_bAttacking)
         {
-            m_effectAnimFuntion.EffectOn();
-            StartCoroutine(AttackCoroutine());
+			StartCoroutine(AttackCoroutine());
             m_bAttacking = true;
         }
     }
 
     private IEnumerator AttackCoroutine()
     {
-        yield return 0;
+        yield return new WaitForSeconds(0.02f);
 
         if (!m_animFuntion.IsTag("NormalAttack"))
         {
             m_bAttacking = false;
             yield break;
         }
-
-		if(!m_playerState.IsPlayerGround())
-			m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
         string m_sAnimName = m_animFuntion.GetCurrntAnimClipName();
 
@@ -118,27 +129,18 @@ public class PlayerNormalAttack : MonoBehaviour
                 break;
             }
 
-
-			Debug.Log("AirAttackking");
 			yield return 0;
         }
 
         m_bAttacking = false;
         m_sAnimName = "";
 
-        if (!m_playerState.IsPlayerEvasion())
-        {
-            m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-            m_rigidbody2D.AddForce(new Vector2(0.1f, 0.1f));
-			Debug.Log("AirAttackEnd");
-		}
+		CancelInvoke();
 
 		if(!m_playerState.IsPlayerGround())
 		{
 			m_playerState.PlayerStateDoubleJump();
 		}
-
-		Debug.Log("AttackEnd");
     }
 
     private void PlayAnimEffect(string _animName)
@@ -161,9 +163,11 @@ public class PlayerNormalAttack : MonoBehaviour
                     break;
             }
         }
-    }
 
-    private void PlayingStartInvokeSwitch(string _animName)
+		m_effectAnimFuntion.EffectOn();
+	}
+
+	private void PlayingStartInvokeSwitch(string _animName)
     {
         if (m_animFuntion.IsTag("NormalAttack"))
         {
@@ -173,7 +177,6 @@ public class PlayerNormalAttack : MonoBehaviour
                     Invoke(nameof(Attack3Plus), 0.97f);
                     break;
                 case "attack_upper":
-					m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 					Invoke(nameof(UpperJump), 0.3f);
                     break;
                 case "attack_downsmash":
@@ -200,7 +203,6 @@ public class PlayerNormalAttack : MonoBehaviour
                     m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic["air_attack_3"].damageRatio, "Monster", m_NormalAttackDic["air_attack_3"].damageForce);
                     break;
                 default:
-                    AddMeve(0.0f);
                     m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic[_animName].damageRatio, "Monster", m_NormalAttackDic[_animName].damageForce);
                     break;
             }
@@ -240,12 +242,11 @@ public class PlayerNormalAttack : MonoBehaviour
     private void UpperJump()
     {
         m_playerState.PlayerStateJump();
-        m_rigidbody2D.AddForce(new Vector2(1f, 25f), ForceMode2D.Impulse);
+        m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, 18f);
     }
 
     private void SmashDown()
     {
-		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-		m_rigidbody2D.AddForce(new Vector2(1f, -40f), ForceMode2D.Impulse);
+		m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, -40f);
     }
 }

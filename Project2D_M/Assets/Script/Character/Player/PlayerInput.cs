@@ -96,8 +96,8 @@ public class PlayerInput : ScriptEnable
             m_characterMove.MoveRight(m_playerInfo.fMoveSpeed);
             m_underUI.transform.localScale= new Vector3(1,1,1);
         }
-        else
-        {
+		else if (m_animFuntion.GetBool(m_animFuntion.hashBMove))
+		{
 			m_animFuntion.SetBool(m_animFuntion.hashBMove, false);
             m_characterMove.MoveStop();
         }
@@ -129,8 +129,8 @@ public class PlayerInput : ScriptEnable
             m_characterMove.MoveRight(m_playerInfo.fMoveSpeed);
             m_underUI.transform.localScale = new Vector3(1, 1, 1);
         }
-        else
-        {
+		else if(m_animFuntion.GetBool(m_animFuntion.hashBMove))
+		{
             m_bUiMove = false;
 			m_animFuntion.SetBool(m_animFuntion.hashBMove, false);
             m_characterMove.MoveStop();
@@ -171,7 +171,6 @@ public class PlayerInput : ScriptEnable
         if (!bScriptEnable)
             return;
 
-        m_playerState.PlayerStateAttack();
         m_playerNormalAttack.NormalAttack();
     }
 

@@ -29,9 +29,13 @@ public class PlayerAttackCollider : AttackCollider
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == m_sTagName)
+		Debug.Log("OnTriggerEnter2D1");
+
+		if (collision.tag == m_sTagName)
         {
-            ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
+			Debug.Log("OnTriggerEnter2D2");
+
+			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
             if (receiveDamage.bScriptEnable != false)
             {
                 if (attackForce != Vector2.zero)
@@ -67,8 +71,10 @@ public class PlayerAttackCollider : AttackCollider
 
 
     public override void SetDamageColliderInfo(float _damage, string _tagName, Vector2 _attackForce)
-    {
-        m_sTagName = _tagName;
+	{
+		Debug.Log("SetDamageColliderInfo");
+
+		m_sTagName = _tagName;
         int randNum = Random.Range(1, 101);
 
         m_damage = (int)(_damage * m_playerInfo.attack + 0.5f);
@@ -79,5 +85,7 @@ public class PlayerAttackCollider : AttackCollider
             _attackForce.x = _attackForce.x * -1;
         }
         attackForce = _attackForce;
-    }
+
+		Debug.Log(m_sTagName);
+	}
 }

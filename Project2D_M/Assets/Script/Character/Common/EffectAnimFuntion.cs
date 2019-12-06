@@ -36,5 +36,5 @@ public class EffectAnimFuntion : MonoBehaviour
     public void EffectPlay(string _EffectAnimName, bool _roof)
     {
         m_skeletonAnimation.AnimationState.SetAnimation(0, _EffectAnimName, _roof);
-    }
+	}
 }

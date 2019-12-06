@@ -27,9 +27,9 @@ public class AttackCollider : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == m_sTagName)
-        {
-            ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
+		if (collision.tag == m_sTagName)
+		{
+			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
             if (receiveDamage.enabled != false)
             {
                 receiveDamage.Receive(m_damage, false);
@@ -49,6 +49,7 @@ public class AttackCollider : MonoBehaviour
             _attackForce.x = _attackForce.x * -1;
         }
         attackForce = _attackForce;
+
     }
 
     public virtual void ColliderLifeCycleOn(float _time)
@@ -63,12 +64,12 @@ public class AttackCollider : MonoBehaviour
 
 	protected void ColliderOn()
     {
-        if (m_collider.enabled == false)
+		if (m_collider.enabled == false)
         {
             m_collider.enabled = true;
             m_spineAnimCollider.ColliderDraw(iCollisionSize);
-        }
-    }
+		}
+	}
 
     protected void ColliderOff()
     {
@@ -81,7 +82,7 @@ public class AttackCollider : MonoBehaviour
     protected IEnumerator ColliderLifeCycle(float _time)
     {
         ColliderOn();
-        yield return new WaitForSeconds(_time);
+		yield return new WaitForSeconds(_time);
         ColliderOff();
     }
 

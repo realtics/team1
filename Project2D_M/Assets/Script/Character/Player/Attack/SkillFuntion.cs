@@ -63,6 +63,6 @@ public class SkillFuntion : MonoBehaviour
 		}
 
 		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-		m_rigidbody2D.velocity = new Vector2(0,-0.01f);
+		m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, -0.01f);
 	}
 }

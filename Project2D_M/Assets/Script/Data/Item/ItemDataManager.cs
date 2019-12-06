@@ -118,7 +118,10 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
 
 	private void Awake()
     {
-        for (int i = 0; i < m_itemData.ItemList.Count; i++)
+		if (m_itemData == null)
+			m_itemData = (ItemDataScriptableObject)Resources.Load("Data/ItemDataSO");
+
+		for (int i = 0; i < m_itemData.ItemList.Count; i++)
         {
            m_itemDic.Add(m_itemData.ItemList[i].itemName, new ItemInfoData(m_itemData.ItemList[i].itemName,
 																		   (ItemInfoData.ITEM_RATING)m_itemData.ItemList[i].itemRating,
@@ -160,8 +163,13 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
 
     public void OnAfterDeserialize()
     {
+		m_itemDic = new Dictionary<string, ItemInfoData>();
 
-    }
+		for (int i = 0; i < m_itemList.Count; i++)
+		{
+			m_itemDic.Add(m_itemList[i].itemName, m_itemList[i]);
+		}
+	}
 
     public void DeserializeDictionary()
     {

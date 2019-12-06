@@ -27,11 +27,11 @@ public class PlayerFootCollision : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
 			m_animFuntion.SetTrigger(m_animFuntion.hashTLend);
+			m_animFuntion.SetBool(m_animFuntion.hashbAir,false);
 			m_animFuntion.ResetTrigger(m_animFuntion.hashTFall);
 			m_animFuntion.ResetTrigger(m_animFuntion.hashTEvasion);
-			m_animFuntion.ResetTrigger(m_animFuntion.hashTEvasionAir);
+
 			m_playerState.PlayerStateReset();
-            m_rigidbody2D.velocity = new Vector2(0, 0);
         }
     }
 
@@ -45,6 +45,7 @@ public class PlayerFootCollision : MonoBehaviour
             }
 			m_animFuntion.ResetTrigger(m_animFuntion.hashTLend);
             m_playerState.PlayerStateJump();
-        }
-    }
+			m_animFuntion.SetBool(m_animFuntion.hashbAir, true);
+		}
+	}
 }
