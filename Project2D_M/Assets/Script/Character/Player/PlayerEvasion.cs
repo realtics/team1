@@ -30,6 +30,9 @@ public class PlayerEvasion : MonoBehaviour
 
     public void Evasion()
     {
+		if (!m_playerState.bSkipEvasion)
+			return;
+
         if (m_count > 0)
         {
             m_count--;

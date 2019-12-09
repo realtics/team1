@@ -149,6 +149,7 @@ MonoBehaviour:
   hp: 300
   defensive: 1
   critical: 0
+  m_attackDistance: 0
 --- !u!114 &2359046002180070597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animFuntion: {fileID: 0}
+  m_playerState: {fileID: 0}
 --- !u!1 &7326014423054582972
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damage: 0
   attackForce: {x: 0, y: 0}
+  iCollisionSize: 1
 --- !u!114 &4201936358414514778
 MonoBehaviour:
   m_ObjectHideFlags: 0

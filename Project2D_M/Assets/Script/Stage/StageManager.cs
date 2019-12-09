@@ -74,18 +74,7 @@ public class StageManager : Singletone<StageManager>
     private float m_fCurrentExp;
     private float m_fCurrentMaxExp;
 
-	private void OnGUI()
-	{
-		string temp = "dfasa";
-		GUIStyle ff = new GUIStyle();
-		Font dd = new Font();
-		ff = GUIStyle.none;
-		ff.font = dd;
-		GUI.Box(new Rect(10, 10, 100, 90), "Loader Menu");
-		GUI.TextArea(new Rect(110, 110, 100, 90), temp , ff);
-		GUI.TextField(new Rect(210, 210, 100, 90), "fadsfa");
-		Debug_UI.Inst.AddTextObject("d","d");
-	}
+
 
 	public void Start()
 	{

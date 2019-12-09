@@ -1529,7 +1529,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1564,6 +1564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_effectAnimFuntion: {fileID: 958730263}
   NormalAttackEffect: {fileID: 7863194669252827703}
+  fAirAttackDistansce: 2
 --- !u!114 &77044987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1637,7 +1638,7 @@ MonoBehaviour:
   maxCombo: 0
   airAttackCount: 0
   fMoveSpeed: 10
-  fJumpforce: 17
+  fJumpforce: 15
 --- !u!114 &4063295413354117836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1689,8 +1690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f34a2f3786d9a94fbf3dbad05e4f91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 800
-  m_speedAir: 700
+  m_speed: 15
+  m_speedAir: 15
   m_count: 3
 --- !u!114 &1827683345
 MonoBehaviour:
@@ -1848,7 +1849,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011919856, y: -0.34349537}
+  m_Offset: {x: -0.011919856, y: -0.24270724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1859,7 +1860,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.97616017, y: 0.4731846}
+  m_Size: {x: 0.97616017, y: 0.19830891}
   m_EdgeRadius: 0
 --- !u!1 &4619171482053815366
 GameObject:
@@ -1874,7 +1875,6 @@ GameObject:
   - component: {fileID: 4619171482053815408}
   - component: {fileID: 4619171482053815409}
   - component: {fileID: 4619171482053815374}
-  - component: {fileID: 1608382168}
   - component: {fileID: 1127028382}
   - component: {fileID: 3542008875137607112}
   - component: {fileID: 1534769828}
@@ -1998,18 +1998,6 @@ MonoBehaviour:
   translator:
     autoReset: 1
     layerMixModes: 00000000
---- !u!114 &1608382168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4619171482053815366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b6c5ca612143a409fcfd0599948fd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1127028382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,6 +2083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animFuntion: {fileID: 1534769828}
+  m_playerState: {fileID: 77044991}
 --- !u!60 &496458986
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2137,9 +2126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7de9f8186225224aa6264ca4757773c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iSkillNum: 1
   sSkillName: FlameHaze
-  sSkillClipName: skill3_flame_haze_2_action
   iCollisionSize: 0.5
 --- !u!114 &496458985
 MonoBehaviour:
@@ -2404,6 +2391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireSword
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063457926189688002, guid: fd4ffdf22bdb9844cbf530311a9c0da2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7063457926189688006, guid: fd4ffdf22bdb9844cbf530311a9c0da2,
         type: 3}

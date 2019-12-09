@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using TMPro;
 
 public class ItemSlot : MonoBehaviour
 {
 	[SerializeField] Image itemImage;
 	[SerializeField] Image frameBackImage;
 	[SerializeField] Image frameBackEdgeImage;
-	[SerializeField] Image mountingImage;
+
+	public event Action<Item> OnRightClickEvent;
 
 	private Item m_item;
+
+	public GameObject ViewDitailObject;
+	private readonly int m_hashBOpen = Animator.StringToHash("bOpen");
+
 
 	public Item Item
 	{
@@ -22,25 +29,47 @@ public class ItemSlot : MonoBehaviour
 			if(m_item == null)
 			{
 				itemImage.enabled = false;
-				//frameBackImage.enabled = false;
+				frameBackImage.enabled = false;
 				frameBackEdgeImage.enabled = false;
-				mountingImage.enabled = false;
 			}
 			else
 			{
 				itemImage.sprite = m_item.Icon;
+				itemImage.SetNativeSize();
 				itemImage.enabled = true;
+
+				frameBackImage.enabled = true;
+				frameBackEdgeImage.enabled = true;
 			}
 		}
 	}
 
-
-	private void OnValidate()
+	public void ClickViewDetailsEvent()
 	{
-		SlotRefreshUI();
+		if (Item != null && OnRightClickEvent != null)
+		{
+			OnRightClickEvent(Item);
+		}
+
+		SetViewDetails();
 	}
 
-	private void SlotRefreshUI()
+	private void SetViewDetails()
+	{
+		//셋팅
+
+		//애니메이션 재생.
+		PlayAnimationViewDetails();
+	}
+
+	private void PlayAnimationViewDetails()
+	{
+		Animator animator = ViewDitailObject.GetComponent<Animator>();
+
+		animator.SetBool(m_hashBOpen, true);
+	}
+
+	protected virtual void OnValidate()
 	{
 		if (frameBackImage == null)
 		{
@@ -55,11 +84,6 @@ public class ItemSlot : MonoBehaviour
 		if (itemImage == null)
 		{
 			itemImage = transform.GetChild(2).gameObject.GetComponent<Image>();
-		}
-
-		if (mountingImage == null)
-		{
-			mountingImage = transform.GetChild(3).gameObject.GetComponent<Image>();
 		}
 	}
 }

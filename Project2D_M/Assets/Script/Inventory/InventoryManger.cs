@@ -4,32 +4,57 @@ using UnityEngine;
 
 public class InventoryManger : MonoBehaviour
 {
-	[SerializeField] List<Item> items;
-	[SerializeField] Transform itemParent;
-	[SerializeField] ItemSlot[] itemSlots;
+	[SerializeField] Inventory inventory;
+	[SerializeField] EquipmentPanel equipmentPanel;
 
-	private void OnValidate()
+	private void Awake()
 	{
-		if(itemParent != null)
-		{
-			itemSlots = itemParent.GetComponentsInChildren<ItemSlot>();
-		}
-
-		RefreshUI();
+		inventory.OnItemRightClickedEvent += EquipFromInventory;
+		equipmentPanel.OnItemRightClickedEvent += UnEquipFromEquipPanel;
 	}
 
-	private void RefreshUI()
+	private void EquipFromInventory(Item item)
 	{
-		int i = 0;
-		
-		for(; i < items.Count && i < itemSlots.Length; i++)
+		if(item is EquippableItem)
 		{
-			itemSlots[i].Item = items[i];
+			Equip((EquippableItem)item);
 		}
+	}
 
-		for( ; i < itemSlots.Length; i++)
+	private void UnEquipFromEquipPanel(Item item)
+	{
+		if (item is EquippableItem)
 		{
-			itemSlots[i].Item = null;
+			Unequip((EquippableItem)item);
+		}
+	}
+
+
+	public void Equip(EquippableItem item)
+	{
+		if(inventory.RemoveItem(item))
+		{
+			EquippableItem previousItem;
+
+			if(equipmentPanel.AddItem(item, out previousItem))
+			{
+				if(previousItem != null)
+				{
+					inventory.AddItem(previousItem);
+				}
+			}
+			else
+			{
+				inventory.AddItem(item);
+			}
+		}
+	}
+
+	public void Unequip(EquippableItem item)
+	{
+		if(!inventory.IsFull() & equipmentPanel.RemoveItem(item))
+		{
+			inventory.AddItem(item);
 		}
 	}
 

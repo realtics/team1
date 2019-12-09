@@ -10,15 +10,15 @@ using UnityEngine;
  */
 public class PlayerState : MonoBehaviour
 {
-    //캐릭터의 현재 공간
-    public enum PLAYER_STATE_POSITION
+	//캐릭터의 현재 공간
+	private enum PLAYER_STATE_POSITION
     {
         PLAYER_POSITION_AIR,
         PLAYER_POSITION_GROUND
     }
 
-    //캐릭터의 현재 점프의 상태
-    public enum PLAYER_STATE_JUMP
+	//캐릭터의 현재 점프의 상태
+	private enum PLAYER_STATE_JUMP
     {
         PLAYER_STATE_NONEJUMP,
         PLAYER_STATE_JUMP,
@@ -26,13 +26,16 @@ public class PlayerState : MonoBehaviour
     }
 
     //캐릭터의 현재 액션
-    public enum PLAYER_STATE_ACTION
+    private enum PLAYER_STATE_ACTION
     {
         PLAYER_STATE_STAND, //대기상태(서 있거나 이동할 때)
         PLAYER_STATE_ATTACK,
+		PLAYER_STATE_SP_ATTACK,
         PlAYER_STATE_EVASION,
         PLAYER_STATE_JUMP,
     }
+
+	public bool bSkipEvasion = true;
 
     [Header("Player State")]
     [SerializeField] private PLAYER_STATE_POSITION m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND;
@@ -67,10 +70,18 @@ public class PlayerState : MonoBehaviour
         m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK;
     }
 
-    /// <summary>
-    /// 플레이어 상태를 회비로
-    /// </summary>
-    public void PlayerStateEvasion()
+	/// <summary>
+	/// 플레이어 상태를 특수공격으로
+	/// </summary>
+	public void PlayerStateSPAttack()
+	{
+		m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_SP_ATTACK;
+	}
+
+	/// <summary>
+	/// 플레이어 상태를 회비로
+	/// </summary>
+	public void PlayerStateEvasion()
     {
         m_actionState = PLAYER_STATE_ACTION.PlAYER_STATE_EVASION;
     }
@@ -101,17 +112,36 @@ public class PlayerState : MonoBehaviour
     /// </summary>
     public bool IsPlayerMove()
     {
-        if (m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK || m_actionState == PLAYER_STATE_ACTION.PlAYER_STATE_EVASION)
+        if (m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK ||
+			m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_SP_ATTACK || 
+			m_actionState == PLAYER_STATE_ACTION.PlAYER_STATE_EVASION)
             return false;
 
         return true;
     }
 
+	/// <summary>
+	/// 플레이어가 공격상태인가?
+	/// </summary>
+	public bool IsPlayerAttack()
+	{
+		return (m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_ATTACK ||
+			m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_SP_ATTACK);
+	}
 
-    /// <summary>
-    /// 플레이어가 회피상태인가?
-    /// </summary>
-    public bool IsPlayerEvasion()
+	/// <summary>
+	/// 플레이어가 특수공격상태인가?
+	/// </summary>
+	public bool IsPlayerSPAttack()
+	{
+		return m_actionState == PLAYER_STATE_ACTION.PLAYER_STATE_SP_ATTACK;
+	}
+
+
+	/// <summary>
+	/// 플레이어가 회피상태인가?
+	/// </summary>
+	public bool IsPlayerEvasion()
     {
         if (m_actionState == PLAYER_STATE_ACTION.PlAYER_STATE_EVASION)
             return true;
@@ -138,19 +168,6 @@ public class PlayerState : MonoBehaviour
             return true;
 
         return false;
-    }
-
-    /// <summary>
-    /// 플레이어가 공중 평타공격이 가능한가?
-    /// </summary>
-    public bool IsPlayerAirAttack()
-    {
-        if (m_positionState != PLAYER_STATE_POSITION.PLAYER_POSITION_AIR)
-            return false;
-
-        m_actionState = PLAYER_STATE_ACTION.PLAYER_STATE_JUMP;
-
-        return true;
     }
 
     /// <summary>

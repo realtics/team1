@@ -94,7 +94,6 @@ public class AttackCollider : MonoBehaviour
 
 		while (time <= _time)
 		{
-			Debug.Log(time);
 			m_spineAnimCollider.ColliderDraw(iCollisionSize);
 			yield return new WaitForSeconds(0.01f);
 			time += Time.fixedDeltaTime;

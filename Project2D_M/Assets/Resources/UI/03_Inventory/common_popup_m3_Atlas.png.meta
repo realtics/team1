@@ -626,13 +626,13 @@ TextureImporter:
       name: common_popup_m3_Atlas_19
       rect:
         serializedVersion: 2
-        x: 481
-        y: 348
-        width: 176
-        height: 176
+        x: 483
+        y: 350
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
+      border: {x: 12, y: 12, z: 12, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1009,7 +1009,7 @@ TextureImporter:
         width: 42
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

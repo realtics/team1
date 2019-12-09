@@ -53,6 +53,10 @@ public class SkillFuntion : MonoBehaviour
 
 	IEnumerator SkillCoroutine()
 	{
+		m_playerState.bSkipEvasion = false;
+
+		m_playerState.PlayerStateSPAttack();
+
 		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
 
 		yield return new WaitForSeconds(0.01f);
@@ -64,5 +68,11 @@ public class SkillFuntion : MonoBehaviour
 
 		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 		m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, -0.01f);
+
+		if (!m_playerState.IsPlayerGround())
+			m_playerState.PlayerStateDoubleJump();
+
+		m_playerState.bSkipEvasion = true;
+
 	}
 }

@@ -3313,6 +3313,110 @@ PolygonCollider2D:
       - {x: -38, y: 8.5}
       - {x: -38, y: -4}
       - {x: 6, y: -4}
+--- !u!1001 &503121606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2543539019729880910, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_Name
+      value: TestLupe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.316337
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.32011747
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219342298069967304, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792869747767737310, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_fAppearTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792869747767737310, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_fSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792869747767737310, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326014424357655792, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326014423054582968, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 658023970810335803, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: maxHp
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 658023970810335803, guid: 68c61bf9b8f67094b940c56220a49893,
+        type: 3}
+      propertyPath: hp
+      value: 200
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68c61bf9b8f67094b940c56220a49893, type: 3}
 --- !u!1 &509368767
 GameObject:
   m_ObjectHideFlags: 0
@@ -14954,6 +15058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monster_Lupe
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543539019729880910, guid: be1a5520d3cd9d14797757c0269b114e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3219342298069967304, guid: be1a5520d3cd9d14797757c0269b114e,
         type: 3}

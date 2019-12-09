@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f04caa18a375a45bd4bee027fc68c3, type: 3}
+  m_Name: "\uD6C8\uB828\uC6A9 \uC7AC\uD0B7"
+  m_EditorClassIdentifier: 
+  itemName: "\uD6C8\uB828\uC6A9 \uC7AC\uD0B7"
+  Icon: {fileID: 21300000, guid: 969cecd7409d7aa499fcd78b8baaf1d0, type: 3}
+  attackBonus: 0
+  armorBonus: 8
+  maxHealthBonus: 0
+  attackPercentBonus: 0
+  armorPercentBonus: 0
+  maxHealthPercentBonus: 0
+  equipmentType: 2

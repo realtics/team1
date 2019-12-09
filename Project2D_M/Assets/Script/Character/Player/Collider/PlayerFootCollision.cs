@@ -39,13 +39,15 @@ public class PlayerFootCollision : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
-            if (m_playerState.IsPlayerGround())
+            if (m_playerState.IsPlayerGround() && !m_playerState.IsPlayerSPAttack())
             {
 				m_animFuntion.SetTrigger(m_animFuntion.hashTFall);
             }
 			m_animFuntion.ResetTrigger(m_animFuntion.hashTLend);
-            m_playerState.PlayerStateJump();
 			m_animFuntion.SetBool(m_animFuntion.hashbAir, true);
+
+			if (!m_playerState.IsPlayerSPAttack())
+				m_playerState.PlayerStateJump();
 		}
 	}
 }
