@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MonsterLupe : StateMachine
+public class MonsterLupe : MonsterStateMachine
 {
 	private readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
 	private readonly int m_hashBLive = Animator.StringToHash("bLive");
@@ -14,7 +14,9 @@ public class MonsterLupe : StateMachine
 
 	[SerializeField]
 	private Animator m_animator;
-	[SerializeField]
+    [SerializeField]
+    private MonsterMove m_monsterMove;
+    [SerializeField]
 	private float m_AppearTime;
 
     void Start()
@@ -22,8 +24,9 @@ public class MonsterLupe : StateMachine
 		InitAniamation();
 		nowState = ENEMY_STATE.APPEAR;
 		m_AppearTime = 3f;
+        m_monsterMove = GetComponent<MonsterMove>();
 
-	}
+    }
 	
 
 	override protected void EnterState(ENEMY_STATE _state)
@@ -31,7 +34,7 @@ public class MonsterLupe : StateMachine
 		switch (_state)
 		{
 			case ENEMY_STATE.APPEAR:
-				start(Appear());
+				ActionStart(Appear());
 				break;
 			case ENEMY_STATE.IDLE:
 				break;
@@ -51,7 +54,7 @@ public class MonsterLupe : StateMachine
 		switch (_state)
 		{
 			case ENEMY_STATE.APPEAR:
-				KillThis();
+				KillCoroutine();
 				break;
 			case ENEMY_STATE.IDLE:
 				break;
@@ -74,10 +77,35 @@ public class MonsterLupe : StateMachine
 			if (m_AppearTime < 0)
 			{
 				m_animator.SetBool(m_hashBAppear, true);
+                nowState = ENEMY_STATE.IDLE;
 			}
 			yield return null;
 		}
 	}
+
+    IEnumerator Idle()
+    {
+        float time = 2.0f;
+        while(true)
+        {
+            time -= Time.deltaTime;
+            if (time < 0)
+            {
+                nowState = ENEMY_STATE.MOVE;
+            }
+            yield return null;
+
+        }
+    }
+
+    IEnumerator Move()
+    {
+        while(true)
+        {
+            m_monsterMove.Move(m_fSpeed);
+			yield return null;
+        }
+    }
 
 	void InitAniamation()
 	{

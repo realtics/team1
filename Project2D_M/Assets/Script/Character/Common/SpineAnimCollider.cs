@@ -75,4 +75,9 @@ public class SpineAnimCollider : MonoBehaviour
         }
 		return temp;
     }
+
+	public void DeleteCollider()
+	{
+		m_meshCollider.pathCount = 0;
+	}
 }

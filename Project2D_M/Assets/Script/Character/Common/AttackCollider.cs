@@ -75,7 +75,8 @@ public class AttackCollider : MonoBehaviour
     {
         if (m_collider.enabled == true)
         {
-            m_collider.enabled = false;
+			m_spineAnimCollider.DeleteCollider();
+			m_collider.enabled = false;
         }
     }
 
@@ -83,7 +84,8 @@ public class AttackCollider : MonoBehaviour
     {
         ColliderOn();
 		yield return new WaitForSeconds(_time);
-        ColliderOff();
+		m_spineAnimCollider.DeleteCollider();
+		ColliderOff();
     }
 
 	protected IEnumerator ColliderLifeCycleDraw(float _time)
@@ -98,7 +100,7 @@ public class AttackCollider : MonoBehaviour
 			yield return new WaitForSeconds(0.01f);
 			time += Time.fixedDeltaTime;
 		}
-
+		m_spineAnimCollider.DeleteCollider();
 		ColliderOff();
 	}
 }

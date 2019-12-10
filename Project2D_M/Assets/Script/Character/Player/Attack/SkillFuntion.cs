@@ -6,7 +6,7 @@ using Spine.Unity;
 public class SkillFuntion : MonoBehaviour
 {
 	public string sSkillName = "FlameHaze";
-	public float iCollisionSize = 0.5f;
+	public float iCollisionSize = 1f;
 	private float iDamageRatio = 10000000.0f;
 	private Vector2 iDamageForce = new Vector2(0, -50f);
 
@@ -73,6 +73,5 @@ public class SkillFuntion : MonoBehaviour
 			m_playerState.PlayerStateDoubleJump();
 
 		m_playerState.bSkipEvasion = true;
-
 	}
 }

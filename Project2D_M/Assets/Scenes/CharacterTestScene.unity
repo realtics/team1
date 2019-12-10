@@ -905,6 +905,10 @@ PrefabInstance:
       propertyPath: comboUIManager
       value: 
       objectReference: {fileID: 573527739}
+    - target: {fileID: 496458986, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: m_Points.m_Paths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
 --- !u!1001 &5464745098757987517

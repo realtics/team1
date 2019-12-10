@@ -10,8 +10,18 @@ using UnityEngine;
  */
 public class MonsterInfo : CharacterInfo
 {
-	[SerializeField]
-    protected float m_attackDistance;
+    [SerializeField]
+    protected float m_fAttackDistance;
+    [SerializeField]
+    protected float m_fSpeed;
+
+	public float speed
+	{
+		get
+		{
+			return m_fSpeed;
+		}
+	}
 
     public struct MonsterCharInfo
     {
@@ -20,6 +30,7 @@ public class MonsterInfo : CharacterInfo
         public int attack;
         public int defensive;
         public float attackDistance;
+		public float speed;
     }
 
     public override int DamageCalculation(int _damage)
@@ -37,11 +48,14 @@ public class MonsterInfo : CharacterInfo
         hp = maxHp;
         attack = _charInfo.attack;
         defensive = _charInfo.defensive;
-        m_attackDistance = _charInfo.attackDistance;
+        m_fAttackDistance = _charInfo.attackDistance;
+		m_fSpeed = _charInfo.speed;
     }
 
     public float GetAttackDistance()
     {
-        return m_attackDistance;
+        return m_fAttackDistance;
     }
+
+	
 }

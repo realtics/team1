@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class StateMachine : MonsterInfo
+public class MonsterStateMachine : MonsterInfo
 {
 	private bool m_bRunning;
 	private bool m_bPaused;
@@ -71,14 +71,14 @@ public class StateMachine : MonsterInfo
 		}
 	}
 
-	public void start(IEnumerator coroutine)
+	public void ActionStart(IEnumerator coroutine)//변경
 	{
 		m_coroutine = coroutine;
 		m_bRunning = true;
 		StartCoroutine(DoWork());
 	}
 
-	public void KillThis()
+	public void KillCoroutine()
 	{
 		m_bRunning = false;
 		m_bPaused = false;

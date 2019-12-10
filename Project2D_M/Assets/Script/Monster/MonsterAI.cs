@@ -44,8 +44,6 @@ public class MonsterAI : MonoBehaviour
     private bool m_bAppear;
 
     private Animator m_animator;
-    [SerializeField]
-    public float m_fSpeed;
     private float m_attackDistance;
 
     private readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
@@ -209,7 +207,7 @@ public class MonsterAI : MonoBehaviour
                         m_monsterAttack.m_bAttack = false;
                         if (m_animFunction.GetCurrntAnimClipName() == "idle")
                         {
-                            m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
+                            m_animator.SetFloat(m_hashFSpeed, m_monsterInfo.speed);
                             m_monsterMove.isMove = true;
                         }
                         break;
@@ -232,6 +230,7 @@ public class MonsterAI : MonoBehaviour
 			monsterCharInfo.defensive = 10;
 			monsterCharInfo.attack = 70;
 			monsterCharInfo.attackDistance = 2.5f;
+			monsterCharInfo.speed = 5.0f;
 			m_monsterInfo = GetComponent<MonsterInfo>();
 			m_monsterInfo.SetInfo(monsterCharInfo);
 		}
@@ -242,6 +241,7 @@ public class MonsterAI : MonoBehaviour
 			monsterCharInfo.defensive = 10;
 			monsterCharInfo.attack = 150;
 			monsterCharInfo.attackDistance = 2.5f;
+			monsterCharInfo.speed = 5.0f;
 			m_monsterInfo = GetComponent<MonsterInfo>();
 			m_monsterInfo.SetInfo(monsterCharInfo);
 		}
@@ -253,7 +253,7 @@ public class MonsterAI : MonoBehaviour
 
         m_monsterPosition = Monster_Position.Monster_Position_Ground;
 
-        m_monsterMove.SetSpeed(m_fSpeed);
+        m_monsterMove.SetSpeed(m_monsterInfo.speed);
         m_bLive = true;
     }
 

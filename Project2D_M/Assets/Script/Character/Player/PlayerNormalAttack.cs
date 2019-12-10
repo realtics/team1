@@ -35,7 +35,8 @@ public class PlayerNormalAttack : MonoBehaviour
 	private PlayerState m_playerState = null;
 	private PlayerInput m_playerInput = null;
 	private PlayerCrowdControlManager m_playerCrowdControlManager=null;
-	private bool m_bAttacking;
+	
+ [SerializeField]private bool m_bAttacking;
 
 	private void Awake()
 	{
@@ -240,6 +241,7 @@ public class PlayerNormalAttack : MonoBehaviour
 		}
 
 		m_effectAnimFuntion.EffectOff();
+		m_playerCrowdControlManager.OffAirStop();
 
 	}
 

@@ -137,7 +137,7 @@
     <Compile Include="Assets\Script\Monster\MonsterInfo.cs" />
     <Compile Include="Assets\Script\Monster\MonsterLupe.cs" />
     <Compile Include="Assets\Script\Monster\MonsterMove.cs" />
-    <Compile Include="Assets\Script\Monster\StateMachine.cs" />
+    <Compile Include="Assets\Script\Monster\MonsterStateMachine.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxBackGround.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxCamera.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxLayer.cs" />
