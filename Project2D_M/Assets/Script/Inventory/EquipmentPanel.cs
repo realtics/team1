@@ -6,21 +6,26 @@ using UnityEngine;
 public class EquipmentPanel : MonoBehaviour
 {
 	[SerializeField] Transform equipmentSlotParent;
-	[SerializeField] EquipmentSlot[] equipmentSlots;
+	public EquipmentSlot[] equipmentSlots;
 
-	public event Action<Item> OnItemRightClickedEvent;
+	public event Action<Item> OnItemLeftClickedEvent;
 
 	private void Start()
 	{
-		for(int i = 0; i< equipmentSlots.Length; i++)
+		for(int i = 0; i < equipmentSlots.Length; i++)
 		{
-			equipmentSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+			equipmentSlots[i].OnLeftClickEvent += OnItemLeftClickedEvent;
 		}
 	}
 
 	private void OnValidate()
 	{
 		equipmentSlots = equipmentSlotParent.GetComponentsInChildren<EquipmentSlot>();
+
+		for (int i = 0 ; i < equipmentSlots.Length; i++)
+		{
+			equipmentSlots[i].slotNum = i;
+		}
 	}
 
 	public bool AddItem(EquippableItem item, out EquippableItem previousItem)

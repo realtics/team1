@@ -12,4 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25acb3b79ea94724f98154e5034ee377, type: 3}
   m_Name: ItemDataSO
   m_EditorClassIdentifier: 
-  itemList: []
+  itemList:
+  - itemName: "\uC544\uC544\uC544"
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: 
+    frameColorR: 0
+    frameColorG: 0
+    frameColorB: 0
+    frameColorA: 0
+    itemType: 0
+    typeName: 
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: "\uC544\uC544\uC544"
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: 
+    frameColorR: 0
+    frameColorG: 0
+    frameColorB: 0
+    frameColorA: 0
+    itemType: 0
+    typeName: 
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0
+  - itemName: "\uC544\uC544\uC544"
+    level: 0
+    image: {fileID: 0}
+    itemRating: 0
+    ratingName: 
+    frameColorR: 0
+    frameColorG: 0
+    frameColorB: 0
+    frameColorA: 0
+    itemType: 0
+    typeName: 
+    equipmentAttack: 0
+    equipmentArmor: 0
+    equipmentMaxHealth: 0

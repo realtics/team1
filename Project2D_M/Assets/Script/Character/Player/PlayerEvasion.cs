@@ -12,13 +12,15 @@ public class PlayerEvasion : MonoBehaviour
 {
     [SerializeField] private float m_speed = 800.0f;
     [SerializeField] private float m_speedAir = 700.0f;
-    [SerializeField] private int m_count = 3;
-    private bool m_bCoroutinePlay = false;
+	[SerializeField] private float m_countRecoveryTime = 1f;
+	private float m_countVelue = 1;
+	private bool m_bCoroutinePlay = false;
     private bool m_bEvasion = false;
     private PlayerState m_playerState = null;
     private PlayerAnimFuntion m_animFuntion = null;
     private Rigidbody2D m_rigidbody2D = null;
     private PlayerCrowdControlManager m_crowdControlManager = null;
+	public EvasionButton evasionButton;
 
     private void Awake()
     {
@@ -30,14 +32,14 @@ public class PlayerEvasion : MonoBehaviour
 
     public void Evasion()
     {
-		if (!m_playerState.bSkipEvasion)
+		if (!m_playerState.bSkipEvasion || m_bEvasion)
 			return;
 
-        if (m_count > 0)
+        if (m_countVelue > (1 * 0.3333f))
         {
-            m_count--;
+			m_countVelue -= (1 * 0.3333f);
 
-            if (!m_bEvasion)
+			if (!m_bEvasion)
             {
                 m_bEvasion = true;
                 StartCoroutine(nameof(EvasionCoroutine));
@@ -53,13 +55,16 @@ public class PlayerEvasion : MonoBehaviour
         m_bCoroutinePlay = true;
         while(true)
         {
-            yield return new WaitForSeconds(1f);
-            m_count++;
+			yield return new WaitForSeconds(m_countRecoveryTime * 0.3f);
+			m_countVelue += m_countRecoveryTime * 0.03f;
+			evasionButton.EvasionBarSet(m_countVelue);
 
-            if (m_count >= 3)
+			if (m_countVelue >= 1)
                 break;
         }
-        m_bCoroutinePlay = false;
+		m_countVelue = 1;
+		evasionButton.EvasionBarSet(m_countVelue);
+		m_bCoroutinePlay = false;
     }
 
     IEnumerator EvasionCoroutine()
@@ -76,7 +81,9 @@ public class PlayerEvasion : MonoBehaviour
         }
         else AddMeve(m_speed);
 
-        while (true)
+		m_playerState.PlayerStateEvasion();
+
+		while (true)
         {
             if (!m_animFuntion.IsTag("Evasion"))
             {

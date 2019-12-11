@@ -16,16 +16,12 @@ public class PlayerAttackCollider : AttackCollider
     private CinemachineImpulseSource m_cinemachineImpulse = null;
     private PlayerCombo m_playerCombo = null;
 	private PlayerState m_playerState = null;
-	private Rigidbody2D m_playerRigidbody2D = null;
-	private PlayerCrowdControlManager m_playerCrowdControlManager = null;
 
 	private void Awake()
     {
         m_playerInfo = this.transform.root.GetComponent<PlayerInfo>();
         m_playerCombo = this.transform.root.GetComponent<PlayerCombo>();
 		m_playerState = this.transform.root.GetComponent<PlayerState>();
-		m_playerRigidbody2D = this.transform.root.GetComponent<Rigidbody2D>();
-		m_playerCrowdControlManager = this.transform.root.GetComponent<PlayerCrowdControlManager>();
 		m_collider = this.GetComponent<PolygonCollider2D>();
         m_cinemachineImpulse = this.GetComponent<CinemachineImpulseSource>();
         m_spineAnimCollider = this.GetComponent<SpineAnimCollider>();
@@ -38,11 +34,6 @@ public class PlayerAttackCollider : AttackCollider
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
             if (receiveDamage.bScriptEnable != false)
             {
-				if(!m_playerState.IsPlayerGround() && !m_playerState.IsPlayerSPAttack())
-				{
-					m_playerCrowdControlManager.OnAirStop();
-				}
-
                 if (attackForce != Vector2.zero)
                 {
                     receiveDamage.AddDamageForce(attackForce);

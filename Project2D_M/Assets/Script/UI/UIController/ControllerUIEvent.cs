@@ -11,16 +11,21 @@ using UnityEngine.EventSystems;
  */
 public class ControllerUIEvent : MonoBehaviour
 {
-    [SerializeField] private PlayerInput m_playerInput = null;
+	[SerializeField] private GameObject m_Player = null;
+	private PlayerInput m_playerInput = null;
     [SerializeField] private JoyStick m_joyStick = null;
     [SerializeField] private EventTrigger m_normalAttackEvent = null;
     [SerializeField] private EventTrigger m_jumpEvent = null;
-    [SerializeField] private EventTrigger m_evasionEvent = null;
+	[SerializeField] private EvasionButton m_evasionButton = null;
+	private PlayerEvasion m_playerEvasion = null;
 
-    // Start is called before the first frame update
-    private void Start()
+	// Start is called before the first frame update
+	private void Start()
     {
-        JoyStickConnect();
+		m_playerInput = m_Player.GetComponent<PlayerInput>();
+		m_playerEvasion = m_Player.GetComponent<PlayerEvasion>();
+
+		JoyStickConnect();
         NormalAttackConnect();
         JumpConnect();
         EvasionConnect();
@@ -71,19 +76,22 @@ public class ControllerUIEvent : MonoBehaviour
 
     private void JumpConnect()
     {
-        EventTrigger.Entry dounEvent = new EventTrigger.Entry();
+		EventTrigger.Entry dounEvent = new EventTrigger.Entry();
         dounEvent.eventID = EventTriggerType.PointerDown;
         dounEvent.callback.AddListener(BaseEventData => m_playerInput.JumpInput());
 
-        m_jumpEvent.triggers.Add(dounEvent);
+		m_jumpEvent.triggers.Add(dounEvent);
     }
 
     private void EvasionConnect() 
     {
-        EventTrigger.Entry dounEvent = new EventTrigger.Entry();
+		m_playerEvasion.evasionButton = m_evasionButton;
+		EventTrigger evasionEvent = m_evasionButton.GetComponent<EventTrigger>();
+
+		EventTrigger.Entry dounEvent = new EventTrigger.Entry();
         dounEvent.eventID = EventTriggerType.PointerDown;
         dounEvent.callback.AddListener(BaseEventData => m_playerInput.EvasionInput());
 
-        m_evasionEvent.triggers.Add(dounEvent);
+		evasionEvent.triggers.Add(dounEvent);
     }
 }

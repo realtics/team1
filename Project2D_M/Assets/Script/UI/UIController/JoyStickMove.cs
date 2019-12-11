@@ -23,9 +23,9 @@ public class JoyStickMove : MonoBehaviour
 	}
 
 	public void OffJoystick(BaseEventData _data)
-	{
-		m_joyStick.DragEnd();
+	{	
 		m_joyStick.StopPlayerMove();
+		m_joyStick.DragEnd();
 		Joystick.SetActive(false);
 	}
 

@@ -52,9 +52,9 @@ public class Debug_UI : Singletone<Debug_UI>
 
     }
 
-	public void AddTextObject(string _str, string _text)
-	{
-	}
+	//public void AddTextObject(string _str, string _text)
+	//{
+	//}
 
     public void ChageActive()
     {

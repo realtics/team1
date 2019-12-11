@@ -7,9 +7,8 @@ public class SkillFuntion : MonoBehaviour
 {
 	public string sSkillName = "FlameHaze";
 	public float iCollisionSize = 1f;
-	private float iDamageRatio = 10000000.0f;
-	private Vector2 iDamageForce = new Vector2(0, -50f);
-
+	private float iDamageRatio = 30.0f;
+	private Vector2 iDamageForce = new Vector2(0, -10f);
 
 	private SkeletonAnimation m_skeletonAnimation;
 	private PlayerState m_playerState;

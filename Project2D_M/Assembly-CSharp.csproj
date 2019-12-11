@@ -95,6 +95,7 @@
     <Compile Include="Assets\Script\Character\Player\Attack\AnimToAttackManager.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\SkillFuntion.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\SkillManager.cs" />
+    <Compile Include="Assets\Script\Character\Player\Attack\TempBezierCurve.cs" />
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerAttackCollider.cs" />
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerFootCollision.cs" />
     <Compile Include="Assets\Script\Character\Player\DamageFont.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\Script\Inventory\EquipmentPanel.cs" />
     <Compile Include="Assets\Script\Inventory\EquipmentSlot.cs" />
     <Compile Include="Assets\Script\Inventory\EquippableItem.cs" />
+    <Compile Include="Assets\Script\Inventory\InfoDisplay.cs" />
     <Compile Include="Assets\Script\Inventory\Inventory.cs" />
     <Compile Include="Assets\Script\Inventory\InventoryManger.cs" />
     <Compile Include="Assets\Script\Inventory\Item.cs" />
@@ -161,6 +163,7 @@
     <Compile Include="Assets\Script\UI\StageOpenManager.cs" />
     <Compile Include="Assets\Script\UI\StartUIInit.cs" />
     <Compile Include="Assets\Script\UI\UIController\ControllerUIEvent.cs" />
+    <Compile Include="Assets\Script\UI\UIController\EvasionButton.cs" />
     <Compile Include="Assets\Script\UI\UIController\JoyStick.cs" />
     <Compile Include="Assets\Script\UI\UIController\JoyStickMove.cs" />
     <Compile Include="Assets\Script\Utility\Debug_UI.cs" />

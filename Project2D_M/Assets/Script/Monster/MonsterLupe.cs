@@ -12,14 +12,18 @@ public class MonsterLupe : MonsterStateMachine
 	private readonly int m_hashTHit = Animator.StringToHash("tHit");
 	private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
 
-	[SerializeField]
+	//[SerializeField]
 	private Animator m_animator;
-    [SerializeField]
+    //[SerializeField]
     private MonsterMove m_monsterMove;
     [SerializeField]
 	private float m_AppearTime;
 
-    void Start()
+	private Work WorkAppear;
+	private Work WorkIdle;
+	private Work WorkMove;
+
+	void Start()
     {
 		InitAniamation();
 		nowState = ENEMY_STATE.APPEAR;
@@ -27,20 +31,23 @@ public class MonsterLupe : MonsterStateMachine
         m_monsterMove = GetComponent<MonsterMove>();
 
     }
-	
+
 
 	override protected void EnterState(ENEMY_STATE _state)
 	{
 		switch (_state)
 		{
 			case ENEMY_STATE.APPEAR:
-				ActionStart(Appear());
+				WorkAppear = new Work(Appear(), true);
 				break;
 			case ENEMY_STATE.IDLE:
+				WorkIdle = new Work(Idle(), true);
+				//ActionStart(Idle());
 				break;
 			case ENEMY_STATE.ATTACK:
 				break;
 			case ENEMY_STATE.MOVE:
+				WorkMove = new Work(Move(), true);
 				break;
 			case ENEMY_STATE.DIE:
 				break;
@@ -54,13 +61,16 @@ public class MonsterLupe : MonsterStateMachine
 		switch (_state)
 		{
 			case ENEMY_STATE.APPEAR:
-				KillCoroutine();
+				if(WorkAppear!= null) WorkAppear.KillCoroutine();
 				break;
 			case ENEMY_STATE.IDLE:
+				if(WorkIdle != null)WorkIdle.KillCoroutine();
 				break;
 			case ENEMY_STATE.ATTACK:
+				//KillCoroutine();
 				break;
 			case ENEMY_STATE.MOVE:
+				if (WorkMove != null) WorkMove.KillCoroutine();
 				break;
 			case ENEMY_STATE.DIE:
 				break;
@@ -93,19 +103,23 @@ public class MonsterLupe : MonsterStateMachine
             {
                 nowState = ENEMY_STATE.MOVE;
             }
-            yield return null;
-
-        }
-    }
+			yield return new WaitForSeconds(0.3f);
+		}
+	}
 
     IEnumerator Move()
     {
         while(true)
         {
             m_monsterMove.Move(m_fSpeed);
-			yield return null;
-        }
-    }
+			if(StageManager.Inst.playerTransform.position.x - this.transform.position.x > -3 &&
+				StageManager.Inst.playerTransform.position.x - this.transform.position.x < 3)
+			{
+				nowState = ENEMY_STATE.NONE;
+			}
+			yield return new WaitForSeconds(0.5f);
+		}
+	}
 
 	void InitAniamation()
 	{

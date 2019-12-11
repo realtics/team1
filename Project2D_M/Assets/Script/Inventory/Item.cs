@@ -7,5 +7,5 @@ using UnityEngine.UI;
 public class Item : ScriptableObject
 {
 	public string itemName;
-	public Sprite Icon;
+	public Sprite icon;
 }

@@ -58,10 +58,10 @@ public class PlayerNormalAttack : MonoBehaviour
 		m_NormalAttackDic.Add("attack_4", new AttackInfo(3.0f, new Vector2(2.0f, 10.0f)));
 		m_NormalAttackDic.Add("attack_5", new AttackInfo(4.0f, new Vector2(10.0f, 10.0f)));
 
-		m_NormalAttackDic.Add("air_attack_1", new AttackInfo(1.0f, new Vector2(1f, 10f)));
-		m_NormalAttackDic.Add("air_attack_2", new AttackInfo(1.0f, new Vector2(1f, 10f)));
-		m_NormalAttackDic.Add("air_attack_3", new AttackInfo(1.0f, new Vector2(1f, 10f)));
-		m_NormalAttackDic.Add("air_attack_4", new AttackInfo(1.0f, new Vector2(5f, 10f)));
+		m_NormalAttackDic.Add("air_attack_1", new AttackInfo(1.0f, new Vector2(1f, 12f)));
+		m_NormalAttackDic.Add("air_attack_2", new AttackInfo(1.0f, new Vector2(1f, 12f)));
+		m_NormalAttackDic.Add("air_attack_3", new AttackInfo(1.0f, new Vector2(1f, 12f)));
+		m_NormalAttackDic.Add("air_attack_4", new AttackInfo(1.0f, new Vector2(5f, 12f)));
 
 		m_NormalAttackDic.Add("attack_upper", new AttackInfo(3.0f, new Vector2(1f, 24.0f)));
 		m_NormalAttackDic.Add("attack_downsmash", new AttackInfo(4.0f, new Vector2(2f, -25.0f)));
@@ -72,6 +72,19 @@ public class PlayerNormalAttack : MonoBehaviour
 		Gizmos.color = Color.red;
 
 		Gizmos.DrawRay(this.transform.position, -this.transform.up * fAirAttackDistansce);
+
+		Gizmos.color = Color.green;
+
+		RaycastHit2D[] raycastHit2D;
+
+		raycastHit2D = Physics2D.BoxCastAll(this.transform.position + new Vector3(0, this.transform.localScale.y * 2, 0), GetComponent<BoxCollider2D>().size, 0.0f, this.transform.localScale.x * this.transform.right, fAirAttackDistansce, 1 << LayerMask.NameToLayer("Monster"));
+
+		for(int i = 0; i < raycastHit2D.Length; ++i)
+		{
+			if (raycastHit2D[i].collider.tag == "Monster")
+				Gizmos.DrawWireCube(this.transform.position + new Vector3(this.transform.localScale.x * Vector3.Distance(raycastHit2D[i].collider.transform.position, this.transform.position), this.transform.localScale.y * 2, 0) + this.transform.localScale.x * this.transform.right * fAirAttackDistansce, GetComponent<BoxCollider2D>().size);
+		}
+		
 	}
 
 	public void NormalAttack()
@@ -82,6 +95,15 @@ public class PlayerNormalAttack : MonoBehaviour
 		}
 
 		m_animFuntion.SetTrigger(m_animFuntion.hashTNormalAttack);
+
+		if (!m_playerState.IsPlayerGround() && !m_playerState.IsPlayerSPAttack()) 
+		{
+			RaycastHit2D[] raycastHit2D = Physics2D.BoxCastAll(this.transform.position + new Vector3(0, this.transform.localScale.y * 2, 0), GetComponent<BoxCollider2D>().size, 0.0f, this.transform.localScale.x * this.transform.right, fAirAttackDistansce, 1 << LayerMask.NameToLayer("Monster"));
+
+			if(raycastHit2D.Length != 0)
+				m_playerCrowdControlManager.OnAirStop();
+			else m_playerCrowdControlManager.OffAirStop();
+		}
 
 		if (Input.GetAxisRaw("Vertical") > 0 || m_playerInput.joystickState == PlayerInput.JOYSTICK_STATE.JOYSTICK_UP)
 		{
@@ -136,7 +158,7 @@ public class PlayerNormalAttack : MonoBehaviour
 		}
 
 		m_bAttacking = false;
-		m_sAnimName = "";
+		m_sAnimName = null;
 
 		CancelInvoke();
 		m_playerCrowdControlManager.OffAirStop();

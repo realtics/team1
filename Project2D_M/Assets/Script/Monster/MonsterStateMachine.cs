@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class MonsterStateMachine : MonsterInfo
 {
-	private bool m_bRunning;
-	private bool m_bPaused;
 
-	private IEnumerator m_coroutine;
+
 
 	public enum ENEMY_STATE
 	{
@@ -17,10 +15,11 @@ public class MonsterStateMachine : MonsterInfo
 		ATTACK,
 		MOVE,
 		DIE,
-		HIT
+		HIT,
+		NONE
 	}
 
-	private ENEMY_STATE eState;
+	private ENEMY_STATE eState = ENEMY_STATE.NONE;
 
 	public ENEMY_STATE nowState
 	{
@@ -36,9 +35,6 @@ public class MonsterStateMachine : MonsterInfo
 		}
 	}
 
-	WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
-	WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
-
 	protected virtual void EnterState(ENEMY_STATE _state)
 	{
 	}
@@ -47,35 +43,53 @@ public class MonsterStateMachine : MonsterInfo
 	{
 	}
 
+	public MonsterStateMachine GetMachine()
+	{
+		return this;
+	}
+
+	
+}
+
+public class Work
+{
+	private bool m_bRunning;
+	private bool m_bPaused;
+
+	private IEnumerator m_coroutine;
 	protected IEnumerator DoWork()
 	{
 		yield return null;
 
+
+
 		while (m_bRunning)
 		{
-			if(m_bPaused)
+			if (m_bPaused)
 			{
 				yield return null;
 			}
 			else
 			{
-				if(m_coroutine.MoveNext())
+				if (m_coroutine.MoveNext())
 				{
 					yield return m_coroutine.Current;
 				}
 				else
 				{
 					m_bRunning = false;
+					break;
 				}
 			}
+			
 		}
 	}
 
-	public void ActionStart(IEnumerator coroutine)//변경
+	public void ActionStart(/*IEnumerator coroutine*/)
 	{
-		m_coroutine = coroutine;
+		//m_coroutine = coroutine;
 		m_bRunning = true;
-		StartCoroutine(DoWork());
+		StageManager.Inst.StartCoroutine(DoWork());
 	}
 
 	public void KillCoroutine()
@@ -83,4 +97,12 @@ public class MonsterStateMachine : MonsterInfo
 		m_bRunning = false;
 		m_bPaused = false;
 	}
+	public Work(IEnumerator coroutine, bool shouldStart)
+	{
+		m_coroutine = coroutine;
+
+		if (shouldStart)
+			ActionStart();
+	}
+
 }

@@ -73,8 +73,6 @@ public class MonsterAttack : MonoBehaviour
             }
 
         }
-
-
     }
 
     public void Attack()

@@ -49,7 +49,6 @@ public class AttackCollider : MonoBehaviour
             _attackForce.x = _attackForce.x * -1;
         }
         attackForce = _attackForce;
-
     }
 
     public virtual void ColliderLifeCycleOn(float _time)

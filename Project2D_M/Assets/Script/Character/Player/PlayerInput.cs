@@ -179,7 +179,6 @@ public class PlayerInput : ScriptEnable
         if (!bScriptEnable)
             return;
 
-        m_playerState.PlayerStateEvasion();
         m_playerEvasion.Evasion();
     }
 }

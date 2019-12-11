@@ -7,15 +7,15 @@ public class Inventory : MonoBehaviour
 {
 	[SerializeField] List<Item> items;
 	[SerializeField] Transform itemParent;
-	[SerializeField] ItemSlot[] itemSlots;
+	public ItemSlot[] itemSlots;
 
-	public event Action<Item> OnItemRightClickedEvent;
+	public event Action<Item> OnItemLeftClickedEvent;
 
 	private void Start()
 	{
-		for(int i = 0; i< itemSlots.Length; i++)
+		for(int i = 0; i < itemSlots.Length; i++)
 		{
-			itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+			itemSlots[i].OnLeftClickEvent += OnItemLeftClickedEvent;
 		}
 	}
 	private void OnValidate()
@@ -27,6 +27,9 @@ public class Inventory : MonoBehaviour
 
 		RefreshUI();
 	}
+
+	
+
 
 	private void RefreshUI()
 	{
@@ -40,6 +43,7 @@ public class Inventory : MonoBehaviour
 		for (; i < itemSlots.Length; i++)
 		{
 			itemSlots[i].Item = null;
+			itemSlots[i].slotNum = i;
 		}
 	}
 

@@ -10,14 +10,23 @@ public class ItemSlot : MonoBehaviour
 	[SerializeField] Image itemImage;
 	[SerializeField] Image frameBackImage;
 	[SerializeField] Image frameBackEdgeImage;
+	[SerializeField] Image noticeImage;
 
-	public event Action<Item> OnRightClickEvent;
+	[SerializeField] InfoDisplay infoDisplay;
+
+	public event Action<Item> OnLeftClickEvent;
 
 	private Item m_item;
 
-	public GameObject ViewDitailObject;
 	private readonly int m_hashBOpen = Animator.StringToHash("bOpen");
 
+	public GameObject viewDitailObject;
+	public GameObject infoViewDitailObject;
+	public GameObject mountingViewDitailObject;
+	public GameObject infoMountingViewDitailObject;
+	public bool isMounting;
+
+	public int slotNum;
 
 	public Item Item
 	{
@@ -34,9 +43,9 @@ public class ItemSlot : MonoBehaviour
 			}
 			else
 			{
-				itemImage.sprite = m_item.Icon;
-				itemImage.SetNativeSize();
 				itemImage.enabled = true;
+				itemImage.sprite = m_item.icon;
+				itemImage.SetNativeSize();
 
 				frameBackImage.enabled = true;
 				frameBackEdgeImage.enabled = true;
@@ -44,29 +53,45 @@ public class ItemSlot : MonoBehaviour
 		}
 	}
 
+	public void MountingItem()
+	{
+		if (Item != null && OnLeftClickEvent != null)
+		{
+			OnLeftClickEvent(Item);
+		}
+	}
+
 	public void ClickViewDetailsEvent()
 	{
-		if (Item != null && OnRightClickEvent != null)
-		{
-			OnRightClickEvent(Item);
-		}
-
 		SetViewDetails();
 	}
 
 	private void SetViewDetails()
 	{
-		//셋팅
+		if(Item is EquippableItem)
+		{
+			infoDisplay.ShowInfomation((EquippableItem)Item);
+			infoDisplay.selectSlotNum = slotNum;
+		}
 
-		//애니메이션 재생.
 		PlayAnimationViewDetails();
 	}
 
 	private void PlayAnimationViewDetails()
 	{
-		Animator animator = ViewDitailObject.GetComponent<Animator>();
+		if(isMounting)
+		{
+			Animator animator = mountingViewDitailObject.GetComponent<Animator>();
 
-		animator.SetBool(m_hashBOpen, true);
+			animator.SetBool(m_hashBOpen, true);
+		}
+		else
+		{
+			Animator animator = viewDitailObject.GetComponent<Animator>();
+
+			animator.SetBool(m_hashBOpen, true);
+		}
+		
 	}
 
 	protected virtual void OnValidate()
@@ -85,5 +110,6 @@ public class ItemSlot : MonoBehaviour
 		{
 			itemImage = transform.GetChild(2).gameObject.GetComponent<Image>();
 		}
+
 	}
 }

@@ -48,18 +48,16 @@ public class PlayerCrowdControlManager : CrowdControlManager
 
 	public void OnAirStop()
 	{
-		Debug.Log("On");
-		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+		if (!m_playerState.IsPlayerEvasion())
+			m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 	}
 
 	public void OffAirStop()
 	{
 		if (!m_playerState.IsPlayerEvasion())
 		{
-			Debug.Log("Off");
-
 			m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-			m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, 0.01f);
+			m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, m_rigidbody2D.velocity.y + 0.01f);
 		}
 	}
 
