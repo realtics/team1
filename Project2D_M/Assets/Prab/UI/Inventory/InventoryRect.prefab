@@ -53,7 +53,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635870169}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 0}
-  - {fileID: 11400000, guid: 50dd817f413ac484595fb10022b792b8, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: dd7bc820b679dab4aac7ab4e8396ef7d, type: 2}
   - {fileID: 11400000, guid: cec24c9de0802d04f8bb48ff9fc26802, type: 2}
   - {fileID: 11400000, guid: 9b77a19763a7c0140acbe1b3123723bd, type: 2}
@@ -935,14 +935,16 @@ MonoBehaviour:
   itemImage: {fileID: 2662300159727770822}
   frameBackImage: {fileID: 7629784352567923005}
   frameBackEdgeImage: {fileID: 4916264799453801515}
+  itemlevel: {fileID: 635870171}
   noticeImage: {fileID: 1334044810}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
   mountingViewDitailObject: {fileID: 0}
   infoMountingViewDitailObject: {fileID: 0}
-  isMounting: 0
+  isMountingSlot: 0
   slotNum: 0
+  eSlotState: 0
 --- !u!1 &9114822624618567479
 GameObject:
   m_ObjectHideFlags: 0

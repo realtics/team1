@@ -46,7 +46,6 @@ public class EquippableItem : Item
 	public ITEM_RATING itemRating;
 	public ITEM_TYPE itemType;
 	[Space]
-	public Vector3 frameColorRGB;
 	public string ratingName;
 	public string typeName;
 

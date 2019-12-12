@@ -32,29 +32,29 @@ public class InventoryManger : MonoBehaviour
 
 	public void Equip(EquippableItem item)
 	{
-		if(inventory.RemoveItem(item))
-		{
+	//	if(inventory.RemoveItem(item))
+	//	{
 			EquippableItem previousItem;
 
 			if(equipmentPanel.AddItem(item, out previousItem))
 			{
 				if(previousItem != null)
 				{
-					inventory.AddItem(previousItem);
+					//inventory.AddItem(previousItem);
 				}
 			}
 			else
 			{
 				inventory.AddItem(item);
 			}
-		}
+	//	}
 	}
 
 	public void Unequip(EquippableItem item)
 	{
 		if(!inventory.IsFull() & equipmentPanel.RemoveItem(item))
 		{
-			inventory.AddItem(item);
+		//	inventory.AddItem(item);
 		}
 	}
 

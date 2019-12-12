@@ -93,9 +93,10 @@
     <Compile Include="Assets\Script\Character\Player\Anim\PlayerIdleBehavior.cs" />
     <Compile Include="Assets\Script\Character\Player\Anim\PlayerLendBehavior.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\AnimToAttackManager.cs" />
+    <Compile Include="Assets\Script\Character\Player\Attack\BezierCurve.cs" />
+    <Compile Include="Assets\Script\Character\Player\Attack\FireBallMove.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\SkillFuntion.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\SkillManager.cs" />
-    <Compile Include="Assets\Script\Character\Player\Attack\TempBezierCurve.cs" />
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerAttackCollider.cs" />
     <Compile Include="Assets\Script\Character\Player\Collider\PlayerFootCollision.cs" />
     <Compile Include="Assets\Script\Character\Player\DamageFont.cs" />
@@ -263,10 +264,10 @@
     <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\SkeletonUtilityBone.cs" />
     <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\SkeletonUtilityConstraint.cs" />
     <Compile Include="Assets\Spine\spine-unity\SpineAttributes.cs" />
-    <None Include="Assets\Resources\Character\Player\Effect\FireDance\Effect_blazedance_calpmaniel.atlas.txt" />
+    <None Include="Assets\Resources\Character\Player\Effect\BlazeDance\Effect_blazedance_calpmaniel.atlas.txt" />
     <None Include="Assets\Spine\spine-unity\Shaders\Utility\HiddenPass.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Spine-Skeleton-Fill.shader" />
-    <None Include="Assets\Resources\Character\Player\Effect\FireSword\Effect_FlameHaze_calpmaniel.atlas.txt" />
+    <None Include="Assets\Resources\Character\Player\Effect\FlameHaze\Effect_FlameHaze_calpmaniel.atlas.txt" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\CGIncludes\SpritePixelLighting.cginc" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\SpriteVertexLighting.cginc" />
     <None Include="Assets\Resources\Character\Player\Effect\FireClaw1\Babaty_Trail_01_1.atlas.txt" />

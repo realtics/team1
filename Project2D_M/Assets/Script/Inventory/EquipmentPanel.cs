@@ -14,7 +14,7 @@ public class EquipmentPanel : MonoBehaviour
 	{
 		for(int i = 0; i < equipmentSlots.Length; i++)
 		{
-			equipmentSlots[i].OnLeftClickEvent += OnItemLeftClickedEvent;
+			equipmentSlots[i].OnEquipmentSlotEvent += OnItemLeftClickedEvent;
 		}
 	}
 
@@ -55,4 +55,5 @@ public class EquipmentPanel : MonoBehaviour
 		}
 		return false;
 	}
+
 }

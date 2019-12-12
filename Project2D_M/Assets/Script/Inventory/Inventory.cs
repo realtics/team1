@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
 	{
 		for(int i = 0; i < itemSlots.Length; i++)
 		{
-			itemSlots[i].OnLeftClickEvent += OnItemLeftClickedEvent;
+			itemSlots[i].OnItemSlotEvent += OnItemLeftClickedEvent;
 		}
 	}
 	private void OnValidate()

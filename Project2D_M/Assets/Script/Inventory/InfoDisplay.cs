@@ -64,7 +64,7 @@ public class InfoDisplay : MonoBehaviour
 	{
 		if(isWearEquipmentInfo)
 		{
-			equipmentPanel.equipmentSlots[selectSlotNum].MountingItem();
+			equipmentPanel.equipmentSlots[selectSlotNum].UnMountingItem();
 		}
 		else
 		{
