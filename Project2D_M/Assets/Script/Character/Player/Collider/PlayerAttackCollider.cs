@@ -17,7 +17,7 @@ public class PlayerAttackCollider : AttackCollider
     private PlayerCombo m_playerCombo = null;
 	private PlayerState m_playerState = null;
 
-	private void Awake()
+	protected void Awake()
     {
         m_playerInfo = this.transform.root.GetComponent<PlayerInfo>();
         m_playerCombo = this.transform.root.GetComponent<PlayerCombo>();

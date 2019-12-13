@@ -11,6 +11,9 @@ public class InventoryManger : MonoBehaviour
 	{
 		inventory.OnItemLeftClickedEvent += EquipFromInventory;
 		equipmentPanel.OnItemLeftClickedEvent += UnEquipFromEquipPanel;
+
+		inventory.Initialize();
+		equipmentPanel.Initialize();
 	}
 
 	private void EquipFromInventory(Item item)

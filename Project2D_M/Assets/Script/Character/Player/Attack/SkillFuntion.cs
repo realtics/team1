@@ -5,37 +5,24 @@ using Spine.Unity;
 
 public class SkillFuntion : MonoBehaviour
 {
-	public string sSkillName = "FlameHaze";
-	public float iCollisionSize = 1f;
-	private float iDamageRatio = 30.0f;
-	private Vector2 iDamageForce = new Vector2(0, -10f);
+	public string sSkillName;
+	public float collisionSize = 1f;
+	public float damageRatio = 30.0f;
+	public Vector2 damageForce = new Vector2(0, -10f);
 
-	private SkeletonAnimation m_skeletonAnimation;
-	private PlayerState m_playerState;
-	private MeshRenderer m_meshRenderer;
-	private PlayerAnimFuntion m_animFuntion;
-	private AttackCollider m_attackCollider;
-	private Rigidbody2D m_rigidbody2D;
+	protected PlayerState m_playerState;
+	protected PlayerAnimFuntion m_animFuntion;
+	protected Rigidbody2D m_rigidbody2D;
 
-	public void InitSkill(PlayerAnimFuntion _animFuntion, PlayerState _playerState)
+	public virtual void InitSkill(PlayerAnimFuntion _animFuntion, PlayerState _playerState)
 	{
 		m_animFuntion = _animFuntion;
 		m_playerState = _playerState;
-
-		m_skeletonAnimation = this.GetComponent<SkeletonAnimation>();
-		m_meshRenderer = this.GetComponent<MeshRenderer>();
-		m_attackCollider = this.GetComponent<AttackCollider>();
 		m_rigidbody2D = this.transform.root.GetComponent<Rigidbody2D>();
-
-		m_attackCollider.iCollisionSize = iCollisionSize;
-		m_attackCollider.SetDamageColliderInfo(iDamageRatio, "Monster", iDamageForce);
 	}
 
-	public void SkillAction()
+	public virtual void SkillAction()
 	{
-		if (m_meshRenderer.enabled == false)
-			m_meshRenderer.enabled = true;
-
 		string sSkillEffentName;
 
 		if (m_playerState.IsPlayerGround())
@@ -46,11 +33,10 @@ public class SkillFuntion : MonoBehaviour
 		}
 
 		StartCoroutine(nameof(SkillCoroutine));
-		m_skeletonAnimation.AnimationState.SetAnimation(0, sSkillEffentName, false);
 		m_animFuntion.PlayAnim(sSkillEffentName);
 	}
 
-	IEnumerator SkillCoroutine()
+	protected IEnumerator SkillCoroutine()
 	{
 		m_playerState.bSkipEvasion = false;
 

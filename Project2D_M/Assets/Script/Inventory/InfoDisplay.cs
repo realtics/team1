@@ -26,8 +26,10 @@ public class InfoDisplay : MonoBehaviour
 	private readonly string defenseAbility = "방어력";
 	private readonly string maxHealthAbility = "최대 체력량";
 
-	public int selectSlotNum = 0;
 	public bool isWearEquipmentInfo;
+
+	public int saveEquipmentSlotIndex;
+	public int saveInventorySlotIndex;
 
 	public void ShowInfomation(EquippableItem _item)
 	{
@@ -64,11 +66,37 @@ public class InfoDisplay : MonoBehaviour
 	{
 		if(isWearEquipmentInfo)
 		{
-			equipmentPanel.equipmentSlots[selectSlotNum].UnMountingItem();
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].UnMountingItem();
+			SlotChangeState(isWearEquipmentInfo);
 		}
 		else
 		{
-			inventory.itemSlots[selectSlotNum].MountingItem();
+			inventory.itemSlots[saveInventorySlotIndex].MountingItem();
+			SlotChangeState(isWearEquipmentInfo);
+		}
+	}
+
+	public void SlotChangeState(bool _isWearEquipmentInfo)
+	{
+		if (_isWearEquipmentInfo)
+		{
+			saveInventorySlotIndex = equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex;
+
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
+			inventory.itemSlots[saveInventorySlotIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
+
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon();
+			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon();
+		}
+		else 
+		{
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState = SLOT_STATE.MOUNTING;
+			inventory.itemSlots[saveInventorySlotIndex].eSlotState = SLOT_STATE.MOUNTING;
+
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon();
+			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon();
+
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex = saveInventorySlotIndex;
 		}
 	}
 

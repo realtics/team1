@@ -13,6 +13,9 @@ public class BezierCurve
 
 	public void InitBezier(List<Vector3> _positions,float _speed)
 	{
+		dTiem = 0;
+		count = 0;
+
 		positions = _positions;
 		m_speed = _speed;
 
@@ -40,7 +43,7 @@ public class BezierCurve
 		}
 	}
 
-	public Vector3 GetPoint()
+	public Vector3 GetPoint(float _speedPlus)
 	{
 		Vector3 result = GetPointOnBezierCurve(listPositions[count],dTiem);
 
@@ -50,7 +53,7 @@ public class BezierCurve
 		{
 			dTiem = 0;
 			count++;
-			m_speed *= 1.7f;
+			m_speed *= _speedPlus;
 			if (listPositions.Count == count)
 				result = lastPosition;
 		}

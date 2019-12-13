@@ -8,6 +8,7 @@ public class EquipmentSlot : ItemSlot
 {
 	public EQUIPMENT_TYPE equipmentType;
 	public event Action<Item> OnEquipmentSlotEvent;
+	public int rememberInventoryIndex;
 
 	protected override void OnValidate()
 	{
@@ -20,8 +21,6 @@ public class EquipmentSlot : ItemSlot
 		if (Item != null && OnEquipmentSlotEvent != null)
 		{
 			OnEquipmentSlotEvent(Item);
-			Debug.Log("언 마운트 실행");
-			eSlotState = SLOT_STATE.NOT_MOUNTING;
 		}
 	}
 }

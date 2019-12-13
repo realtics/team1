@@ -102,9 +102,55 @@ public class ItemSlot : MonoBehaviour
 		if (Item != null && OnItemSlotEvent != null)
 		{
 			OnItemSlotEvent(Item);
-			Debug.Log("마운트 실행");
-			eSlotState = SLOT_STATE.MOUNTING;
-			//해당 장착 인덱스 슬롯의 
+
+		}
+	}
+
+	public void SetSelectSlot(EquippableItem _item)
+	{
+		if (isMountingSlot)
+		{
+			infoDisplay.saveEquipmentSlotIndex = slotNum;
+		}
+		else
+		{
+			infoDisplay.saveInventorySlotIndex = slotNum;
+			switch(_item.equipmentType)
+			{
+				case EQUIPMENT_TYPE.WEAPON:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.WEAPON;
+					break;
+				case EQUIPMENT_TYPE.HAT:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.HAT;
+					break;
+				case EQUIPMENT_TYPE.TOP:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.TOP;
+					break;
+				case EQUIPMENT_TYPE.GLOVES:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.GLOVES;
+					break;
+				case EQUIPMENT_TYPE.PANTS:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.PANTS;
+					break;
+				case EQUIPMENT_TYPE.SHOES:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.SHOES;
+					break;
+				case EQUIPMENT_TYPE.NECKLACE:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.NECKLACE;
+					break;
+				case EQUIPMENT_TYPE.EARRING_1:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_1;
+					break;
+				case EQUIPMENT_TYPE.EARRING_2:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_2;
+					break;
+				case EQUIPMENT_TYPE.RING_1:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_1;
+					break;
+				case EQUIPMENT_TYPE.RING_2:
+					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_2;
+					break;
+			}
 		}
 	}
 
@@ -118,13 +164,13 @@ public class ItemSlot : MonoBehaviour
 		if(Item is EquippableItem)
 		{
 			infoDisplay.ShowInfomation((EquippableItem)Item);
-			infoDisplay.selectSlotNum = slotNum;
+			SetSelectSlot((EquippableItem)Item);
 		}
 
 		PlayAnimationViewDetails();
 	}
 
-	private void PlayAnimationViewDetails()
+	public void PlayAnimationViewDetails()
 	{
 		if (Item != null)
 		{
@@ -170,7 +216,5 @@ public class ItemSlot : MonoBehaviour
 		{
 			noticeImage = transform.GetChild(4).gameObject.GetComponent<Image>();
 		}
-
-		SettingNoticeIcon();
 	}
 }

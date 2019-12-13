@@ -34,10 +34,11 @@ public enum ITEM_TYPE
 [CreateAssetMenu]
 public class EquippableItem : Item
 {
+	//일반 스탯 적용시 사용
 	public int attackBonus;
 	public int armorBonus;
 	public int maxHealthBonus;
-	[Space]
+	[Space] // 퍼센트 증가용 스탯 적용시 사용.
 	public float attackPercentBonus;
 	public float armorPercentBonus;
 	public float maxHealthPercentBonus;

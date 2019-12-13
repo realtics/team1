@@ -13,7 +13,7 @@ public class MonsterMove : MonoBehaviour
 {
     private Transform m_monsterTransform;
     private Transform m_playerTransform;
-    private CharacterMove m_characterMove;
+    public CharacterMove m_characterMove;
     private float m_fSpeed =0.0f;
     public bool isMove = false;
 
@@ -31,10 +31,10 @@ public class MonsterMove : MonoBehaviour
         {
             Move(m_fSpeed);
         }
-        //else
-            //m_characterMove.MoveStop();
+		//else
+		//	m_characterMove.MoveStop();
 
-    }
+	}
 
     public void Move(float _speed)
     {

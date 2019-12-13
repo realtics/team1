@@ -9,42 +9,50 @@ public class FireBallMove : MonoBehaviour
 	public int pointCount = 8;
 	public int distance = 10;
 	public float speed = 1;
+	public float height = 0.1f;
+	public bool Up;
 	private void Awake()
 	{
 		m_bezierCurve = new BezierCurve();
-		InitFireBall(this.transform.position, 0, 0);
 	}
 
-	private void InitFireBall(Vector3 _position, float _distance, int _pointCount)
+	public void InitFireBall(Vector3 startPos, float _distance, int _pointCount, float _height, bool _up, bool left, int _num)
 	{
-		_distance = distance;
-		_pointCount = pointCount;
-
 		postions = new Vector3[_pointCount];
 
-		postions[_pointCount - 1] = new Vector3(_position.x + _distance, _position.y, _position.z);
+		if (!left)
+			_distance *= -1;
+
+		postions[_pointCount - 1] = new Vector3(startPos.x + _distance, startPos.y, startPos.z);
 
 		for (int i = _pointCount - 2; i >= 0; --i)
 		{
 			if (i == 0)
 			{
-				postions[i] = _position;
+				postions[i] = startPos;
 				break;
 			}
+			float tempvalue = Random.Range(0.1f, 0.7f);
 
-			postions[i] = Vector3.Lerp(_position, postions[i + 1], 0.5f);
+			postions[i] = Vector3.Lerp(startPos, postions[i + 1], tempvalue);
 		}
 
-		int tempMinus = Random.Range(0, 2);
-		int num = 1;
-		if (tempMinus == 0)
-			tempMinus = -1;
-		else tempMinus = 1;
+
+		float plusvalue = Random.Range(1.0f, 2.0f);
+
+		int minusNum;
+
+		if (_up)
+			minusNum = 1;
+		else minusNum = -1;
 
 		for (int i = _pointCount - 2; i > 0; --i)
 		{
-			num *= tempMinus;
-			postions[i].y += (_pointCount - i) * num;
+			minusNum = -1 * minusNum;
+
+			if (i == 1)
+				postions[i].y += (_pointCount - i) * minusNum * _num * plusvalue * _height;
+			else postions[i].y += minusNum * _num * plusvalue * _height;
 		}
 
 		m_bezierCurve.InitBezier(new List<Vector3>(postions), speed);
@@ -53,6 +61,7 @@ public class FireBallMove : MonoBehaviour
 	private void FixedUpdate()
 	{
 		if (this.transform.position != m_bezierCurve.lastPosition)
-			this.transform.position = m_bezierCurve.GetPoint();
+			this.transform.position = m_bezierCurve.GetPoint(3f);
+		else ObjectPool.Inst.PushToPool(this.name, this.gameObject);
 	}
 }

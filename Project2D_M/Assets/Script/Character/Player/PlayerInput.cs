@@ -70,6 +70,11 @@ public class PlayerInput : ScriptEnable
 			m_skillManager.SkillAction("FlameHaze");
 		}
 
+		if (Input.GetKeyDown("w"))
+		{
+				m_skillManager.SkillAction("FireBallShoot");
+		}
+
 	}
 
     private void MoveInput()

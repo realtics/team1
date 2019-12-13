@@ -12,18 +12,26 @@ public class MonsterLupe : MonsterStateMachine
 	private readonly int m_hashTHit = Animator.StringToHash("tHit");
 	private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
 
-	//[SerializeField]
 	private Animator m_animator;
-    //[SerializeField]
     private MonsterMove m_monsterMove;
-    [SerializeField]
-	private float m_AppearTime;
+	private MonsterInfo m_monsterInfo;
 
+    [SerializeField]
+	private float m_appearTime;
+
+	private bool m_bIsAir;
+	private bool m_bLive;
+
+	private MonsterHpBar m_monsterHpBar;
+	
+	#region Work Kind
 	private Work WorkAppear;
 	private Work WorkIdle;
 	private Work WorkMove;
 	private Work WorkHit;
-	private Work WorkCheckHit;
+	private Work WorkAttack;
+	private Work WorkDie;
+	#endregion;
 
 	void Start()
     {
@@ -32,7 +40,14 @@ public class MonsterLupe : MonsterStateMachine
 		//m_AppearTime;
         m_monsterMove = GetComponent<MonsterMove>();
 
-    }
+		#region value bool
+		m_bIsAir = false;
+		#endregion
+		m_monsterHpBar = GetComponentInChildren<MonsterHpBar>();
+		m_monsterHpBar.transform.gameObject.SetActive(false);
+		m_monsterInfo = GetComponent<MonsterInfo>();
+
+	}
 
 
 	override protected void EnterState(ENEMY_STATE _state)
@@ -49,10 +64,11 @@ public class MonsterLupe : MonsterStateMachine
 			case ENEMY_STATE.ATTACK:
 				break;
 			case ENEMY_STATE.MOVE:
+				//WorkCheckHit = new Work(CheckHit(), true);
 				WorkMove = new Work(Move(), true);
-				WorkCheckHit = new Work(CheckHit(), true);
 				break;
 			case ENEMY_STATE.DIE:
+				WorkDie = new Work(Die(), true);
 				break;
 			case ENEMY_STATE.HIT:
 				WorkHit = new Work(Hit(), true);
@@ -71,11 +87,10 @@ public class MonsterLupe : MonsterStateMachine
 				if(WorkIdle != null)WorkIdle.KillCoroutine();
 				break;
 			case ENEMY_STATE.ATTACK:
-				//KillCoroutine();
 				break;
 			case ENEMY_STATE.MOVE:
 				if (WorkMove != null) WorkMove.KillCoroutine();
-				if (WorkCheckHit != null) WorkCheckHit.KillCoroutine();
+				//if (WorkCheckHit != null) WorkCheckHit.KillCoroutine();
 				break;
 			case ENEMY_STATE.DIE:
 				break;
@@ -89,11 +104,12 @@ public class MonsterLupe : MonsterStateMachine
 	{
 		while (true)
 		{
-			m_AppearTime -= Time.deltaTime;
-			if (m_AppearTime < 0)
+			m_appearTime -= Time.deltaTime;
+			if (m_appearTime < 0)
 			{
 				m_animator.SetBool(m_hashBAppear, true);
                 nowState = ENEMY_STATE.IDLE;
+				m_monsterHpBar.transform.gameObject.SetActive(true);
 			}
 			yield return null;
 		}
@@ -114,16 +130,32 @@ public class MonsterLupe : MonsterStateMachine
 		}
 	}
 
+	IEnumerator Attack()
+	{
+		while(true)
+		{
+
+			yield return null;
+		}
+	}
+
     IEnumerator Move()
     {
 		float time = 3.0f;
-		m_monsterMove.isMove = true;
-		m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
+		
 		while (true)
         {
 			Debug_UI.Inst.SetDebugText("Cha_anim", m_animFunction.GetCurrntAnimClipName().ToString());
 			Debug_UI.Inst.SetDebugText("isMove", m_monsterMove.isMove.ToString());
-			//CheckHit();
+			Debug_UI.Inst.SetDebugText("isAir", m_bIsAir.ToString());
+			CheckHit();
+			CheckDie();
+			if (!m_bIsAir)
+			{
+				m_monsterMove.isMove = true;
+				m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
+				m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
+			}
 			//time -= Time.deltaTime;
 			//if(time <0)
 			//{
@@ -138,14 +170,26 @@ public class MonsterLupe : MonsterStateMachine
 
 	IEnumerator Hit()
 	{
-		float time = 3f;
+		float time = 0.7f;
 		m_monsterMove.isMove = false;
 		m_animator.SetFloat(m_hashFSpeed, 0);
+		m_monsterMove.m_characterMove.MoveStop();
 		while (true)
 		{
+			///Debug
+			Debug_UI.Inst.SetDebugText("Cha_anim", m_animFunction.GetCurrntAnimClipName().ToString());
+			Debug_UI.Inst.SetDebugText("isMove", m_monsterMove.isMove.ToString());
+			Debug_UI.Inst.SetDebugText("isAir", m_bIsAir.ToString());
+			///Debug End
+
+			CheckDie();
+			m_monsterHpBar.SetHPBar(m_monsterInfo);
+			m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
+
 			time -= Time.deltaTime;
 			if(time<0)
 			{
+				CheckHit();
 				nowState = ENEMY_STATE.MOVE;
 				//attack 가능?
 				//else
@@ -155,12 +199,30 @@ public class MonsterLupe : MonsterStateMachine
 		}
 	}
 
+	IEnumerator Die()
+	{
+		float time = 3.0f;
+		while(true)
+		{
+			time -= Time.deltaTime;
+			if(time<0)
+			{
+				WorkDie.KillCoroutine();
+				this.gameObject.SetActive(false);
+			}
+			yield return null;
+		}
+	}
+
+
+
+
+	#region function
 	protected void InitAniamation()
 	{
 		m_animator = this.GetComponentInChildren<Animator>();
 		m_animator.SetBool(m_hashBLive, true);
 		m_animFunction = transform.GetComponentInChildren<AnimFuntion>();
-
 	}
 
 	protected void CheckCanAttack()
@@ -173,17 +235,39 @@ public class MonsterLupe : MonsterStateMachine
 		//}
 	}
 
-
 	AnimFuntion m_animFunction;
-	IEnumerator CheckHit()
+	private void CheckHit()
 	{
-		while(true)
+		if (m_animFunction.GetCurrntAnimClipName() == "hit")
 		{
-			if (m_animFunction.GetCurrntAnimClipName() == "Hit")
-				nowState = ENEMY_STATE.HIT;
-
-			yield return null;
+			nowState = ENEMY_STATE.HIT;
 		}
 	}
 
+	private void CheckDie()
+	{
+		if(m_monsterInfo.IsCharacterDie())
+		{
+			nowState = ENEMY_STATE.DIE;
+		}
+	}
+	#endregion
+
+	#region collider
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+		{
+			m_bIsAir = false;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+		{
+			m_bIsAir = true;
+		}
+	}
+	#endregion
 }

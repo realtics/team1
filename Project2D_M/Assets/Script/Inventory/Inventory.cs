@@ -2,45 +2,92 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
 	[SerializeField] List<Item> items;
 	[SerializeField] Transform itemParent;
-	public ItemSlot[] itemSlots;
+	public List<ItemSlot> itemSlots;
 
 	public event Action<Item> OnItemLeftClickedEvent;
 
-	private void Start()
+	[SerializeField] private GameObject m_itemSlotPrefab = null;
+	//나중에 캐릭터SO에서 인벤토리 MAX 용량 받아와야함, 일단 임시로
+	[SerializeField] int inventorySlotMaxNum;
+	public int InventorySlotMaxNum
 	{
-		for(int i = 0; i < itemSlots.Length; i++)
+		get { return inventorySlotMaxNum; }
+		set { SetMaxSlots(value); }
+	}
+
+	private void SetMaxSlots(int value)
+	{
+		if (value <= 0)
 		{
-			itemSlots[i].OnItemSlotEvent += OnItemLeftClickedEvent;
+			inventorySlotMaxNum = 1;
+		}
+		else
+		{
+			inventorySlotMaxNum = value;
+		}
+
+		if (inventorySlotMaxNum < itemSlots.Count)
+		{
+			for (int i = inventorySlotMaxNum; i < itemSlots.Count; i++)
+			{
+				Destroy(itemSlots[i].transform.parent.gameObject);
+			}
+
+			int diff = itemSlots.Count - inventorySlotMaxNum;
+			itemSlots.RemoveRange(inventorySlotMaxNum, diff);
+		}
+		else if (inventorySlotMaxNum > itemSlots.Count)
+		{
+			int diff = inventorySlotMaxNum - itemSlots.Count;
+
+			for (int i = 0; i < diff; i++)
+			{
+				GameObject itemSlotGameObj = Instantiate(m_itemSlotPrefab);
+				itemSlotGameObj.transform.SetParent(itemParent, worldPositionStays: false);
+				itemSlots.Add(itemSlotGameObj.GetComponentInChildren<ItemSlot>());
+			}
 		}
 	}
-	private void OnValidate()
+
+
+	public void Initialize()
 	{
-		if (itemParent != null)
+		SetMaxSlots(inventorySlotMaxNum);
+
+		for (int i = 0; i < itemSlots.Count; i++)
 		{
-			itemSlots = itemParent.GetComponentsInChildren<ItemSlot>();
+			itemSlots[i].OnItemSlotEvent += OnItemLeftClickedEvent;
 		}
 
 		RefreshUI();
 	}
 
-	
+	private void OnValidate()
+	{
+		if (itemParent != null)
+		{
+			GetComponentsInChildren<ItemSlot>(includeInactive: true , result: itemSlots);
+		}
 
+		RefreshUI();
+	}
 
 	private void RefreshUI()
 	{
 		int i = 0;
 
-		for (; i < items.Count && i < itemSlots.Length; i++)
+		for (; i < items.Count && i < itemSlots.Count; i++)
 		{
 			itemSlots[i].Item = items[i];
 		}
 
-		for (; i < itemSlots.Length; i++)
+		for (; i < itemSlots.Count; i++)
 		{
 			itemSlots[i].Item = null;
 			itemSlots[i].slotNum = i;
@@ -72,7 +119,7 @@ public class Inventory : MonoBehaviour
 
 	public bool IsFull()
 	{
-		return items.Count >= itemSlots.Length;
+		return items.Count >= itemSlots.Count;
 	}
 
 

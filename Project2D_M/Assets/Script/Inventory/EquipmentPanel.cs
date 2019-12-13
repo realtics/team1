@@ -10,7 +10,7 @@ public class EquipmentPanel : MonoBehaviour
 
 	public event Action<Item> OnItemLeftClickedEvent;
 
-	private void Start()
+	public void Initialize()
 	{
 		for(int i = 0; i < equipmentSlots.Length; i++)
 		{
