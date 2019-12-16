@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9145372796725407128}
   - component: {fileID: 9145372796725407134}
   - component: {fileID: 747347685}
+  - component: {fileID: 4538133568090504799}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -74,3 +75,16 @@ MonoBehaviour:
   dataName: StageData.dat
   stageDataSO: {fileID: 11400000, guid: 2e56e34037664c143b3655888fe95c33, type: 2}
   nowStage: 0
+--- !u!114 &4538133568090504799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145372796725407129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e3a0adc5cf0bc47849e6c45f5f0a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataSO: {fileID: 11400000, guid: 3f4ab9c3abb328640be97d8b48001f3d, type: 2}

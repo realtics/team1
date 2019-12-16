@@ -9,8 +9,10 @@ public class Inventory : MonoBehaviour
 	[SerializeField] List<Item> items;
 	[SerializeField] Transform itemParent;
 	public List<ItemSlot> itemSlots;
+	public GameObject NotWearEquipmentInfo;
 
 	public event Action<Item> OnItemLeftClickedEvent;
+
 
 	[SerializeField] private GameObject m_itemSlotPrefab = null;
 	//나중에 캐릭터SO에서 인벤토리 MAX 용량 받아와야함, 일단 임시로
@@ -50,6 +52,10 @@ public class Inventory : MonoBehaviour
 			{
 				GameObject itemSlotGameObj = Instantiate(m_itemSlotPrefab);
 				itemSlotGameObj.transform.SetParent(itemParent, worldPositionStays: false);
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().viewDitailObject = NotWearEquipmentInfo;
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoViewDitailObject = NotWearEquipmentInfo.transform.GetChild(1).gameObject;
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoDisplay = NotWearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().slotNum = i + 1;
 				itemSlots.Add(itemSlotGameObj.GetComponentInChildren<ItemSlot>());
 			}
 		}
@@ -120,6 +126,19 @@ public class Inventory : MonoBehaviour
 	public bool IsFull()
 	{
 		return items.Count >= itemSlots.Count;
+	}
+
+	public void Clear()
+	{
+		for (int i = 0; i < itemSlots.Count; i++)
+		{
+			if (itemSlots[i].Item != null && Application.isPlaying)
+			{
+				itemSlots[i].Item.Destroy();
+			}
+			itemSlots[i].Item = null;
+			itemSlots[i].Amount = 0;
+		}
 	}
 
 

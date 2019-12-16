@@ -43,8 +43,9 @@ public class InfoDisplay : MonoBehaviour
 		BackImage.color = new Color(_item.frameColorRGB.x / 255, _item.frameColorRGB.y / 255, _item.frameColorRGB.z / 255);
 		BackFrame.color = new Color(_item.frameColorRGB.x / 255, _item.frameColorRGB.y / 255, _item.frameColorRGB.z / 255);
 		itemMainImage.sprite = _item.icon;
+		itemMainImage.SetNativeSize();
 
-		switch(_item.itemType)
+		switch (_item.itemType)
 		{
 			case ITEM_TYPE.WEAPON:
 				abilityTypeName.text = attackAbility;
@@ -90,6 +91,12 @@ public class InfoDisplay : MonoBehaviour
 		}
 		else 
 		{
+			if(equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState == SLOT_STATE.MOUNTING)
+			{
+				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
+				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].SettingNoticeIcon();
+			}
+
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState = SLOT_STATE.MOUNTING;
 			inventory.itemSlots[saveInventorySlotIndex].eSlotState = SLOT_STATE.MOUNTING;
 

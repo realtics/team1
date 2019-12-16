@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InventoryManger : MonoBehaviour
 {
-	[SerializeField] Inventory inventory;
-	[SerializeField] EquipmentPanel equipmentPanel;
+	public Inventory inventory;
+	public EquipmentPanel equipmentPanel;
 
 	private void Awake()
 	{

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f04caa18a375a45bd4bee027fc68c3, type: 3}
   m_Name: Weapon01
   m_EditorClassIdentifier: 
+  id: 
   itemName: "\uD6C8\uB828\uC6A9 \uC218\uC815"
-  Icon: {fileID: 21300000, guid: a8b3b268c00236041ad43181ca1072e0, type: 3}
+  icon: {fileID: 21300000, guid: a8b3b268c00236041ad43181ca1072e0, type: 3}
+  frameColorRGB: {x: 79, y: 79, z: 79}
   attackBonus: 10
   armorBonus: 0
   maxHealthBonus: 0
@@ -23,6 +25,5 @@ MonoBehaviour:
   equipmentType: 0
   itemRating: 0
   itemType: 0
-  frameColorRGB: {x: 79, y: 79, z: 79}
   ratingName: "\uC77C\uBC18"
   typeName: "\uBB34\uAE30"

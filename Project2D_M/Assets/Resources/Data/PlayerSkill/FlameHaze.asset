@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf78f80ee93aba948aa7be75f3abd01c, type: 3}
+  m_Name: FlameHaze
+  m_EditorClassIdentifier: 
+  skillName: FlameHaze
+  collisionSize: 0.7
+  damageRatio: 50
+  damageForce: {x: 0, y: -10}
+  skillImage: {fileID: -4890565124111239272, guid: 0c4b47a1e0f8a3a4f8e2a7398976b504,
+    type: 3}
+  coolTime: 30

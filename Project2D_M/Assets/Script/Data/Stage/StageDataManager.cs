@@ -20,7 +20,7 @@ public class StageDataManager : Singletone<StageDataManager>
 
     private void Awake()
     {
-        AllStageData m_stageData = BinaryManager.Load<AllStageData>(dataName);
+        //AllStageData m_stageData = BinaryManager.Load<AllStageData>(dataName);
 
         if (m_stageData == null)
             InitData();
@@ -30,8 +30,7 @@ public class StageDataManager : Singletone<StageDataManager>
 
 		ConnectData();
 
-		BinaryManager.Save(m_stageData, dataName);
-
+		//BinaryManager.Save(m_stageData, dataName);
     }
 
     private void InitData()

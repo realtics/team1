@@ -2,272 +2,100 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class MonsterLupe : MonsterStateMachine
+public class MonsterLupe : MonsterFsmBase
 {
-	private readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
-	private readonly int m_hashBLive = Animator.StringToHash("bLive");
-	private readonly int m_hashBStun = Animator.StringToHash("bStun");
-	private readonly int m_hashBAppear = Animator.StringToHash("bAppear");
-	private readonly int m_hashTHit = Animator.StringToHash("tHit");
-	private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
+	struct AttackInfo
+	{
+		public float damageRatio;
+		public Vector2 damageForce;
+		public AttackInfo(float _damageRatio, Vector2 _damageForce = default(Vector2))
+		{
+			damageRatio = _damageRatio;
 
+			if (_damageForce == Vector2.zero)
+				damageForce = Vector2.zero;
+			else damageForce = _damageForce;
+		}
+	}
+
+	private Dictionary<string, AttackInfo> m_normalAttackDic;
+	private AttackCollider m_attackcollider = null;
+	private bool m_bAttacking;
 	private Animator m_animator;
-    private MonsterMove m_monsterMove;
-	private MonsterInfo m_monsterInfo;
-
-    [SerializeField]
-	private float m_appearTime;
-
-	private bool m_bIsAir;
-	private bool m_bLive;
-
-	private MonsterHpBar m_monsterHpBar;
-	
-	#region Work Kind
-	private Work WorkAppear;
-	private Work WorkIdle;
-	private Work WorkMove;
-	private Work WorkHit;
-	private Work WorkAttack;
-	private Work WorkDie;
-	#endregion;
-
-	void Start()
-    {
-		InitAniamation();
-		nowState = ENEMY_STATE.APPEAR;
-		//m_AppearTime;
-        m_monsterMove = GetComponent<MonsterMove>();
-
-		#region value bool
-		m_bIsAir = false;
-		#endregion
-		m_monsterHpBar = GetComponentInChildren<MonsterHpBar>();
-		m_monsterHpBar.transform.gameObject.SetActive(false);
-		m_monsterInfo = GetComponent<MonsterInfo>();
-
-	}
+	private const float m_fAttackDelay = 2.0f;
+	private float m_fNextAttackTime = 0.0f;
+	private readonly int m_hashiAttackType = Animator.StringToHash("iAttackType");
 
 
-	override protected void EnterState(ENEMY_STATE _state)
+	LUPE_ATTACK m_eAttack;
+	//public bool m_bAttack;
+
+
+	private enum LUPE_ATTACK
 	{
-		switch (_state)
-		{
-			case ENEMY_STATE.APPEAR:
-				WorkAppear = new Work(Appear(), true);
-				break;
-			case ENEMY_STATE.IDLE:
-				WorkIdle = new Work(Idle(), true);
-				//ActionStart(Idle());
-				break;
-			case ENEMY_STATE.ATTACK:
-				break;
-			case ENEMY_STATE.MOVE:
-				//WorkCheckHit = new Work(CheckHit(), true);
-				WorkMove = new Work(Move(), true);
-				break;
-			case ENEMY_STATE.DIE:
-				WorkDie = new Work(Die(), true);
-				break;
-			case ENEMY_STATE.HIT:
-				WorkHit = new Work(Hit(), true);
-				break;
-		}
+		ATTACK_1 = 1,
+		ATTACK_2
 	}
 
-	protected override void ExitState(ENEMY_STATE _state)
+	private void Awake()
 	{
-		switch (_state)
-		{
-			case ENEMY_STATE.APPEAR:
-				if(WorkAppear!= null) WorkAppear.KillCoroutine();
-				break;
-			case ENEMY_STATE.IDLE:
-				if(WorkIdle != null)WorkIdle.KillCoroutine();
-				break;
-			case ENEMY_STATE.ATTACK:
-				break;
-			case ENEMY_STATE.MOVE:
-				if (WorkMove != null) WorkMove.KillCoroutine();
-				//if (WorkCheckHit != null) WorkCheckHit.KillCoroutine();
-				break;
-			case ENEMY_STATE.DIE:
-				break;
-			case ENEMY_STATE.HIT:
-				if (WorkHit != null) WorkHit.KillCoroutine();
-				break;
-		}
+		m_attackcollider = this.GetComponentInChildren<AttackCollider>();
+		m_animator = this.GetComponentInChildren<Animator>();
+		//m_bAttacking = false;
+		m_normalAttackDic = new Dictionary<string, AttackInfo>();
+		m_normalAttackDic.Add(LUPE_ATTACK.ATTACK_1.ToString(), new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
+		m_normalAttackDic.Add(LUPE_ATTACK.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
 	}
-
-	protected virtual IEnumerator Appear()
+	protected override IEnumerator Attack()
 	{
-		while (true)
-		{
-			m_appearTime -= Time.deltaTime;
-			if (m_appearTime < 0)
-			{
-				m_animator.SetBool(m_hashBAppear, true);
-                nowState = ENEMY_STATE.IDLE;
-				m_monsterHpBar.transform.gameObject.SetActive(true);
-			}
-			yield return null;
-		}
-	}
-
-    IEnumerator Idle()
-    {
-        float time = 2.0f;
-        while(true)
-        {
-            time -= Time.deltaTime;
-			//CheckHit();
-            if (time < 0)
-            {
-                nowState = ENEMY_STATE.MOVE;
-            }
-			yield return null;
-		}
-	}
-
-	IEnumerator Attack()
-	{
-		while(true)
-		{
-
-			yield return null;
-		}
-	}
-
-    IEnumerator Move()
-    {
-		float time = 3.0f;
+		MoveStop();
 		
 		while (true)
-        {
-			Debug_UI.Inst.SetDebugText("Cha_anim", m_animFunction.GetCurrntAnimClipName().ToString());
-			Debug_UI.Inst.SetDebugText("isMove", m_monsterMove.isMove.ToString());
-			Debug_UI.Inst.SetDebugText("isAir", m_bIsAir.ToString());
-			CheckHit();
-			CheckDie();
-			if (!m_bIsAir)
-			{
-				m_monsterMove.isMove = true;
-				m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
-				m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
-			}
-			//time -= Time.deltaTime;
-			//if(time <0)
-			//{
-			//	//m_monsterMove.Move(m_fSpeed);
-			//	m_monsterMove.isMove = true;
-			//	m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
-			//	time = 3.0f;
-			//}
-			yield return null;
-		}
-	}
-
-	IEnumerator Hit()
-	{
-		float time = 0.7f;
-		m_monsterMove.isMove = false;
-		m_animator.SetFloat(m_hashFSpeed, 0);
-		m_monsterMove.m_characterMove.MoveStop();
-		while (true)
 		{
-			///Debug
-			Debug_UI.Inst.SetDebugText("Cha_anim", m_animFunction.GetCurrntAnimClipName().ToString());
-			Debug_UI.Inst.SetDebugText("isMove", m_monsterMove.isMove.ToString());
-			Debug_UI.Inst.SetDebugText("isAir", m_bIsAir.ToString());
-			///Debug End
-
-			CheckDie();
-			m_monsterHpBar.SetHPBar(m_monsterInfo);
-			m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
-
-			time -= Time.deltaTime;
-			if(time<0)
+			/////// 여기서부터 하면됨
+			if (!m_animator.GetCurrentAnimatorStateInfo(0).IsTag("attack"))
 			{
-				CheckHit();
-				nowState = ENEMY_STATE.MOVE;
-				//attack 가능?
-				//else
-				//이동
+				m_bAttacking = false;
+			}
+			if (!m_bAttacking)
+			{
+				if (Time.time >= m_fNextAttackTime)
+				{
+					if(CheckCanAttack())
+					{
+						RandomAttack();
+						m_bAttacking = true;
+					}
+					else
+					{
+						nowState = ENEMY_STATE.MOVE;
+					}
+					m_fNextAttackTime = Time.time + m_fAttackDelay;
+				}
+
 			}
 			yield return null;
 		}
 	}
 
-	IEnumerator Die()
+	private void RandomAttack()
 	{
-		float time = 3.0f;
-		while(true)
+		int random;
+		random = Random.Range(1, 40);
+
+		if (random % 4 == 0)
 		{
-			time -= Time.deltaTime;
-			if(time<0)
-			{
-				WorkDie.KillCoroutine();
-				this.gameObject.SetActive(false);
-			}
-			yield return null;
+			m_eAttack = LUPE_ATTACK.ATTACK_2;
 		}
-	}
-
-
-
-
-	#region function
-	protected void InitAniamation()
-	{
-		m_animator = this.GetComponentInChildren<Animator>();
-		m_animator.SetBool(m_hashBLive, true);
-		m_animFunction = transform.GetComponentInChildren<AnimFuntion>();
-	}
-
-	protected void CheckCanAttack()
-	{
-		////test
-		//if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > -3 &&
-		//    StageManager.Inst.playerTransform.position.x - this.transform.position.x < 3)
-		//{
-		//    nowState = ENEMY_STATE.NONE;
-		//}
-	}
-
-	AnimFuntion m_animFunction;
-	private void CheckHit()
-	{
-		if (m_animFunction.GetCurrntAnimClipName() == "hit")
+		else
 		{
-			nowState = ENEMY_STATE.HIT;
+			m_eAttack = LUPE_ATTACK.ATTACK_1;
 		}
-	}
 
-	private void CheckDie()
-	{
-		if(m_monsterInfo.IsCharacterDie())
-		{
-			nowState = ENEMY_STATE.DIE;
-		}
+		//m_eAttack에 따라 그것에 맞는 공격/스킬이 나감(애니메이션 연계도)
+		m_attackcollider.SetDamageColliderInfo(m_normalAttackDic[m_eAttack.ToString()].damageRatio,
+			"Player", m_normalAttackDic[m_eAttack.ToString()].damageForce);
+		m_animator.SetInteger(m_hashiAttackType, (int)m_eAttack);
+		m_animator.SetTrigger("tAttack");
 	}
-	#endregion
-
-	#region collider
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if(collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
-		{
-			m_bIsAir = false;
-		}
-	}
-
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-		if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
-		{
-			m_bIsAir = true;
-		}
-	}
-	#endregion
 }

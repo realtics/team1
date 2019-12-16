@@ -6,19 +6,18 @@ public class FireBallMove : MonoBehaviour
 {
 	private BezierCurve m_bezierCurve = null;
 	private Vector3[] postions;
-	public int pointCount = 8;
-	public int distance = 10;
 	public float speed = 1;
-	public float height = 0.1f;
-	public bool Up;
+
 	private void Awake()
 	{
 		m_bezierCurve = new BezierCurve();
 	}
 
+
 	public void InitFireBall(Vector3 startPos, float _distance, int _pointCount, float _height, bool _up, bool left, int _num)
 	{
 		postions = new Vector3[_pointCount];
+		this.transform.position = startPos;
 
 		if (!left)
 			_distance *= -1;
@@ -62,6 +61,9 @@ public class FireBallMove : MonoBehaviour
 	{
 		if (this.transform.position != m_bezierCurve.lastPosition)
 			this.transform.position = m_bezierCurve.GetPoint(3f);
-		else ObjectPool.Inst.PushToPool(this.name, this.gameObject);
+		else
+		{
+			ObjectPool.Inst.PushToPool(this.name, this.gameObject);
+		}
 	}
 }

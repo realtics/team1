@@ -31,7 +31,7 @@ public enum ITEM_TYPE
 }
 
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Items/Equippable Item")]
 public class EquippableItem : Item
 {
 	//일반 스탯 적용시 사용
@@ -90,4 +90,17 @@ public class EquippableItem : Item
 		}
 	}
 
+	public override Item GetCopy()
+	{
+		return Instantiate(this);
+	}
+
+	public override void Destroy()
+	{
+		Destroy(this);
+	}
+	public override string GetItemType()
+	{
+		return itemType.ToString();
+	}
 }

@@ -14,8 +14,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
     public string dataname = "PlayerData.dat";
     public PlayerDataScriptableObject dataSO;
 
-    private DataUIPlayerLeval m_dataUIPlayerLeval;
-
     public class PlayerData
     {
         public enum DATA_ENUM
@@ -45,7 +43,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
     private PlayerSaveData m_playerSaveData = null;
     private void Awake()
     {
-        m_dataUIPlayerLeval = GetComponentInChildren<DataUIPlayerLeval>();
         m_playerSaveData = BinaryManager.Load<PlayerSaveData>(dataname);
         if (m_playerSaveData == null)
             InitData();
@@ -58,9 +55,11 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.gold = dataSO.gold;
         m_playerSaveData.cash = dataSO.cash;
         m_playerSaveData.fatigability = dataSO.fatigability;
-		InitPlayerSOtoPlayerData();
 
-		//BinaryManager.Save(m_playerSaveData, dataname);
+		if (m_playerSaveData.equipmentInfo == null)
+			InitPlayerSOtoPlayerData();
+
+		BinaryManager.Save(m_playerSaveData, dataname);
 	}
 
 	public void InitPlayerSOtoPlayerData()
@@ -119,7 +118,7 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         dataSO.cash = m_playerSaveData.cash;
         dataSO.fatigability = m_playerSaveData.fatigability;
 
-        //BinaryManager.Save(m_playerSaveData, dataname);
+        BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     public void SavePlayerData(PlayerData.DATA_ENUM _data_enum, int _value)
@@ -131,11 +130,11 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
                 dataSO.level = m_playerSaveData.level;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_GOLD:
-				//m_playerSaveData.gold += _value;
-				dataSO.gold += _value;// = m_playerSaveData.gold;
+				m_playerSaveData.gold += _value;
+				dataSO.gold = m_playerSaveData.gold;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_CASH:
-                m_playerSaveData.cash = _value;
+                m_playerSaveData.cash += _value;
                 dataSO.cash = m_playerSaveData.cash;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_FATIGABILITY:
@@ -144,7 +143,7 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
                 break;
         }
 
-        //BinaryManager.Save(m_playerSaveData, dataname);
+        BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     private void InitPlayerData()
@@ -170,7 +169,7 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.fatigability = 25;
 
 
-        //BinaryManager.Save(m_playerSaveData, dataname);
+        BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     public bool PlusExp(int _exp)

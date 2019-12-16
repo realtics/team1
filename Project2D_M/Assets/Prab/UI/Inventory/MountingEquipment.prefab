@@ -750,6 +750,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130154725487993}
   itemlevel: {fileID: 5862130155692955117}
   noticeImage: {fileID: 5862130154593126568}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -2091,6 +2092,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130155517336331}
   itemlevel: {fileID: 5862130156337716433}
   noticeImage: {fileID: 5862130155472464524}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -2483,6 +2485,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130156158824065}
   itemlevel: {fileID: 5862130155479454082}
   noticeImage: {fileID: 5862130155656444827}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -3095,6 +3098,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130155192197386}
   itemlevel: {fileID: 5862130154861414184}
   noticeImage: {fileID: 5862130155843088577}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -4146,6 +4150,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130156015598241}
   itemlevel: {fileID: 5862130155946267319}
   noticeImage: {fileID: 5862130156365704426}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -4382,6 +4387,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130154294309820}
   itemlevel: {fileID: 5862130155933801572}
   noticeImage: {fileID: 5862130155391700027}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -4991,6 +4997,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130154286206884}
   itemlevel: {fileID: 5862130154576907895}
   noticeImage: {fileID: 5862130155800122857}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -5539,6 +5546,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130155043325280}
   itemlevel: {fileID: 5862130155652168009}
   noticeImage: {fileID: 5862130154383985025}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -5701,6 +5709,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130155470496738}
   itemlevel: {fileID: 5862130155715106713}
   noticeImage: {fileID: 5862130155881582258}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -6448,6 +6457,7 @@ MonoBehaviour:
   - {fileID: 5862130155552822153}
   - {fileID: 5862130155683542665}
   - {fileID: 5862130156240295807}
+  WearEquipmentInfo: {fileID: 0}
 --- !u!1 &5862130156015598243
 GameObject:
   m_ObjectHideFlags: 0
@@ -7086,6 +7096,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130154380328180}
   itemlevel: {fileID: 5862130155115550148}
   noticeImage: {fileID: 5862130155151068898}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
@@ -7321,6 +7332,7 @@ MonoBehaviour:
   frameBackEdgeImage: {fileID: 5862130154591070252}
   itemlevel: {fileID: 5862130154317145487}
   noticeImage: {fileID: 5862130155057778484}
+  amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}

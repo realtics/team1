@@ -66,9 +66,14 @@ public class AnimFuntion : MonoBehaviour
         return m_animator.GetCurrentAnimatorStateInfo(0).IsTag(_animTag);
     }
 
+	/// <summary>
+	/// 현재 진행중인 애니메이션 스테이트의 이름과 비교
+	/// </summary>
+	/// <param name="_animName"></param>
+	/// <returns></returns>
     public bool IsName(string _animName)
     {
-        return GetCurrntAnimClipName() == _animName;
+        return m_animator.GetCurrentAnimatorStateInfo(0).IsName(_animName);
     }
 
     public void SetTrigger(int _triggerName)

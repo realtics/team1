@@ -7,6 +7,7 @@ public class EquipmentPanel : MonoBehaviour
 {
 	[SerializeField] Transform equipmentSlotParent;
 	public EquipmentSlot[] equipmentSlots;
+	public GameObject WearEquipmentInfo;
 
 	public event Action<Item> OnItemLeftClickedEvent;
 

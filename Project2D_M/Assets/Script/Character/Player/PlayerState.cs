@@ -35,7 +35,7 @@ public class PlayerState : MonoBehaviour
         PLAYER_STATE_JUMP,
     }
 
-	public bool bSkipEvasion = true;
+	public bool bSkipAction = true;
 
     [Header("Player State")]
     [SerializeField] private PLAYER_STATE_POSITION m_positionState = PLAYER_STATE_POSITION.PLAYER_POSITION_GROUND;

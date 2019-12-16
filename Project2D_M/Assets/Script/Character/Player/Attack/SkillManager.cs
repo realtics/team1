@@ -33,7 +33,7 @@ public class SkillManager : MonoBehaviour
     {
         for(int i = 0; i < m_attackColliders.Length; ++i)
         {
-			if (m_animFuntion.IsTag(m_skillFuntions[i].sSkillName))
+			if (m_animFuntion.IsTag(m_skillFuntions[i].skillName))
 				m_attackColliders[i].ColliderLifeCycleOn(_time);
         }
     }
@@ -42,7 +42,7 @@ public class SkillManager : MonoBehaviour
 	{
 		for (int i = 0; i < m_attackColliders.Length; ++i)
 		{
-			if (m_animFuntion.IsTag(m_skillFuntions[i].sSkillName))
+			if (m_animFuntion.IsTag(m_skillFuntions[i].skillName))
 				m_attackColliders[i].ColliderLifeCycleOnDraw(_time);
 		}
 	}
@@ -70,7 +70,7 @@ public class SkillManager : MonoBehaviour
 	{
 		for (int i = 0; i < m_skillFuntions.Length; ++i)
 		{
-			if(m_skillFuntions[i].sSkillName.Equals(_skillName))
+			if(m_skillFuntions[i].skillName.Equals(_skillName))
 				m_skillFuntions[i].SkillAction();
 		}
 	}

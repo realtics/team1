@@ -72,7 +72,7 @@ public class PlayerInput : ScriptEnable
 
 		if (Input.GetKeyDown("w"))
 		{
-				m_skillManager.SkillAction("FireBallShoot");
+			m_skillManager.SkillAction("FireBallShoot");
 		}
 
 	}
@@ -186,4 +186,15 @@ public class PlayerInput : ScriptEnable
 
         m_playerEvasion.Evasion();
     }
+
+	public bool SkillAction(string _skillName)
+	{
+		if (m_playerState.bSkipAction)
+		{
+			m_skillManager.SkillAction(_skillName);
+			return true;
+		}
+
+		return false;
+	}
 }

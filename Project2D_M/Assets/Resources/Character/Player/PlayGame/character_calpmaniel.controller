@@ -3634,7 +3634,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireBallShoot_air 0
+  m_Name: FireBallShoot_air_action
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -7092,9 +7092,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.04374118
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 0.6969565
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -9989,7 +9989,7 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7294485820418122266}
-    m_Position: {x: 510, y: 150, z: 0}
+    m_Position: {x: 520, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2453204457775768450}
     m_Position: {x: 240, y: 50, z: 0}
@@ -14404,7 +14404,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FireBallShoot_ground2
+  m_Name: FireBallShoot_ground_action
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -15329,9 +15329,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.06327182
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 0.58992857
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

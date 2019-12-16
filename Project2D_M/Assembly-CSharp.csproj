@@ -120,10 +120,17 @@
     <Compile Include="Assets\Script\Data\DataUI\DataUIPlayerLeval.cs" />
     <Compile Include="Assets\Script\Data\GameDataManager.cs" />
     <Compile Include="Assets\Script\Data\GameSaveData.cs" />
+    <Compile Include="Assets\Script\Data\Item\ItemDataBase.cs" />
     <Compile Include="Assets\Script\Data\Item\ItemDataManager.cs" />
     <Compile Include="Assets\Script\Data\Item\ItemDataScriptableObject.cs" />
+    <Compile Include="Assets\Script\Data\Item\ItemFileReadWrite.cs" />
+    <Compile Include="Assets\Script\Data\Item\ItemSaveIO.cs" />
+    <Compile Include="Assets\Script\Data\Item\ItemSlotSaveData.cs" />
     <Compile Include="Assets\Script\Data\PlayerDataManager.cs" />
     <Compile Include="Assets\Script\Data\PlayerDataScriptableObject.cs" />
+    <Compile Include="Assets\Script\Data\Skill\SkillDataManager.cs" />
+    <Compile Include="Assets\Script\Data\Skill\SkillScriptableObject.cs" />
+    <Compile Include="Assets\Script\Data\Skill\SkillSOManager.cs" />
     <Compile Include="Assets\Script\Data\Stage\StageData.cs" />
     <Compile Include="Assets\Script\Data\Stage\StageDataManager.cs" />
     <Compile Include="Assets\Script\Data\Stage\StageDataScriptableObject.cs" />
@@ -135,6 +142,7 @@
     <Compile Include="Assets\Script\Inventory\Inventory.cs" />
     <Compile Include="Assets\Script\Inventory\InventoryManger.cs" />
     <Compile Include="Assets\Script\Inventory\Item.cs" />
+    <Compile Include="Assets\Script\Inventory\ItemSaveManager.cs" />
     <Compile Include="Assets\Script\Inventory\ItemSlot.cs" />
     <Compile Include="Assets\Script\Monster\AttackToEffectAnim.cs" />
     <Compile Include="Assets\Script\Monster\CharacterHpBar.cs" />
@@ -142,6 +150,7 @@
     <Compile Include="Assets\Script\Monster\MonsterAnimation.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAttack.cs" />
     <Compile Include="Assets\Script\Monster\MonsterFootCollider.cs" />
+    <Compile Include="Assets\Script\Monster\MonsterFsmBase.cs" />
     <Compile Include="Assets\Script\Monster\MonsterHpBar.cs" />
     <Compile Include="Assets\Script\Monster\MonsterInfo.cs" />
     <Compile Include="Assets\Script\Monster\MonsterLupe.cs" />
@@ -173,6 +182,7 @@
     <Compile Include="Assets\Script\UI\UIController\EvasionButton.cs" />
     <Compile Include="Assets\Script\UI\UIController\JoyStick.cs" />
     <Compile Include="Assets\Script\UI\UIController\JoyStickMove.cs" />
+    <Compile Include="Assets\Script\UI\UIController\SkillQuick.cs" />
     <Compile Include="Assets\Script\Utility\Debug_UI.cs" />
     <Compile Include="Assets\Spine\spine-csharp\Animation.cs" />
     <Compile Include="Assets\Spine\spine-csharp\AnimationState.cs" />

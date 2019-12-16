@@ -19,8 +19,8 @@ public class ItemSlot : MonoBehaviour
 	[SerializeField] Image frameBackEdgeImage;
 	[SerializeField] TextMeshProUGUI itemlevel;
 	[SerializeField] Image noticeImage;
-
-	[SerializeField] InfoDisplay infoDisplay;
+	[SerializeField] TextMeshProUGUI amountText;
+	public InfoDisplay infoDisplay;
 
 	public event Action<Item> OnItemSlotEvent;
 
@@ -65,6 +65,27 @@ public class ItemSlot : MonoBehaviour
 		}
 	}
 
+	// 수량 표기가 필요할 때 쓰이는 '양'
+	private int _amount;
+	public int Amount
+	{
+		get { return _amount; }
+		set
+		{
+			_amount = value;
+			if (_amount < 0) _amount = 0;
+			if (_amount == 0 && Item != null) Item = null;
+
+			if (amountText != null)
+			{
+				amountText.enabled = m_item != null && _amount > 1;
+				if (amountText.enabled)
+				{
+					amountText.text = _amount.ToString();
+				}
+			}
+		}
+	}
 	public void SettingNoticeIcon()
 	{
 		if (isMountingSlot)

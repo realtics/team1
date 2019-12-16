@@ -17,6 +17,11 @@ public class ControllerUIEvent : MonoBehaviour
     [SerializeField] private EventTrigger m_normalAttackEvent = null;
     [SerializeField] private EventTrigger m_jumpEvent = null;
 	[SerializeField] private EvasionButton m_evasionButton = null;
+	[SerializeField] private SkillQuick skillQuick1 = null;
+	[SerializeField] private SkillQuick skillQuick2 = null;
+	[SerializeField] private SkillQuick skillQuick3 = null;
+	[SerializeField] private SkillQuick skillQuick4 = null;
+
 	private PlayerEvasion m_playerEvasion = null;
 
 	// Start is called before the first frame update
@@ -29,7 +34,10 @@ public class ControllerUIEvent : MonoBehaviour
         NormalAttackConnect();
         JumpConnect();
         EvasionConnect();
-    }
+
+		skillQuick1.InitQuickSkill("FlameHaze", m_playerInput);
+		skillQuick2.InitQuickSkill("FireBallShoot", m_playerInput);
+	}
 
     private void JoyStickConnect()
     {

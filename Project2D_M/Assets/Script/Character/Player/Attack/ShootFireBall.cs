@@ -19,13 +19,12 @@ public class ShootFireBall : MonoBehaviour,ISkillShoot
 			GameObject fireBallObject = ObjectPool.Inst.PopFromPool("FireBall");
 			FireBallMove fireBallMove = fireBallObject.GetComponent<FireBallMove>();
 			PlayerShootAttackCollider playerShootAttackCollider = fireBallObject.GetComponent<PlayerShootAttackCollider>();
-			fireBallObject.transform.position = this.transform.position;
 
 			if (i % 2 == 0)
 				num++;
 
 			playerShootAttackCollider.SetDamageColliderInfo(_damageInfo.damage, "Monster", _damageInfo.attackForce,this.gameObject);
-			fireBallMove.InitFireBall(fireBallObject.transform.position, distance, pointCount, height, up, _xFilp, num);
+			fireBallMove.InitFireBall(this.transform.position, distance, pointCount, height, up, _xFilp, num);
 			up = !up;
 
 			fireBallObject.SetActive(true);
