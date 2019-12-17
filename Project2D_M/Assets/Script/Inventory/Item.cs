@@ -16,8 +16,11 @@ public class Item : ScriptableObject
 	public Sprite icon;
 	public Vector3 frameColorRGB;
 
+	[Range(1, 999)]
+	public int MaximumStacks = 1;
+
 #if UNITY_EDITOR
-	private void OnValidate()
+	protected virtual void OnValidate()
 	{
 		string path = AssetDatabase.GetAssetPath(this);
 		id = AssetDatabase.AssetPathToGUID(path);
@@ -35,11 +38,6 @@ public class Item : ScriptableObject
 	}
 
 	public virtual string GetItemType()
-	{
-		return "";
-	}
-
-	public virtual string GetDescription()
 	{
 		return "";
 	}

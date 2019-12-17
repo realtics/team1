@@ -45,7 +45,8 @@ public class PlayerShootAttackCollider : ShootAttackCollider
 				m_playerCombo.plusCombo();
 			}
 
-			ObjectPool.Inst.PushToPool(this.name, this.gameObject);
+			if (autoDistroy)
+				ObjectPool.Inst.PushToPool(this.gameObject);
 		}
 	}
 
@@ -90,13 +91,14 @@ public class PlayerShootAttackCollider : ShootAttackCollider
 		}
 	}
 
-	public override void SetDamageColliderInfo(int _damage, string _tagName, Vector2 _attackForce, GameObject _order)
+	public override void SetDamageColliderInfo(int _damage, string _tagName, Vector2 _attackForce, GameObject _order, bool _autoDistroy = true)
 	{
 		m_sTagName = _tagName;
 		orderObject = _order;
 		m_damage = _damage;
 		attackForce = _attackForce;
-		
+		autoDistroy = _autoDistroy;
+
 		m_playerInfo = m_playerInfo ?? _order.transform.root.GetComponent<PlayerInfo>();
 		m_cinemachineImpulse = m_cinemachineImpulse ?? this.GetComponent<CinemachineImpulseSource>();
 		m_playerCombo = m_playerCombo ?? _order.transform.root.GetComponent<PlayerCombo>();

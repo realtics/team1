@@ -23,11 +23,10 @@ public class ItemDataBase : ScriptableObject
 	public Item GetItemCopy(string _itemID)
 	{
 		Item item = GetItemReference(_itemID);
-		if (item == null) return null;
-
-		return item.GetCopy();
+		return item != null ? item.GetCopy() : null; 
 	}
 
+#if UNITY_EDITOR
 	private void OnValidate()
 	{
 		LoadItems();
@@ -35,6 +34,7 @@ public class ItemDataBase : ScriptableObject
 
 	private void OnEnable()
 	{
+		EditorApplication.projectChanged -= LoadItems;
 		EditorApplication.projectChanged += LoadItems;
 	}
 
@@ -73,4 +73,5 @@ public class ItemDataBase : ScriptableObject
 		}
 		return assets;
 	}
+#endif
 }

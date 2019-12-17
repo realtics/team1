@@ -7,20 +7,35 @@ using System;
 public class EquipmentSlot : ItemSlot
 {
 	public EQUIPMENT_TYPE equipmentType;
-	public event Action<Item> OnEquipmentSlotEvent;
 	public int rememberInventoryIndex;
+
+	public GameObject mountingViewDitailObject;
+	public GameObject infoMountingViewDitailObject;
 
 	protected override void OnValidate()
 	{
 		base.OnValidate();
 		gameObject.name = equipmentType.ToString() + " Slot";
 	}
-
-	public void UnMountingItem()
+	protected override void SetViewDetails()
 	{
-		if (Item != null && OnEquipmentSlotEvent != null)
+		if (Item is EquippableItem)
 		{
-			OnEquipmentSlotEvent(Item);
+			infoDisplay.ShowInfomation((EquippableItem)Item);
+			SetSelectSlot((EquippableItem)Item, true);
 		}
+
+		PlayAnimationViewDetails();
+	}
+
+	private void PlayAnimationViewDetails()
+	{
+		if (Item != null)
+		{
+			Animator animator = mountingViewDitailObject.GetComponent<Animator>();
+
+			animator.SetBool(m_hashBOpen, true);
+		}
+
 	}
 }

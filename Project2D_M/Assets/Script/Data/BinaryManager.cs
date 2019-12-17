@@ -29,7 +29,7 @@ public class BinaryManager
         {
             //파일이 존재할 경우 데이터 불러오기
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.dataPath + _dataPath, FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + _dataPath, FileMode.Open);
             //GameData 클래스에 파일로부터 읽은 데이터를 기록
             T data = (T)bf.Deserialize(file);
             file.Close();

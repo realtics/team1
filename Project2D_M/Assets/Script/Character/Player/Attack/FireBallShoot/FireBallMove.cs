@@ -14,6 +14,17 @@ public class FireBallMove : MonoBehaviour
 	}
 
 
+	//private void OnDrawGizmos()
+	//{
+	//	if (postions.Length > 0)
+	//	{
+	//		for (int i = 0; i < postions.Length; ++i)
+	//		{
+	//			Gizmos.DrawWireSphere(postions[i], 0.1f);
+	//		}
+	//	}
+	//}
+
 	public void InitFireBall(Vector3 startPos, float _distance, int _pointCount, float _height, bool _up, bool left, int _num)
 	{
 		postions = new Vector3[_pointCount];
@@ -63,7 +74,7 @@ public class FireBallMove : MonoBehaviour
 			this.transform.position = m_bezierCurve.GetPoint(3f);
 		else
 		{
-			ObjectPool.Inst.PushToPool(this.name, this.gameObject);
+			ObjectPool.Inst.PushToPool(this.gameObject);
 		}
 	}
 }

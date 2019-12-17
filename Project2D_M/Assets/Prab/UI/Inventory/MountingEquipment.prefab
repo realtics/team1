@@ -201,7 +201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130154317145473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -752,15 +752,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130154593126568}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 0
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 0
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130154465697068
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130154576907849}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -2094,15 +2094,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155472464524}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 2
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 2
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130154861414186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130154861414186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -2487,15 +2487,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155656444827}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 4
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 4
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155043325282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,7 +2769,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155115550150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -3100,15 +3100,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155843088577}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 3
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 3
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155151068900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3895,7 +3895,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155479454084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -4152,15 +4152,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130156365704426}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 6
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 6
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155517336333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4389,15 +4389,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155391700027}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 8
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 8
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155605655308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,7 +4597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155652168011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -4999,15 +4999,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155800122857}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 9
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 9
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155692955119
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,7 +5061,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155692955119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -5217,7 +5217,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155715106715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -5548,15 +5548,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130154383985025}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 7
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 7
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155795263988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,15 +5711,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155881582258}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 1
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 1
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155800122859
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,7 +6136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155933801574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -6292,7 +6292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155946267273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -7098,15 +7098,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155151068898}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 5
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 5
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130156209421413
 GameObject:
   m_ObjectHideFlags: 0
@@ -7334,15 +7334,15 @@ MonoBehaviour:
   noticeImage: {fileID: 5862130155057778484}
   amountText: {fileID: 0}
   infoDisplay: {fileID: 0}
-  viewDitailObject: {fileID: 0}
-  infoViewDitailObject: {fileID: 0}
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
-  isMountingSlot: 1
   slotNum: 10
   eSlotState: 0
+  viewDitailObject: {fileID: 0}
+  infoViewDitailObject: {fileID: 0}
+  isMountingSlot: 0
   equipmentType: 10
   rememberInventoryIndex: 0
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130156262899843
 GameObject:
   m_ObjectHideFlags: 0
@@ -7468,7 +7468,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130156337716435}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

@@ -12,7 +12,7 @@ public class MonsterFsmBase : MonsterStateMachine
 	private readonly int m_hashTHit = Animator.StringToHash("tHit");
 	private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
 
-	private Animator m_animator;
+	protected Animator m_animator;
     private MonsterMove m_monsterMove;
 	private MonsterInfo m_monsterInfo;
 	private MonsterAttack m_monsterAttack;
@@ -20,10 +20,11 @@ public class MonsterFsmBase : MonsterStateMachine
     [SerializeField]
 	private float m_appearTime;
 
-	private bool m_bIsAir;
+	protected bool m_bIsAir;
+	protected float m_currentDelay;
 	private bool m_bLive;
 
-	private MonsterHpBar m_monsterHpBar;
+	protected MonsterHpBar m_monsterHpBar;
 	
 	#region Work Kind
 	private Work WorkAppear;
@@ -39,14 +40,12 @@ public class MonsterFsmBase : MonsterStateMachine
 		InitAniamation();
 		nowState = ENEMY_STATE.APPEAR;
 		//m_AppearTime;
-        m_monsterMove = GetComponent<MonsterMove>();
 
 		#region value bool
 		m_bIsAir = false;
 		#endregion
 		m_monsterHpBar = GetComponentInChildren<MonsterHpBar>();
 		m_monsterHpBar.transform.gameObject.SetActive(false);
-		m_monsterInfo = GetComponent<MonsterInfo>();
 
 	}
 
@@ -177,6 +176,8 @@ public class MonsterFsmBase : MonsterStateMachine
 		m_monsterMove.isMove = false;
 		m_animator.SetFloat(m_hashFSpeed, 0);
 		m_monsterMove.m_characterMove.MoveStop();
+
+
 		while (true)
 		{
 			///Debug
@@ -185,9 +186,9 @@ public class MonsterFsmBase : MonsterStateMachine
 			Debug_UI.Inst.SetDebugText("isAir", m_bIsAir.ToString());
 			///Debug End
 
-			CheckDie();
 			m_monsterHpBar.SetHPBar(m_monsterInfo);
 			m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
+			CheckDie();
 
 			time -= Time.deltaTime;
 			if(time<0)
@@ -195,9 +196,6 @@ public class MonsterFsmBase : MonsterStateMachine
 				CheckHit();
 				CheckCanAttack();
 				nowState = ENEMY_STATE.MOVE;
-				//attack 가능?
-				//else
-				//이동
 			}
 			yield return null;
 		}
@@ -231,33 +229,40 @@ public class MonsterFsmBase : MonsterStateMachine
 
 	protected bool CheckCanAttack()
 	{
-		if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > -3 &&
-			StageManager.Inst.playerTransform.position.x - this.transform.position.x < 3)
+		if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > - m_monsterInfo.GetAttackDistance() &&
+			StageManager.Inst.playerTransform.position.x - this.transform.position.x < m_monsterInfo.GetAttackDistance())
 		{
 			if(nowState ==ENEMY_STATE.ATTACK)
 			{
-				return true;
 			}
-			nowState = ENEMY_STATE.ATTACK;
+			else
+			{
+				nowState = ENEMY_STATE.ATTACK;
+			}
+			m_monsterMove.MoveDir();
 			return true;
 		}
 		return false;
 	}
 
 	AnimFuntion m_animFunction;
-	private void CheckHit()
+	protected void CheckHit()
 	{
 		if (m_animFunction.GetCurrntAnimClipName() == "hit")
 		{
+			//m_monsterHpBar.SetHPBar(m_monsterInfo);
+			//m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
 			nowState = ENEMY_STATE.HIT;
 		}
 	}
 
-	private void CheckDie()
+	protected void CheckDie()
 	{
 		if(m_monsterInfo.IsCharacterDie())
 		{
+			m_monsterHpBar.SetHPBar(m_monsterInfo);
 			nowState = ENEMY_STATE.DIE;
+			m_animator.SetBool(m_hashBLive, false);
 		}
 	}
 
@@ -266,10 +271,34 @@ public class MonsterFsmBase : MonsterStateMachine
 		m_monsterMove.isMove = false;
 		m_animator.SetFloat(m_hashFSpeed, 0);
 	}
+
+	protected void InitMonstInfo()
+	{
+		//MonsterInfo.MonsterCharInfo monsterCharInfo;
+		m_monsterInfo = GetComponent<MonsterInfo>();
+		m_monsterMove = GetComponent<MonsterMove>();
+		m_monsterMove.SetSpeed(m_monsterInfo.speed);
+	}
 	#endregion
 
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+		{
+			m_bIsAir = false;
+		}
+	}
+
+	private void OnCollisionExit2D(Collision2D collision)
+	{
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+		{
+			m_bIsAir = true;
+		}
+	}
+
 	#region collider
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void Oncol (Collider2D collision)
 	{
 		if(collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
 		{

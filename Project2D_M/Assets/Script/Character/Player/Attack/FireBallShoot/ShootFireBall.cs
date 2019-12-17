@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootFireBall : MonoBehaviour,ISkillShoot
+public class ShootFireBall : MonoBehaviour, ISkillShoot
 {
 	public int pointCount = 4;
 	public int distance = 10;
@@ -23,7 +23,12 @@ public class ShootFireBall : MonoBehaviour,ISkillShoot
 			if (i % 2 == 0)
 				num++;
 
-			playerShootAttackCollider.SetDamageColliderInfo(_damageInfo.damage, "Monster", _damageInfo.attackForce,this.gameObject);
+			if ((_xFilp && _damageInfo.attackForce.x < 0) || (!_xFilp && _damageInfo.attackForce.x > 0))
+			{
+				_damageInfo.attackForce.x = _damageInfo.attackForce.x * -1;
+			}
+
+			playerShootAttackCollider.SetDamageColliderInfo(_damageInfo.damage, "Monster", _damageInfo.attackForce, this.gameObject);
 			fireBallMove.InitFireBall(this.transform.position, distance, pointCount, height, up, _xFilp, num);
 			up = !up;
 

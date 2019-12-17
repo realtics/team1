@@ -110,7 +110,7 @@ public class DamageFont : MonoBehaviour
                     color.a = color.a - m_option.clearSpeed;
                     m_spriteRenderer[i].color = color;
                     if (color.a <= 0)
-                        ObjectPool.Inst.PushToPool(this.name, gameObject);
+                        ObjectPool.Inst.PushToPool(gameObject);
                 }
             }
             yield return null;

@@ -50,8 +50,10 @@ public class EquippableItem : Item
 	public string ratingName;
 	public string typeName;
 
-	public void OnValidate()
+	protected override void OnValidate()
 	{
+		base.OnValidate();
+
 		switch (itemRating)
 		{
 			case ITEM_RATING.NOMAL:
@@ -103,4 +105,5 @@ public class EquippableItem : Item
 	{
 		return itemType.ToString();
 	}
+
 }

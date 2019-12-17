@@ -7,57 +7,73 @@ public class InventoryManger : MonoBehaviour
 	public Inventory inventory;
 	public EquipmentPanel equipmentPanel;
 
+	[SerializeField] ItemSaveManager itemSaveManager;
+
 	private void Awake()
 	{
-		inventory.OnItemLeftClickedEvent += EquipFromInventory;
-		equipmentPanel.OnItemLeftClickedEvent += UnEquipFromEquipPanel;
-
-		inventory.Initialize();
-		equipmentPanel.Initialize();
+		inventory.MountingOrUnMountingEvent += EquipFromInventory;
+		equipmentPanel.MountingOrUnMountingEvent += UnEquipFromEquipPanel;
 	}
 
-	private void EquipFromInventory(Item item)
+	private void Start()
 	{
-		if(item is EquippableItem)
+		if (itemSaveManager != null)
 		{
-			Equip((EquippableItem)item);
+			itemSaveManager.LoadEquipment(this);
+			itemSaveManager.LoadInventory(this);
 		}
 	}
 
-	private void UnEquipFromEquipPanel(Item item)
+	private void OnDestroy()
 	{
-		if (item is EquippableItem)
+		if (itemSaveManager != null)
 		{
-			Unequip((EquippableItem)item);
+			itemSaveManager.SaveEquipment(this);
+			itemSaveManager.SaveInventory(this);
+		}
+	}
+
+	private void EquipFromInventory(BaseItemSlot _itemSlot)
+	{
+		if (_itemSlot.Item is EquippableItem)
+		{
+			Equip((EquippableItem)_itemSlot.Item);
+		}
+	}
+
+	private void UnEquipFromEquipPanel(BaseItemSlot _itemSlot)
+	{
+		if (_itemSlot.Item is EquippableItem)
+		{
+			Unequip((EquippableItem)_itemSlot.Item);
 		}
 	}
 
 
 	public void Equip(EquippableItem item)
 	{
-	//	if(inventory.RemoveItem(item))
-	//	{
+		if (inventory.RemoveItem(item))
+		{
 			EquippableItem previousItem;
-
-			if(equipmentPanel.AddItem(item, out previousItem))
+			if (equipmentPanel.AddItem(item, out previousItem))
 			{
-				if(previousItem != null)
+				if (previousItem != null)
 				{
-					//inventory.AddItem(previousItem);
+					inventory.AddItem(previousItem);
 				}
 			}
 			else
 			{
 				inventory.AddItem(item);
 			}
-	//	}
+		}
 	}
 
 	public void Unequip(EquippableItem item)
 	{
-		if(!inventory.IsFull() & equipmentPanel.RemoveItem(item))
+		if (inventory.CanAddItem(item) && equipmentPanel.RemoveItem(item))
 		{
-		//	inventory.AddItem(item);
+			inventory.AddItem(item);
 		}
 	}
 

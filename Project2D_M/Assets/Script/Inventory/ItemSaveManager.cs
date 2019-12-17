@@ -20,7 +20,7 @@ public class ItemSaveManager : MonoBehaviour
 			ItemSlot itemSlot = _inventoryManager.inventory.itemSlots[i];
 			ItemSlotSaveData savedSlot = savedSlots.savedSlots[i];
 
-			if(savedSlot ==null)
+			if(savedSlot == null)
 			{
 				itemSlot.Item = null;
 				itemSlot.Amount = 0;
@@ -40,7 +40,7 @@ public class ItemSaveManager : MonoBehaviour
 
 		foreach(ItemSlotSaveData savedSlot in savedSlots.savedSlots)
 		{
-			if(savedSlot ==null)
+			if(savedSlot == null)
 			{
 				continue;
 			}
@@ -82,4 +82,5 @@ public class ItemSaveManager : MonoBehaviour
 
 		ItemSaveIO.SaveItems(saveData, _fileName);
 	}
+
 }

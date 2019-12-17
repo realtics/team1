@@ -14,9 +14,9 @@ public class ObjectPool : Singletone<ObjectPool>
         }
     }
 
-    public bool PushToPool(string itemName, GameObject item, Transform parent = null)
+    public bool PushToPool(GameObject item, Transform parent = null)
     {
-        PooledObject pool = GetPoolItem(itemName);
+        PooledObject pool = GetPoolItem(item.name);
         if (pool == null)
             return false;
 

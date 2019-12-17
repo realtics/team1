@@ -20,7 +20,9 @@ public class SkillDataManager : Singletone<SkillDataManager>
 	{
 		SkillInfo skillInfo;
 
-		for(int i = 0; i < dataSO.skillSOList.Count; ++i)
+		dataSO = dataSO ?? (SkillSOManager)Resources.Load("Data/PlayerSkill/SkillSOManager");
+
+		for (int i = 0; i < dataSO.skillSOList.Count; ++i)
 		{
 			if(dataSO.skillSOList[i].skillName == _skillName)
 			{

@@ -7,36 +7,33 @@ public class EquipmentPanel : MonoBehaviour
 {
 	[SerializeField] Transform equipmentSlotParent;
 	public EquipmentSlot[] equipmentSlots;
+
 	public GameObject WearEquipmentInfo;
 
-	public event Action<Item> OnItemLeftClickedEvent;
+	public event Action<BaseItemSlot> MountingOrUnMountingEvent;
 
-	public void Initialize()
+	private void Start()
 	{
 		for(int i = 0; i < equipmentSlots.Length; i++)
 		{
-			equipmentSlots[i].OnEquipmentSlotEvent += OnItemLeftClickedEvent;
+			equipmentSlots[i].MountingOrUnMountingEvent += slot => MountingOrUnMountingEvent(slot);
 		}
 	}
 
 	private void OnValidate()
 	{
 		equipmentSlots = equipmentSlotParent.GetComponentsInChildren<EquipmentSlot>();
-
-		for (int i = 0 ; i < equipmentSlots.Length; i++)
-		{
-			equipmentSlots[i].slotNum = i;
-		}
 	}
 
 	public bool AddItem(EquippableItem item, out EquippableItem previousItem)
 	{
 		for (int i = 0; i < equipmentSlots.Length; i++)
 		{
-			if(equipmentSlots[i].equipmentType == item.equipmentType)
+			if (equipmentSlots[i].equipmentType == item.equipmentType)
 			{
 				previousItem = (EquippableItem)equipmentSlots[i].Item;
 				equipmentSlots[i].Item = item;
+				equipmentSlots[i].Amount = 1;
 				return true;
 			}
 		}
@@ -51,6 +48,7 @@ public class EquipmentPanel : MonoBehaviour
 			if (equipmentSlots[i].Item == item)
 			{
 				equipmentSlots[i].Item = null;
+				equipmentSlots[i].Amount = 0;
 				return true;
 			}
 		}

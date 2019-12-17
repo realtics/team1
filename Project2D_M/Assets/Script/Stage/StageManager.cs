@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StageManager : Singletone<StageManager>
 {
 	private Transform m_monsterTransform;
+	[SerializeField]
 	private Transform m_playerTransform;
 	private CharacterInfo m_playerInfo;
 	private GameObject m_endUI;

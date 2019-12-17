@@ -11,6 +11,7 @@ public class ShootAttackCollider : MonoBehaviour
 	protected bool longDamage = false;
 	protected float damageSpaceTime = 0.2f;
 	protected float currntTime = 0;
+	protected bool autoDistroy = true;
 
 	protected virtual void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -30,7 +31,8 @@ public class ShootAttackCollider : MonoBehaviour
 				receiveDamage.Receive(m_damage, false);
 			}
 
-			ObjectPool.Inst.PushToPool(this.name, this.gameObject);
+			if(autoDistroy)
+				ObjectPool.Inst.PushToPool(this.gameObject);
 		}
 	}
 
@@ -59,12 +61,13 @@ public class ShootAttackCollider : MonoBehaviour
 		}
 	}
 
-	public virtual void SetDamageColliderInfo(int _damage, string _tagName, Vector2 _attackForce, GameObject _order)
+	public virtual void SetDamageColliderInfo(int _damage, string _tagName, Vector2 _attackForce, GameObject _order, bool _autoDistroy = true)
 	{
 		m_sTagName = _tagName;
 		orderObject = _order;
 		m_damage = _damage;
 		attackForce = _attackForce;
+		autoDistroy = _autoDistroy;
 	}
 
 	public virtual void SetDamageOption(bool _longDamage, float _damageSpaceTime)

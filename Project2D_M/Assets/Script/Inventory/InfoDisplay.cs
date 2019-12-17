@@ -67,12 +67,12 @@ public class InfoDisplay : MonoBehaviour
 	{
 		if(isWearEquipmentInfo)
 		{
-			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].UnMountingItem();
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].MountingOrUnMountingItem();
 			SlotChangeState(isWearEquipmentInfo);
 		}
 		else
 		{
-			inventory.itemSlots[saveInventorySlotIndex].MountingItem();
+			inventory.itemSlots[saveInventorySlotIndex].MountingOrUnMountingItem();
 			SlotChangeState(isWearEquipmentInfo);
 		}
 	}
@@ -86,22 +86,22 @@ public class InfoDisplay : MonoBehaviour
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
 			inventory.itemSlots[saveInventorySlotIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
 
-			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon();
-			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon();
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon(true);
+			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon(false);
 		}
 		else 
 		{
 			if(equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState == SLOT_STATE.MOUNTING)
 			{
 				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
-				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].SettingNoticeIcon();
+				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].SettingNoticeIcon(true);
 			}
 
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState = SLOT_STATE.MOUNTING;
 			inventory.itemSlots[saveInventorySlotIndex].eSlotState = SLOT_STATE.MOUNTING;
 
-			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon();
-			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon();
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon(false);
+			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon(true);
 
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex = saveInventorySlotIndex;
 		}

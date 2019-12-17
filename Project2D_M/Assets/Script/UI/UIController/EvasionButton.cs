@@ -6,8 +6,8 @@ using TMPro;
 
 public class EvasionButton : MonoBehaviour
 {
-	[SerializeField] private Image imageFillBar;
-	[SerializeField] private TextMeshProUGUI evasionCount;
+	[SerializeField] private Image imageFillBar = null;
+	[SerializeField] private TextMeshProUGUI evasionCount = null;
 	public void EvasionBarSet(float _fillVelue)
 	{
 		imageFillBar.fillAmount = _fillVelue;

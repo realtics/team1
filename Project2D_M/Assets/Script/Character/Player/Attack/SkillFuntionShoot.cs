@@ -7,6 +7,7 @@ public class SkillFuntionShoot : SkillFuntion
     private ISkillShoot m_skillShoot;
 	private CharacterInfo m_characterInfo;
 	private DamageInfo m_damageInfo;
+
 	public override void InitSkill(PlayerAnimFuntion _animFuntion, PlayerState _playerState)
 	{
 		base.InitSkill(_animFuntion, _playerState);
@@ -74,7 +75,7 @@ public class SkillFuntionShoot : SkillFuntion
 	private void ChangeAnim(string _skillEffentName)
 	{
 		if (m_animFuntion.IsTag(skillName))
-		{ 
+		{
 			if (m_animFuntion.IsName(_skillEffentName + "_action"))
 			{
 				m_skillShoot.ShootAction(m_playerState.IsPlayerLookRight(), m_damageInfo);

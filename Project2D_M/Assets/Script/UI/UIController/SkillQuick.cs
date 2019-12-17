@@ -15,9 +15,13 @@ public class SkillQuick : MonoBehaviour
 	private Image m_coolImage;
 	private TextMeshProUGUI m_text;
 
-	public void InitQuickSkill(string _flaimHaze, PlayerInput _playerInput)
+	public void InitQuickSkill(string _skillname, PlayerInput _playerInput)
 	{
-		m_skillInfo = SkillDataManager.Inst.GetSkillInfo(_flaimHaze);
+		if (_skillname == null)
+			return;
+
+		m_skillInfo = SkillDataManager.Inst.GetSkillInfo(_skillname);
+		this.GetComponentsInChildren<Image>()[1].enabled = true;
 		this.GetComponentsInChildren<Image>()[1].sprite = m_skillInfo.skillImage;
 		coolTime = m_skillInfo.coolTime;
 		m_playerInput = _playerInput;
@@ -53,7 +57,7 @@ public class SkillQuick : MonoBehaviour
 			yield return new WaitForSeconds(0.1f);
 			coolTimeLeft += 0.1f;
 			m_coolImage.fillAmount = 1.0f - (coolTimeLeft / coolTime);
-			m_text.text = ((int)(coolTime - coolTimeLeft)).ToString();
+			m_text.text = ((int)(coolTime - coolTimeLeft)+1).ToString();
 		}
 
 		m_text.text = "";
