@@ -52,14 +52,14 @@ public class InventoryManger : MonoBehaviour
 
 	public void Equip(EquippableItem item)
 	{
-		if (inventory.RemoveItem(item))
+		//if (inventory.RemoveItem(item))
 		{
 			EquippableItem previousItem;
 			if (equipmentPanel.AddItem(item, out previousItem))
 			{
 				if (previousItem != null)
 				{
-					inventory.AddItem(previousItem);
+				//	inventory.AddItem(previousItem);
 				}
 			}
 			else
@@ -73,7 +73,7 @@ public class InventoryManger : MonoBehaviour
 	{
 		if (inventory.CanAddItem(item) && equipmentPanel.RemoveItem(item))
 		{
-			inventory.AddItem(item);
+			//inventory.AddItem(item);
 		}
 	}
 

@@ -10,9 +10,9 @@ public class Inventory : ItemContainer
 	[SerializeField] protected Transform itemParent;
 	public GameObject NotWearEquipmentInfo;
 
-	protected override void Awake()
+	protected override void Start()
 	{
-		base.Awake();
+		base.Start();
 		SetStartingItems();
 	}
 
@@ -23,10 +23,7 @@ public class Inventory : ItemContainer
 			itemParent.GetComponentsInChildren<ItemSlot>(includeInactive: true , result: itemSlots);
 		}
 
-		if(!Application.isPlaying)
-		{
-			SetStartingItems();
-		}
+		SetStartingItems();
 	}
 
 	private void SetStartingItems()

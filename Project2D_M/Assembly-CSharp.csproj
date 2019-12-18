@@ -95,6 +95,8 @@
     <Compile Include="Assets\Script\Character\Player\Anim\PlayerLendBehavior.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\AnimToAttackManager.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\CrecentFlame\CrecentFlameCtrl.cs" />
+    <Compile Include="Assets\Script\Character\Player\Attack\CrecentFlame\CrecentFlameSkillFuntionShoot.cs" />
+    <Compile Include="Assets\Script\Character\Player\Attack\CrecentFlame\ShootCrecentFlame.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\FireBallShoot\BezierCurve.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\FireBallShoot\FireBallMove.cs" />
     <Compile Include="Assets\Script\Character\Player\Attack\FireBallShoot\ShootFireBall.cs" />

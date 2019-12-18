@@ -94,14 +94,14 @@ public class InfoDisplay : MonoBehaviour
 			if(equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState == SLOT_STATE.MOUNTING)
 			{
 				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
-				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].SettingNoticeIcon(true);
+				inventory.itemSlots[equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex].SettingNoticeIcon(false);
 			}
 
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState = SLOT_STATE.MOUNTING;
 			inventory.itemSlots[saveInventorySlotIndex].eSlotState = SLOT_STATE.MOUNTING;
 
-			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon(false);
-			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon(true);
+			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon(true);
+			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon(false);
 
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex = saveInventorySlotIndex;
 		}

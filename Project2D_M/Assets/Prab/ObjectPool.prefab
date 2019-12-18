@@ -43,4 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3532bcaa5b1f31544b557af61ee2378f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPool: []
+  objectPool:
+  - prefab: {fileID: 7189341393296949732, guid: 6dc5a43deb58bcf41945ce02a8588c8f,
+      type: 3}
+    poolCount: 5
+    poolList: []
+  - prefab: {fileID: 5160895870373987493, guid: 07370a1d643dabf4a890be92ee5b6f97,
+      type: 3}
+    poolCount: 4
+    poolList: []
+  - prefab: {fileID: 4146138257577634943, guid: 9d45da385cc3e7642b46919cdee5a6d9,
+      type: 3}
+    poolCount: 3
+    poolList: []
+  - prefab: {fileID: 7253428419563131654, guid: bd98480aa143b0f4fbc73e07e51309db,
+      type: 3}
+    poolCount: 6
+    poolList: []

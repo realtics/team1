@@ -45,15 +45,15 @@ public class DynamicInventory : Inventory
 				itemSlotGameObj.GetComponentInChildren<ItemSlot>().viewDitailObject = NotWearEquipmentInfo;
 				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoViewDitailObject = NotWearEquipmentInfo.transform.GetChild(1).gameObject;
 				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoDisplay = NotWearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().slotNum = i + 1;
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().slotNum = i;
 				itemSlots.Add(itemSlotGameObj.GetComponentInChildren<ItemSlot>());
 			}
 		}
 	}
 
-	protected override void Awake()
+	protected override void Start()
 	{
 		SetMaxSlots(inventorySlotMaxNum);
-		base.Awake();
+		base.Start();
 	}
 }

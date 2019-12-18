@@ -2,43 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillFuntionShoot : SkillFuntion
+public class CrecentFlameSkillFuntionShoot : SkillFuntionShoot
 {
-	protected ISkillShoot m_skillShoot;
-	protected CharacterInfo m_characterInfo;
-	protected DamageInfo m_damageInfo;
-
-	public override void InitSkill(PlayerAnimFuntion _animFuntion, PlayerState _playerState)
-	{
-		base.InitSkill(_animFuntion, _playerState);
-
-		m_characterInfo = this.transform.root.GetComponent<CharacterInfo>();
-		m_skillShoot = GetComponent<ISkillShoot>();
-
-		m_damageInfo.damage = (int)((m_characterInfo.attack * (damageRatio * level)) + 0.5f);
-
-		if ((this.transform.root.transform.localScale.x > 0 && damageForce.x < 0) ||
-			(this.transform.root.transform.localScale.x < 0 && damageForce.x > 0))
-		{
-			damageForce.x = damageForce.x * -1;
-		}
-
-		m_damageInfo.attackForce = damageForce;
-	}
-
 	public override void SkillAction()
 	{
 		string skillEffentName;
 
 		if (m_playerState.IsPlayerGround())
-			skillEffentName = skillName + "_ground";
-		else
 		{
-			skillEffentName = skillName + "_air";
+			skillEffentName = skillName + "_ground";
+			StartCoroutine(nameof(SkillCoroutine), skillEffentName);
+			m_animFuntion.PlayAnim(skillEffentName);
 		}
-
-		StartCoroutine(nameof(SkillCoroutine), skillEffentName);
-		m_animFuntion.PlayAnim(skillEffentName);
 	}
 
 	protected override IEnumerator SkillCoroutine(string _skillEffentName)
@@ -55,7 +30,7 @@ public class SkillFuntionShoot : SkillFuntion
 
 		while (m_animFuntion.IsTag(skillName))
 		{
-			if(currntAnimName != m_animFuntion.GetCurrntAnimClipName())
+			if (currntAnimName != m_animFuntion.GetCurrntAnimClipName())
 			{
 				currntAnimName = m_animFuntion.GetCurrntAnimClipName();
 				ChangeAnim(_skillEffentName);
@@ -72,7 +47,7 @@ public class SkillFuntionShoot : SkillFuntion
 		m_playerState.bSkipAction = true;
 	}
 
-	protected virtual void ChangeAnim(string _skillEffentName)
+	protected override void ChangeAnim(string _skillEffentName)
 	{
 		if (m_animFuntion.IsTag(skillName))
 		{

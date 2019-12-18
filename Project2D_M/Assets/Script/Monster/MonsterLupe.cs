@@ -51,10 +51,11 @@ public class MonsterLupe : MonsterFsmBase
 	protected override IEnumerator Attack()
 	{
 		MoveStop();
-
 		while (true)
 		{
-
+			//debug
+			Debug_UI.Inst.SetDebugText("attack", m_currentDelay.ToString());
+			//
 			m_currentDelay -= Time.deltaTime;
 			CheckHit();
 			CheckDie();
@@ -73,12 +74,12 @@ public class MonsterLupe : MonsterFsmBase
 					{
 						RandomAttack();
 						m_bAttacking = true;
+						m_currentDelay = m_fAttackDelay;
 					}
 					else
 					{
 						nowState = ENEMY_STATE.MOVE;
 					}
-					m_currentDelay = m_fAttackDelay;
 				}
 			}
 			yield return null;
