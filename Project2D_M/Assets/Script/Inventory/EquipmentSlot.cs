@@ -12,6 +12,23 @@ public class EquipmentSlot : ItemSlot
 	public GameObject mountingViewDitailObject;
 	public GameObject infoMountingViewDitailObject;
 
+	public override void SetStart()
+	{
+		Debug.Log("장비 슬롯 실행.");
+
+		switch (eSlotState)
+		{
+			case SLOT_STATE.NOT_MOUNTING:
+				noticeImage.enabled = true;
+				break;
+			case SLOT_STATE.MOUNTING:
+				noticeImage.enabled = false;
+				break;
+			case SLOT_STATE.UPGRADE:
+				break;
+		}
+	}
+
 	protected override void OnValidate()
 	{
 		base.OnValidate();

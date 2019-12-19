@@ -25,11 +25,11 @@ public class MonsterLupe : MonsterFsmBase
 	private readonly int m_hashiAttackType = Animator.StringToHash("iAttackType");
 
 
-	LUPE_ATTACK m_eAttack;
+	ATTACK_KINDS m_eAttack;
 	//public bool m_bAttack;
 
 
-	private enum LUPE_ATTACK
+	private enum ATTACK_KINDS
 	{
 		ATTACK_1 = 1,
 		ATTACK_2
@@ -40,8 +40,8 @@ public class MonsterLupe : MonsterFsmBase
 		m_attackcollider = this.GetComponentInChildren<AttackCollider>();
 		m_bAttacking = false;
 		m_normalAttackDic = new Dictionary<string, AttackInfo>();
-		m_normalAttackDic.Add(LUPE_ATTACK.ATTACK_1.ToString(), new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
-		m_normalAttackDic.Add(LUPE_ATTACK.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
+		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_1.ToString(), new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
+		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
 
 		m_currentDelay = 0;
 
@@ -93,11 +93,11 @@ public class MonsterLupe : MonsterFsmBase
 
 		if (random % 4 == 0)
 		{
-			m_eAttack = LUPE_ATTACK.ATTACK_1;
+			m_eAttack = ATTACK_KINDS.ATTACK_1;
 		}
 		else
 		{
-			m_eAttack = LUPE_ATTACK.ATTACK_1;
+			m_eAttack = ATTACK_KINDS.ATTACK_1;
 		}
 
 		//m_eAttack에 따라 그것에 맞는 공격/스킬이 나감(애니메이션 연계도)

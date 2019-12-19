@@ -19,34 +19,36 @@ public class PlayerShootAttackCollider : ShootAttackCollider
 		if (collision.tag == m_sTagName)
 		{
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
-			if (receiveDamage.bScriptEnable != false)
+
+			if (!receiveDamage.bScriptEnable)
+				return;
+
+			if (attackForce != Vector2.zero)
 			{
-				if (attackForce != Vector2.zero)
-				{
-					receiveDamage.AddDamageForce(attackForce);
-					m_cinemachineImpulse.GenerateImpulse();
-				}
-
-				if (m_playerInfo.IsCritical())
-				{
-					m_damage = (int)((m_damage * 1.5f) + 0.5f);
-					receiveDamage.Receive(m_damage, true);
-				}
-				else
-				{
-					receiveDamage.Receive(m_damage, false);
-				}
-
-				if (!m_playerState.IsPlayerGround())
-				{
-					m_playerInfo.PlusAirAttackCount();
-				}
-
-				m_playerCombo.plusCombo();
+				receiveDamage.AddDamageForce(attackForce);
+				m_cinemachineImpulse.GenerateImpulse();
 			}
+
+			if (m_playerInfo.IsCritical())
+			{
+				m_damage = (int)((m_damage * 1.5f) + 0.5f);
+				receiveDamage.Receive(m_damage, true);
+			}
+			else
+			{
+				receiveDamage.Receive(m_damage, false);
+			}
+
+			if (!m_playerState.IsPlayerGround())
+			{
+				m_playerInfo.PlusAirAttackCount();
+			}
+
+			m_playerCombo.plusCombo();
 
 			if (autoDistroy)
 				ObjectPool.Inst.PushToPool(this.gameObject);
+
 		}
 	}
 
@@ -63,31 +65,33 @@ public class PlayerShootAttackCollider : ShootAttackCollider
 		if (collision.tag == m_sTagName)
 		{
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
-			if (receiveDamage.bScriptEnable != false)
+
+			if (!receiveDamage.bScriptEnable)
+				return;
+
+			if (attackForce != Vector2.zero)
 			{
-				if (attackForce != Vector2.zero)
-				{
-					receiveDamage.AddDamageForce(attackForce);
-					m_cinemachineImpulse.GenerateImpulse();
-				}
-
-				if (m_playerInfo.IsCritical())
-				{
-					m_damage = (int)((m_damage * 1.5f) + 0.5f);
-					receiveDamage.Receive(m_damage, true);
-				}
-				else
-				{
-					receiveDamage.Receive(m_damage, false);
-				}
-
-				if (!m_playerState.IsPlayerGround())
-				{
-					m_playerInfo.PlusAirAttackCount();
-				}
-
-				m_playerCombo.plusCombo();
+				receiveDamage.AddDamageForce(attackForce);
+				m_cinemachineImpulse.GenerateImpulse();
 			}
+
+			if (m_playerInfo.IsCritical())
+			{
+				m_damage = (int)((m_damage * 1.5f) + 0.5f);
+				receiveDamage.Receive(m_damage, true);
+			}
+			else
+			{
+				receiveDamage.Receive(m_damage, false);
+			}
+
+			if (!m_playerState.IsPlayerGround())
+			{
+				m_playerInfo.PlusAirAttackCount();
+			}
+
+			m_playerCombo.plusCombo();
+
 		}
 	}
 

@@ -101,8 +101,6 @@ public class PlayerEvasion : MonoBehaviour
         if (m_playerState.IsPlayerGround())
             m_playerState.PlayerStateReset();
         else m_playerState.PlayerStateDoubleJump();
-
-
 	}
 
 	private void AddMeve(float _speed)

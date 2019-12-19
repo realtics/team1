@@ -27,10 +27,10 @@ public class ControllerUIEvent : MonoBehaviour
 	// Start is called before the first frame update
 	private void Start()
     {
-		if(m_Player == null)
-			m_playerInput = GameObject.Find("Player").GetComponent<PlayerInput>(); 
-		else m_playerInput = m_Player.GetComponent<PlayerInput>();
-
+		if (m_Player == null)
+			m_Player = GameObject.Find("Player");
+		
+		m_playerInput = m_Player.GetComponent<PlayerInput>();
 		m_playerEvasion = m_Player.GetComponent<PlayerEvasion>();
 
 		JoyStickConnect();
@@ -38,10 +38,10 @@ public class ControllerUIEvent : MonoBehaviour
         JumpConnect();
         EvasionConnect();
 
-		skillQuick1.InitQuickSkill("FlameHaze", m_playerInput);
-		skillQuick2.InitQuickSkill("FireBallShoot", m_playerInput);
-		skillQuick3.InitQuickSkill("FireBoomShoot", m_playerInput);
-		skillQuick4.InitQuickSkill(null, m_playerInput);
+		skillQuick1.InitQuickSkill("FireBallShoot", m_playerInput);
+		skillQuick2.InitQuickSkill("FireBoomShoot", m_playerInput);
+		skillQuick3.InitQuickSkill("FlameHaze", m_playerInput);
+		skillQuick4.InitQuickSkill("CrecentFlameShoot", m_playerInput);
 	}
 
     private void JoyStickConnect()

@@ -143,8 +143,6 @@ public class MonsterFsmBase : MonsterStateMachine
 
     IEnumerator Move()
     {
-		float time = 3.0f;
-		
 		while (true)
         {
 			Debug_UI.Inst.SetDebugText("Cha_anim", m_animFunction.GetCurrntAnimClipName().ToString());
@@ -158,14 +156,6 @@ public class MonsterFsmBase : MonsterStateMachine
 				m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
 				m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
 			}
-			//time -= Time.deltaTime;
-			//if(time <0)
-			//{
-			//	//m_monsterMove.Move(m_fSpeed);
-			//	m_monsterMove.isMove = true;
-			//	m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
-			//	time = 3.0f;
-			//}
 			yield return null;
 		}
 	}

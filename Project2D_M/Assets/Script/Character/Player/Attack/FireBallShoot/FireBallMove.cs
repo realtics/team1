@@ -8,12 +8,6 @@ public class FireBallMove : MonoBehaviour
 	private Vector3[] postions;
 	public float speed = 1;
 
-	private void Awake()
-	{
-		m_bezierCurve = new BezierCurve();
-	}
-
-
 	//private void OnDrawGizmos()
 	//{
 	//	if (postions.Length > 0)
@@ -27,6 +21,7 @@ public class FireBallMove : MonoBehaviour
 
 	public void InitFireBall(Vector3 startPos, float _distance, int _pointCount, float _height, bool _up, bool left, int _num)
 	{
+		m_bezierCurve = m_bezierCurve ?? new BezierCurve();
 		postions = new Vector3[_pointCount];
 		this.transform.position = startPos;
 

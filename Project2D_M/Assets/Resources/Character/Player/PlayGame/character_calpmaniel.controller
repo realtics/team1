@@ -1913,7 +1913,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -3223708375035724113}
-  m_Tag: 
+  m_Tag: CrecentFlameShoot
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -2164,22 +2164,22 @@ AnimatorStateMachine:
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 3276795465187506949}
-    m_Position: {x: -10, y: 100, z: 0}
+    m_Position: {x: -80, y: -40, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 2922560324684271750}
-    m_Position: {x: -20, y: 250, z: 0}
+    m_Position: {x: -80, y: 110, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 3020860652318634369}
-    m_Position: {x: -30, y: 380, z: 0}
+    m_Position: {x: -80, y: 250, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 4431817259543689956}
-    m_Position: {x: 299.50598, y: 422.1374, z: 0}
+    m_Position: {x: -80, y: 400, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 0, y: -80, z: 0}
-  m_EntryPosition: {x: -10, y: 520, z: 0}
+  m_AnyStatePosition: {x: 820, y: 240, z: 0}
+  m_EntryPosition: {x: 450, y: 70, z: 0}
   m_ExitPosition: {x: 820, y: 170, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1169390661188914696}
@@ -4488,9 +4488,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.15059951
   m_TransitionOffset: 0
-  m_ExitTime: 0.375
+  m_ExitTime: 0.62350124
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -8968,7 +8968,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CrecentFlameShoot_ground
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3891461489523571206}
@@ -8982,7 +8982,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 827449790461047382}
-  m_Tag: 
+  m_Tag: CrecentFlameShoot
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -11698,9 +11698,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.10803354
   m_TransitionOffset: 0
-  m_ExitTime: 0.375
+  m_ExitTime: 0.8651679
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

@@ -14,7 +14,26 @@ public class ObjectPool : Singletone<ObjectPool>
         }
     }
 
-    public bool PushToPool(GameObject item, Transform parent = null)
+	public void Initialize(GameObject item, int count)
+	{
+		for (int ix = 0; ix < objectPool.Count; ++ix)
+		{
+			if(objectPool[ix].prefab == item)
+			{
+				objectPool[ix].Initialize(transform);
+
+				return;
+			}
+		}
+
+		PooledObject pooledObject = new PooledObject();
+		pooledObject.prefab = item;
+		pooledObject.poolCount = count;
+		pooledObject.Initialize(transform);
+		objectPool.Add(pooledObject);
+	}
+
+	public bool PushToPool(GameObject item, Transform parent = null)
     {
         PooledObject pool = GetPoolItem(item.name);
         if (pool == null)

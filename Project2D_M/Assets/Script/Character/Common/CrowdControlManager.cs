@@ -16,6 +16,8 @@ public class CrowdControlManager : MonoBehaviour
 
     protected bool m_bStiffen = false;
     protected bool m_bImpenetrable = false;
+	public bool superArmor { get; protected set; } = false;
+
     private void Awake()
     {
         m_characterMove = this.GetComponent<CharacterMove>();
@@ -91,7 +93,17 @@ public class CrowdControlManager : MonoBehaviour
         m_bImpenetrable = false;
     }
 
-    IEnumerator ImpenetrableCoroutine(float _second)
+	public virtual void SuperArmorOn()
+	{
+		superArmor = true;
+	}
+
+	public virtual void SuperArmorOff()
+	{
+		superArmor = false;
+	}
+
+	IEnumerator ImpenetrableCoroutine(float _second)
     {
         m_bImpenetrable = true;
         m_receiveDamage.bScriptEnable = false;

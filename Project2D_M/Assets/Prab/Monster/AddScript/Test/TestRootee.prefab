@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 3219342298069967304}
   - component: {fileID: 3377322105623943498}
   - component: {fileID: 1452632301252225295}
-  - component: {fileID: 4337773804706467041}
-  - component: {fileID: 2792869747767737310}
+  - component: {fileID: 8597727431600386994}
   - component: {fileID: 3693826847195681627}
   - component: {fileID: 5117128862464961960}
   - component: {fileID: 2359046002180070597}
@@ -89,7 +88,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4337773804706467041
+--- !u!114 &8597727431600386994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,32 +97,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2543539019729880910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b7a9fde64e93d42957176ef23bd60d, type: 3}
+  m_Script: {fileID: 11500000, guid: 793b097f873434d4e9b12170b109a71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  maxHp: 100
-  hp: 100
+  maxHp: 222
+  hp: 222
   defensive: 10
   critical: 0
-  m_fAttackDistance: 0
-  m_fSpeed: 0
+  m_fAttackDistance: 2
+  m_fSpeed: 4
   m_appearTime: 0
---- !u!114 &2792869747767737310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543539019729880910}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdf73d9bf365a146ace5a23e09ded3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_monsterPosition: 0
-  m_fAppearTime: 0
-  m_crowdControlMg: {fileID: 0}
 --- !u!114 &3693826847195681627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animFuntion: {fileID: 0}
-  m_playerState: {fileID: 0}
+  m_playerObject: {fileID: 0}
 --- !u!1 &7326014423054582972
 GameObject:
   m_ObjectHideFlags: 0

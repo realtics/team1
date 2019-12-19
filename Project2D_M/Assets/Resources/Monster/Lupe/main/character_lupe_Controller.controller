@@ -943,9 +943,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.04412198
-  m_TransitionOffset: 0.270764
-  m_ExitTime: 0.74999994
+  m_TransitionDuration: 0.1396792
+  m_TransitionOffset: 0
+  m_ExitTime: 0.72434866
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1072,7 +1072,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.56666666
+  - time: 0.6666667
     functionName: ColliderLifeCycleOn
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -4313,7 +4313,7 @@ AnimatorStateMachine:
     m_Position: {x: 100, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 939477141400008306}
-    m_Position: {x: 460, y: 240, z: 0}
+    m_Position: {x: 450, y: 250, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -9211541307086227481}

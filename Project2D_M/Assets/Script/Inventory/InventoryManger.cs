@@ -7,31 +7,18 @@ public class InventoryManger : MonoBehaviour
 	public Inventory inventory;
 	public EquipmentPanel equipmentPanel;
 
-	[SerializeField] ItemSaveManager itemSaveManager;
-
 	private void Awake()
 	{
 		inventory.MountingOrUnMountingEvent += EquipFromInventory;
 		equipmentPanel.MountingOrUnMountingEvent += UnEquipFromEquipPanel;
 	}
 
-	private void Start()
-	{
-		if (itemSaveManager != null)
-		{
-			itemSaveManager.LoadEquipment(this);
-			itemSaveManager.LoadInventory(this);
-		}
-	}
-
 	private void OnDestroy()
 	{
-		if (itemSaveManager != null)
-		{
-			itemSaveManager.SaveEquipment(this);
-			itemSaveManager.SaveInventory(this);
-		}
+		ItemSaveManager.Inst.SaveEquipment(this);
+		ItemSaveManager.Inst.SaveInventory(this);
 	}
+	
 
 	private void EquipFromInventory(BaseItemSlot _itemSlot)
 	{
@@ -59,7 +46,7 @@ public class InventoryManger : MonoBehaviour
 			{
 				if (previousItem != null)
 				{
-				//	inventory.AddItem(previousItem);
+					//inventory.AddItem(previousItem);
 				}
 			}
 			else
@@ -67,6 +54,7 @@ public class InventoryManger : MonoBehaviour
 				inventory.AddItem(item);
 			}
 		}
+
 	}
 
 	public void Unequip(EquippableItem item)

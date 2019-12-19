@@ -67,26 +67,7 @@ public class PlayerNormalAttack : MonoBehaviour
 		m_NormalAttackDic.Add("attack_downsmash", new AttackInfo(4.0f, new Vector2(2f, -25.0f)));
 	}
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.color = Color.red;
-
-		Gizmos.DrawRay(this.transform.position, -this.transform.up * fAirAttackDistansce);
-
-		Gizmos.color = Color.green;
-
-		RaycastHit2D[] raycastHit2D;
-
-		raycastHit2D = Physics2D.BoxCastAll(this.transform.position + new Vector3(0, this.transform.localScale.y * 2, 0), GetComponent<BoxCollider2D>().size, 0.0f, this.transform.localScale.x * this.transform.right, fAirAttackDistansce, 1 << LayerMask.NameToLayer("Monster"));
-
-		for(int i = 0; i < raycastHit2D.Length; ++i)
-		{
-			if (raycastHit2D[i].collider.tag == "Monster")
-				Gizmos.DrawWireCube(this.transform.position + new Vector3(this.transform.localScale.x * Vector3.Distance(raycastHit2D[i].collider.transform.position, this.transform.position), this.transform.localScale.y * 2, 0) + this.transform.localScale.x * this.transform.right * fAirAttackDistansce, GetComponent<BoxCollider2D>().size);
-		}
-		
-	}
-
+	
 	public void NormalAttack()
 	{
 		if (!m_playerState.IsPlayerGround() && Physics2D.Raycast(this.transform.position, -this.transform.up, fAirAttackDistansce, 1 << LayerMask.NameToLayer("Floor")))
@@ -98,7 +79,9 @@ public class PlayerNormalAttack : MonoBehaviour
 
 		if (!m_playerState.IsPlayerGround() && !m_playerState.IsPlayerSPAttack()) 
 		{
-			RaycastHit2D[] raycastHit2D = Physics2D.BoxCastAll(this.transform.position + new Vector3(0, this.transform.localScale.y * 2, 0), GetComponent<BoxCollider2D>().size, 0.0f, this.transform.localScale.x * this.transform.right, fAirAttackDistansce, 1 << LayerMask.NameToLayer("Monster"));
+			RaycastHit2D[] raycastHit2D = Physics2D.BoxCastAll(this.transform.position + new Vector3(0, this.transform.localScale.y * 2, 0), GetComponent<BoxCollider2D>().size, 0.0f,
+				this.transform.localScale.x * this.transform.right,
+				fAirAttackDistansce, 1 << LayerMask.NameToLayer("Monster"));
 
 			if(raycastHit2D.Length != 0)
 				m_playerCrowdControlManager.OnAirStop();
@@ -204,10 +187,12 @@ public class PlayerNormalAttack : MonoBehaviour
 					break;
 				case "attack_upper":
 					m_playerState.PlayerStateSPAttack();
+					m_playerCrowdControlManager.SuperArmorOn();
 					Invoke(nameof(UpperJump), 0.3f);
 					break;
 				case "attack_downsmash":
 					m_playerState.PlayerStateSPAttack();
+					m_playerCrowdControlManager.SuperArmorOn();
 					Invoke(nameof(SmashDown), 0.37f);
 					break;
 				default:
@@ -255,6 +240,10 @@ public class PlayerNormalAttack : MonoBehaviour
 		{
 			case "attack_upper":
 					m_playerState.PlayerStateJump();
+					m_playerCrowdControlManager.SuperArmorOff();
+				break;
+			case "attack_downsmash":
+				m_playerCrowdControlManager.SuperArmorOff();
 				break;
 			default:
 				if (!m_playerState.IsPlayerGround())

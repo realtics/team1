@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSaveManager : MonoBehaviour
+public class ItemSaveManager : Singletone<ItemSaveManager>
 {
 	[SerializeField] ItemDataBase m_itemDataBase;
 
@@ -29,25 +29,35 @@ public class ItemSaveManager : MonoBehaviour
 			{
 				itemSlot.Item = m_itemDataBase.GetItemCopy(savedSlot.itemID);
 				itemSlot.Amount = savedSlot.amount;
+				itemSlot.eSlotState = savedSlot.slotState;
+				itemSlot.SetStart();
 			}
 		}
 	}
 
-	public void LoadEquipment(InventoryManger _inventoryManger)
+	public void LoadEquipment(InventoryManger _inventoryManager)
 	{
 		ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(EquipmentFileName);
 		if (savedSlots == null) return;
 
-		foreach(ItemSlotSaveData savedSlot in savedSlots.savedSlots)
+		for (int i = 0; i < savedSlots.savedSlots.Length; i++)
 		{
-			if(savedSlot == null)
-			{
-				continue;
-			}
+			ItemSlot itemSlot = _inventoryManager.equipmentPanel.equipmentSlots[i];
+			ItemSlotSaveData savedSlot = savedSlots.savedSlots[i];
 
-			Item item = m_itemDataBase.GetItemCopy(savedSlot.itemID);
-			_inventoryManger.inventory.AddItem(item);
-			_inventoryManger.Equip((EquippableItem)item);
+			if (savedSlot == null)
+			{
+				itemSlot.Item = null;
+				itemSlot.Amount = 0;
+			}
+			else
+			{
+				itemSlot.Item = m_itemDataBase.GetItemCopy(savedSlot.itemID);
+				itemSlot.Amount = savedSlot.amount;
+				((EquipmentSlot)itemSlot).rememberInventoryIndex = savedSlot.rememberInventoryIndex;
+				itemSlot.eSlotState = savedSlot.slotState;
+				itemSlot.SetStart();
+			}
 		}
 	}
 
@@ -59,7 +69,7 @@ public class ItemSaveManager : MonoBehaviour
 
 	public void SaveEquipment(InventoryManger _inventoryManger)
 	{
-		SaveItems(_inventoryManger.equipmentPanel.equipmentSlots, EquipmentFileName);
+		SaveEquipmentItems(_inventoryManger.equipmentPanel.equipmentSlots, EquipmentFileName);
 	}
 
 	private void SaveItems(IList<ItemSlot> _itemSlots, string _fileName)
@@ -76,11 +86,36 @@ public class ItemSaveManager : MonoBehaviour
 			}
 			else
 			{
-				saveData.savedSlots[i] = new ItemSlotSaveData(itemSlot.Item.ID, itemSlot.Amount);
+				saveData.savedSlots[i] = new ItemSlotSaveData(itemSlot.Item.ID, itemSlot.Amount, itemSlot.eSlotState);
+				Debug.Log(itemSlot.Item.ID + "가 " + itemSlot.Amount +"개 저장됨.");
 			}
 		}
 
 		ItemSaveIO.SaveItems(saveData, _fileName);
+		Debug.Log(_fileName + "저장 완료");
+	}
+
+	private void SaveEquipmentItems(IList<ItemSlot> _itemSlots, string _fileName)
+	{
+		var saveData = new ItemContainerSaveData(_itemSlots.Count);
+
+		for (int i = 0; i < saveData.savedSlots.Length; i++)
+		{
+			ItemSlot itemSlot = _itemSlots[i];
+
+			if (itemSlot.Item == null)
+			{
+				saveData.savedSlots[i] = null;
+			}
+			else
+			{
+				saveData.savedSlots[i] = new ItemSlotSaveData(itemSlot.Item.ID, itemSlot.Amount, itemSlot.eSlotState,((EquipmentSlot)itemSlot).rememberInventoryIndex);
+				Debug.Log(itemSlot.Item.ID + "가 " + itemSlot.Amount + "개 저장됨.");
+			}
+		}
+
+		ItemSaveIO.SaveItems(saveData, _fileName);
+		Debug.Log(_fileName + "저장 완료");
 	}
 
 }

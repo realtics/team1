@@ -14,8 +14,8 @@ public class SkillFuntion : MonoBehaviour
 	protected PlayerState m_playerState;
 	protected PlayerAnimFuntion m_animFuntion;
 	protected Rigidbody2D m_rigidbody2D;
-
-	public virtual void InitSkill(PlayerAnimFuntion _animFuntion, PlayerState _playerState)
+	protected PlayerCrowdControlManager m_crowdControlManager;
+	public virtual void InitSkill(PlayerAnimFuntion _animFuntion, GameObject _playerObject)
 	{
 		SkillDataManager.SkillInfo skillInfo = SkillDataManager.Inst.GetSkillInfo(gameObject.name );
 		skillName = skillInfo.skillName;
@@ -24,13 +24,14 @@ public class SkillFuntion : MonoBehaviour
 		damageForce = skillInfo.damageForce;
 
 		m_animFuntion = _animFuntion;
-		m_playerState = _playerState;
-		m_rigidbody2D = this.transform.root.GetComponent<Rigidbody2D>();
+		m_playerState = _playerObject.GetComponent<PlayerState>();
+		m_rigidbody2D = _playerObject.GetComponent<Rigidbody2D>();
+		m_crowdControlManager = _playerObject.GetComponent<PlayerCrowdControlManager>();
 	}
 
-	public virtual void SkillAction()
+	public virtual bool SkillAction()
 	{
-		
+		return true;
 	}
 
 	protected virtual IEnumerator SkillCoroutine(string _skillEffentName)

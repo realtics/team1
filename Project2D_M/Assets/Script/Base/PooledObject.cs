@@ -23,7 +23,6 @@ public class PooledObject
         item.transform.SetParent(parent);
         item.SetActive(false);
         poolList.Add(item);
-
     }
     public GameObject PopFromPool(Transform parent = null)
     {

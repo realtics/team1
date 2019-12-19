@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: FireBallShoot
   collisionSize: 1
-  damageRatio: 10
+  damageRatio: 5
   damageForce: {x: 5, y: 5}
   skillImage: {fileID: -229346630224473088, guid: 0c4b47a1e0f8a3a4f8e2a7398976b504,
     type: 3}

@@ -42,12 +42,13 @@ public class CrecentFlameCtrl : MonoBehaviour
 	private IEnumerator CrecentFlameCoroutine()
 	{
 		float value = 0.0f;
-		collider.enabled = true;
 
 		for (int i = 0; i < animator.Length; ++i)
 		{
 			animator[i].SetTrigger("tShoot");
 		}
+
+		collider.enabled = true;
 
 		while (true)
 		{
@@ -79,6 +80,8 @@ public class CrecentFlameCtrl : MonoBehaviour
 
 		SetSpriteProgress(0.0f);
 		SetSpriteAlpha(1.0f);
+
+        this.transform.localScale = new Vector3(1, 1, 1);
 
 		ObjectPool.Inst.PushToPool(this.gameObject);
 	}

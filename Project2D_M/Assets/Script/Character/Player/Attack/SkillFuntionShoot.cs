@@ -8,25 +8,23 @@ public class SkillFuntionShoot : SkillFuntion
 	protected CharacterInfo m_characterInfo;
 	protected DamageInfo m_damageInfo;
 
-	public override void InitSkill(PlayerAnimFuntion _animFuntion, PlayerState _playerState)
+	[SerializeField] protected GameObject shotObject = null;
+	[SerializeField] protected int objectCount;
+	public override void InitSkill(PlayerAnimFuntion _animFuntion, GameObject _playerObject)
 	{
-		base.InitSkill(_animFuntion, _playerState);
+		base.InitSkill(_animFuntion, _playerObject);
 
-		m_characterInfo = this.transform.root.GetComponent<CharacterInfo>();
+		m_characterInfo = _playerObject.GetComponent<CharacterInfo>();
 		m_skillShoot = GetComponent<ISkillShoot>();
 
 		m_damageInfo.damage = (int)((m_characterInfo.attack * (damageRatio * level)) + 0.5f);
 
-		if ((this.transform.root.transform.localScale.x > 0 && damageForce.x < 0) ||
-			(this.transform.root.transform.localScale.x < 0 && damageForce.x > 0))
-		{
-			damageForce.x = damageForce.x * -1;
-		}
+		ObjectPool.Inst.Initialize(shotObject, objectCount);
 
 		m_damageInfo.attackForce = damageForce;
 	}
 
-	public override void SkillAction()
+	public override bool SkillAction()
 	{
 		string skillEffentName;
 
@@ -38,22 +36,26 @@ public class SkillFuntionShoot : SkillFuntion
 		}
 
 		StartCoroutine(nameof(SkillCoroutine), skillEffentName);
-		m_animFuntion.PlayAnim(skillEffentName);
+
+		return true;
 	}
 
 	protected override IEnumerator SkillCoroutine(string _skillEffentName)
 	{
 		m_playerState.bSkipAction = false;
 
+		m_animFuntion.PlayAnim(_skillEffentName);
+
+		yield return new WaitForSeconds(0.03f);
+
 		m_playerState.PlayerStateSPAttack();
-
-		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
-
-		yield return new WaitForSeconds(0.01f);
-
+		m_rigidbody2D.velocity = Vector3.zero;
+		m_crowdControlManager.OnAirStop();
 		string currntAnimName = m_animFuntion.GetCurrntAnimClipName();
 
-		while (m_animFuntion.IsTag(skillName))
+        m_skillShoot.InitShoot(m_playerState.IsPlayerLookRight(), m_damageInfo);
+
+        while (m_animFuntion.IsTag(skillName))
 		{
 			if(currntAnimName != m_animFuntion.GetCurrntAnimClipName())
 			{
@@ -63,8 +65,7 @@ public class SkillFuntionShoot : SkillFuntion
 			yield return new WaitForSeconds(0.01f);
 		}
 
-		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-		m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, -0.01f);
+		m_crowdControlManager.OffAirStop();
 
 		if (!m_playerState.IsPlayerGround())
 			m_playerState.PlayerStateDoubleJump();
@@ -78,7 +79,7 @@ public class SkillFuntionShoot : SkillFuntion
 		{
 			if (m_animFuntion.IsName(_skillEffentName + "_action"))
 			{
-				m_skillShoot.ShootAction(m_playerState.IsPlayerLookRight(), m_damageInfo);
+				m_skillShoot.ShootAction();
 			}
 		}
 	}

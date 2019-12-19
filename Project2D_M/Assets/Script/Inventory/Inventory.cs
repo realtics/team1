@@ -9,10 +9,11 @@ public class Inventory : ItemContainer
 	[SerializeField] protected Item[] startingItems;
 	[SerializeField] protected Transform itemParent;
 	public GameObject NotWearEquipmentInfo;
-
+	[SerializeField] InventoryManger inventoryManger;
 	protected override void Start()
 	{
 		base.Start();
+		LoadItem();
 		SetStartingItems();
 	}
 
@@ -22,16 +23,21 @@ public class Inventory : ItemContainer
 		{
 			itemParent.GetComponentsInChildren<ItemSlot>(includeInactive: true , result: itemSlots);
 		}
-
-		SetStartingItems();
 	}
 
 	private void SetStartingItems()
 	{
-		Clear();
-		foreach(Item item in startingItems)
+		//Clear();
+
+		foreach (Item item in startingItems)
 		{
 			AddItem(item.GetCopy());
 		}
+	}
+
+	private void LoadItem()
+	{
+		ItemSaveManager.Inst.LoadEquipment(inventoryManger);
+		ItemSaveManager.Inst.LoadInventory(inventoryManger);
 	}
 }

@@ -12,6 +12,23 @@ public class ItemSlot : BaseItemSlot
 
 	public bool isMountingSlot;
 
+	public virtual void SetStart()
+	{
+		Debug.Log("인벤토리 슬롯 실행.");
+
+		switch (eSlotState)
+		{
+			case SLOT_STATE.NOT_MOUNTING:
+				noticeImage.enabled = false;
+				break;
+			case SLOT_STATE.MOUNTING:
+				noticeImage.enabled = true;
+				break;
+			case SLOT_STATE.UPGRADE:
+				break;
+		}
+	}
+
 	public override bool CanAddStack(Item _item, int _amount = 1)
 	{
 		return base.CanAddStack(_item, _amount) && Amount + _amount <= _item.MaximumStacks;

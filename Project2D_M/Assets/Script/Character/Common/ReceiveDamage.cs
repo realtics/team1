@@ -43,7 +43,8 @@ public class ReceiveDamage : ScriptEnable
     {
         if (!bScriptEnable)
             return;
-        if (Vector2.zero != _force)
+
+		if (!m_crowdControlManager.superArmor && Vector2.zero != _force)
         {
             m_rigidbody2D.velocity = Vector2.zero;
             m_animator.SetTrigger("tHit");

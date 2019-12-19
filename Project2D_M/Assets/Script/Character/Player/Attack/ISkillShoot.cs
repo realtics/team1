@@ -10,5 +10,6 @@ public struct DamageInfo
 
 public interface ISkillShoot
 {
-	void ShootAction(bool _xFilp, DamageInfo _damageInfo);
+    void InitShoot(bool _xFilp, DamageInfo _damageInfo);
+    void ShootAction();
 }

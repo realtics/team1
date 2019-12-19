@@ -10,11 +10,15 @@ public class FireBoomCtrl : MonoBehaviour
 	{
 		m_animator = this.GetComponent<Animator>();
 		m_animator.speed = _speed;
-		this.gameObject.SetActive(true);
-		StartCoroutine(nameof(FireCoroutine));
 	}
 
-	private IEnumerator FireCoroutine()
+    public void ShootBoom()
+    {
+        this.gameObject.SetActive(true);
+        StartCoroutine(nameof(FireCoroutine));
+    }
+
+    private IEnumerator FireCoroutine()
 	{
 		while (true)
 		{

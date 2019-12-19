@@ -191,8 +191,8 @@ public class PlayerInput : ScriptEnable
 	{
 		if (m_playerState.bSkipAction)
 		{
-			m_skillManager.SkillAction(_skillName);
-			return true;
+			if(m_skillManager.SkillAction(_skillName))
+				return true;
 		}
 
 		return false;

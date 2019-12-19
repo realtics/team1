@@ -13,19 +13,21 @@ public class SkillManager : MonoBehaviour
 {
     private AttackCollider[] m_attackColliders;
     private SkeletonAnimation[] m_skeletonAnimations;
+	private EffectSpineAnimFunction[] m_effectSpineAnimFunctions;
 	private SkillFuntion[] m_skillFuntions;
 	[SerializeField] private PlayerAnimFuntion m_animFuntion = null;
-	[SerializeField] private PlayerState m_playerState = null;
+	[SerializeField] private GameObject m_playerObject = null;
 
 	private void Awake()
     {
         m_attackColliders = this.GetComponentsInChildren<AttackCollider>();
         m_skeletonAnimations = this.GetComponentsInChildren<SkeletonAnimation>();
+		m_effectSpineAnimFunctions = this.GetComponentsInChildren<EffectSpineAnimFunction>();
 		m_skillFuntions = this.GetComponentsInChildren<SkillFuntion>();
 
 		for (int i = 0; i < m_skillFuntions.Length; ++i)
 		{
-			m_skillFuntions[i].InitSkill(m_animFuntion, m_playerState);
+			m_skillFuntions[i].InitSkill(m_animFuntion, m_playerObject);
 		}
 	}
 
@@ -57,21 +59,20 @@ public class SkillManager : MonoBehaviour
 
     public void PlayAnim(string _animname, string _attackObjectName = null, bool _roof = false)
     {
-		for (int i = 0; i < m_skeletonAnimations.Length; ++i)
+		for (int i = 0; i < m_effectSpineAnimFunctions.Length; ++i)
 		{
-			if (_attackObjectName != null && m_skeletonAnimations[i].transform.name == _attackObjectName)
-				m_skeletonAnimations[i].AnimationState.SetAnimation(0, _animname, _roof);
-            else if (_attackObjectName == null)
-				m_skeletonAnimations[i].AnimationState.SetAnimation(0, _animname, _roof);
-        }
+			m_effectSpineAnimFunctions[i].PlayAnim(_animname);
+		}
     }
 
-	public void SkillAction(string _skillName)
+	public bool SkillAction(string _skillName)
 	{
 		for (int i = 0; i < m_skillFuntions.Length; ++i)
 		{
 			if(m_skillFuntions[i].skillName.Equals(_skillName))
-				m_skillFuntions[i].SkillAction();
+				return m_skillFuntions[i].SkillAction();
 		}
+
+		return false;
 	}
 }

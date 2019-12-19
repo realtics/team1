@@ -53,7 +53,11 @@ public class DynamicInventory : Inventory
 
 	protected override void Start()
 	{
-		SetMaxSlots(inventorySlotMaxNum);
 		base.Start();
 	}
+	private void Awake()
+	{
+		SetMaxSlots(inventorySlotMaxNum);
+	}
+
 }

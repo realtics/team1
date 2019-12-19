@@ -9,9 +9,9 @@ public class SkillFuntionSpineAnim : SkillFuntion
 	protected MeshRenderer m_meshRenderer;
 	protected AttackCollider m_attackCollider;
 
-	public override void InitSkill(PlayerAnimFuntion _animFuntion, PlayerState _playerState)
+	public override void InitSkill(PlayerAnimFuntion _animFuntion, GameObject _playerObject)
 	{
-		base.InitSkill(_animFuntion, _playerState);
+		base.InitSkill(_animFuntion, _playerObject);
 
 		m_skeletonAnimation = this.GetComponent<SkeletonAnimation>();
 		m_meshRenderer = this.GetComponent<MeshRenderer>();
@@ -21,7 +21,7 @@ public class SkillFuntionSpineAnim : SkillFuntion
 		m_attackCollider.SetDamageColliderInfo(damageRatio * level, "Monster", damageForce);
 	}
 
-	public override void SkillAction()
+	public override bool SkillAction()
 	{
 		string skillEffentName;
 
@@ -33,8 +33,8 @@ public class SkillFuntionSpineAnim : SkillFuntion
 		}
 
 		StartCoroutine(nameof(SkillCoroutine), skillEffentName);
-		m_skeletonAnimation.AnimationState.SetAnimation(0, skillEffentName, false);
-		m_animFuntion.PlayAnim(skillEffentName);
+
+		return true;
 	}
 
 	protected override IEnumerator SkillCoroutine(string _skillEffentName)
@@ -44,19 +44,22 @@ public class SkillFuntionSpineAnim : SkillFuntion
 
 		m_playerState.bSkipAction = false;
 
+		m_rigidbody2D.velocity = Vector3.zero;
+
+		m_skeletonAnimation.AnimationState.SetAnimation(0, _skillEffentName, false);
+		m_animFuntion.PlayAnim(_skillEffentName);
+
+		yield return new WaitForSeconds(0.03f);
+
 		m_playerState.PlayerStateSPAttack();
-
-		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
-
-		yield return new WaitForSeconds(0.01f);
+		m_crowdControlManager.OnAirStop();
 
 		while (m_animFuntion.IsTag(skillName))
 		{
 			yield return new WaitForSeconds(0.01f);
 		}
 
-		m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-		m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, -0.01f);
+		m_crowdControlManager.OffAirStop();
 
 		if (!m_playerState.IsPlayerGround())
 			m_playerState.PlayerStateDoubleJump();

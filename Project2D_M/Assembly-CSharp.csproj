@@ -156,6 +156,7 @@
     <Compile Include="Assets\Script\Inventory\ItemSlot.cs" />
     <Compile Include="Assets\Script\Monster\AttackToEffectAnim.cs" />
     <Compile Include="Assets\Script\Monster\CharacterHpBar.cs" />
+    <Compile Include="Assets\Script\Monster\EffectSpineAnimFunction.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAI.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAnimation.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAttack.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Assets\Script\Monster\MonsterInfo.cs" />
     <Compile Include="Assets\Script\Monster\MonsterLupe.cs" />
     <Compile Include="Assets\Script\Monster\MonsterMove.cs" />
+    <Compile Include="Assets\Script\Monster\MonsterRootee.cs" />
     <Compile Include="Assets\Script\Monster\MonsterStateMachine.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxBackGround.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxCamera.cs" />
@@ -182,7 +184,6 @@
     <Compile Include="Assets\Script\UI\LoadingProgress.cs" />
     <Compile Include="Assets\Script\UI\LoadSceneButton.cs" />
     <Compile Include="Assets\Script\UI\LobbyParallax.cs" />
-    <Compile Include="Assets\Script\UI\SlotInfo.cs" />
     <Compile Include="Assets\Script\UI\StageDecoMove.cs" />
     <Compile Include="Assets\Script\UI\StageInfoOpener.cs" />
     <Compile Include="Assets\Script\UI\StageLoadSceneButton.cs" />
@@ -310,6 +311,7 @@
     <None Include="Assets\Resources\UI\ImageFont\DamageFont_ArmorBreak.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Straight Alpha\Spine-Straight-Skeleton-Tint.shader" />
+    <None Include="Assets\Resources\Monster\Rootee\Test\dust.atlas.txt" />
     <None Include="Assets\Resources\Monster\Larvo\character_larvo.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\CGIncludes\SpriteLighting.cginc" />
@@ -321,6 +323,7 @@
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\CGIncludes\SpriteUnlit.cginc" />
     <None Include="Assets\Spine\spine-unity\version.txt" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\SpritesPixelLit.shader" />
+    <None Include="Assets\Resources\Character\NPC\p_npc_Marion.atlas.txt" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Spine-Skeleton-Tint.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\SpritesUnlit.shader" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -333,6 +336,7 @@
     <None Include="Assets\Resources\Monster\Rootee\Effect\Effect_rootee.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Resources\Stage1\atlas\Erfenorva_mainroad_01.atlas.txt" />
+    <None Include="Assets\Resources\Monster\Rootee\Test\land_effect.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\CameraDepthNormalsTexture.shader" />
     <None Include="Assets\Resources\Monster\Rootee\Main\character_rootee.atlas.txt" />

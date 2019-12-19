@@ -35,8 +35,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         public int cash;
         public int fatigability; //피로도
 		public int maxFatigability;
-
-		public EquipmentInfo equipmentInfo;
 	}
 
     private PlayerData m_playerData = null;
@@ -56,28 +54,8 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.cash = dataSO.cash;
         m_playerSaveData.fatigability = dataSO.fatigability;
 
-		if (m_playerSaveData.equipmentInfo == null)
-			InitPlayerSOtoPlayerData();
-
 		BinaryManager.Save(m_playerSaveData, dataname);
 	}
-
-	public void InitPlayerSOtoPlayerData()
-	{
-		m_playerSaveData.equipmentInfo = new EquipmentInfo();
-
-		m_playerSaveData.equipmentInfo.weapon = dataSO.weapon;
-		m_playerSaveData.equipmentInfo.hat = dataSO.hat;
-		m_playerSaveData.equipmentInfo.top = dataSO.top;
-		m_playerSaveData.equipmentInfo.gloves = dataSO.gloves;
-		m_playerSaveData.equipmentInfo.pants = dataSO.pants;
-		m_playerSaveData.equipmentInfo.shoes = dataSO.shoes;
-		m_playerSaveData.equipmentInfo.necklace = dataSO.necklace;
-		m_playerSaveData.equipmentInfo.earring_one = dataSO.earring_one;
-		m_playerSaveData.equipmentInfo.earring_two = dataSO.earring_two;
-		m_playerSaveData.equipmentInfo.ring_one = dataSO.ring_one;
-		m_playerSaveData.equipmentInfo.ring_two = dataSO.ring_two;
-    }
 
     public PlayerData GetPlayerData()
     {
@@ -88,19 +66,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
 
         return m_playerData;
     }
-
-	public EquipmentInfo GetPlayerEquipInfo()
-	{
-		if(m_playerData.equipmentInfo == null)
-		{
-			if (m_playerSaveData.equipmentInfo == null)
-				InitPlayerSOtoPlayerData();
-
-			m_playerData.equipmentInfo = m_playerSaveData.equipmentInfo;
-		}
-
-		return m_playerData.equipmentInfo;
-	}
 
     public void SavePlayerData(PlayerData _playerData)
     {

@@ -4,50 +4,70 @@ using UnityEngine;
 
 public class ShootCrecentFlame : MonoBehaviour, ISkillShoot
 {
-	public int objectCount = 6;
 	public int distance = 10;
-	public float boomCreateSpeed = 0.1f;
+	public float createSpeed = 0.1f;
+    private CrecentFlameCtrl[] crecentFlameCtrls = new CrecentFlameCtrl[6];
 
-	public void ShootAction(bool _xFilp, DamageInfo _damageInfo)
+    public void InitShoot(bool _xFilp, DamageInfo _damageInfo)
+    {
+        StartCoroutine(InitCoroutine(_xFilp, _damageInfo));
+    }
+
+	public void ShootAction()
 	{
-		StartCoroutine(ActionCoroutine(_xFilp, _damageInfo));
+		StartCoroutine(ActionCoroutine());
 	}
+    private IEnumerator ActionCoroutine()
+    {
+        for (int i = 0; i < 6; ++i)
+        {
+            crecentFlameCtrls[i].SkillAction();
 
-	private IEnumerator ActionCoroutine(bool _xFilp, DamageInfo _damageInfo)
-	{
-		for (int i = 0; i < 6; ++i)
-		{
-			GameObject crecentFlameObject = ObjectPool.Inst.PopFromPool("FireBoom");
-			CrecentFlameCtrl crecentFlameCtrl = crecentFlameObject.GetComponent<CrecentFlameCtrl>();
-			PlayerShootAttackCollider playerShootAttackCollider = crecentFlameObject.GetComponent<PlayerShootAttackCollider>();
+            if (i % 2 == 0)
+                yield return null;
+            else
+                yield return new WaitForSeconds(createSpeed);
+        }
+    }
+    private IEnumerator InitCoroutine(bool _xFilp, DamageInfo _damageInfo)
+    {
+        for (int i = 0; i < 6; ++i)
+        {
+            GameObject crecentFlameObject = ObjectPool.Inst.PopFromPool("CrecentFlame");
+            CrecentFlameCtrl crecentFlameCtrl = crecentFlameObject.GetComponent<CrecentFlameCtrl>();
+            PlayerShootAttackCollider playerShootAttackCollider = crecentFlameObject.GetComponent<PlayerShootAttackCollider>();
 
-			Vector3 position = this.transform.position;
+            Vector3 position = this.transform.position;
 
-			if (i % 2 == 0)
-				position.x = position.x + ((i * 0.5f + 1) * distance);
-			else
-				position.x = position.x - ((i * 0.5f + 1) * distance);
+            if (i % 2 == 0)
+                position.x = position.x + distance + ((int)(i * 0.5f + 1) * distance * (int)(i * 0.5f));
+            else
+                position.x = position.x - distance - ((int)(i * 0.5f + 1) * distance * (int)(i * 0.5f));
 
-			crecentFlameObject.transform.position = position;
+            crecentFlameObject.transform.position = position;
 
-			Vector3 scale = crecentFlameObject.transform.localScale;
+            Vector3 scale = crecentFlameObject.transform.localScale * ((int)(i * 0.5f) + 1);
 
-			if ((i % 2 != 0 && scale.x > 0) || (i % 2 == 0 && scale.x < 0))
-			{
-				scale.x = scale.x * -1;
-				crecentFlameObject.transform.localScale = scale;
-			}
+            if ((i % 2 != 0 && scale.x > 0) || (i % 2 == 0 && scale.x < 0))
+            {
+                scale.x = scale.x * -1;
+            }
 
-			if ((i % 2 == 0 && _damageInfo.attackForce.x < 0) || (i % 2 != 0 && _damageInfo.attackForce.x > 0))
-			{
-				_damageInfo.attackForce.x = _damageInfo.attackForce.x * -1;
-			}
+            crecentFlameObject.transform.localScale = scale;
 
-			playerShootAttackCollider.SetDamageColliderInfo(_damageInfo.damage, "Monster", _damageInfo.attackForce, this.gameObject, false);
-			crecentFlameCtrl.InitCrecentFlame();
+            if ((i % 2 == 0 && _damageInfo.attackForce.x < 0) || (i % 2 != 0 && _damageInfo.attackForce.x > 0))
+            {
+                _damageInfo.attackForce.x = _damageInfo.attackForce.x * -1;
+            }
 
+            playerShootAttackCollider.SetDamageColliderInfo(_damageInfo.damage, "Monster", _damageInfo.attackForce, this.gameObject, false);
+            crecentFlameCtrl.InitCrecentFlame();
+            crecentFlameCtrls[i] = crecentFlameCtrl;
 
-			yield return new WaitForSeconds(boomCreateSpeed);
-		}
-	}
+            if (i % 2 == 0)
+                yield return null;
+            else
+                yield return new WaitForSeconds(createSpeed);
+        }
+    }
 }

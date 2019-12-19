@@ -40,6 +40,18 @@ public class EquipmentPanel : MonoBehaviour
 		previousItem = null;
 		return false;
 	}
+	public bool AddItem(EquippableItem _item)
+	{
+		for (int i = 0; i < equipmentSlots.Length; i++)
+		{
+			if (equipmentSlots[i].Item == null)
+			{
+				equipmentSlots[i].Item = _item;
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public bool RemoveItem(EquippableItem item)
 	{
