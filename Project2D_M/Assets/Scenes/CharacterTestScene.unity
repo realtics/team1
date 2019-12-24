@@ -893,6 +893,26 @@ PrefabInstance:
       propertyPath: comboUIManager
       value: 
       objectReference: {fileID: 573527739}
+    - target: {fileID: 1124892545, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: audioInfos.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124892545, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: audioInfos.Array.data[4].audioName
+      value: Upper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124892545, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: audioInfos.Array.data[4].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bf096586679f754daefaa987df0b1a9, type: 3}
+    - target: {fileID: 1124892545, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: audioInfos.Array.data[5].audioName
+      value: Downsmash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124892545, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
+      propertyPath: audioInfos.Array.data[5].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7932c3ebf964a24468828eaf4177442a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e46492e23ee58468fae3a5aafc3ea7, type: 3}
 --- !u!1001 &5464745098757987517

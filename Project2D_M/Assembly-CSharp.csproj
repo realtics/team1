@@ -205,7 +205,6 @@
     <Compile Include="Assets\Script\UI\StageInfoOpener.cs" />
     <Compile Include="Assets\Script\UI\StageLoadSceneButton.cs" />
     <Compile Include="Assets\Script\UI\StageOpenManager.cs" />
-    <Compile Include="Assets\Script\UI\StartUIInit.cs" />
     <Compile Include="Assets\Script\UI\UIController\ControllerUIEvent.cs" />
     <Compile Include="Assets\Script\UI\UIController\EvasionButton.cs" />
     <Compile Include="Assets\Script\UI\UIController\JoyStick.cs" />
@@ -308,6 +307,12 @@
     <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\SkeletonUtilityBone.cs" />
     <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\SkeletonUtilityConstraint.cs" />
     <Compile Include="Assets\Spine\spine-unity\SpineAttributes.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\Rotate.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs" />
     <None Include="Assets\Resources\Character\Player\Effect\BlazeDance\Effect_blazedance_calpmaniel.atlas.txt" />
     <None Include="Assets\Spine\spine-unity\Shaders\Utility\HiddenPass.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Spine-Skeleton-Fill.shader" />

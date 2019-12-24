@@ -14,7 +14,6 @@ public class StageLoadSceneButton : LoadSceneButton
 		}
 		else PlayerDataManager.Inst.GetPlayerData().fatigability--;
 
-		Debug.Log(PlayerDataManager.Inst.GetPlayerData().fatigability);
 		LoadingProgress.LoadScene((int)wantToGoSceneName);
 	}
 }

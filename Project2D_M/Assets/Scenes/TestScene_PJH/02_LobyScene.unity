@@ -6967,7 +6967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.6681466, b: 0, a: 1}
+  m_Color: {r: 0.5660378, g: 0.46486193, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7998,7 +7998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.6681466, b: 0, a: 1}
+  m_Color: {r: 0.5660378, g: 0.46486193, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -20278,7 +20278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.6681466, b: 0, a: 1}
+  m_Color: {r: 0.5660378, g: 0.46486193, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -25458,7 +25458,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -26183,7 +26183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.6681466, b: 0, a: 1}
+  m_Color: {r: 0.5660378, g: 0.46486193, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -33947,6 +33947,11 @@ PrefabInstance:
     - target: {fileID: 9145372796725407129, guid: 76b0e055683ed0c4e86742686ada0f1d,
         type: 3}
       propertyPath: m_Name
+      value: DataManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145372796725407129, guid: 76b0e055683ed0c4e86742686ada0f1d,
+        type: 3}
+      propertyPath: m_TagString
       value: DataManager
       objectReference: {fileID: 0}
     - target: {fileID: 9145372796725407135, guid: 76b0e055683ed0c4e86742686ada0f1d,

@@ -18,6 +18,6 @@ public class TestLarvo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		m_Data_test.
+		//m_Data_test.
     }
 }

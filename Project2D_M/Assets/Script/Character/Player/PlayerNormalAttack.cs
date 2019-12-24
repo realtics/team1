@@ -36,8 +36,9 @@ public class PlayerNormalAttack : MonoBehaviour
 	private PlayerInput m_playerInput = null;
 	private PlayerCrowdControlManager m_playerCrowdControlManager=null;
 	private PlayerRandAudioFuntion m_randAudioFuntion = null;
+	private PlayerAudioFunction m_audioFuntion = null;
 
- [SerializeField]private bool m_bAttacking;
+	[SerializeField]private bool m_bAttacking;
 
 	private void Awake()
 	{
@@ -49,6 +50,8 @@ public class PlayerNormalAttack : MonoBehaviour
 		m_playerInput = this.GetComponent<PlayerInput>();
 		m_playerCrowdControlManager = this.GetComponent<PlayerCrowdControlManager>();
 		m_randAudioFuntion = this.GetComponent<PlayerRandAudioFuntion>();
+		m_audioFuntion = this.GetComponent<PlayerAudioFunction>();
+
 		m_bAttacking = false;
 
 		m_NormalAttackDic = new Dictionary<string, AttackInfo>();
@@ -111,8 +114,6 @@ public class PlayerNormalAttack : MonoBehaviour
 
 	private IEnumerator AttackCoroutine()
 	{
-		//yield return new WaitForSeconds(0.02f);
-
 		if (!m_animFuntion.IsTag("NormalAttack"))
 		{
 			m_bAttacking = false;
@@ -217,10 +218,20 @@ public class PlayerNormalAttack : MonoBehaviour
 				case "attack_3":
 					AddMeve(4.0f);
 					m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic["attack_3_1"].damageRatio, "Monster", m_NormalAttackDic["attack_3_1"].damageForce);
+					m_randAudioFuntion.VoiceRandPlay("Attack");
 					break;
 				case "air_attack_3":
 					AddMeve(4.0f);
 					m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic["air_attack_3"].damageRatio, "Monster", m_NormalAttackDic["air_attack_3"].damageForce);
+					m_randAudioFuntion.VoiceRandPlay("Attack");
+					break;
+				case "attack_upper":
+					m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic[_animName].damageRatio, "Monster", m_NormalAttackDic[_animName].damageForce);
+					m_audioFuntion.VoicePlay("Upper",false);
+					break;
+				case "attack_downsmash":
+					m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic[_animName].damageRatio, "Monster", m_NormalAttackDic[_animName].damageForce);
+					m_audioFuntion.VoicePlay("Downsmash", false);
 					break;
 				default:
 					m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic[_animName].damageRatio, "Monster", m_NormalAttackDic[_animName].damageForce);
@@ -277,6 +288,7 @@ public class PlayerNormalAttack : MonoBehaviour
 		m_characterMove.MoveStop();
 		m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic["attack_3_2"].damageRatio, "Monster", m_NormalAttackDic["attack_3_2"].damageForce);
 		m_effectAnimFuntion.EffectPlay("attack_3_2", false);
+		m_randAudioFuntion.VoiceRandPlay("Attack");
 	}
 
 	private void UpperJump()

@@ -63,6 +63,7 @@ public class BGMAudioManager : Singletone<BGMAudioManager>
 
 		AudioStop();
 		StartCoroutine(FadeIn(sceneBGMInfo, _loof));
+		m_currntBGM = sceneBGMInfo.sceneName;
 	}
 
 	public void AudioStop()

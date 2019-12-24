@@ -101,12 +101,14 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
                 break;
         }
 
-        BinaryManager.Save(m_playerSaveData, dataname);
+		InitPlayerData();
+		BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     private void InitPlayerData()
     {
-        m_playerData = new PlayerData();
+		if(m_playerData == null)
+			m_playerData = new PlayerData();
 
         m_playerData.level = m_playerSaveData.level;
         m_playerData.exp = m_playerSaveData.exp;

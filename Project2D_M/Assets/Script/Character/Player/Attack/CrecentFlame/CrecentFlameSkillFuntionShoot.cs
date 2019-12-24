@@ -23,7 +23,6 @@ public class CrecentFlameSkillFuntionShoot : SkillFuntionShoot
 	{
 		m_playerState.bSkipAction = false;
 
-
 		m_animFuntion.PlayAnim(_skillEffentName);
 		m_crowdControlManager.ImpenetrableOn();
 

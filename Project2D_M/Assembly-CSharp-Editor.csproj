@@ -95,6 +95,7 @@
     <Compile Include="Assets\Spine\spine-unity\Modules\Timeline\SpineSkeletonFlip\Editor\SpineSkeletonFlipDrawer.cs" />
     <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\Editor\SkeletonUtilityBoneInspector.cs" />
     <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\Editor\SkeletonUtilityInspector.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
     <None Include="Assets\Spine\spine-unity\Editor\Resources\SpineAssetDatabaseMarker.txt" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/ICT03_02/Desktop/Unity_Project/Project2D_M/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>

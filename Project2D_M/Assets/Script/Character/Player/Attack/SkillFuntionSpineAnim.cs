@@ -43,14 +43,13 @@ public class SkillFuntionSpineAnim : SkillFuntion
 
 		m_playerState.bSkipAction = false;
 
-		m_rigidbody2D.velocity = Vector3.zero;
-
 		m_effectAnimFuntion.EffectPlay(_skillEffentName, false);
 		m_animFuntion.PlayAnim(_skillEffentName);
 
 		yield return new WaitForSeconds(0.03f);
 
 		m_playerState.PlayerStateSPAttack();
+		m_rigidbody2D.velocity = Vector3.zero;
 		m_crowdControlManager.OnAirStop();
 		m_crowdControlManager.SuperArmorOn();
 
