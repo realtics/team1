@@ -7,6 +7,7 @@ public class CrecentFlameCtrl : MonoBehaviour
 	private SpriteRenderer[] m_spriteRenderer = null;
 	private BoxCollider2D collider = null;
 	private Animator[] animator = null;
+	private AudioFunction m_audioFunction;
 	public void InitCrecentFlame()
 	{
 		m_spriteRenderer = m_spriteRenderer ?? GetComponentsInChildren<SpriteRenderer>();
@@ -16,10 +17,14 @@ public class CrecentFlameCtrl : MonoBehaviour
 		SetSpriteProgress(0.0f);
 		SetSpriteAlpha(1.0f);
 		this.gameObject.SetActive(true);
+
+		m_audioFunction = m_audioFunction ?? GetComponent<AudioFunction>();
+		m_audioFunction.AudioPlay("CrecentFlame_Init",false);
 	}
 
 	public void SkillAction()
 	{
+		m_audioFunction.AudioPlay("CrecentFlame_Shot", false);
 		StartCoroutine(nameof(CrecentFlameCoroutine));
 	}
 

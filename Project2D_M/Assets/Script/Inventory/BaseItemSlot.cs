@@ -18,7 +18,9 @@ public class BaseItemSlot : MonoBehaviour
 	[SerializeField] protected TextMeshProUGUI itemlevel;
 	[SerializeField] protected Image noticeImage;
 	[SerializeField] protected TextMeshProUGUI amountText;
-	public InfoDisplay infoDisplay;
+
+	public InfoDisplay wearInfoDisplay;
+	public InfoDisplay notWearInfoDisplay;
 
 	protected readonly int m_hashBOpen = Animator.StringToHash("bOpen");
 
@@ -26,7 +28,8 @@ public class BaseItemSlot : MonoBehaviour
 
 	public SLOT_STATE eSlotState;
 
-	public event Action<BaseItemSlot> MountingOrUnMountingEvent;
+	public event Action<BaseItemSlot> MountingEvent;
+	public event Action<BaseItemSlot> UnMountingEvent;
 
 	private Item m_item;
 	public Item Item
@@ -115,13 +118,23 @@ public class BaseItemSlot : MonoBehaviour
 		Amount = m_amount;
 	}
 
-	public void MountingOrUnMountingItem()
+	public void MountingItem()
 	{
-		if (Item != null && MountingOrUnMountingEvent != null)
+		if (Item != null && MountingEvent != null)
 		{
-			MountingOrUnMountingEvent(this);
+			MountingEvent(this);
 		}
 	}
+
+	public void UnMountingItem()
+	{
+		if (Item != null && UnMountingEvent != null)
+		{
+			UnMountingEvent(this);
+		}
+	}
+
+
 	public void ClickViewDetailsEvent()
 	{
 		SetViewDetails();
@@ -136,45 +149,58 @@ public class BaseItemSlot : MonoBehaviour
 	{
 		if (_isMountingSlot)
 		{
-			infoDisplay.saveEquipmentSlotIndex = slotNum;
+			wearInfoDisplay.saveEquipmentSlotIndex = slotNum;
 		}
 		else
 		{
-			infoDisplay.saveInventorySlotIndex = slotNum;
+			notWearInfoDisplay.saveInventorySlotIndex = slotNum;
+			wearInfoDisplay.saveInventorySlotIndex = slotNum;
+
 			switch (_item.equipmentType)
 			{
 				case EQUIPMENT_TYPE.WEAPON:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.WEAPON;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.WEAPON;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.WEAPON;
 					break;
 				case EQUIPMENT_TYPE.HAT:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.HAT;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.HAT;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.HAT;
 					break;
 				case EQUIPMENT_TYPE.TOP:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.TOP;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.TOP;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.TOP;
 					break;
 				case EQUIPMENT_TYPE.GLOVES:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.GLOVES;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.GLOVES;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.GLOVES;
 					break;
 				case EQUIPMENT_TYPE.PANTS:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.PANTS;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.PANTS;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.PANTS;
 					break;
 				case EQUIPMENT_TYPE.SHOES:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.SHOES;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.SHOES;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.SHOES;
 					break;
 				case EQUIPMENT_TYPE.NECKLACE:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.NECKLACE;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.NECKLACE;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.NECKLACE;
 					break;
 				case EQUIPMENT_TYPE.EARRING_1:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_1;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_1;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_1;
 					break;
 				case EQUIPMENT_TYPE.EARRING_2:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_2;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_2;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.EARRING_2;
 					break;
 				case EQUIPMENT_TYPE.RING_1:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_1;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_1;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_1;
 					break;
 				case EQUIPMENT_TYPE.RING_2:
-					infoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_2;
+					notWearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_2;
+					wearInfoDisplay.saveEquipmentSlotIndex = (int)EQUIPMENT_TYPE.RING_2;
 					break;
 			}
 		}

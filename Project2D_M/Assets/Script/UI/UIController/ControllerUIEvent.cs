@@ -17,10 +17,7 @@ public class ControllerUIEvent : MonoBehaviour
     [SerializeField] private EventTrigger m_normalAttackEvent = null;
     [SerializeField] private EventTrigger m_jumpEvent = null;
 	[SerializeField] private EvasionButton m_evasionButton = null;
-	[SerializeField] private SkillQuick skillQuick1 = null;
-	[SerializeField] private SkillQuick skillQuick2 = null;
-	[SerializeField] private SkillQuick skillQuick3 = null;
-	[SerializeField] private SkillQuick skillQuick4 = null;
+	[SerializeField] private SkillQuick[] skillQuicks = null;
 
 	private PlayerEvasion m_playerEvasion = null;
 
@@ -38,10 +35,16 @@ public class ControllerUIEvent : MonoBehaviour
         JumpConnect();
         EvasionConnect();
 
-		skillQuick1.InitQuickSkill("FireBallShoot", m_playerInput);
-		skillQuick2.InitQuickSkill("FireBoomShoot", m_playerInput);
-		skillQuick3.InitQuickSkill("FlameHaze", m_playerInput);
-		skillQuick4.InitQuickSkill("CrecentFlameShoot", m_playerInput);
+		int playerLevel = PlayerDataManager.Inst.GetPlayerData().level;
+		string[] skillNames = SkillDataManager.Inst.GetSkillNames();
+		for(int i = 0; i < skillNames.Length; ++i)
+		{
+			if (i >= skillQuicks.Length)
+				break;
+
+			if(playerLevel >= SkillDataManager.Inst.GetSkillInfo(skillNames[i]).levelLimit)
+				skillQuicks[i].InitQuickSkill(skillNames[i], m_playerInput);
+		}
 	}
 
     private void JoyStickConnect()

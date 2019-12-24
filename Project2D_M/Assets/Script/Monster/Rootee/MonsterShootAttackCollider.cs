@@ -8,6 +8,7 @@ public class MonsterShootAttackCollider : ShootAttackCollider
 	private MonsterInfo m_monsterInfo = null;
 	private CinemachineImpulseSource m_cinemachineImpulse = null;
 	private bool m_hited = false;
+	private RooteeProjectile m_projectile;
 
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -42,6 +43,10 @@ public class MonsterShootAttackCollider : ShootAttackCollider
 				ObjectPool.Inst.PushToPool(this.gameObject);
 
 		}
+		if(collision.tag == "Floor")
+		{
+			StartCoroutine(m_projectile.InGround());
+		}
 	}
 
 	public override void SetDamageColliderInfo(int _damage, string _tagName, Vector2 _attackForce, GameObject _order, bool _autoDistroy = true)
@@ -54,6 +59,9 @@ public class MonsterShootAttackCollider : ShootAttackCollider
 
 		m_monsterInfo = m_monsterInfo ?? _order.transform.root.GetComponent<MonsterInfo>();
 		m_cinemachineImpulse = m_cinemachineImpulse ?? this.GetComponent<CinemachineImpulseSource>();
+		m_projectile = this.GetComponent<RooteeProjectile>();
 	}
+
+
 
 }

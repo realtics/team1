@@ -13,16 +13,20 @@ public class MonsterFsmBase : MonsterStateMachine
 	private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
 
 	protected Animator m_animator;
-    private MonsterMove m_monsterMove;
-	private MonsterInfo m_monsterInfo;
-	private MonsterAttack m_monsterAttack;
+    protected MonsterMove m_monsterMove;
+	protected MonsterInfo m_monsterInfo;
+	protected CrowdControlManager m_crowdControlMg;
 
-    [SerializeField]
+	[SerializeField]
 	private float m_appearTime;
+	[SerializeField]
+	private int m_attackRanged;
 
 	protected bool m_bIsAir;
 	protected float m_currentDelay;
 	private bool m_bLive;
+	protected bool m_bRangedMonster;
+	protected bool m_bRangedAttack;
 
 	protected MonsterHpBar m_monsterHpBar;
 	
@@ -43,10 +47,17 @@ public class MonsterFsmBase : MonsterStateMachine
 
 		#region value bool
 		m_bIsAir = false;
+		m_bRangedMonster = false;
+		m_bRangedAttack = false;
 		#endregion
+
 		m_monsterHpBar = GetComponentInChildren<MonsterHpBar>();
 		m_monsterHpBar.transform.gameObject.SetActive(false);
 
+		m_crowdControlMg = GetComponent<CrowdControlManager>();
+		m_crowdControlMg.Impenetrable(m_appearTime);
+		if (this.GetComponent<MonsterRootee>() != null)
+			m_bRangedMonster = true;
 	}
 
 
@@ -59,7 +70,6 @@ public class MonsterFsmBase : MonsterStateMachine
 				break;
 			case ENEMY_STATE.IDLE:
 				WorkIdle = new Work(Idle(), true);
-				//ActionStart(Idle());
 				break;
 			case ENEMY_STATE.ATTACK:
 				WorkAttack = new Work(Attack(), true);
@@ -136,7 +146,7 @@ public class MonsterFsmBase : MonsterStateMachine
 	{
 		while(true)
 		{
-			m_monsterAttack.m_bAttack = true;
+			//m_monsterAttack.m_bAttack = true;
 			yield return null;
 		}
 	}
@@ -145,9 +155,6 @@ public class MonsterFsmBase : MonsterStateMachine
     {
 		while (true)
         {
-			Debug_UI.Inst.SetDebugText("Cha_anim", m_animFunction.GetCurrntAnimClipName().ToString());
-			Debug_UI.Inst.SetDebugText("isMove", m_monsterMove.isMove.ToString());
-			Debug_UI.Inst.SetDebugText("isAir", m_bIsAir.ToString());
 			CheckHit();
 			CheckCanAttack();
 			if (!m_bIsAir)
@@ -166,16 +173,10 @@ public class MonsterFsmBase : MonsterStateMachine
 		m_monsterMove.isMove = false;
 		m_animator.SetFloat(m_hashFSpeed, 0);
 		m_monsterMove.m_characterMove.MoveStop();
-
+		CancelInvoke();
 
 		while (true)
 		{
-			///Debug
-			Debug_UI.Inst.SetDebugText("Cha_anim", m_animFunction.GetCurrntAnimClipName().ToString());
-			Debug_UI.Inst.SetDebugText("isMove", m_monsterMove.isMove.ToString());
-			Debug_UI.Inst.SetDebugText("isAir", m_bIsAir.ToString());
-			///Debug End
-
 			m_monsterHpBar.SetHPBar(m_monsterInfo);
 			m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
 			CheckDie();
@@ -193,6 +194,7 @@ public class MonsterFsmBase : MonsterStateMachine
 
 	IEnumerator Die()
 	{
+		StageManager.Inst.SetMonsterCount(m_monsterInfo.bOverKill);
 		float time = 3.0f;
 		while(true)
 		{
@@ -219,18 +221,54 @@ public class MonsterFsmBase : MonsterStateMachine
 
 	protected bool CheckCanAttack()
 	{
-		if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > - m_monsterInfo.GetAttackDistance() &&
-			StageManager.Inst.playerTransform.position.x - this.transform.position.x < m_monsterInfo.GetAttackDistance())
+		if(m_bRangedMonster)
 		{
-			if(nowState ==ENEMY_STATE.ATTACK)
+			if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > -m_monsterInfo.GetAttackDistance() && StageManager.Inst.playerTransform.position.x - this.transform.position.x < m_monsterInfo.GetAttackDistance())
 			{
+				if (nowState == ENEMY_STATE.ATTACK)
+				{
+				}
+				else
+				{
+					nowState = ENEMY_STATE.ATTACK;
+				}
+				m_monsterMove.MoveDir();
+				return true;
 			}
-			else
+			else if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > -(m_monsterInfo.GetAttackDistance()+ m_attackRanged) && StageManager.Inst.playerTransform.position.x - this.transform.position.x < (m_monsterInfo.GetAttackDistance()+ m_attackRanged))
 			{
-				nowState = ENEMY_STATE.ATTACK;
+				int random;
+				random = Random.Range(1, 40);
+				m_bRangedAttack = true;
+
+				if (true)
+				{
+					if (nowState == ENEMY_STATE.ATTACK)
+					{
+					}
+					else
+					{
+						nowState = ENEMY_STATE.ATTACK;
+					}
+					m_monsterMove.MoveDir();
+					return true;
+				}
 			}
-			m_monsterMove.MoveDir();
-			return true;
+		}
+		else
+		{
+			if (StageManager.Inst.playerTransform.position.x - this.transform.position.x > -m_monsterInfo.GetAttackDistance() && StageManager.Inst.playerTransform.position.x - this.transform.position.x < m_monsterInfo.GetAttackDistance())
+			{
+				if (nowState == ENEMY_STATE.ATTACK)
+				{
+				}
+				else
+				{
+					nowState = ENEMY_STATE.ATTACK;
+				}
+				m_monsterMove.MoveDir();
+				return true;
+			}
 		}
 		return false;
 	}

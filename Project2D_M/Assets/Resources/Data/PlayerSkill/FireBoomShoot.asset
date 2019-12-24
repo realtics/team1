@@ -19,3 +19,4 @@ MonoBehaviour:
   skillImage: {fileID: -1153641287313354496, guid: 0c4b47a1e0f8a3a4f8e2a7398976b504,
     type: 3}
   coolTime: 15
+  levelLimit: 1

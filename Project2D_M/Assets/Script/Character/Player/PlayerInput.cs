@@ -32,6 +32,7 @@ public class PlayerInput : ScriptEnable
     private PlayerAnimFuntion m_animFuntion= null;
 	private SkillManager m_skillManager = null;
     private PlayerInfo m_playerInfo;
+	private AudioFunction m_audioFunction = null;
     private bool m_bUiMove = false;
 
 	[SerializeField] public JOYSTICK_STATE joystickState = JOYSTICK_STATE.JOYSTICK_CENTER;
@@ -47,7 +48,9 @@ public class PlayerInput : ScriptEnable
 		m_playerNormalAttack = this.GetComponent<PlayerNormalAttack>();
         m_playerEvasion = this.GetComponent<PlayerEvasion>();
         m_playerInfo = this.GetComponent<PlayerInfo>();
-    }
+		m_audioFunction = this.GetComponent<AudioFunction>();
+
+	}
 
     private void FixedUpdate()
     {
@@ -169,7 +172,8 @@ public class PlayerInput : ScriptEnable
     {
 		m_animFuntion.SetTrigger(m_animFuntion.hashBJump);
         m_characterJump.Jump(m_playerInfo.fJumpforce);
-    }
+		m_audioFunction.AudioPlay("Jump", false);
+	}
 
     public void AttackInput()
     {

@@ -10,12 +10,13 @@ public class ItemSlot : BaseItemSlot
 	public GameObject viewDitailObject;
 	public GameObject infoViewDitailObject;
 
+	public GameObject mountingViewDitailObject;
+	public GameObject infoMountingViewDitailObject;
+
 	public bool isMountingSlot;
 
 	public virtual void SetStart()
 	{
-		Debug.Log("인벤토리 슬롯 실행.");
-
 		switch (eSlotState)
 		{
 			case SLOT_STATE.NOT_MOUNTING:
@@ -36,22 +37,47 @@ public class ItemSlot : BaseItemSlot
 
 	protected override void SetViewDetails()
 	{
-		if (Item is EquippableItem)
+		if(eSlotState == SLOT_STATE.NOT_MOUNTING)
 		{
-			infoDisplay.ShowInfomation((EquippableItem)Item);
-			SetSelectSlot((EquippableItem)Item, false);
-		}
+			if (Item is EquippableItem)
+			{
+				notWearInfoDisplay.ShowInfomation((EquippableItem)Item);
+				SetSelectSlot((EquippableItem)Item, false);
+			}
 
-		PlayAnimationViewDetails();
+			PlayAnimationViewDetails(false);
+		}
+		else if(eSlotState == SLOT_STATE.MOUNTING)
+		{
+			if (Item is EquippableItem)
+			{
+				wearInfoDisplay.ShowInfomation((EquippableItem)Item);
+				SetSelectSlot((EquippableItem)Item, false);
+			}
+
+			PlayAnimationViewDetails(true);
+		}
 	}
 
-	private void PlayAnimationViewDetails()
+	private void PlayAnimationViewDetails(bool _isMounting)
 	{
-		if (Item != null)
+		if(_isMounting)
 		{
-			Animator animator = viewDitailObject.GetComponent<Animator>();
+			if (Item != null)
+			{
+				Animator animator = mountingViewDitailObject.GetComponent<Animator>();
 
-			animator.SetBool(m_hashBOpen, true);
+				animator.SetBool(m_hashBOpen, true);
+			}
+		}
+		else
+		{
+			if (Item != null)
+			{
+				Animator animator = viewDitailObject.GetComponent<Animator>();
+
+				animator.SetBool(m_hashBOpen, true);
+			}
 		}
 		
 	}

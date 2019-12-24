@@ -17,20 +17,6 @@ public class ItemSlotSaveData
 	}
 }
 
-//public class EquipmentSlotSaveData
-//{
-//	public string itemID;
-//	public int amount;
-//	public SLOT_STATE slotState;
-
-//	public EquipmentSlotSaveData(string _id, int _amount, SLOT_STATE _slotState)
-//	{
-//		itemID = _id;
-//		amount = _amount;
-//		slotState = _slotState;
-//	}
-//}
-
 [Serializable]
 public class ItemContainerSaveData
 {

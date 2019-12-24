@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3839211021398491152}
   - component: {fileID: 3839211021398491153}
   - component: {fileID: 3839211021398491154}
+  - component: {fileID: 2075196480870928030}
   m_Layer: 0
   m_Name: Mairon
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3839211021398491155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.66, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,7 +79,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
 --- !u!114 &3839211021398491154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,5 +109,18 @@ MonoBehaviour:
   logErrors: 0
   disableRenderingOnOverride: 1
   _animationName: op_idle
-  loop: 0
+  loop: 1
   timeScale: 1
+--- !u!114 &2075196480870928030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839211021398491155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b486c4272767e4a4898024dc52180bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1000

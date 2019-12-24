@@ -8,6 +8,12 @@ public class ItemSaveManager : Singletone<ItemSaveManager>
 	private const string InventoryFileName = "Inventory";
 	private const string EquipmentFileName = "Equipment";
 
+	private void Awake()
+	{
+		if (m_itemDataBase == null)
+			m_itemDataBase = (ItemDataBase)Resources.Load("Data/ItemDataBase");
+	}
+
 	public void LoadInventory(InventoryManger _inventoryManager)
 	{
 		ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(InventoryFileName);
@@ -61,6 +67,36 @@ public class ItemSaveManager : Singletone<ItemSaveManager>
 		}
 	}
 
+	public PlayerDataManager.PlayerData LoadPlayerEquipmentStatusSetting(PlayerDataManager.PlayerData _playerData)
+	{
+		ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(EquipmentFileName);
+
+		if (savedSlots == null) return _playerData;
+
+		for (int i = 0; i < savedSlots.savedSlots.Length; i++)
+		{
+			ItemSlotSaveData savedSlot = savedSlots.savedSlots[i];
+
+			if (savedSlot == null)
+			{
+				
+			}
+			else
+			{
+				EquippableItem equipItem = (EquippableItem)m_itemDataBase.GetItemReference(savedSlot.itemID);
+
+				_playerData.attack += equipItem.attackBonus;
+				_playerData.defensive += equipItem.armorBonus;
+				_playerData.maxHp += equipItem.maxHealthBonus;
+
+				Debug.Log("공격력 : " + equipItem.attackBonus + " 더함");
+				Debug.Log("방어력 : " + equipItem.armorBonus + " 더함");
+				Debug.Log("체력 : " + equipItem.maxHealthBonus + " 더함");
+			}
+		}
+		return _playerData;
+	}
+
 
 	public void SaveInventory(InventoryManger _inventoryManger)
 	{
@@ -92,7 +128,9 @@ public class ItemSaveManager : Singletone<ItemSaveManager>
 		}
 
 		ItemSaveIO.SaveItems(saveData, _fileName);
-		Debug.Log(_fileName + "저장 완료");
+
+        Debug.Log(_fileName + "저장 완료");
+       
 	}
 
 	private void SaveEquipmentItems(IList<ItemSlot> _itemSlots, string _fileName)

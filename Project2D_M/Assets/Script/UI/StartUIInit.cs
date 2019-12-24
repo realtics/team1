@@ -6,6 +6,6 @@ public class StartUIInit : MonoBehaviour
 {
     private void Awake()
     {
-        Screen.SetResolution(1920, 1080, false);
+        Screen.SetResolution(1920, (1080/16)*9, false);
     }
 }

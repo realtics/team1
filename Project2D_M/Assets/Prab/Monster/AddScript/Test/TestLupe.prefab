@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8043905803266854926}
   - component: {fileID: 3693826847195681627}
   - component: {fileID: 5117128862464961960}
-  - component: {fileID: 2359046002180070597}
   - component: {fileID: 2990237126952637828}
   - component: {fileID: 458349848721985494}
   m_Layer: 10
@@ -38,7 +37,6 @@ Transform:
   - {fileID: 7326014424357655794}
   - {fileID: 1081705036597077086}
   - {fileID: 7326014424634636369}
-  - {fileID: 5967171910865481315}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,12 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  maxHp: 100
-  hp: 100
+  maxHp: 555
+  hp: 555
   defensive: 10
   critical: 0
-  m_fAttackDistance: 0
-  m_fSpeed: 0
+  m_fAttackDistance: 2
+  m_fSpeed: 5
   m_appearTime: 0
 --- !u!114 &3693826847195681627
 MonoBehaviour:
@@ -135,20 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bScriptEnable: 1
---- !u!114 &2359046002180070597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543539019729880910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53eaa74c0489dce4aa5a326b934cfe2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_bAttack: 0
-  m_monsterSkill: {fileID: 0}
 --- !u!114 &2990237126952637828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,76 +157,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fe4af2fda3068649a5b15c494f33c5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &3455840465376681636
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5967171910865481315}
-  - component: {fileID: 5299288010443672906}
-  - component: {fileID: 1899705935498428392}
-  m_Layer: 10
-  m_Name: FoodCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5967171910865481315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3455840465376681636}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3219342298069967304}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5299288010443672906
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3455840465376681636}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1899705935498428392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3455840465376681636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2344ad78ecf1b7848b2817622ce66512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4122175351645332683
@@ -290,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animFuntion: {fileID: 0}
-  m_playerState: {fileID: 0}
+  m_playerObject: {fileID: 2543539019729880910}
 --- !u!1 &7326014423054582972
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +217,7 @@ GameObject:
   - component: {fileID: 7326014423054582968}
   - component: {fileID: 7326014423054582969}
   - component: {fileID: 7326014423054582974}
+  - component: {fileID: 1551944016}
   m_Layer: 12
   m_Name: MeleeAttack
   m_TagString: Monster
@@ -368,7 +283,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1450764655
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
 --- !u!114 &7326014423054582974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +315,18 @@ MonoBehaviour:
   _animationName: 
   loop: 0
   timeScale: 1
+--- !u!114 &1551944016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326014423054582972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f037a04df31d144ca65944c324cff8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7326014424357655796
 GameObject:
   m_ObjectHideFlags: 0

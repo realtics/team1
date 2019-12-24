@@ -751,16 +751,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130155692955117}
   noticeImage: {fileID: 5862130154593126568}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 0
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 0
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130154465697068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,16 +2094,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130156337716433}
   noticeImage: {fileID: 5862130155472464524}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 2
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 2
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130154861414186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,16 +2488,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130155479454082}
   noticeImage: {fileID: 5862130155656444827}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 4
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 4
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155043325282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,16 +3102,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130154861414184}
   noticeImage: {fileID: 5862130155843088577}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 3
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 3
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155151068900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4151,16 +4155,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130155946267319}
   noticeImage: {fileID: 5862130156365704426}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 6
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 6
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155517336333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,16 +4393,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130155933801572}
   noticeImage: {fileID: 5862130155391700027}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 8
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 8
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155605655308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4998,16 +5004,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130154576907895}
   noticeImage: {fileID: 5862130155800122857}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 9
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 9
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155692955119
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,16 +5554,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130155652168009}
   noticeImage: {fileID: 5862130154383985025}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 7
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 7
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155795263988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5710,16 +5718,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130155715106713}
   noticeImage: {fileID: 5862130155881582258}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 1
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 1
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130155800122859
 GameObject:
   m_ObjectHideFlags: 0
@@ -6419,7 +6428,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862130155952480521}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children:
@@ -6457,7 +6466,6 @@ MonoBehaviour:
   - {fileID: 5862130155552822153}
   - {fileID: 5862130155683542665}
   - {fileID: 5862130156240295807}
-  WearEquipmentInfo: {fileID: 0}
 --- !u!1 &5862130156015598243
 GameObject:
   m_ObjectHideFlags: 0
@@ -7097,16 +7105,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130155115550148}
   noticeImage: {fileID: 5862130155151068898}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 5
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 5
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130156209421413
 GameObject:
   m_ObjectHideFlags: 0
@@ -7333,16 +7342,17 @@ MonoBehaviour:
   itemlevel: {fileID: 5862130154317145487}
   noticeImage: {fileID: 5862130155057778484}
   amountText: {fileID: 0}
-  infoDisplay: {fileID: 0}
+  wearInfoDisplay: {fileID: 0}
+  notWearInfoDisplay: {fileID: 0}
   slotNum: 10
   eSlotState: 0
   viewDitailObject: {fileID: 0}
   infoViewDitailObject: {fileID: 0}
+  mountingViewDitailObject: {fileID: 0}
+  infoMountingViewDitailObject: {fileID: 0}
   isMountingSlot: 0
   equipmentType: 10
   rememberInventoryIndex: 0
-  mountingViewDitailObject: {fileID: 0}
-  infoMountingViewDitailObject: {fileID: 0}
 --- !u!1 &5862130156262899843
 GameObject:
   m_ObjectHideFlags: 0

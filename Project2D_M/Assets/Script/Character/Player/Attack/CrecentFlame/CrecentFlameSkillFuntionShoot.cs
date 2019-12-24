@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CrecentFlameSkillFuntionShoot : SkillFuntionShoot
 {
+	private AudioFunction m_audioFunction = null;
     public override bool SkillAction()
 	{
 		string skillEffentName;
@@ -31,11 +32,13 @@ public class CrecentFlameSkillFuntionShoot : SkillFuntionShoot
 		m_playerState.PlayerStateSPAttack();
 		m_rigidbody2D.velocity = Vector3.zero;
 		m_crowdControlManager.OnAirStop();
-		string currntAnimName = m_animFuntion.GetCurrntAnimClipName();
-
         m_skillShoot.InitShoot(m_playerState.IsPlayerLookRight(), m_damageInfo);
 
-        while (m_animFuntion.IsTag(skillName))
+		m_audioFunction = m_audioFunction ?? GetComponent<AudioFunction>();
+		m_audioFunction.AudioPlay("Start", false);
+		string currntAnimName = m_animFuntion.GetCurrntAnimClipName();
+
+		while (m_animFuntion.IsTag(skillName))
 		{
 			if (currntAnimName != m_animFuntion.GetCurrntAnimClipName())
 			{
@@ -64,6 +67,7 @@ public class CrecentFlameSkillFuntionShoot : SkillFuntionShoot
 			if (m_animFuntion.IsName(_skillEffentName + "_action"))
 			{
 				m_skillShoot.ShootAction();
+				m_audioFunction.AudioPlay("Shot", false);
 			}
 		}
 	}

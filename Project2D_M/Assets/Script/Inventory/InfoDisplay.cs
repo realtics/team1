@@ -8,8 +8,8 @@ using System;
 
 public class InfoDisplay : MonoBehaviour
 {
-	[SerializeField] Inventory inventory;
-	[SerializeField] EquipmentPanel equipmentPanel;
+	[SerializeField] Inventory inventory = null;
+	[SerializeField] EquipmentPanel equipmentPanel = null;
 
 	private StringBuilder m_sbRatingAndType = new StringBuilder();
 
@@ -30,6 +30,8 @@ public class InfoDisplay : MonoBehaviour
 
 	public int saveEquipmentSlotIndex;
 	public int saveInventorySlotIndex;
+
+	public InfoText[] RefreshInfoList;
 
 	public void ShowInfomation(EquippableItem _item)
 	{
@@ -63,29 +65,38 @@ public class InfoDisplay : MonoBehaviour
 		}
 	}
 
+	public void UpdateStatusInfo()
+	{
+		for (int i = 0; i < RefreshInfoList.Length; i++)
+		{
+			RefreshInfoList[i].RefreshStatus();
+		}
+	}
+
 	public void ClickMountingItem()
 	{
-		if(isWearEquipmentInfo)
-		{
-			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].MountingOrUnMountingItem();
-			SlotChangeState(isWearEquipmentInfo);
-		}
-		else
-		{
-			inventory.itemSlots[saveInventorySlotIndex].MountingOrUnMountingItem();
-			SlotChangeState(isWearEquipmentInfo);
-		}
+		inventory.itemSlots[saveInventorySlotIndex].MountingItem();
+		SlotChangeState(isWearEquipmentInfo);
+	}
+
+	public void ClickUnMountingItem()
+	{
+		equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].UnMountingItem();
+		SlotChangeState(isWearEquipmentInfo);
 	}
 
 	public void SlotChangeState(bool _isWearEquipmentInfo)
 	{
 		if (_isWearEquipmentInfo)
 		{
+			//착용일때
+
 			saveInventorySlotIndex = equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].rememberInventoryIndex;
 
+			//상태 바꾸고
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
 			inventory.itemSlots[saveInventorySlotIndex].eSlotState = SLOT_STATE.NOT_MOUNTING;
-
+			//아이콘 상태 바꾸고
 			equipmentPanel.equipmentSlots[saveEquipmentSlotIndex].SettingNoticeIcon(true);
 			inventory.itemSlots[saveInventorySlotIndex].SettingNoticeIcon(false);
 		}

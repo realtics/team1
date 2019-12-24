@@ -11,4 +11,5 @@ public class SkillScriptableObject : ScriptableObject
 	public Vector2 damageForce;
 	public Sprite skillImage;
 	public float coolTime;
+	public int levelLimit;
 }

@@ -106,4 +106,36 @@ public class EquippableItem : Item
 		return itemType.ToString();
 	}
 
+	public void Equip(InventoryManger _inventoryManger)
+	{
+		if(attackBonus != 0)
+		{
+			_inventoryManger.StatModifier(true, ITEM_TYPE.WEAPON, attackBonus);
+		}
+		if(armorBonus != 0)
+		{
+			_inventoryManger.StatModifier(true, ITEM_TYPE.ARMOR, armorBonus);
+		}
+		if(maxHealthBonus != 0)
+		{
+			_inventoryManger.StatModifier(true, ITEM_TYPE.ACCESSORIES, maxHealthBonus);
+		}
+	}
+
+	public void UnEquip(InventoryManger _inventoryManger)
+	{
+		if (attackBonus != 0)
+		{
+			_inventoryManger.StatModifier(false, ITEM_TYPE.WEAPON, attackBonus);
+		}
+		if (armorBonus != 0)
+		{
+			_inventoryManger.StatModifier(false, ITEM_TYPE.ARMOR, armorBonus);
+		}
+		if (maxHealthBonus != 0)
+		{
+			_inventoryManger.StatModifier(false, ITEM_TYPE.ACCESSORIES, maxHealthBonus);
+		}
+	}
+
 }

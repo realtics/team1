@@ -14,11 +14,12 @@ public class ReceiveDamage : ScriptEnable
     private Animator m_animator = null;
     private Rigidbody2D m_rigidbody2D = null;
     private CrowdControlManager m_crowdControlManager = null;
+	private PlayerRandAudioFuntion m_randAudioFuntion = null;
     private void Awake()
     {
         m_animator = this.GetComponentInChildren<Animator>();
-
-        m_characterInfo = this.GetComponent<CharacterInfo>();
+		m_randAudioFuntion = this.GetComponent<PlayerRandAudioFuntion>();
+		m_characterInfo = this.GetComponent<CharacterInfo>();
         m_rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_crowdControlManager = this.GetComponent<CrowdControlManager>();
     }
@@ -37,7 +38,10 @@ public class ReceiveDamage : ScriptEnable
             m_animator.SetTrigger("tDie");
             this.bScriptEnable = false;
         }
-    }
+
+		if(m_randAudioFuntion != null)
+			m_randAudioFuntion.VoiceRandPlay("Hit");
+	}
 
     public void AddDamageForce(Vector2 _force)
     {
@@ -51,9 +55,10 @@ public class ReceiveDamage : ScriptEnable
 
             if (m_crowdControlManager != null)
                 m_crowdControlManager.Stiffen(0.5f);
-        }
-        m_rigidbody2D.velocity = _force;
-    }
+
+			m_rigidbody2D.velocity = _force;
+		}
+	}
 
     private Vector3 DamageShowPosition()
     {

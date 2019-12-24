@@ -9,7 +9,9 @@ public class Inventory : ItemContainer
 	[SerializeField] protected Item[] startingItems;
 	[SerializeField] protected Transform itemParent;
 	public GameObject NotWearEquipmentInfo;
-	[SerializeField] InventoryManger inventoryManger;
+	public GameObject WearEquipmentInfo;
+
+	[SerializeField] InventoryManger inventoryManger = null;
 	protected override void Start()
 	{
 		base.Start();
@@ -25,8 +27,10 @@ public class Inventory : ItemContainer
 		}
 	}
 
+	//임의로 아이템 추가시키고 싶을때 사용하는 임시 함수
 	private void SetStartingItems()
 	{
+		//인벤토리 내부 지우기 용도
 		//Clear();
 
 		foreach (Item item in startingItems)

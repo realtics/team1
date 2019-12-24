@@ -6,8 +6,8 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 {
 	public List<ItemSlot> itemSlots;
 
-	public event Action<BaseItemSlot> MountingOrUnMountingEvent;
-
+	public event Action<BaseItemSlot> MountingEvent;
+	public event Action<BaseItemSlot> UnMountingEvent;
 	protected virtual void OnValidate()
 	{
 		GetComponentsInChildren(includeInactive: true, result: itemSlots);
@@ -17,7 +17,8 @@ public abstract class ItemContainer : MonoBehaviour, IItemContainer
 	{
 		for (int i = 0; i < itemSlots.Count; i++)
 		{
-			itemSlots[i].MountingOrUnMountingEvent += slot => EventHelper(slot, MountingOrUnMountingEvent);
+			itemSlots[i].MountingEvent += slot => EventHelper(slot, MountingEvent);
+			itemSlots[i].UnMountingEvent += slot => EventHelper(slot, UnMountingEvent);
 		}
 	}
 

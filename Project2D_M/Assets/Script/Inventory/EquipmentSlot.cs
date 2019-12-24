@@ -9,9 +9,6 @@ public class EquipmentSlot : ItemSlot
 	public EQUIPMENT_TYPE equipmentType;
 	public int rememberInventoryIndex;
 
-	public GameObject mountingViewDitailObject;
-	public GameObject infoMountingViewDitailObject;
-
 	public override void SetStart()
 	{
 		Debug.Log("장비 슬롯 실행.");
@@ -38,7 +35,7 @@ public class EquipmentSlot : ItemSlot
 	{
 		if (Item is EquippableItem)
 		{
-			infoDisplay.ShowInfomation((EquippableItem)Item);
+			wearInfoDisplay.ShowInfomation((EquippableItem)Item);
 			SetSelectSlot((EquippableItem)Item, true);
 		}
 

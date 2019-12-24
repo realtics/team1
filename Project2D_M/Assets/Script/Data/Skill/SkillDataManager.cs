@@ -14,6 +14,7 @@ public class SkillDataManager : Singletone<SkillDataManager>
 		public Vector2 damageForce;
 		public Sprite skillImage;
 		public float coolTime;
+		public int levelLimit;
 	}
 
 	public SkillInfo GetSkillInfo(string _skillName)
@@ -32,6 +33,7 @@ public class SkillDataManager : Singletone<SkillDataManager>
 				skillInfo.damageForce = dataSO.skillSOList[i].damageForce;
 				skillInfo.skillImage = dataSO.skillSOList[i].skillImage;
 				skillInfo.coolTime = dataSO.skillSOList[i].coolTime;
+				skillInfo.levelLimit = dataSO.skillSOList[i].levelLimit;
 				return skillInfo;
 			}
 		}
@@ -42,7 +44,24 @@ public class SkillDataManager : Singletone<SkillDataManager>
 		skillInfo.damageForce = Vector2.zero;
 		skillInfo.skillImage = null;
 		skillInfo.coolTime = 0;
+		skillInfo.levelLimit = 0;
 
 		return skillInfo;
+	}
+
+	public string[] GetSkillNames()
+	{
+		string[] names;
+
+		dataSO = dataSO ?? (SkillSOManager)Resources.Load("Data/PlayerSkill/SkillSOManager");
+
+		names = new string[dataSO.skillSOList.Count];
+
+		for (int i = 0; i < dataSO.skillSOList.Count; ++i)
+		{
+			names[i] = dataSO.skillSOList[i].skillName;
+		}
+
+		return names;
 	}
 }

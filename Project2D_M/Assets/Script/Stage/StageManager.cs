@@ -10,6 +10,7 @@ public class StageManager : Singletone<StageManager>
 	[SerializeField]
 	private Transform m_playerTransform;
 	private CharacterInfo m_playerInfo;
+	private PlayerCrowdControlManager m_playerCrowdControl;
 	private GameObject m_endUI;
 
 
@@ -79,7 +80,9 @@ public class StageManager : Singletone<StageManager>
 
 	public void Start()
 	{
+		m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		m_playerInfo = m_playerTransform.GetComponent<CharacterInfo>();
+		m_playerCrowdControl = m_playerTransform.GetComponent<PlayerCrowdControlManager>();
 		m_endUI = GameObject.Find("EndUI"); //변경 해야함
         m_endUI.SetActive(false);		
 		m_bStageSuccess = false;
@@ -103,15 +106,19 @@ public class StageManager : Singletone<StageManager>
 			StageEnd();
 			m_endUI.SetActive(true);
 			EndUIActive();
+			m_playerCrowdControl.PlayerStateClear();
+			StageAudioManager.Inst.PlayAudioStateEnd(true);
 		}
 		else if (m_bUserDie && m_endUI.activeSelf == false)
 		{
 			StageEnd();
 			m_endUI.SetActive(true);
 			EndUIActive();
+			m_playerCrowdControl.PlayerStateFail();
+			StageAudioManager.Inst.PlayAudioStateEnd(false);
 		}
 
-		if(m_endUI.activeSelf == true && m_fRewardTime >0)
+		if (m_endUI.activeSelf == true && m_fRewardTime >0)
 		{
 			m_fRewardTime -= Time.fixedDeltaTime;
 			if(m_fRewardTime<=0)

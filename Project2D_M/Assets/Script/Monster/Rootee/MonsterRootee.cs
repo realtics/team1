@@ -23,13 +23,15 @@ public class MonsterRootee : MonsterFsmBase
 	private bool m_bAttacking;
 	private const float m_fAttackDelay = 2.0f;
 	private readonly int m_hashiAttackType = Animator.StringToHash("iAttackType");
+	private RooteeSkill m_rootSkill = null;
 
 	ATTACK_KINDS m_eAttack;
 
 	private enum ATTACK_KINDS
 	{
 		ATTACK_1 = 1,
-		ATTACK_2
+		ATTACK_2,
+		ATTACK_3
 	}
 
 	private void Awake()
@@ -39,11 +41,11 @@ public class MonsterRootee : MonsterFsmBase
 		m_normalAttackDic = new Dictionary<string, AttackInfo>();
 		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_1.ToString(), new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
 		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
-
+		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_3.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
 		m_currentDelay = 0;
-
+		m_rootSkill = GetComponentInChildren<RooteeSkill>();
+		m_rootSkill.InitSkill();
 		InitMonstInfo();
-
 	}
 	protected override IEnumerator Attack()
 	{
@@ -66,7 +68,7 @@ public class MonsterRootee : MonsterFsmBase
 
 				if (m_currentDelay < 0)
 				{
-
+					m_bRangedAttack = false;
 					if (CheckCanAttack())
 					{
 						RandomAttack();
@@ -88,13 +90,21 @@ public class MonsterRootee : MonsterFsmBase
 		int random;
 		random = Random.Range(1, 40);
 
-		if (random % 4 == 0)
+		if (random % 2 == 0 && m_bRangedAttack)
+		{
+			m_eAttack = ATTACK_KINDS.ATTACK_3;
+			Invoke("SkillEventOfRootee", 1.5f);
+		}
+		else if (m_bRangedAttack)
 		{
 			m_eAttack = ATTACK_KINDS.ATTACK_1;
+			m_monsterMove.isMove = true;
+			Invoke("SkillEventMove", 1f);
 		}
 		else
 		{
-			m_eAttack = ATTACK_KINDS.ATTACK_1;
+			m_eAttack = ATTACK_KINDS.ATTACK_2;
+			//Invoke("SkillEventOfRootee", 1.5f);
 		}
 
 		//m_eAttack에 따라 그것에 맞는 공격/스킬이 나감(애니메이션 연계도)
@@ -102,5 +112,24 @@ public class MonsterRootee : MonsterFsmBase
 			"Player", m_normalAttackDic[m_eAttack.ToString()].damageForce);
 		m_animator.SetInteger(m_hashiAttackType, (int)m_eAttack);
 		m_animator.SetTrigger("tAttack");
+	}
+
+	public void SkillEventOfRootee()
+	{
+		float tempDir = this.transform.localScale.x;
+		
+		if(tempDir<0)
+		{
+			m_rootSkill.SkillAction(true, (int)(m_monsterInfo.attack *2.3f));
+		}
+		else
+		{
+			m_rootSkill.SkillAction(false, (int)(m_monsterInfo.attack * 2.3f));
+		}
+	}
+
+	public void SkillEventMove()
+	{
+		m_monsterMove.isMove = false;
 	}
 }

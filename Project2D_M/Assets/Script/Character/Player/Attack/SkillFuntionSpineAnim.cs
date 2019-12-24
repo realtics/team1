@@ -5,17 +5,16 @@ using Spine.Unity;
 
 public class SkillFuntionSpineAnim : SkillFuntion
 {
-	protected SkeletonAnimation m_skeletonAnimation;
 	protected MeshRenderer m_meshRenderer;
 	protected AttackCollider m_attackCollider;
-
+	protected EffectAnimFuntion m_effectAnimFuntion;
 	public override void InitSkill(PlayerAnimFuntion _animFuntion, GameObject _playerObject)
 	{
 		base.InitSkill(_animFuntion, _playerObject);
 
-		m_skeletonAnimation = this.GetComponent<SkeletonAnimation>();
 		m_meshRenderer = this.GetComponent<MeshRenderer>();
 		m_attackCollider = this.GetComponent<AttackCollider>();
+		m_effectAnimFuntion = this.GetComponent<EffectAnimFuntion>();
 
 		m_attackCollider.iCollisionSize = collisionSize;
 		m_attackCollider.SetDamageColliderInfo(damageRatio * level, "Monster", damageForce);
@@ -46,13 +45,14 @@ public class SkillFuntionSpineAnim : SkillFuntion
 
 		m_rigidbody2D.velocity = Vector3.zero;
 
-		m_skeletonAnimation.AnimationState.SetAnimation(0, _skillEffentName, false);
+		m_effectAnimFuntion.EffectPlay(_skillEffentName, false);
 		m_animFuntion.PlayAnim(_skillEffentName);
 
 		yield return new WaitForSeconds(0.03f);
 
 		m_playerState.PlayerStateSPAttack();
 		m_crowdControlManager.OnAirStop();
+		m_crowdControlManager.SuperArmorOn();
 
 		while (m_animFuntion.IsTag(skillName))
 		{
@@ -60,6 +60,7 @@ public class SkillFuntionSpineAnim : SkillFuntion
 		}
 
 		m_crowdControlManager.OffAirStop();
+		m_crowdControlManager.SuperArmorOff();
 
 		if (!m_playerState.IsPlayerGround())
 			m_playerState.PlayerStateDoubleJump();

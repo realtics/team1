@@ -15,6 +15,7 @@ public class PlayerCrowdControlManager : CrowdControlManager
 	private PlayerInput m_playerInput = null;
 	private Rigidbody2D m_rigidbody2D = null;
 	private PlayerState m_playerState = null;
+	private PlayerAudioFunction m_audioFunction = null;
 	private void Awake()
 	{
 		m_characterMove = this.GetComponent<CharacterMove>();
@@ -23,6 +24,7 @@ public class PlayerCrowdControlManager : CrowdControlManager
 		m_receiveDamage = this.GetComponent<ReceiveDamage>();
 		m_rigidbody2D = this.GetComponent<Rigidbody2D>();
 		m_playerState = this.GetComponent<PlayerState>();
+		m_audioFunction = this.GetComponent<PlayerAudioFunction>();
 	}
 
 	public override void Stiffen(float _second)
@@ -61,4 +63,22 @@ public class PlayerCrowdControlManager : CrowdControlManager
 		}
 	}
 
+	/// <summary>
+	/// 승리시
+	/// </summary>
+	public void PlayerStateClear()
+	{
+		m_audioFunction.VoicePlay("Victory",false);
+		ImpenetrableOn();
+	}
+
+
+	/// <summary>
+	/// 패배시
+	/// </summary>
+	public void PlayerStateFail()
+	{
+		m_audioFunction.VoicePlay("Death", false);
+		ImpenetrableOn();
+	}
 }

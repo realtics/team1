@@ -35,7 +35,8 @@ public class PlayerNormalAttack : MonoBehaviour
 	private PlayerState m_playerState = null;
 	private PlayerInput m_playerInput = null;
 	private PlayerCrowdControlManager m_playerCrowdControlManager=null;
-	
+	private PlayerRandAudioFuntion m_randAudioFuntion = null;
+
  [SerializeField]private bool m_bAttacking;
 
 	private void Awake()
@@ -47,6 +48,7 @@ public class PlayerNormalAttack : MonoBehaviour
 		m_playerState = this.GetComponent<PlayerState>();
 		m_playerInput = this.GetComponent<PlayerInput>();
 		m_playerCrowdControlManager = this.GetComponent<PlayerCrowdControlManager>();
+		m_randAudioFuntion = this.GetComponent<PlayerRandAudioFuntion>();
 		m_bAttacking = false;
 
 		m_NormalAttackDic = new Dictionary<string, AttackInfo>();
@@ -222,6 +224,7 @@ public class PlayerNormalAttack : MonoBehaviour
 					break;
 				default:
 					m_attackCollider.SetDamageColliderInfo(m_NormalAttackDic[_animName].damageRatio, "Monster", m_NormalAttackDic[_animName].damageForce);
+					m_randAudioFuntion.VoiceRandPlay("Attack");
 					break;
 			}
 

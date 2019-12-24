@@ -9,9 +9,12 @@ public class ShootFireBall : MonoBehaviour, ISkillShoot
 	public float speed = 1.5f;
 	public float height = 0.5f;
     private GameObject[] fireBallObjects = new GameObject[4];
+	private AudioFunction m_audioFunction = null;
     public void InitShoot(bool _xFilp, DamageInfo _damageInfo)
-    { 
-        bool up = true;
+    {
+		m_audioFunction = m_audioFunction ?? GetComponent<AudioFunction>();
+		
+		bool up = true;
         int num = 0;
 
         for (int i = 0; i < 4; ++i)
@@ -40,6 +43,34 @@ public class ShootFireBall : MonoBehaviour, ISkillShoot
         for (int i = 0; i < 4; ++i)
         {
             fireBallObjects[i].SetActive(true);
-        }
+		}
+
+		m_audioFunction.AudioPlay("Start",false);
+		StartCoroutine(nameof(AudioCoroutine));
     }
+
+	private IEnumerator AudioCoroutine()
+	{
+		int count = fireBallObjects.Length;
+
+		while (count > 0)
+		{
+			int actveNum = 0;
+			for (int i = 0; i < 4; ++i)
+			{
+				if (fireBallObjects[i].activeInHierarchy)
+					actveNum++;
+			}
+
+			if(actveNum != count)
+			{
+				count = actveNum;
+				m_audioFunction.AudioPlay("End", false);
+			}
+
+			yield return null;
+		}
+
+		yield return null;
+	}
 }

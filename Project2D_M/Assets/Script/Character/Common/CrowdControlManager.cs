@@ -93,11 +93,17 @@ public class CrowdControlManager : MonoBehaviour
         m_bImpenetrable = false;
     }
 
+	/// <summary>
+	/// 경직무적 켜기
+	/// </summary>
 	public virtual void SuperArmorOn()
 	{
 		superArmor = true;
 	}
 
+	/// <summary>
+	/// 경직무적 끄기
+	/// </summary>
 	public virtual void SuperArmorOff()
 	{
 		superArmor = false;

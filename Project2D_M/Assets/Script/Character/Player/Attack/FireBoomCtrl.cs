@@ -5,10 +5,12 @@ using UnityEngine;
 public class FireBoomCtrl : MonoBehaviour
 {
 	private Animator m_animator = null;
+	private AudioFunction m_audioFuntion = null;
 
 	public void InitFireBoom(float _speed)
 	{
-		m_animator = this.GetComponent<Animator>();
+		m_animator = m_animator ?? this.GetComponent<Animator>();
+		m_audioFuntion = m_audioFuntion ?? this.GetComponent<AudioFunction>();
 		m_animator.speed = _speed;
 	}
 
@@ -20,6 +22,7 @@ public class FireBoomCtrl : MonoBehaviour
 
     private IEnumerator FireCoroutine()
 	{
+		m_audioFuntion.AudioPlay(this.gameObject.name,false);
 		while (true)
 		{
 			if (m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.98f)

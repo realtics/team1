@@ -5,18 +5,16 @@ using UnityEngine;
 
 public class EquipmentPanel : MonoBehaviour
 {
-	[SerializeField] Transform equipmentSlotParent;
+	[SerializeField] Transform equipmentSlotParent = null;
 	public EquipmentSlot[] equipmentSlots;
 
-	public GameObject WearEquipmentInfo;
-
-	public event Action<BaseItemSlot> MountingOrUnMountingEvent;
+	public event Action<BaseItemSlot> UnMountingEvent;
 
 	private void Start()
 	{
 		for(int i = 0; i < equipmentSlots.Length; i++)
 		{
-			equipmentSlots[i].MountingOrUnMountingEvent += slot => MountingOrUnMountingEvent(slot);
+			equipmentSlots[i].UnMountingEvent += slot => UnMountingEvent(slot);
 		}
 	}
 

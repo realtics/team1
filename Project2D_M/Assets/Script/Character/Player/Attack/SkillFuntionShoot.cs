@@ -51,6 +51,8 @@ public class SkillFuntionShoot : SkillFuntion
 		m_playerState.PlayerStateSPAttack();
 		m_rigidbody2D.velocity = Vector3.zero;
 		m_crowdControlManager.OnAirStop();
+		m_crowdControlManager.SuperArmorOn();
+
 		string currntAnimName = m_animFuntion.GetCurrntAnimClipName();
 
         m_skillShoot.InitShoot(m_playerState.IsPlayerLookRight(), m_damageInfo);
@@ -66,6 +68,7 @@ public class SkillFuntionShoot : SkillFuntion
 		}
 
 		m_crowdControlManager.OffAirStop();
+		m_crowdControlManager.SuperArmorOff();
 
 		if (!m_playerState.IsPlayerGround())
 			m_playerState.PlayerStateDoubleJump();

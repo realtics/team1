@@ -44,7 +44,12 @@ public class DynamicInventory : Inventory
 				itemSlotGameObj.transform.SetParent(itemParent, worldPositionStays: false);
 				itemSlotGameObj.GetComponentInChildren<ItemSlot>().viewDitailObject = NotWearEquipmentInfo;
 				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoViewDitailObject = NotWearEquipmentInfo.transform.GetChild(1).gameObject;
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoDisplay = NotWearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().notWearInfoDisplay = NotWearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
+
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().mountingViewDitailObject = WearEquipmentInfo;
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoMountingViewDitailObject = WearEquipmentInfo.transform.GetChild(1).gameObject;
+				itemSlotGameObj.GetComponentInChildren<ItemSlot>().wearInfoDisplay = WearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
+
 				itemSlotGameObj.GetComponentInChildren<ItemSlot>().slotNum = i;
 				itemSlots.Add(itemSlotGameObj.GetComponentInChildren<ItemSlot>());
 			}

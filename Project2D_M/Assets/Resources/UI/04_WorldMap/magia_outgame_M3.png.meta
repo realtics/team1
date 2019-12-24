@@ -38,6 +38,45 @@ TextureImporter:
   - first:
       213: -6059224773785392479
     second: magia_outgame_M3_11
+  - first:
+      213: -6587794014926564830
+    second: magia_outgame_M3_12
+  - first:
+      213: 1980301947171582054
+    second: magia_outgame_M3_13
+  - first:
+      213: -7212486610364904022
+    second: magia_outgame_M3_14
+  - first:
+      213: -1339651475390860494
+    second: magia_outgame_M3_15
+  - first:
+      213: -1995184404491879760
+    second: magia_outgame_M3_16
+  - first:
+      213: -4173465360815279889
+    second: magia_outgame_M3_17
+  - first:
+      213: 2104784571086659786
+    second: magia_outgame_M3_18
+  - first:
+      213: 8652705910063053334
+    second: magia_outgame_M3_19
+  - first:
+      213: -6962659287795078300
+    second: magia_outgame_M3_20
+  - first:
+      213: -8896634852407126326
+    second: magia_outgame_M3_21
+  - first:
+      213: -6668664166063019801
+    second: magia_outgame_M3_22
+  - first:
+      213: 2087549050065195236
+    second: magia_outgame_M3_23
+  - first:
+      213: 3489845633076495230
+    second: magia_outgame_M3_24
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -373,7 +412,7 @@ TextureImporter:
         width: 460
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,6 +420,279 @@ TextureImporter:
       bones: []
       spriteID: e4b0258702d7a4f4f83f9b2ba70f80b8
       internalID: -6059224773785392479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_12
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 659
+        width: 167
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14d0946a04a3a34fb0850c6d6fc86d3
+      internalID: -6587794014926564830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_13
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1692
+        width: 69
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02713566aaaf52842a6efcbf0f405d86
+      internalID: 1980301947171582054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_14
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 247
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c847fcf25a2af28438dd0e456b09a961
+      internalID: -7212486610364904022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_15
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1101
+        width: 72
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 29, z: 17, w: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526ce1f8a5aa5e846af9f1f686959d96
+      internalID: -1339651475390860494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_16
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 1328
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9e3b27314dd6648889e23b35d46110
+      internalID: -1995184404491879760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_17
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 515
+        width: 129
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 29, z: 30, w: 29}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1465d2a1879a14b8fc3dba4797fb68
+      internalID: -4173465360815279889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_18
+      rect:
+        serializedVersion: 2
+        x: 1996
+        y: 1505
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2a82f256058e64094fb0335c4eb11d
+      internalID: 2104784571086659786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_19
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 1505
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0affc155770e242bb2a8b3d2c8aac8
+      internalID: 8652705910063053334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_20
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 1511
+        width: 7
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225f7c2e17830cb4196e98b88304d469
+      internalID: -6962659287795078300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_21
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1509
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd3c9cbd84f3ff49acfa09a79d4c787
+      internalID: -8896634852407126326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_22
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 990
+        width: 67
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd076d355096c748a42b20f35c30250
+      internalID: -6668664166063019801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_23
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 88
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d440f1834022e48818861af00ac836
+      internalID: 2087549050065195236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magia_outgame_M3_24
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 455
+        width: 244
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 41, y: 18, z: 41, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95091206e135e744d889831825769b78
+      internalID: 3489845633076495230
       vertices: []
       indices: 
       edges: []

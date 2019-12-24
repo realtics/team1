@@ -27,12 +27,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191231647}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 11, z: 1}
   m_Children: []
   m_Father: {fileID: 6470256991674006875}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -178,7 +178,7 @@ RectTransform:
   - {fileID: 1443466255}
   - {fileID: 1870905884}
   m_Father: {fileID: 6470256991674006875}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -981,6 +981,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6470256991056701801}
         m_MethodName: GotoScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 947391406}
+        m_MethodName: PulseOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3665,7 +3676,7 @@ RectTransform:
   - {fileID: 513264996712105647}
   - {fileID: 3100291089294933907}
   m_Father: {fileID: 6470256991674006875}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -14881,9 +14892,9 @@ RectTransform:
   - {fileID: 6470256989712873044}
   - {fileID: 6470256991009380610}
   - {fileID: 6470256991688475992}
-  - {fileID: 8376577064695287983}
   - {fileID: 573527738}
   - {fileID: 191231648}
+  - {fileID: 8376577064695287983}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14969,10 +14980,11 @@ MonoBehaviour:
   m_normalAttackEvent: {fileID: 6470256989800506316}
   m_jumpEvent: {fileID: 6470256990640730266}
   m_evasionButton: {fileID: 897465232}
-  skillQuick1: {fileID: 154384677}
-  skillQuick2: {fileID: 1666813051}
-  skillQuick3: {fileID: 1213087246}
-  skillQuick4: {fileID: 1287227409}
+  skillQuicks:
+  - {fileID: 154384677}
+  - {fileID: 1666813051}
+  - {fileID: 1213087246}
+  - {fileID: 1287227409}
 --- !u!1 &6470256991676259275
 GameObject:
   m_ObjectHideFlags: 0

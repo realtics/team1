@@ -13,14 +13,13 @@ public class PlayerFootCollision : MonoBehaviour
 {
     private PlayerState m_playerState = null;
     private PlayerAnimFuntion m_animFuntion = null;
-    private Rigidbody2D m_rigidbody2D = null;
-
+	private AudioFunction m_audioFunction = null;
     private void Awake()
     {
 		m_animFuntion = this.transform.parent.transform.Find("PlayerSpineSprite").GetComponent<PlayerAnimFuntion>();
         m_playerState = this.transform.parent.GetComponent<PlayerState>();
-        m_rigidbody2D = this.transform.parent.GetComponent<Rigidbody2D>();
-    }
+		m_audioFunction = this.transform.parent.GetComponent<AudioFunction>();
+	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,6 +30,7 @@ public class PlayerFootCollision : MonoBehaviour
 			m_animFuntion.ResetTrigger(m_animFuntion.hashTFall);
 			m_animFuntion.ResetTrigger(m_animFuntion.hashTEvasion);
 
+			m_audioFunction.AudioPlay("Lend",false);
 			m_playerState.PlayerStateReset();
         }
     }

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameSaveData;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 /*
  * 작성자          : 고은우
  * 최종 수정 날짜  : 11_25
@@ -45,16 +49,15 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         if (m_playerSaveData == null)
             InitData();
 
-        if (dataSO == null)
+#if UNITY_EDITOR
+		if (dataSO == null)
 			dataSO = (PlayerDataScriptableObject)Resources.Load("Data/PlayerDataScript");
-
-        m_playerSaveData.level = dataSO.level;
-        m_playerSaveData.exp = dataSO.exp;
-        m_playerSaveData.gold = dataSO.gold;
-        m_playerSaveData.cash = dataSO.cash;
-        m_playerSaveData.fatigability = dataSO.fatigability;
-
-		BinaryManager.Save(m_playerSaveData, dataname);
+		m_playerSaveData.level = dataSO.level;
+		m_playerSaveData.exp = dataSO.exp;
+		m_playerSaveData.gold = dataSO.gold;
+		m_playerSaveData.cash = dataSO.cash;
+		m_playerSaveData.fatigability = dataSO.fatigability;
+#endif
 	}
 
     public PlayerData GetPlayerData()
@@ -77,12 +80,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.cash = m_playerData.cash;
         m_playerSaveData.fatigability = m_playerData.fatigability;
 
-        dataSO.level = m_playerSaveData.level;
-        dataSO.exp = m_playerSaveData.exp;
-        dataSO.gold = m_playerSaveData.gold;
-        dataSO.cash = m_playerSaveData.cash;
-        dataSO.fatigability = m_playerSaveData.fatigability;
-
         BinaryManager.Save(m_playerSaveData, dataname);
     }
 
@@ -92,19 +89,15 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         {
             case PlayerData.DATA_ENUM.DATA_ENUM_LEVEL:
                 m_playerSaveData.level = _value;
-                dataSO.level = m_playerSaveData.level;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_GOLD:
 				m_playerSaveData.gold += _value;
-				dataSO.gold = m_playerSaveData.gold;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_CASH:
                 m_playerSaveData.cash += _value;
-                dataSO.cash = m_playerSaveData.cash;
                 break;
             case PlayerData.DATA_ENUM.DATA_ENUM_FATIGABILITY:
                 m_playerSaveData.fatigability = _value;
-                dataSO.fatigability = m_playerSaveData.fatigability;
                 break;
         }
 
@@ -122,6 +115,8 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerData.fatigability = m_playerSaveData.fatigability;
 
 		LevelToPlayerData();
+
+		m_playerData = ItemSaveManager.Inst.LoadPlayerEquipmentStatusSetting(m_playerData);
 	}
 
     private void InitData()
@@ -132,7 +127,6 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.exp = 0;
         m_playerSaveData.gold = 0;
         m_playerSaveData.fatigability = 25;
-
 
         BinaryManager.Save(m_playerSaveData, dataname);
     }
@@ -173,5 +167,39 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
 		m_playerData.maxExp = 40 * m_playerData.level;
 		m_playerData.maxHp = 100 + m_playerData.level * 20;
 		m_playerData.maxFatigability = 10 + m_playerData.level * 2;
+	}
+
+	public void EquipMentToPlayerData(bool _isWearing, ITEM_TYPE _type, int _value)
+	{
+		if(_isWearing)
+		{
+			switch(_type)
+			{
+				case ITEM_TYPE.WEAPON:
+					m_playerData.attack += _value;
+					break;
+				case ITEM_TYPE.ARMOR:
+					m_playerData.defensive += _value;
+					break;
+				case ITEM_TYPE.ACCESSORIES:
+					m_playerData.maxHp += _value;
+					break;
+			}
+		}
+		else
+		{
+			switch (_type)
+			{
+				case ITEM_TYPE.WEAPON:
+					m_playerData.attack -= _value;
+					break;
+				case ITEM_TYPE.ARMOR:
+					m_playerData.defensive -= _value;
+					break;
+				case ITEM_TYPE.ACCESSORIES:
+					m_playerData.maxHp -= _value;
+					break;
+			}
+		}
 	}
 }

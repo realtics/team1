@@ -75,6 +75,13 @@
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_Demo08.cs" />
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_DemoPlaySound.cs" />
     <Compile Include="Assets\Asset\PJH\GUI Animator\GUI Animator FREE\Demo\Scripts\GA_FREE_OpenOtherScene.cs" />
+    <Compile Include="Assets\Script\Audio\AudioFunction.cs" />
+    <Compile Include="Assets\Script\Audio\BGMAudioManager.cs" />
+    <Compile Include="Assets\Script\Audio\PlayerAudioFunction.cs" />
+    <Compile Include="Assets\Script\Audio\PlayerRandAudioFuntion.cs" />
+    <Compile Include="Assets\Script\Audio\RandAudioFuntion.cs" />
+    <Compile Include="Assets\Script\Audio\StageAudioManager.cs" />
+    <Compile Include="Assets\Script\Audio\VolumeCtrl.cs" />
     <Compile Include="Assets\Script\Base\ObjectPool.cs" />
     <Compile Include="Assets\Script\Base\PooledObject.cs" />
     <Compile Include="Assets\Script\Base\Pulse.cs" />
@@ -157,6 +164,7 @@
     <Compile Include="Assets\Script\Monster\AttackToEffectAnim.cs" />
     <Compile Include="Assets\Script\Monster\CharacterHpBar.cs" />
     <Compile Include="Assets\Script\Monster\EffectSpineAnimFunction.cs" />
+    <Compile Include="Assets\Script\Monster\Larvo\TestLarvo.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAI.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAnimation.cs" />
     <Compile Include="Assets\Script\Monster\MonsterAttack.cs" />
@@ -166,8 +174,16 @@
     <Compile Include="Assets\Script\Monster\MonsterInfo.cs" />
     <Compile Include="Assets\Script\Monster\MonsterLupe.cs" />
     <Compile Include="Assets\Script\Monster\MonsterMove.cs" />
-    <Compile Include="Assets\Script\Monster\MonsterRootee.cs" />
     <Compile Include="Assets\Script\Monster\MonsterStateMachine.cs" />
+    <Compile Include="Assets\Script\Monster\Rootee\MonsterRootee.cs" />
+    <Compile Include="Assets\Script\Monster\Rootee\MonsterShootAttackCollider.cs" />
+    <Compile Include="Assets\Script\Monster\Rootee\RooteeProjectile.cs" />
+    <Compile Include="Assets\Script\Monster\Rootee\RooteeSkill.cs" />
+    <Compile Include="Assets\Script\Quest\NpcData.cs" />
+    <Compile Include="Assets\Script\Quest\Quest.cs" />
+    <Compile Include="Assets\Script\Quest\QuestData.cs" />
+    <Compile Include="Assets\Script\Quest\QuestManager.cs" />
+    <Compile Include="Assets\Script\Quest\TalkManager.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxBackGround.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxCamera.cs" />
     <Compile Include="Assets\Script\Stage\ParallaxLayer.cs" />
@@ -184,6 +200,7 @@
     <Compile Include="Assets\Script\UI\LoadingProgress.cs" />
     <Compile Include="Assets\Script\UI\LoadSceneButton.cs" />
     <Compile Include="Assets\Script\UI\LobbyParallax.cs" />
+    <Compile Include="Assets\Script\UI\QuestObjentMove.cs" />
     <Compile Include="Assets\Script\UI\StageDecoMove.cs" />
     <Compile Include="Assets\Script\UI\StageInfoOpener.cs" />
     <Compile Include="Assets\Script\UI\StageLoadSceneButton.cs" />
@@ -333,6 +350,7 @@
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Ghost\Shaders\Spine-Special-Skeleton-Ghost.shader" />
     <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\CGIncludes\SpriteVertexLighting.cginc" />
+    <None Include="Assets\Resources\Character\Player\Standing\p_pc_calpmaniere.atlas.txt" />
     <None Include="Assets\Resources\Monster\Rootee\Effect\Effect_rootee.atlas.txt" />
     <None Include="Assets\Asset\Common\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Resources\Stage1\atlas\Erfenorva_mainroad_01.atlas.txt" />
