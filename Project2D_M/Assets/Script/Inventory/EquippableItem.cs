@@ -50,6 +50,7 @@ public class EquippableItem : Item
 	public string ratingName;
 	public string typeName;
 
+
 #if UNITY_EDITOR
 	protected override void OnValidate()
 	{

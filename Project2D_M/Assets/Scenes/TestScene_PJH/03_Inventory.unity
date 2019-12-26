@@ -6081,6 +6081,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599707805}
   m_CullTransparentMesh: 0
+--- !u!114 &625643007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8806567318392285219, guid: 2398ef5bfc72fb943bbe8368477d49d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8806567318141980079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &626380262
 GameObject:
   m_ObjectHideFlags: 0
@@ -7574,8 +7586,8 @@ MonoBehaviour:
   equipmentPanel: {fileID: 1678141153}
   itemRatingAndType: {fileID: 626380264}
   itemName: {fileID: 1055327838}
-  BackImage: {fileID: 1185496891}
-  BackFrame: {fileID: 1766850263}
+  backImage: {fileID: 1185496891}
+  backFrame: {fileID: 1766850263}
   itemMainImage: {fileID: 519824971}
   abilityTypeName: {fileID: 436290525}
   abilityValue: {fileID: 1898311020}
@@ -21035,6 +21047,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946294090}
   m_CullTransparentMesh: 0
+--- !u!114 &1973101537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8806567318797127228, guid: 2398ef5bfc72fb943bbe8368477d49d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8806567318141980079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977212972
 GameObject:
   m_ObjectHideFlags: 0
@@ -23324,6 +23348,16 @@ PrefabInstance:
       propertyPath: RefreshInfoList.Array.data[3]
       value: 
       objectReference: {fileID: 1498005370}
+    - target: {fileID: 8806567318777610226, guid: 2398ef5bfc72fb943bbe8368477d49d4,
+        type: 3}
+      propertyPath: backImage
+      value: 
+      objectReference: {fileID: 625643007}
+    - target: {fileID: 8806567318777610226, guid: 2398ef5bfc72fb943bbe8368477d49d4,
+        type: 3}
+      propertyPath: backFrame
+      value: 
+      objectReference: {fileID: 1973101537}
     - target: {fileID: 8806567319079572043, guid: 2398ef5bfc72fb943bbe8368477d49d4,
         type: 3}
       propertyPath: m_Material

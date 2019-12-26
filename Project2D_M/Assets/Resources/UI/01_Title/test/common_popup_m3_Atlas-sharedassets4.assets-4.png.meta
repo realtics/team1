@@ -41,6 +41,9 @@ TextureImporter:
   - first:
       213: -113860983931732136
     second: common_popup_m3_Atlas-sharedassets4.assets-4_4
+  - first:
+      213: -71791085816959097
+    second: common_popup_m3_Atlas-sharedassets4.assets-4_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -409,7 +412,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,6 +420,27 @@ TextureImporter:
       bones: []
       spriteID: be95a0b6bd4bd9d499ac16933593e62b
       internalID: -113860983931732136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: common_popup_m3_Atlas-sharedassets4.assets-4_5
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 796
+        width: 76
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 71, y: 3, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e501c8aed3f807a43a9a0ae5c607a66e
+      internalID: -71791085816959097
       vertices: []
       indices: 
       edges: []

@@ -17,7 +17,7 @@ public class Quest : MonoBehaviour
 
 	void GenerateData()
 	{
-		questDic.Add(10, new QuestData("시작되는 모험", new NPC_TYPE[] { NPC_TYPE.NPC_MARI }));
+		questDic.Add(10, new QuestData("시작되는 모험", new NPC_TYPE[] { NPC_TYPE.NPC_MARI, NPC_TYPE.NPC_MARI }));
 
 		questDic.Add(20, new QuestData("두근두근 모험", new NPC_TYPE[] { NPC_TYPE.NPC_MARI }));
 	}

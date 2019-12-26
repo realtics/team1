@@ -75,7 +75,7 @@ public class StageManager : Singletone<StageManager>
     private float m_fPrevMaxExp;
     private float m_fCurrentExp;
     private float m_fCurrentMaxExp;
-
+	private StageRewordRank m_stageRewordRank;
 
 
 	public void Start()
@@ -93,7 +93,9 @@ public class StageManager : Singletone<StageManager>
         m_stageExpText.text += "%";
         m_nowStageIndex = StageDataManager.Inst.nowStage;
         m_fRewardExp = StageDataManager.Inst.stageDataSO.MainStageData[(int)m_nowStageIndex].rewardExp;
-    }
+		m_stageRewordRank = m_rewardUI.GetComponent<StageRewordRank>();
+
+	}
 
 	public void FixedUpdate()
 	{
@@ -164,7 +166,7 @@ public class StageManager : Singletone<StageManager>
                 m_stageExpBar.fillAmount = 0;
                 m_fRewardExp = 0;
                 m_LevelUpUI.SetActive(true);
-				SetPlayerInfoInUI();
+				SetPlayerInfoInUILevel();
 				Invoke(nameof(LevelUpUIOff), 2f);
             }
         }
@@ -220,13 +222,21 @@ public class StageManager : Singletone<StageManager>
 
 	}
 
+	bool stageEndChark = false;
+
 	private void StageEnd()
 	{
-		SetEndTime();
-		SetKillCountInUI();
-		SetPlayerInfoInUI();
-		SetOverKillInUI();
-		RewardText();
+		if (!stageEndChark)
+		{
+			SetEndTime();
+			SetKillCountInUI();
+			SetPlayerInfoInUI();
+			SetPlayerInfoInUILevel();
+			SetOverKillInUI();
+			RewardText();
+		}
+
+		stageEndChark = true;
 	}
 
 
@@ -267,20 +277,26 @@ public class StageManager : Singletone<StageManager>
 		{
 			m_stageOverKillText.text = "0";
 			m_stageOverKillText.text += m_iOverKillMonsterCount.ToString();
+			m_stageRewordRank.PlusRankSprite();
 		}
 		else
 			m_stageOverKillText.text = m_iOverKillMonsterCount.ToString();
 
+		m_stageRewordRank.PlusRankSprite();
+
+		if (m_bUserDie)
+			m_stageRewordRank.SetRankSprite(StageRewordRank.RANK_ENUM.F_RANK);
 	}
 
 	private void SetPlayerInfoInUI()
 	{
 		int temp = ((PlayerInfo)m_playerInfo).GetEndInfo().maxCombo;
 
-		if(temp<10)
+		if (temp < 10)
 		{
 			m_stageMaxComboText.text = "0";
 			m_stageMaxComboText.text += temp.ToString();
+			m_stageRewordRank.PlusRankSprite();
 		}
 		else
 			m_stageMaxComboText.text = temp.ToString();
@@ -291,13 +307,19 @@ public class StageManager : Singletone<StageManager>
 		{
 			m_stageAirAttckText.text = "0";
 			m_stageAirAttckText.text += temp.ToString();
+			m_stageRewordRank.PlusRankSprite();
 		}
 		else
 			m_stageAirAttckText.text = temp.ToString();
 
+		if (m_bUserDie)
+			m_stageRewordRank.SetRankSprite(StageRewordRank.RANK_ENUM.F_RANK);
+	}
+
+	private void SetPlayerInfoInUILevel()
+	{
 		m_stageLvText.text = "Lv ";
 		m_stageLvText.text += PlayerDataManager.Inst.GetPlayerData().level.ToString();
-
 	}
 
 	private void SetKillCountInUI()
@@ -306,9 +328,15 @@ public class StageManager : Singletone<StageManager>
 		{
 			m_stageMonsterText.text = "0";
 			m_stageMonsterText.text += m_iKillMonsterCount.ToString();
+			m_stageRewordRank.PlusRankSprite();
 		}
 		else
 			m_stageMonsterText.text = m_iKillMonsterCount.ToString();
+
+		m_stageRewordRank.PlusRankSprite();
+
+		if (m_bUserDie)
+			m_stageRewordRank.SetRankSprite(StageRewordRank.RANK_ENUM.F_RANK);
 	}
 
 	private void SetEndTime()
@@ -319,7 +347,6 @@ public class StageManager : Singletone<StageManager>
 		if (m_bStageSuccess)
 		{
 			SetTimeText(m_stageTimeText, tempfloat);
-
 		}
 	}
 

@@ -15,8 +15,8 @@ public class InfoDisplay : MonoBehaviour
 
 	public TextMeshProUGUI itemRatingAndType;
 	public TextMeshProUGUI itemName;
-	public Image BackImage;
-	public Image BackFrame;
+	public Image backImage;
+	public Image backFrame;
 	public Image itemMainImage;
 
 	public TextMeshProUGUI abilityTypeName;
@@ -42,8 +42,8 @@ public class InfoDisplay : MonoBehaviour
 
 		itemRatingAndType.text = m_sbRatingAndType.ToString();
 		itemName.text = _item.itemName;
-		BackImage.color = new Color(_item.frameColorRGB.x / 255, _item.frameColorRGB.y / 255, _item.frameColorRGB.z / 255);
-		BackFrame.color = new Color(_item.frameColorRGB.x / 255, _item.frameColorRGB.y / 255, _item.frameColorRGB.z / 255);
+		backImage.color = new Color(_item.frameColorRGB.x / 255, _item.frameColorRGB.y / 255, _item.frameColorRGB.z / 255);
+		backFrame.color = new Color(_item.frameColorRGB.x / 255, _item.frameColorRGB.y / 255, _item.frameColorRGB.z / 255);
 		itemMainImage.sprite = _item.icon;
 		itemMainImage.SetNativeSize();
 

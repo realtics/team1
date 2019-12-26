@@ -42,16 +42,18 @@ public class DynamicInventory : Inventory
 			{
 				GameObject itemSlotGameObj = Instantiate(m_itemSlotPrefab);
 				itemSlotGameObj.transform.SetParent(itemParent, worldPositionStays: false);
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().viewDitailObject = NotWearEquipmentInfo;
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoViewDitailObject = NotWearEquipmentInfo.transform.GetChild(1).gameObject;
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().notWearInfoDisplay = NotWearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
 
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().mountingViewDitailObject = WearEquipmentInfo;
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().infoMountingViewDitailObject = WearEquipmentInfo.transform.GetChild(1).gameObject;
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().wearInfoDisplay = WearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
+				var slotChild = itemSlotGameObj.GetComponentInChildren<ItemSlot>();
 
-				itemSlotGameObj.GetComponentInChildren<ItemSlot>().slotNum = i;
-				itemSlots.Add(itemSlotGameObj.GetComponentInChildren<ItemSlot>());
+				slotChild.viewDitailObject = NotWearEquipmentInfo;
+				slotChild.infoViewDitailObject = NotWearEquipmentInfo.transform.GetChild(1).gameObject;
+				slotChild.notWearInfoDisplay = NotWearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
+				slotChild.mountingViewDitailObject = WearEquipmentInfo;
+				slotChild.infoMountingViewDitailObject = WearEquipmentInfo.transform.GetChild(1).gameObject;
+				slotChild.wearInfoDisplay = WearEquipmentInfo.transform.GetChild(1).GetComponent<InfoDisplay>();
+
+				slotChild.slotNum = i;
+				itemSlots.Add(slotChild);
 			}
 		}
 	}

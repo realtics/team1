@@ -57,7 +57,7 @@ public class MonsterAI : MonoBehaviour
         //몬스터 유저 찾기 2가지 방법중
         //1) 어웨이크에서 유저 오브젝트를 저장 해놓고 좌표 거리계산으로 유저 찾기 << 선택
         //2) 탐색 콜리전으로 크게 콜리젼만들고 콜리젼 안에 들어오면 찾기
-        //StageManager.Inst.playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        StageManager.Inst.playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         m_playerTransform = StageManager.Inst.playerTransform;
 
         m_eState = MONSTER_STATE.APPEAR;

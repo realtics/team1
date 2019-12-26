@@ -73,17 +73,20 @@ namespace Spine.Unity {
 		public void Update () {
 			if (!valid) return;
 
-			#if UNITY_EDITOR
-			if (Application.isPlaying) {
+#if UNITY_EDITOR
+			if (Application.isPlaying)
+			{
 				translator.Apply(skeleton);
-			} else {
+			}
+			else
+			{
 				var translatorAnimator = translator.Animator;
 				if (translatorAnimator != null && translatorAnimator.isInitialized)
 					translator.Apply(skeleton);
 			}
-			#else
+#else
 			translator.Apply(skeleton);
-			#endif
+#endif
 
 			// UpdateWorldTransform and Bone Callbacks
 			{

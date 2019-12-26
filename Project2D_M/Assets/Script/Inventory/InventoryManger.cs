@@ -6,6 +6,7 @@ public class InventoryManger : Singletone<InventoryManger>
 {
 	public Inventory inventory;
 	public EquipmentPanel equipmentPanel;
+
 	public InfoDisplay wearInfoDisplay;
 	public InfoDisplay notWearInfoDisplay;
 

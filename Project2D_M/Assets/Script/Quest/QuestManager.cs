@@ -22,6 +22,15 @@ public class QuestManager : Singletone<QuestManager>
 	public bool isClick;
 	public int talkIndex;
 
+	public struct QuestInfo
+	{
+		public int Index;
+		public bool isClear;
+	}
+
+	public Dictionary<ulong, QuestInfo> QuestList; 
+
+
 	private void Awake()
 	{
 		if(talkManager == null)

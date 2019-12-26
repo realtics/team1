@@ -10,6 +10,11 @@ public class TalkManager : MonoBehaviour
 
 	public GameObject[] portraitArray;
 
+	public struct AnimationFace
+	{
+		
+	}
+
 	private void Awake()
 	{
 		m_talkData = new Dictionary<NPC_TYPE, string[]>();
@@ -19,7 +24,7 @@ public class TalkManager : MonoBehaviour
 
 	private void GenerateData()
 	{
-		m_talkData.Add(NPC_TYPE.NPC_MARI, new string[] { "어서오세요", "이곳에 처음 오셨군요?" });
+		m_talkData.Add(NPC_TYPE.NPC_MARI, new string[] { "어서오세요:0", "이곳에 처음 오셨군요?" });
 
 		m_portraitData.Add(NPC_TYPE.NPC_MARI, portraitArray[0]);
 
@@ -27,7 +32,7 @@ public class TalkManager : MonoBehaviour
 		//퀘스트 Talk
 		m_talkData.Add(10 + NPC_TYPE.NPC_MARI, new string[] { "새로운 모험가님이시군요! ", "저는 앞으로 당신을 부려먹을 npc랍니다." });
 
-		m_talkData.Add(11 + NPC_TYPE.NPC_MARI, new string[] { "그냥 해본말이야!" });
+		m_talkData.Add(11 + NPC_TYPE.NPC_MARI, new string[] { "그럼 갑작스럽지만 에페노바 숲에서 저녁거릴 구해다 오실 수 있을까요?" });
 	}
 
 	public string GetTalk(NPC_TYPE id, int talkindex)

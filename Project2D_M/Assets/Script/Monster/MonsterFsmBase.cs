@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class MonsterFsmBase : MonsterStateMachine
 {
-	private readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
-	private readonly int m_hashBLive = Animator.StringToHash("bLive");
-	private readonly int m_hashBStun = Animator.StringToHash("bStun");
-	private readonly int m_hashBAppear = Animator.StringToHash("bAppear");
-	private readonly int m_hashTHit = Animator.StringToHash("tHit");
-	private readonly int m_hashTAttack = Animator.StringToHash("tAttack");
+	protected readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
+	protected readonly int m_hashBLive = Animator.StringToHash("bLive");
+	protected readonly int m_hashBStun = Animator.StringToHash("bStun");
+	protected readonly int m_hashBAppear = Animator.StringToHash("bAppear");
+	protected readonly int m_hashTHit = Animator.StringToHash("tHit");
+	protected readonly int m_hashTAttack = Animator.StringToHash("tAttack");
 
 	protected Animator m_animator;
     protected MonsterMove m_monsterMove;
@@ -18,7 +18,7 @@ public class MonsterFsmBase : MonsterStateMachine
 	protected CrowdControlManager m_crowdControlMg;
 
 	[SerializeField]
-	private float m_appearTime;
+	protected float m_appearTime;
 	[SerializeField]
 	private int m_attackRanged;
 
@@ -119,6 +119,7 @@ public class MonsterFsmBase : MonsterStateMachine
 			m_appearTime -= Time.deltaTime;
 			if (m_appearTime < 0)
 			{
+				//m_animator.StartPlayback();
 				m_animator.SetBool(m_hashBAppear, true);
                 nowState = ENEMY_STATE.IDLE;
 				m_monsterHpBar.transform.gameObject.SetActive(true);
