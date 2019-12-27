@@ -14,10 +14,10 @@ public class CharacterInfo : MonoBehaviour
     [SerializeField] protected int level = 1;
     [SerializeField] protected int maxHp = 100;
     [SerializeField] protected int hp = 100;
-    [SerializeField] public int attack { get; protected set; } = 15;
+    [SerializeField] public int attack = 15;
     [SerializeField] protected int defensive = 10;
     [SerializeField] protected int critical = 0;
-	[SerializeField] public bool bOverKill { get; protected set; } = false;
+	public bool bOverKill { get; protected set; } = false;
 
 	public void HpDamage(int _damage)
     {

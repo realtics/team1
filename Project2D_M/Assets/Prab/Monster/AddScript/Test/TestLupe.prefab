@@ -100,13 +100,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  maxHp: 555
-  hp: 555
+  maxHp: 300
+  hp: 300
   defensive: 10
   critical: 0
   m_fAttackDistance: 2
   m_fSpeed: 5
-  m_appearTime: 0
+  m_appearTime: 10
+  m_attackRanged: 0
 --- !u!114 &3693826847195681627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,7 +411,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72388ba6509826943bc30ca289213112, type: 2}
+  - {fileID: 2100000, guid: 94e2e72c3ed7a194890e3a78d927fd2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -444,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: caca9c181e7d56e4188fa7f31b1e0b96, type: 2}
-  initialSkinName: Lupe_1
+  initialSkinName: Lupe_2
   initialFlipX: 0
   initialFlipY: 0
   separatorSlotNames: []

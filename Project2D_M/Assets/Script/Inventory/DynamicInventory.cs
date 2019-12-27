@@ -5,7 +5,6 @@ using UnityEngine;
 public class DynamicInventory : Inventory
 {
 	[SerializeField] private GameObject m_itemSlotPrefab = null;
-
 	[SerializeField] int inventorySlotMaxNum;
 	public int InventorySlotMaxNum
 	{

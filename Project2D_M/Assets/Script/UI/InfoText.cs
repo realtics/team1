@@ -32,6 +32,9 @@ public class InfoText : MonoBehaviour
     private void Start()
     {
         Initialized();
+
+		if (infoData == INFO_TYPE.FATIGABILITY)
+			InvokeRepeating(nameof(Initialized), 5f, 5f);
     }
 
 	private void Initialized()

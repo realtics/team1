@@ -21,6 +21,7 @@ namespace GameSaveData
 		public int gold;
 		public int cash;
 		public int fatigability; //피로도
+		public DateTime saveTiem;
 
 		public EquipmentInfo equipmentInfo;
 	}

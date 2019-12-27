@@ -39,11 +39,24 @@ public class MonsterFsmBase : MonsterStateMachine
 	private Work WorkDie;
 	#endregion;
 
-	void Start()
+	protected enum MONSTER_KINDS
+	{
+		MELEE_LUPE,
+		RANGED_ROOTEE,
+		BOSS_LARVO
+	}
+
+	protected MONSTER_KINDS m_monsterKind;
+
+	protected virtual void Start()
     {
 		InitAniamation();
 		nowState = ENEMY_STATE.APPEAR;
-		//m_AppearTime;
+
+		if (m_monsterKind == MONSTER_KINDS.BOSS_LARVO)
+		{
+			m_animator.speed = 0.0f;
+		}
 
 		#region value bool
 		m_bIsAir = false;

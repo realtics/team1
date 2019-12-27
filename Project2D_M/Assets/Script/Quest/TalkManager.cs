@@ -10,11 +10,6 @@ public class TalkManager : MonoBehaviour
 
 	public GameObject[] portraitArray;
 
-	public struct AnimationFace
-	{
-		
-	}
-
 	private void Awake()
 	{
 		m_talkData = new Dictionary<NPC_TYPE, string[]>();
@@ -24,7 +19,7 @@ public class TalkManager : MonoBehaviour
 
 	private void GenerateData()
 	{
-		m_talkData.Add(NPC_TYPE.NPC_MARI, new string[] { "어서오세요:0", "이곳에 처음 오셨군요?" });
+		m_talkData.Add(NPC_TYPE.NPC_MARI, new string[] { "어서오세요", "이곳에 처음 오셨군요?" });
 
 		m_portraitData.Add(NPC_TYPE.NPC_MARI, portraitArray[0]);
 

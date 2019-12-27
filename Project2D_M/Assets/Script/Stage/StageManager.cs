@@ -77,6 +77,8 @@ public class StageManager : Singletone<StageManager>
     private float m_fCurrentMaxExp;
 	private StageRewordRank m_stageRewordRank;
 
+	public EquippableItem[] rewordItemArray;
+	private const string InventoryFileName = "Inventory";
 
 	public void Start()
 	{
@@ -234,6 +236,7 @@ public class StageManager : Singletone<StageManager>
 			SetPlayerInfoInUILevel();
 			SetOverKillInUI();
 			RewardText();
+			//RewordItemToInventory();
 		}
 
 		stageEndChark = true;
@@ -397,5 +400,37 @@ public class StageManager : Singletone<StageManager>
 		str +=":";
 
 		return str;
+	}
+
+	public void RewordItemToInventory()
+	{
+		ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(InventoryFileName);
+		if (savedSlots == null) return;
+
+		var saveData = new ItemContainerSaveData(savedSlots.savedSlots.Length);
+
+		int rewordItemCount = rewordItemArray.Length;
+
+		//로드
+		for (int i = 0; i < savedSlots.savedSlots.Length; i++)
+		{
+			ItemSlotSaveData savedSlot = savedSlots.savedSlots[i];
+
+			if (savedSlot == null)
+			{
+				saveData.savedSlots = null;
+			}
+			else
+			{
+
+			}
+		}
+
+		//세이브
+
+
+
+		ItemSaveIO.SaveItems(saveData, InventoryFileName);
+
 	}
 }

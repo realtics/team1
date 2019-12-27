@@ -49,6 +49,8 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         if (m_playerSaveData == null)
             InitData();
 
+		InitPlayerData();
+
 #if UNITY_EDITOR
 		if (dataSO == null)
 			dataSO = (PlayerDataScriptableObject)Resources.Load("Data/PlayerDataScript");
@@ -58,6 +60,8 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
 		m_playerSaveData.cash = dataSO.cash;
 		m_playerSaveData.fatigability = dataSO.fatigability;
 #endif
+		LoginTimeFatigabilityPlus();
+		InvokeRepeating(nameof(TimeSave),10f,10f);
 	}
 
     public PlayerData GetPlayerData()
@@ -130,7 +134,7 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
         m_playerSaveData.gold = 0;
         m_playerSaveData.fatigability = 25;
 
-        BinaryManager.Save(m_playerSaveData, dataname);
+		BinaryManager.Save(m_playerSaveData, dataname);
     }
 
     public bool PlusExp(int _exp)
@@ -203,5 +207,48 @@ public class PlayerDataManager : Singletone<PlayerDataManager>
 					break;
 			}
 		}
+	}
+
+	private void TimeSave()
+	{
+		m_playerSaveData.fatigability++;
+		if(m_playerData.maxFatigability < m_playerSaveData.fatigability)
+		{
+			m_playerSaveData.fatigability = m_playerData.maxFatigability;
+		}
+
+		m_playerData.fatigability = m_playerSaveData.fatigability;
+		m_playerSaveData.saveTiem = System.DateTime.Now;
+
+		BinaryManager.Save(m_playerSaveData, dataname);
+	}
+
+	private void LoginTimeFatigabilityPlus()
+	{
+		if (m_playerData.maxFatigability < m_playerSaveData.fatigability)
+		{
+			m_playerSaveData.saveTiem = System.DateTime.Now;
+			BinaryManager.Save(m_playerSaveData, dataname);
+			return;
+		}
+
+		System.TimeSpan tempTimeSpan = System.DateTime.Now - m_playerSaveData.saveTiem;
+
+		while (tempTimeSpan < System.TimeSpan.Zero)
+		{
+			tempTimeSpan -= System.TimeSpan.FromSeconds(10f);
+
+			m_playerSaveData.fatigability++;
+			if (m_playerData.maxFatigability > m_playerSaveData.fatigability)
+			{
+				m_playerSaveData.fatigability = m_playerData.maxFatigability;
+				break;
+			}
+		}
+
+		m_playerData.fatigability = m_playerSaveData.fatigability;
+		m_playerSaveData.saveTiem = System.DateTime.Now;
+
+		BinaryManager.Save(m_playerSaveData, dataname);
 	}
 }

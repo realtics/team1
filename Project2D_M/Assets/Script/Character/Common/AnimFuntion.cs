@@ -40,6 +40,7 @@ public class AnimFuntion : MonoBehaviour
 
 	public void PlayAnim(string _animName)
 	{
+		Debug.Log(this.gameObject+"/"+ _animName);
 		m_animator.Play(_animName);
 	}
 

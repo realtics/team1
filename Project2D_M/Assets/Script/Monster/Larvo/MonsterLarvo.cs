@@ -23,7 +23,10 @@ public class MonsterLarvo : MonsterFsmBase
 	private bool m_bAttacking;
 	private const float m_fAttackDelay = 2.0f;
 	private readonly int m_hashiAttackType = Animator.StringToHash("iAttackType");
+	private bool m_patternPlaying;
 
+	[SerializeField]
+	GameObject m_effect;
 
 	ATTACK_KINDS m_eAttack;
 	//public bool m_bAttack;
@@ -35,17 +38,20 @@ public class MonsterLarvo : MonsterFsmBase
 		ATTACK_2
 	}
 
-	private void Awake()
+	protected override void Start()
 	{
+		m_monsterKind = MONSTER_KINDS.BOSS_LARVO;
+		m_patternPlaying = false;
 		m_attackcollider = this.GetComponentInChildren<AttackCollider>();
 		m_bAttacking = false;
 		m_normalAttackDic = new Dictionary<string, AttackInfo>();
 		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_1.ToString(), new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
-		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
+		//m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
 
 		m_currentDelay = 0;
 
 		InitMonstInfo();
+		base.Start();
 	}
 	protected override IEnumerator Attack()
 	{
@@ -90,13 +96,16 @@ public class MonsterLarvo : MonsterFsmBase
 		int random;
 		random = Random.Range(1, 40);
 
-		if (random % 4 == 0)
+		if (random % 8 == 0)
 		{
 			m_eAttack = ATTACK_KINDS.ATTACK_1;
 		}
 		else
 		{
+			Debug.Log("D");
 			m_eAttack = ATTACK_KINDS.ATTACK_1;
+			//m_monsterMove.isMove = true;
+			StartCoroutine(PlayAttackEffect());
 		}
 
 		//m_eAttack에 따라 그것에 맞는 공격/스킬이 나감(애니메이션 연계도)
@@ -106,6 +115,39 @@ public class MonsterLarvo : MonsterFsmBase
 		m_animator.SetTrigger("tAttack");
 	}
 
+	IEnumerator Pattern1()
+	{
+		while(true)
+		{
+
+			yield return null;
+		}
+	}
+
+	IEnumerator PlayAttackEffect()
+	{
+		float time = 0.8f;
+		//m_effect.SetActive(true);
+
+		while (true)
+		{
+			time -= Time.deltaTime;
+			if (time < 0.2 && time> 0)
+			{
+				m_monsterMove.Move(8);
+
+				m_effect.SetActive(true);
+			}
+			if(time<-0.1)
+			{
+				m_effect.SetActive(false);
+				//m_monsterMove.isMove = false;
+				time = 0.8f;
+				break;
+			}
+			yield return null;
+		}
+	}
 	protected override IEnumerator Appear()
 	{
 
@@ -114,6 +156,7 @@ public class MonsterLarvo : MonsterFsmBase
 			m_appearTime -= Time.deltaTime;
 			if (m_appearTime < 0)
 			{
+				m_animator.speed = 1.0f;
 				m_animator.SetBool(m_hashBAppear, true);
 				nowState = ENEMY_STATE.IDLE;
 				m_monsterHpBar.transform.gameObject.SetActive(true);
