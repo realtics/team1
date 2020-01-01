@@ -10,7 +10,7 @@ using GameSaveDataIO;
  * 팀              : 1팀
  * 스크립트 용도   : 게임 데이터를 묶어서 관리 예정인 스크립트
  */
-public class GameDataManager : Singletone<GameDataManager>
+public class DontDestroyGameObject : MonoBehaviour
 {
 	private void Awake()
     {

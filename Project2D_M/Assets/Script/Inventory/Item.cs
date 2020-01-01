@@ -24,10 +24,10 @@ public class Item : ScriptableObject
 	{
 		string path = AssetDatabase.GetAssetPath(this);
 		id = AssetDatabase.AssetPathToGUID(path);
-	}
+    }
 #endif
 
-	public virtual Item GetCopy()
+    public virtual Item GetCopy()
 	{
 		return this;
 	}

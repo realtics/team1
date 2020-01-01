@@ -18,9 +18,19 @@ MonoBehaviour:
     rewardGold: 320
     monsterNum: 0
     monsterLevel: 0
-    timeRecord: 0
+    timeRecord: 1196
   - rewardExp: 70
     rewardGold: 500
     monsterNum: 5
     monsterLevel: 0
-    timeRecord: 0
+    timeRecord: 2008
+  - rewardExp: 70
+    rewardGold: 500
+    monsterNum: 5
+    monsterLevel: 0
+    timeRecord: 1442
+  - rewardExp: 70
+    rewardGold: 500
+    monsterNum: 5
+    monsterLevel: 0
+    timeRecord: 1996

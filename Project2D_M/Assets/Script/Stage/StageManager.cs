@@ -12,9 +12,9 @@ public class StageManager : Singletone<StageManager>
 	private CharacterInfo m_playerInfo;
 	private PlayerCrowdControlManager m_playerCrowdControl;
 	private GameObject m_endUI;
+    [SerializeField] private GameObject m_stageUI;
 
-
-	[SerializeField]
+    [SerializeField]
 	private int m_iKillMonsterCount = 0;
 	[SerializeField]
 	private int m_iOverKillMonsterCount = 0;
@@ -77,7 +77,7 @@ public class StageManager : Singletone<StageManager>
     private float m_fCurrentMaxExp;
 	private StageRewordRank m_stageRewordRank;
 
-	public EquippableItem[] rewordItemArray;
+	public Item[] rewordItemArray;
 	private const string InventoryFileName = "Inventory";
 
 	public void Start()
@@ -91,7 +91,7 @@ public class StageManager : Singletone<StageManager>
 		m_stageTime = 0;
 		m_fRewardTime = 3.0f;
         m_stageExpBar.fillAmount = (float)(PlayerDataManager.Inst.GetPlayerData().exp) / (float)(PlayerDataManager.Inst.GetPlayerData().maxExp);
-        m_stageExpText.text = ((m_stageExpBar.fillAmount) * 100).ToString();
+        m_stageExpText.text = (Mathf.Round(m_stageExpBar.fillAmount * 10000) / 100).ToString();
         m_stageExpText.text += "%";
         m_nowStageIndex = StageDataManager.Inst.nowStage;
         m_fRewardExp = StageDataManager.Inst.stageDataSO.MainStageData[(int)m_nowStageIndex].rewardExp;
@@ -104,9 +104,10 @@ public class StageManager : Singletone<StageManager>
 		float deltaTime = Time.deltaTime;
 		m_stageTime += deltaTime;
 		m_bUserDie = m_playerInfo.IsCharacterDie();
-		if ((m_iKillMonsterCount == m_iMaxMonsterNum ) && m_endUI.activeSelf == false)
+		if ((m_iKillMonsterCount >= m_iMaxMonsterNum ) && m_endUI.activeSelf == false)
 		{
-			m_bStageSuccess = true;
+            m_stageUI.SetActive(false);
+            m_bStageSuccess = true;
 			StageEnd();
 			m_endUI.SetActive(true);
 			EndUIActive();
@@ -115,7 +116,8 @@ public class StageManager : Singletone<StageManager>
 		}
 		else if (m_bUserDie && m_endUI.activeSelf == false)
 		{
-			StageEnd();
+            m_stageUI.SetActive(false);
+            StageEnd();
 			m_endUI.SetActive(true);
 			EndUIActive();
 			m_playerCrowdControl.PlayerStateFail();
@@ -138,6 +140,8 @@ public class StageManager : Singletone<StageManager>
 
 					PlayerDataManager.Inst.SavePlayerData(PlayerDataManager.PlayerData.DATA_ENUM.DATA_ENUM_GOLD,
 						StageDataManager.Inst.stageDataSO.MainStageData[(int)m_nowStageIndex].rewardGold);
+
+					//StageDataManager.Inst.SaveStageData();
 				}
 
 				m_rewardUI.SetActive(true);
@@ -213,8 +217,19 @@ public class StageManager : Singletone<StageManager>
 
 	private void UpdateMaxStage()
 	{
-		if (StageDataManager.Inst.nowStage == StageDataManager.StageNameEnum.STAGE_1_1 && m_bStageSuccess)
+		if (StageDataManager.Inst.nowStage == StageDataManager.StageNameEnum.STAGE_1_1 && m_bStageSuccess
+            && StageDataManager.Inst.stageDataSO.maxStage == StageDataManager.StageNameEnum.STAGE_1_1)
 			StageDataManager.Inst.stageDataSO.maxStage = StageDataManager.StageNameEnum.STAGE_1_2;
+
+		if (StageDataManager.Inst.nowStage == StageDataManager.StageNameEnum.STAGE_1_2 && m_bStageSuccess
+            && StageDataManager.Inst.stageDataSO.maxStage == StageDataManager.StageNameEnum.STAGE_1_2)
+			StageDataManager.Inst.stageDataSO.maxStage = StageDataManager.StageNameEnum.STAGE_1_3;
+
+		if (StageDataManager.Inst.nowStage == StageDataManager.StageNameEnum.STAGE_1_3 && m_bStageSuccess
+            && StageDataManager.Inst.stageDataSO.maxStage == StageDataManager.StageNameEnum.STAGE_1_3)
+			StageDataManager.Inst.stageDataSO.maxStage = StageDataManager.StageNameEnum.STAGE_1_4;
+
+        StageDataManager.Inst.SaveStageData();
 	}
 
 	private void UpdatePlayerUI()
@@ -230,16 +245,15 @@ public class StageManager : Singletone<StageManager>
 	{
 		if (!stageEndChark)
 		{
+			stageEndChark = true;
 			SetEndTime();
 			SetKillCountInUI();
 			SetPlayerInfoInUI();
 			SetPlayerInfoInUILevel();
 			SetOverKillInUI();
 			RewardText();
-			//RewordItemToInventory();
+			RewordItemToInventory();
 		}
-
-		stageEndChark = true;
 	}
 
 
@@ -404,33 +418,49 @@ public class StageManager : Singletone<StageManager>
 
 	public void RewordItemToInventory()
 	{
-		ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(InventoryFileName);
-		if (savedSlots == null) return;
+        int rewordItemCount = rewordItemArray.Length - 1;
 
-		var saveData = new ItemContainerSaveData(savedSlots.savedSlots.Length);
+        ItemContainerSaveData savedSlots = ItemSaveIO.LoadItems(InventoryFileName);
+        if (savedSlots == null)
+        {
+            savedSlots = new ItemContainerSaveData(PlayerDataManager.Inst.GetPlayerData().inventoySize);
 
-		int rewordItemCount = rewordItemArray.Length;
+            for(int i = 0; i < rewordItemArray.Length; i++)
+            {
+                savedSlots.savedSlots[i] = new ItemSlotSaveData(rewordItemArray[rewordItemCount - i].ID, 1, SLOT_STATE.NOT_MOUNTING);
+            }
 
-		//로드
+            ItemSaveIO.SaveItems(savedSlots, InventoryFileName);
+            return;
+        }
+
+		//저장할 공간
+		var tempSaveData = new ItemContainerSaveData(savedSlots.savedSlots.Length);
+
 		for (int i = 0; i < savedSlots.savedSlots.Length; i++)
 		{
 			ItemSlotSaveData savedSlot = savedSlots.savedSlots[i];
 
 			if (savedSlot == null)
 			{
-				saveData.savedSlots = null;
+				if (rewordItemCount >= 0)
+				{
+					tempSaveData.savedSlots[i] = new ItemSlotSaveData(rewordItemArray[rewordItemCount].ID, 1, SLOT_STATE.NOT_MOUNTING);
+
+					rewordItemCount--;
+				}
+                else
+                {
+                    tempSaveData.savedSlots[i] = null;
+                }
 			}
 			else
 			{
-
+				tempSaveData.savedSlots[i] = new ItemSlotSaveData(savedSlot.itemID, savedSlot.amount, savedSlot.slotState);
 			}
 		}
 
-		//세이브
-
-
-
-		ItemSaveIO.SaveItems(saveData, InventoryFileName);
+		ItemSaveIO.SaveItems(tempSaveData, InventoryFileName);
 
 	}
 }

@@ -27,7 +27,7 @@ public class AttackCollider : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-		if (collision.tag == m_sTagName)
+		if (collision.CompareTag(m_sTagName))
 		{
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
             if (receiveDamage.enabled != false)

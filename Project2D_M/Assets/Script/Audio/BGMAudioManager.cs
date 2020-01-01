@@ -20,12 +20,9 @@ public class BGMAudioManager : Singletone<BGMAudioManager>
 	private bool m_isfadeOut = false;
 	[SerializeField] private SceneBGMInfo[] m_audioInfos = null;
 	[SerializeField] private AudioSource m_ambientAudioSource = null;
-	[SerializeField] private AudioMixer m_audioMixer;
+	[SerializeField] private AudioMixer m_audioMixer = null;
 	[SerializeField] private int m_fadeSpeed = 5;
-	private void Awake()
-	{
-		DontDestroyOnLoad(gameObject);
-	}
+
 	private void Start()
 	{
 		StartCoroutine(nameof(SceneChackCoroutine));

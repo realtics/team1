@@ -20,9 +20,6 @@ MonoBehaviour:
   attackBonus: 0
   armorBonus: 0
   maxHealthBonus: 15
-  attackPercentBonus: 0
-  armorPercentBonus: 0
-  maxHealthPercentBonus: 0
   equipmentType: 8
   itemRating: 1
   itemType: 2

@@ -6,8 +6,6 @@ public class StageLoadSceneButton : LoadSceneButton
 {
 	public override void GotoScene()
 	{
-		Debug.Log(PlayerDataManager.Inst.GetPlayerData().fatigability);
-
 		if (PlayerDataManager.Inst.GetPlayerData().fatigability == 0)
 		{
 			return;

@@ -12,10 +12,10 @@ public class MonsterHpBar : MonoBehaviour
     [SerializeField]
     protected Image damageBar = null;
 
-    private float m_fDamgeTime;
-    private const float DAMAGE_MAX_TIME = 1.0f;
+    protected float m_fDamgeTime;
+    protected const float DAMAGE_MAX_TIME = 1.0f;
 
-    private void Update()
+    protected virtual void Update()
     {
         m_fDamgeTime -= Time.deltaTime;
         if(m_fDamgeTime<0)

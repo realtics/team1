@@ -13,7 +13,5 @@ public class DataUIPlayerLeval : MonoBehaviour
     {
         m_iPrevPlayerLevel = _prevLevel;
         m_iCurrentPlayerLevel = _currentLevel;
-
-        Debug.Log(m_iPrevPlayerLevel + " -> " + m_iCurrentPlayerLevel);
     }
 }

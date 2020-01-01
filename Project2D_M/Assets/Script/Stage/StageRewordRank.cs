@@ -23,7 +23,8 @@ public class StageRewordRank : MonoBehaviour
 	public void SetRankSprite(RANK_ENUM _rnakEnum)
 	{
 		rankImage.sprite = rankSprites[(int)_rnakEnum];
-		currentEnum = _rnakEnum;
+        rankImage.SetNativeSize();
+        currentEnum = _rnakEnum;
 	}
 
 	public void PlusRankSprite()
@@ -33,5 +34,6 @@ public class StageRewordRank : MonoBehaviour
 
 		currentEnum--;
 		rankImage.sprite = rankSprites[(int)currentEnum];
-	}
+        rankImage.SetNativeSize();
+    }
 }

@@ -33,8 +33,6 @@ public class AudioFunction : MonoBehaviour
 				return;
 			}
 		}
-
-		Debug.Log("같은 이름의 소리가 없습니다.: "+ _EffectAnimName);
 		return;
 	}
 

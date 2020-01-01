@@ -5,13 +5,13 @@ using UnityEngine;
 public class CrecentFlameCtrl : MonoBehaviour
 {
 	private SpriteRenderer[] m_spriteRenderer = null;
-	private BoxCollider2D collider = null;
+	private BoxCollider2D colliderBox = null;
 	private Animator[] animator = null;
 	private AudioFunction m_audioFunction;
 	public void InitCrecentFlame()
 	{
 		m_spriteRenderer = m_spriteRenderer ?? GetComponentsInChildren<SpriteRenderer>();
-		collider = collider ?? GetComponent<BoxCollider2D>();
+        colliderBox = colliderBox ?? GetComponent<BoxCollider2D>();
 		animator = animator ?? GetComponentsInChildren<Animator>();
 
 		SetSpriteProgress(0.0f);
@@ -53,7 +53,7 @@ public class CrecentFlameCtrl : MonoBehaviour
 			animator[i].SetTrigger("tShoot");
 		}
 
-		collider.enabled = true;
+        colliderBox.enabled = true;
 
 		while (true)
 		{
@@ -68,7 +68,7 @@ public class CrecentFlameCtrl : MonoBehaviour
 				break;
 		}
 
-		collider.enabled = false;
+        colliderBox.enabled = false;
 
 		while (true)
 		{

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6501211875188224528}
   - component: {fileID: 6501211875188224529}
   - component: {fileID: 6501211875188224530}
+  - component: {fileID: 3767048910736910103}
   m_Layer: 0
   m_Name: BGMAudioManager
   m_TagString: Untagged
@@ -143,16 +144,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioInfos:
-  - audioName: 00_TitleScene
+  - sceneName: 
     audioClip: {fileID: 8300000, guid: 6a8f636d678aa4d438ccea4edb2b987c, type: 3}
     loop: 0
-  - audioName: 02_LobyScene
+  - sceneName: 
     audioClip: {fileID: 8300000, guid: 6208fa689104fee40a93d578520613e3, type: 3}
     loop: 0
-  - audioName: 04_WorldMap
+  - sceneName: 
     audioClip: {fileID: 8300000, guid: 2ec77fb8f517515498a7e677a42534ae, type: 3}
     loop: 0
   m_ambientAudioSource: {fileID: 8607405789015841846}
+  m_audioMixer: {fileID: 0}
+  m_fadeSpeed: 5
+--- !u!114 &3767048910736910103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501211875188224531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ec5cf7db783b244a81a3a717fa8875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7972646543148004824
 GameObject:
   m_ObjectHideFlags: 0

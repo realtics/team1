@@ -7483,7 +7483,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.011510183
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -11265,9 +11265,9 @@ AnimatorStateMachine:
   - {fileID: 9162693155777595944}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 4295437031903371675}
-    second: []
   - first: {fileID: 5386734839345158205}
+    second: []
+  - first: {fileID: 4295437031903371675}
     second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -200, y: 20, z: 0}

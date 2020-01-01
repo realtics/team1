@@ -10,11 +10,11 @@ using UnityEngine;
  */
 public class ReceiveDamage : ScriptEnable
 {
-    private CharacterInfo m_characterInfo = null;
-    private Animator m_animator = null;
-    private Rigidbody2D m_rigidbody2D = null;
-    private CrowdControlManager m_crowdControlManager = null;
-	private PlayerRandAudioFuntion m_randAudioFuntion = null;
+    protected CharacterInfo m_characterInfo = null;
+    protected Animator m_animator = null;
+    protected Rigidbody2D m_rigidbody2D = null;
+    protected CrowdControlManager m_crowdControlManager = null;
+    protected PlayerRandAudioFuntion m_randAudioFuntion = null;
     private void Awake()
     {
         m_animator = this.GetComponentInChildren<Animator>();
@@ -24,7 +24,7 @@ public class ReceiveDamage : ScriptEnable
         m_crowdControlManager = this.GetComponent<CrowdControlManager>();
     }
 
-    public void Receive(int _damage, bool _bCritical)
+    public virtual void Receive(int _damage, bool _bCritical)
     {
         if (!bScriptEnable)
             return;
@@ -43,7 +43,7 @@ public class ReceiveDamage : ScriptEnable
 			m_randAudioFuntion.VoiceRandPlay("Hit");
 	}
 
-    public void AddDamageForce(Vector2 _force)
+    public virtual void AddDamageForce(Vector2 _force)
     {
         if (!bScriptEnable)
             return;
@@ -60,7 +60,7 @@ public class ReceiveDamage : ScriptEnable
 		}
 	}
 
-    private Vector3 DamageShowPosition()
+    protected Vector3 DamageShowPosition()
     {
         Vector3 pos = new Vector3(this.transform.position.x, this.transform.position.y + 3f, this.transform.position.z);
         return pos;

@@ -6,7 +6,7 @@ using TMPro;
 public class QuestManager : Singletone<QuestManager>
 {
 	//관리
-	public TalkManager talkManager;
+	public StringManager talkManager;
 	public Quest quest;
 
 	//대화창
@@ -48,7 +48,6 @@ public class QuestManager : Singletone<QuestManager>
 		{
 			isClick = false;
 			talkIndex = 0;
-			Debug.Log(quest.CheckQuest(_npcId));
 			return;
 		}
 

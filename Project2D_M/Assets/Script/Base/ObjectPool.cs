@@ -60,7 +60,6 @@ public class ObjectPool : Singletone<ObjectPool>
                 return objectPool[ix];
         }
 
-        Debug.LogWarning("There's no matched pool list.");
         return null;
     }
 }

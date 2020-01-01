@@ -21,7 +21,9 @@ public class LoadSceneButton : MonoBehaviour
         INVENTORY,
         WORLDMAP,
         STAGE_1,
-		STAGE_2
+		STAGE_2,
+		STAGE_3,
+		STAGE_4
     }
 
     public SCENE_NAME wantToGoSceneName;
@@ -34,6 +36,5 @@ public class LoadSceneButton : MonoBehaviour
     public void OnClickExit()
     {
         Application.Quit();
-        Debug.Log("Exit");
     }
 }

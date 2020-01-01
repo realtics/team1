@@ -48,7 +48,6 @@ public class ItemDataBase : ScriptableObject
 		m_items = FindAssetsByType<Item>("Assets/Resources/Data/Items");
 	}
 
-
 	// 참조 : http://answers.unity.com/answers/1216386/view.html
 	public static T[] FindAssetsByType<T>(params string[] folders) where T : Object
 	{

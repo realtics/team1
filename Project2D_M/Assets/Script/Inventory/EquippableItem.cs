@@ -38,10 +38,6 @@ public class EquippableItem : Item
 	public int attackBonus;
 	public int armorBonus;
 	public int maxHealthBonus;
-	[Space] // 퍼센트 증가용 스탯 적용시 사용.
-	public float attackPercentBonus;
-	public float armorPercentBonus;
-	public float maxHealthPercentBonus;
 	[Space]
 	public EQUIPMENT_TYPE equipmentType;
 	public ITEM_RATING itemRating;

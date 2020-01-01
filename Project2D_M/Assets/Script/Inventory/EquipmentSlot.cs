@@ -11,7 +11,6 @@ public class EquipmentSlot : ItemSlot
 
 	public override void SetStart()
 	{
-		Debug.Log("장비 슬롯 실행.");
 
 		switch (eSlotState)
 		{

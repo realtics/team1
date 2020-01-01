@@ -21,10 +21,18 @@ namespace GameSaveData
 		public int gold;
 		public int cash;
 		public int fatigability; //피로도
-		public DateTime saveTiem;
+        public int inventoySize;
+        public DateTime saveTiem;
 
 		public EquipmentInfo equipmentInfo;
-	}
+        public PlayerSkillLevelData playerSkillLevelData;
+    }
+
+    [System.Serializable]
+    public class PlayerSkillLevelData
+    {
+       public Dictionary<string,int> SkillLevelInfoDic;
+    }
 
 	[System.Serializable]
 	public class EquipmentInfo

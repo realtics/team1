@@ -88,10 +88,6 @@ public class ItemSaveManager : Singletone<ItemSaveManager>
 				_playerData.attack += equipItem.attackBonus;
 				_playerData.defensive += equipItem.armorBonus;
 				_playerData.maxHp += equipItem.maxHealthBonus;
-
-				Debug.Log("공격력 : " + equipItem.attackBonus + " 더함");
-				Debug.Log("방어력 : " + equipItem.armorBonus + " 더함");
-				Debug.Log("체력 : " + equipItem.maxHealthBonus + " 더함");
 			}
 		}
 		return _playerData;
@@ -123,13 +119,10 @@ public class ItemSaveManager : Singletone<ItemSaveManager>
 			else
 			{
 				saveData.savedSlots[i] = new ItemSlotSaveData(itemSlot.Item.ID, itemSlot.Amount, itemSlot.eSlotState);
-				Debug.Log(itemSlot.Item.ID + "가 " + itemSlot.Amount +"개 저장됨.");
 			}
 		}
 
 		ItemSaveIO.SaveItems(saveData, _fileName);
-
-        Debug.Log(_fileName + "저장 완료");
        
 	}
 
@@ -148,12 +141,10 @@ public class ItemSaveManager : Singletone<ItemSaveManager>
 			else
 			{
 				saveData.savedSlots[i] = new ItemSlotSaveData(itemSlot.Item.ID, itemSlot.Amount, itemSlot.eSlotState,((EquipmentSlot)itemSlot).rememberInventoryIndex);
-				Debug.Log(itemSlot.Item.ID + "가 " + itemSlot.Amount + "개 저장됨.");
 			}
 		}
 
 		ItemSaveIO.SaveItems(saveData, _fileName);
-		Debug.Log(_fileName + "저장 완료");
 	}
 
 }

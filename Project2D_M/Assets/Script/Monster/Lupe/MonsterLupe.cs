@@ -53,9 +53,6 @@ public class MonsterLupe : MonsterFsmBase
 		MoveStop();
 		while (true)
 		{
-			//debug
-			Debug_UI.Inst.SetDebugText("attack", m_currentDelay.ToString());
-			//
 			m_currentDelay -= Time.deltaTime;
 			CheckHit();
 			CheckDie();
@@ -65,7 +62,6 @@ public class MonsterLupe : MonsterFsmBase
 			}
 			if (!m_bAttacking && !m_bIsAir)
 			{
-				m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
 
 				if (m_currentDelay < 0)
 				{
@@ -106,4 +102,5 @@ public class MonsterLupe : MonsterFsmBase
 		m_animator.SetInteger(m_hashiAttackType, (int)m_eAttack);
 		m_animator.SetTrigger("tAttack");
 	}
+
 }

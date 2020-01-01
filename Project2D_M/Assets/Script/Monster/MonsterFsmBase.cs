@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class MonsterFsmBase : MonsterStateMachine
 {
 	protected readonly int m_hashFSpeed = Animator.StringToHash("fSpeed");
@@ -17,10 +16,12 @@ public class MonsterFsmBase : MonsterStateMachine
 	protected MonsterInfo m_monsterInfo;
 	protected CrowdControlManager m_crowdControlMg;
 
-	[SerializeField]
+
+    [SerializeField]
 	protected float m_appearTime;
 	[SerializeField]
 	private int m_attackRanged;
+    private bool m_bDie;
 
 	protected bool m_bIsAir;
 	protected float m_currentDelay;
@@ -29,14 +30,17 @@ public class MonsterFsmBase : MonsterStateMachine
 	protected bool m_bRangedAttack;
 
 	protected MonsterHpBar m_monsterHpBar;
-	
-	#region Work Kind
-	private Work WorkAppear;
+    protected BossMonsterHpBar m_bossHpBar;
+
+    #region Work Kind
+    private Work WorkAppear;
 	private Work WorkIdle;
 	private Work WorkMove;
 	private Work WorkHit;
 	private Work WorkAttack;
 	private Work WorkDie;
+    protected Work WorkUpdateHpBar;
+	private Work WorkStun;
 	#endregion;
 
 	protected enum MONSTER_KINDS
@@ -46,14 +50,24 @@ public class MonsterFsmBase : MonsterStateMachine
 		BOSS_LARVO
 	}
 
+    protected enum MONSTER_RANK
+    {
+        MONSTER_NORMAL,
+        MONSTER_BOSS
+    }
+
 	protected MONSTER_KINDS m_monsterKind;
+    [SerializeField]
+    protected MONSTER_RANK m_monsterRank;
 
 	protected virtual void Start()
     {
 		InitAniamation();
 		nowState = ENEMY_STATE.APPEAR;
+        m_bDie = false;
 
-		if (m_monsterKind == MONSTER_KINDS.BOSS_LARVO)
+
+        if (m_monsterKind == MONSTER_KINDS.BOSS_LARVO)
 		{
 			m_animator.speed = 0.0f;
 		}
@@ -62,12 +76,18 @@ public class MonsterFsmBase : MonsterStateMachine
 		m_bIsAir = false;
 		m_bRangedMonster = false;
 		m_bRangedAttack = false;
-		#endregion
+        #endregion
 
-		m_monsterHpBar = GetComponentInChildren<MonsterHpBar>();
-		m_monsterHpBar.transform.gameObject.SetActive(false);
+        m_bossHpBar = GetComponentInChildren<BossMonsterHpBar>();
+        if (m_bossHpBar != null)
+            m_bossHpBar.transform.gameObject.SetActive(false);
 
-		m_crowdControlMg = GetComponent<CrowdControlManager>();
+        m_monsterHpBar = GetComponentInChildren<MonsterHpBar>();
+        if (m_monsterHpBar!= null)
+            m_monsterHpBar.transform.gameObject.SetActive(false);
+
+
+        m_crowdControlMg = GetComponent<CrowdControlManager>();
 		m_crowdControlMg.Impenetrable(m_appearTime);
 		if (this.GetComponent<MonsterRootee>() != null)
 			m_bRangedMonster = true;
@@ -96,6 +116,9 @@ public class MonsterFsmBase : MonsterStateMachine
 			case ENEMY_STATE.HIT:
 				WorkHit = new Work(Hit(), true);
 				break;
+			case ENEMY_STATE.STUN:
+				WorkStun = new Work(Stun(), true);
+				break;
 		}
 	}
 
@@ -121,6 +144,9 @@ public class MonsterFsmBase : MonsterStateMachine
 			case ENEMY_STATE.HIT:
 				if (WorkHit != null) WorkHit.KillCoroutine();
 				break;
+			case ENEMY_STATE.STUN:
+				if (WorkStun != null) WorkStun.KillCoroutine();
+				break;
 		}
 	}
 
@@ -132,10 +158,14 @@ public class MonsterFsmBase : MonsterStateMachine
 			m_appearTime -= Time.deltaTime;
 			if (m_appearTime < 0)
 			{
-				//m_animator.StartPlayback();
-				m_animator.SetBool(m_hashBAppear, true);
+                if (WorkUpdateHpBar == null)
+                {
+                    WorkUpdateHpBar = new Work(CheckHP(), true);
+                }
+                //m_animator.StartPlayback();
+                m_animator.SetBool(m_hashBAppear, true);
                 nowState = ENEMY_STATE.IDLE;
-				m_monsterHpBar.transform.gameObject.SetActive(true);
+				//m_monsterHpBar.transform.gameObject.SetActive(true);
 			}
 			yield return null;
 		}
@@ -165,23 +195,24 @@ public class MonsterFsmBase : MonsterStateMachine
 		}
 	}
 
-    IEnumerator Move()
+    protected virtual IEnumerator Move()
     {
 		while (true)
         {
 			CheckHit();
+			CheckDie();
 			CheckCanAttack();
 			if (!m_bIsAir)
 			{
 				m_monsterMove.isMove = true;
 				m_animator.SetFloat(m_hashFSpeed, m_fSpeed);
-				m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
+				//m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
 			}
 			yield return null;
 		}
 	}
 
-	IEnumerator Hit()
+    protected virtual IEnumerator Hit()
 	{
 		float time = 0.7f;
 		m_monsterMove.isMove = false;
@@ -191,8 +222,6 @@ public class MonsterFsmBase : MonsterStateMachine
 
 		while (true)
 		{
-			m_monsterHpBar.SetHPBar(m_monsterInfo);
-			m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
 			CheckDie();
 
 			time -= Time.deltaTime;
@@ -206,9 +235,14 @@ public class MonsterFsmBase : MonsterStateMachine
 		}
 	}
 
-	IEnumerator Die()
+    protected virtual IEnumerator Die()
 	{
-		StageManager.Inst.SetMonsterCount(m_monsterInfo.bOverKill);
+        if(m_bDie== false)
+        {
+            StageManager.Inst.SetMonsterCount(m_monsterInfo.bOverKill);
+            m_bDie = true;
+        }
+        m_monsterMove.isMove = false;
 		float time = 3.0f;
 		while(true)
 		{
@@ -221,11 +255,101 @@ public class MonsterFsmBase : MonsterStateMachine
 			yield return null;
 		}
 	}
+
+    protected virtual IEnumerator CheckHP()
+    {
+        
+        if (m_monsterRank== MONSTER_RANK.MONSTER_NORMAL)
+        {
+            m_monsterHpBar.transform.gameObject.SetActive(true);
+            while (true)
+            {
+                m_monsterHpBar.SetHPBar(m_monsterInfo);
+                m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
+                if (nowState == ENEMY_STATE.DIE)
+                    WorkUpdateHpBar.KillCoroutine();
+                yield return null;
+            }
+        }
+        else
+        {
+            m_bossHpBar.transform.gameObject.SetActive(true);
+			m_bossHpBar.InitInfo();
+            m_bossHpBar.iCurValue = m_monsterInfo.GetHP() / 300;
+            m_bossHpBar.SetText();
+            m_bossHpBar.iCurValue--;
+            while (true)
+            {
+                //
+                float temp = m_monsterInfo.GetHP() / 300;
+                temp -= 1;
+                if (m_monsterInfo.GetHP() % 300 > 0.0f)
+                    temp++;
+
+                if(m_bossHpBar.iCurValue > temp && m_bossHpBar.bLastHp == false)
+                {
+                    m_bossHpBar.SetHPBar(300, 0);
+                    m_bossHpBar.ChangeHpBar();
+                    m_bossHpBar.HpZero();
+                    m_bossHpBar.ResetHpBar();
+                    m_bossHpBar.iCurValue = (int)temp;
+                }
+
+                if (temp > -1)
+                    m_bossHpBar.SetHPBar(300, m_monsterInfo.GetHP() - temp * 300);
+                else
+                {
+                    m_bossHpBar.SetHPBar(300, 0);
+                    m_bossHpBar.HpZero();
+                }
+
+                if (m_monsterInfo.GetHP() / 300 == 0)
+                    m_bossHpBar.bLastHp = true;
+
+                if (nowState == ENEMY_STATE.DIE)
+                {
+                    WorkUpdateHpBar.KillCoroutine();
+                    m_bossHpBar.EndBossUI();
+                }
+
+				m_bossHpBar.SetArmorBar(m_fMaxArmorPoint, m_fArmorPoint);
+				CheckArmorBreak();
+				yield return null;
+            }
+        }
+    }
+	protected virtual IEnumerator Stun()
+	{
+		m_monsterMove.isMove = false;
+		m_animator.SetFloat(m_hashFSpeed, 0);
+		float stunTime = 4.0f;
+		while(true)
+		{
+			stunTime -= Time.deltaTime;
+			m_bNowArmorBreak = true;
+			CheckDie();
+			if(stunTime<0)
+			{
+				m_bNowArmorBreak = false;
+				nowState = ENEMY_STATE.MOVE;
+			}
+			yield return null;
+		}
+	}
+
 	#endregion
 
-
-
 	#region function
+	protected void CheckArmorBreak()
+	{
+		if(m_fArmorPoint<=0)
+		{
+			m_fArmorPoint = m_fMaxArmorPoint;
+			m_bossHpBar.SyncAnimPosition(this.transform);
+			m_bossHpBar.PlayAnimArmorBreak();
+			nowState = ENEMY_STATE.STUN;
+		}
+	}
 	protected void InitAniamation()
 	{
 		m_animator = this.GetComponentInChildren<Animator>();
@@ -292,8 +416,6 @@ public class MonsterFsmBase : MonsterStateMachine
 	{
 		if (m_animFunction.GetCurrntAnimClipName() == "hit")
 		{
-			//m_monsterHpBar.SetHPBar(m_monsterInfo);
-			//m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
 			nowState = ENEMY_STATE.HIT;
 		}
 	}
@@ -302,7 +424,7 @@ public class MonsterFsmBase : MonsterStateMachine
 	{
 		if(m_monsterInfo.IsCharacterDie())
 		{
-			m_monsterHpBar.SetHPBar(m_monsterInfo);
+			//m_monsterHpBar.SetHPBar(m_monsterInfo);
 			nowState = ENEMY_STATE.DIE;
 			m_animator.SetBool(m_hashBLive, false);
 		}

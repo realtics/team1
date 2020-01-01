@@ -14,6 +14,12 @@ public class MonsterInfo : CharacterInfo
     protected float m_fAttackDistance;
     [SerializeField]
     protected float m_fSpeed;
+    [SerializeField]
+    protected float m_fArmorPoint;
+	[SerializeField]
+	protected float m_fMaxArmorPoint;
+
+	protected bool m_bNowArmorBreak =false;
 
 	public float speed
 	{
@@ -57,5 +63,10 @@ public class MonsterInfo : CharacterInfo
         return m_fAttackDistance;
     }
 
+	public void ArmorDamage(int _damage)
+	{
+		if(!m_bNowArmorBreak)
+			m_fArmorPoint -= _damage;
+	}
 	
 }

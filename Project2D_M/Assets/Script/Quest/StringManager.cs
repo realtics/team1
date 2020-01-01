@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalkManager : MonoBehaviour
+public class StringManager : MonoBehaviour
 {
 	Dictionary<NPC_TYPE, string[]> m_talkData;
 	Dictionary<NPC_TYPE, GameObject> m_portraitData;

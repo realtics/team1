@@ -16,7 +16,7 @@ public class PlayerShootAttackCollider : ShootAttackCollider
 		if (longDamage)
 			return;
 
-		if (collision.tag == m_sTagName)
+		if (collision.CompareTag(m_sTagName))
 		{
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
 
@@ -62,7 +62,7 @@ public class PlayerShootAttackCollider : ShootAttackCollider
 			return;
 		else currntTime = 0;
 
-		if (collision.tag == m_sTagName)
+		if (collision.CompareTag(m_sTagName))
 		{
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
 

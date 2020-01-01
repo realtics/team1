@@ -112,7 +112,7 @@ public class PlayerNormalAttack : MonoBehaviour
 		}
 	}
 
-	private IEnumerator AttackCoroutine()
+    private IEnumerator AttackCoroutine()
 	{
 		if (!m_animFuntion.IsTag("NormalAttack"))
 		{
@@ -298,6 +298,7 @@ public class PlayerNormalAttack : MonoBehaviour
 
 	private void SmashDown()
 	{
-		m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, -40f);
+        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        m_rigidbody2D.velocity = new Vector2(m_rigidbody2D.velocity.x, -40f);
 	}
 }

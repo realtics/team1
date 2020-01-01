@@ -11,7 +11,7 @@ public class RooteeProjectile : MonoBehaviour
 	private void Awake()
 	{
 		m_rigidBody = GetComponent<Rigidbody2D>();
-		m_fireForce = new Vector2(3.5f, 2.0f);
+		m_fireForce = new Vector2(5.5f, 3.0f);
 	}
 
 	private void OnEnable()

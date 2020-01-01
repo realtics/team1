@@ -47,7 +47,6 @@ public class InfoFillAmount : MonoBehaviour
     {
         if(!m_imgFillBar)
         {
-            Debug.Log("Bar 이미지가 없습니다.");
             return;
         }
 
@@ -58,7 +57,6 @@ public class InfoFillAmount : MonoBehaviour
     {
         if (!m_textPersent)
         {
-            Debug.Log("텍스트가 없습니다.");
             return;
         }
 

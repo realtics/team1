@@ -57,7 +57,6 @@ public class InventoryManger : Singletone<InventoryManger>
 		else
 		{
 			inventory.AddItem(item);
-
 		}
 	}
 

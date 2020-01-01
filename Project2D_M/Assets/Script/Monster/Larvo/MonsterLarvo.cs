@@ -23,6 +23,8 @@ public class MonsterLarvo : MonsterFsmBase
 	private bool m_bAttacking;
 	private const float m_fAttackDelay = 2.0f;
 	private readonly int m_hashiAttackType = Animator.StringToHash("iAttackType");
+    
+    //패턴상태 상위 어택 코루틴을 돌지 않게 하기위한 불문
 	private bool m_patternPlaying;
 
 	[SerializeField]
@@ -45,22 +47,21 @@ public class MonsterLarvo : MonsterFsmBase
 		m_attackcollider = this.GetComponentInChildren<AttackCollider>();
 		m_bAttacking = false;
 		m_normalAttackDic = new Dictionary<string, AttackInfo>();
-		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_1.ToString(), new AttackInfo(1.0f, new Vector2(2.0f, 10.0f)));
-		//m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
+		m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_1.ToString(), new AttackInfo(1.0f, new Vector2(2.0f, 1.0f)));
+        //m_normalAttackDic.Add(ATTACK_KINDS.ATTACK_2.ToString(), new AttackInfo(1.0f, new Vector2(3.0f, 10.0f)));
 
-		m_currentDelay = 0;
+        m_currentDelay = 0;
 
 		InitMonstInfo();
 		base.Start();
 	}
+
 	protected override IEnumerator Attack()
 	{
 		MoveStop();
+
 		while (true)
 		{
-			//debug
-			Debug_UI.Inst.SetDebugText("attack", m_currentDelay.ToString());
-			//
 			m_currentDelay -= Time.deltaTime;
 			CheckHit();
 			CheckDie();
@@ -70,8 +71,6 @@ public class MonsterLarvo : MonsterFsmBase
 			}
 			if (!m_bAttacking && !m_bIsAir)
 			{
-				m_monsterHpBar.SetHpBarDirection(this.transform.localScale.x);
-
 				if (m_currentDelay < 0)
 				{
 
@@ -102,9 +101,7 @@ public class MonsterLarvo : MonsterFsmBase
 		}
 		else
 		{
-			Debug.Log("D");
 			m_eAttack = ATTACK_KINDS.ATTACK_1;
-			//m_monsterMove.isMove = true;
 			StartCoroutine(PlayAttackEffect());
 		}
 
@@ -115,7 +112,7 @@ public class MonsterLarvo : MonsterFsmBase
 		m_animator.SetTrigger("tAttack");
 	}
 
-	IEnumerator Pattern1()
+    IEnumerator Pattern1()
 	{
 		while(true)
 		{
@@ -132,9 +129,9 @@ public class MonsterLarvo : MonsterFsmBase
 		while (true)
 		{
 			time -= Time.deltaTime;
-			if (time < 0.2 && time> 0)
+			if (time < 0.2 && time> 0 && m_effect.activeSelf==false)
 			{
-				m_monsterMove.Move(8);
+				m_monsterMove.Move(10);
 
 				m_effect.SetActive(true);
 			}
@@ -156,10 +153,13 @@ public class MonsterLarvo : MonsterFsmBase
 			m_appearTime -= Time.deltaTime;
 			if (m_appearTime < 0)
 			{
-				m_animator.speed = 1.0f;
+                if (WorkUpdateHpBar == null)
+                {
+                    WorkUpdateHpBar = new Work(CheckHP(), true);
+                }
+                m_animator.speed = 1.0f;
 				m_animator.SetBool(m_hashBAppear, true);
 				nowState = ENEMY_STATE.IDLE;
-				m_monsterHpBar.transform.gameObject.SetActive(true);
 			}
 			yield return null;
 		}

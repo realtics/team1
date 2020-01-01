@@ -6,6 +6,7 @@ using UnityEngine;
 public class EquipmentPanel : MonoBehaviour
 {
 	[SerializeField] Transform equipmentSlotParent = null;
+
 	public EquipmentSlot[] equipmentSlots;
 
 	public event Action<BaseItemSlot> UnMountingEvent;

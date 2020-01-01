@@ -16,6 +16,7 @@ public class MonsterStateMachine : MonsterInfo
 		MOVE,
 		DIE,
 		HIT,
+		STUN,
 		NONE
 	}
 

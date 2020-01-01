@@ -490,7 +490,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.6166667
-    functionName: PlayAnim
+    functionName: PlayAnimToSkill
     data: dust01_rush(air)
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1388,7 +1388,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: PlayAnim
+    functionName: PlayAnimToSkill
     data: Attack_1
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

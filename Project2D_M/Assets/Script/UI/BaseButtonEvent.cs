@@ -18,7 +18,6 @@ public class BaseButtonEvent : MonoBehaviour
     { 
         if(!selectObject)
         {
-            Debug.Log("오픈할 버튼이 없습니다.");
             return;
         }
         selectObject.SetActive(true);
@@ -28,7 +27,6 @@ public class BaseButtonEvent : MonoBehaviour
     {
         if (!selectObject)
         {
-            Debug.Log("닫을 버튼이 없습니다.");
             return;
         }
         selectObject.SetActive(false);

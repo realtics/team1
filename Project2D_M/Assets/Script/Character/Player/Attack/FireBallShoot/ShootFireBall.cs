@@ -10,6 +10,7 @@ public class ShootFireBall : MonoBehaviour, ISkillShoot
 	public float height = 0.5f;
     private GameObject[] fireBallObjects = new GameObject[4];
 	private AudioFunction m_audioFunction = null;
+
     public void InitShoot(bool _xFilp, DamageInfo _damageInfo)
     {
 		m_audioFunction = m_audioFunction ?? GetComponent<AudioFunction>();

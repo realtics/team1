@@ -5,10 +5,11 @@ using UnityEngine;
 public class DynamicInventory : Inventory
 {
 	[SerializeField] private GameObject m_itemSlotPrefab = null;
-	[SerializeField] int inventorySlotMaxNum;
+
+	private int inventorySlotMaxNum;
 	public int InventorySlotMaxNum
 	{
-		get { return inventorySlotMaxNum; }
+		get { return inventorySlotMaxNum ; }
 		set { SetMaxSlots(value); }
 	}
 
@@ -63,7 +64,9 @@ public class DynamicInventory : Inventory
 	}
 	private void Awake()
 	{
-		SetMaxSlots(inventorySlotMaxNum);
+        inventorySlotMaxNum = PlayerDataManager.Inst.GetPlayerData().inventoySize;
+
+        SetMaxSlots(inventorySlotMaxNum);
 	}
 
 }

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerDataScript
   m_EditorClassIdentifier: 
   charactorName: 
-  level: 1
+  level: 3
   exp: 0
-  gold: 320
+  gold: 5000
   cash: 2000
   fatigability: 5
   weapon: 

@@ -52,9 +52,6 @@ public class MonsterRootee : MonsterFsmBase
 		MoveStop();
 		while (true)
 		{
-			//debug
-			Debug_UI.Inst.SetDebugText("attack", m_currentDelay.ToString());
-			//
 			m_currentDelay -= Time.deltaTime;
 			CheckHit();
 			CheckDie();

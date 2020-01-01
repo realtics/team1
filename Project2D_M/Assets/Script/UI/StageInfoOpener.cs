@@ -123,14 +123,18 @@ public class StageInfoOpener : MonoBehaviour
                 stageExplanationText.text = "흙이 유달리 푹신하게 깔려 있는 중간 숲 한구석";
                 rewordGold.text = GetThousandCommaText(1000);
                 rewordExp.text = GetThousandCommaText(100);
-                break;
+				StageStartButton2.GetComponent<StageLoadSceneButton>().wantToGoSceneName = LoadSceneButton.SCENE_NAME.STAGE_3;
+				StageDataManager.Inst.nowStage = StageDataManager.StageNameEnum.STAGE_1_3;
+				break;
             case STAGE_NUM_TYPE.STAGE_01_4:
                 selectStageImage.sprite = stageImages[(int)STAGE_NUM_TYPE.STAGE_01_4];
                 stageName.text = "[1-4] 중간 숲 고블린 배회지역";
                 stageExplanationText.text = "에페노바 중간 숲의 고블린 영토 변투리 지역";
                 rewordGold.text = GetThousandCommaText(1200);
                 rewordExp.text = GetThousandCommaText(140);
-                break;
+				StageStartButton2.GetComponent<StageLoadSceneButton>().wantToGoSceneName = LoadSceneButton.SCENE_NAME.STAGE_4;
+				StageDataManager.Inst.nowStage = StageDataManager.StageNameEnum.STAGE_1_4;
+				break;
             case STAGE_NUM_TYPE.STAGE_01_5:
                 selectStageImage.sprite = stageImages[(int)STAGE_NUM_TYPE.STAGE_01_5];
                 stageName.text = "[1-5] 중간 숲 폭군의 영토";

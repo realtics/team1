@@ -18,7 +18,7 @@ public class ShootAttackCollider : MonoBehaviour
 		if (longDamage)
 			return;
 
-		if (collision.tag == m_sTagName)
+		if (collision.CompareTag(m_sTagName))
 		{
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
 
@@ -46,7 +46,7 @@ public class ShootAttackCollider : MonoBehaviour
 			return;
 		else currntTime = 0;
 
-		if (collision.tag == m_sTagName)
+		if (collision.CompareTag(m_sTagName))
 		{
 			ReceiveDamage receiveDamage = collision.gameObject.GetComponent<ReceiveDamage>();
 

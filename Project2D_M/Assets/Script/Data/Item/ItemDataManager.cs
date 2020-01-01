@@ -139,7 +139,6 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
 		}
 		else
 		{
-			Debug.Log("장비정보가 잘못됨.");
 			return null;
 		}
 	}
@@ -173,7 +172,6 @@ public class ItemDataManager : Singletone<ItemDataManager>, ISerializationCallba
 
     public void DeserializeDictionary()
     {
-        Debug.Log("Deserialize");
         m_itemDic = new Dictionary<string, ItemInfoData>();
 
         m_itemData.ItemList.Clear();
